@@ -2,6 +2,10 @@
 title: "What is R?"
 ---
 
+R is a language and environment for statistical computing and graphics.
+
+
+
 This is a book created from markdown and executable code.
 
 See @knuth84 for additional discussion of literate programming.
