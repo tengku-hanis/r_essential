@@ -1,0 +1,25 @@
+project:
+  type: book
+
+book:
+  title: "R Essentials: A Beginner’s Guide to Data Analysis"
+  author: "Tengku Muhammad Hanis Bin Tengku Mokhtar, PhD"
+  date: today
+  date-format: "MMM D, YYYY"
+  chapters:
+    - index.qmd
+    - Ch1_what_is_R.qmd
+    - Ch2_install_R.qmd
+    - summary.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+
+editor: visual
+
