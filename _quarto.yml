@@ -1,6 +1,6 @@
 project:
   type: book
-  output-dir: docs
+  output-dir: _book
 
 book:
   title: "R Essentials: A Beginner’s Guide to Data Analysis"
@@ -11,6 +11,7 @@ book:
     - index.qmd
     - Ch1_what_is_R.qmd
     - Ch2_install_R.qmd
+    - Ch3_basic_R.qmd
     - summary.qmd
     - references.qmd
 
