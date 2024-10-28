@@ -5,5 +5,3 @@ This book is intended for anyone interested in using R for applied statistical a
 Looking back, I wish I had known certain things earlier or that experienced R users had shared their insights from the start. This book is my attempt to provide those insights, covering the key concepts and tips I wish I’d had when I started. I hope it sparks interest in R for others and helps them fully utilize its capabilities.
 
 [Tengku Muhammad Hanis Bin Tengku Mokhtar, PhD](https://tengkuhanis.netlify.app/)
-
-

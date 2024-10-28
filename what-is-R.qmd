@@ -1,4 +1,6 @@
-# What is R?
+---
+title: "What is R?"
+---
 
 This is a book created from markdown and executable code.
 

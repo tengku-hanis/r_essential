@@ -8,5 +8,65 @@
     "crumbs": [
       "Welcome"
     ]
+  },
+  {
+    "objectID": "basic-r.html",
+    "href": "basic-r.html",
+    "title": "3  Basics of R",
+    "section": "",
+    "text": "This chapter is currently under construction. Stay tuned for updates!",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Basics of R</span>"
+    ]
+  },
+  {
+    "objectID": "data-explore.html",
+    "href": "data-explore.html",
+    "title": "6  Data exploration",
+    "section": "",
+    "text": "This chapter is currently under construction. Stay tuned for updates!",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Data exploration</span>"
+    ]
+  },
+  {
+    "objectID": "data-wrangling.html",
+    "href": "data-wrangling.html",
+    "title": "4  Data wrangling",
+    "section": "",
+    "text": "This chapter is currently under construction. Stay tuned for updates!",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Data wrangling</span>"
+    ]
+  },
+  {
+    "objectID": "descriptive-stat.html",
+    "href": "descriptive-stat.html",
+    "title": "7  Descriptive statistics",
+    "section": "",
+    "text": "This chapter is currently under construction. Stay tuned for updates!",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Descriptive statistics</span>"
+    ]
+  },
+  {
+    "objectID": "install-r.html",
+    "href": "install-r.html",
+    "title": "2  Installing R and RStudio",
+    "section": "",
+    "text": "This chapter is currently under construction. Stay tuned for updates!",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Installing R and RStudio</span>"
+    ]
+  },
+  {
+    "objectID": "plotting.html",
+    "href": "plotting.html",
+    "title": "5  Data visualisation",
+    "section": "",
+    "text": "This chapter is currently under construction. Stay tuned for updates!",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Data visualisation</span>"
+    ]
   }
 ]
