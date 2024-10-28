@@ -9,9 +9,13 @@ book:
   date-format: "MMM D, YYYY"
   chapters:
     - index.qmd
-    - Ch1_what_is_R.qmd
-    - Ch2_install_R.qmd
-    - Ch3_basic_R.qmd
+    - what-is-r.qmd
+    - install-r.qmd
+    - basic-r.qmd
+    - data-wrangling.qmd
+    - plotting.qmd
+    - data-explore.qmd
+    - descriptive-stat.qmd
     - summary.qmd
     - references.qmd
 

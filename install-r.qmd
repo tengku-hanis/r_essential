@@ -1,3 +1,5 @@
-# Summary
+---
+title: "Installing R and RStudio"
+---
 
 This chapter is currently under construction. Stay tuned for updates!

@@ -1,3 +1,5 @@
-# Summary
+---
+title: "Data exploration"
+---
 
 This chapter is currently under construction. Stay tuned for updates!
