@@ -4,12 +4,6 @@ title: "What is R?"
 
 R is a language and environment for statistical computing and graphics.
 
+This chapter is currently under construction. Stay tuned for updates!
 
-
-This is a book created from markdown and executable code.
-
-See @knuth84 for additional discussion of literate programming.
-
-```{r}
-1 + 1
-```
+![](figs/under_construction.gif){fig-align="left"}
