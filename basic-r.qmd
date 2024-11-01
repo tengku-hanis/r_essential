@@ -2,6 +2,269 @@
 title: "Basics of R"
 ---
 
-This chapter is currently under construction. Stay tuned for updates!
+## Data types in R
 
-![](figs/under_construction.gif){fig-align="left"}
+There are a few data types in R:
+
+1.  Numeric
+2.  Integer
+3.  Logical
+4.  Character
+5.  Complex
+
+Let us see the example in R:
+
+For the numeric:
+
+```{r}
+x1 <- 11
+x2 <- 11.9
+
+class(x1); class(x2)
+```
+
+Both numbers are recognised as numeric in R. For integers, the number should be denoted by 'L' to be recognised as an integer.
+
+```{r}
+x3 <- 11L
+
+class(x3)
+```
+
+For logical values, the boolean operators such as 'FALSE' and 'TRUE' are examples of logical values.
+
+```{r}
+x4 <- c(TRUE, FALSE)
+
+class(x4)
+```
+
+Next, we have character values.
+
+```{r}
+x5 <- c("fruit", "apple")
+
+class(x5)
+```
+
+Lastly, we have complex values. The type of data is usually used to store numbers and imaginary components (for example, `i` in the code below).
+
+```{r}
+x6 <- 9 + 3i
+
+class(x6)
+```
+
+It is important to note the data type for each value as the function for numeric values can only be applied to numeric values. For example, if we want to find a mean value.
+
+```{r}
+numeric_val <- 1:10 #list out all numbers between 1 and 10
+numeric_val
+
+character_val <- letters[1:10] #list out the first 10 alphabets
+character_val
+```
+
+Now, let us try applying the mean function to both data.
+
+```{r}
+mean(numeric_val)
+mean(character_val)
+```
+
+So, R gives us a warning that the 'character_val' is not a numeric or logical value. Thus, the returning NA mean not available.
+
+## Data structure in R
+
+There are a few data structures in R:
+
+1.  Vector
+2.  Matrix
+3.  Array
+4.  Data frame
+5.  List
+
+![Data structures in R](figs/ch3/data_structure.png){#fig-data-structure}
+
+Depending on the fields, certain data structures are more common compared to others.
+
+### Vector
+
+Vector is the most basic data structure in R. It can contain one data type at a time.
+
+```{r}
+vec_data <- c(1, 2, 3, 4)
+vec_data
+```
+
+The structure of the data can be checked using the function `str()`.
+
+```{r}
+str(vec_data)
+```
+
+We can further confirm whether `vec_data` is a vector or not by using the `is.vector()` function.
+
+```{r}
+is.vector(vec_data)
+```
+
+A `TRUE` result indicates that the data is a vector type.
+
+### Matrix
+
+A matrix contains at least a single row and a single column. Contrary, to a vector which contains only a single row or a single column.
+
+```{r}
+mat_data <- matrix(data = c(1, 2, 3, 4, 5, 6), nrow = 3, ncol = 2)
+mat_data
+```
+
+By using `str()` function, we can see that the values are numerical and we have a matrix with 3 rows and 2 columns.
+
+```{r}
+str(mat_data)
+```
+
+Next, we can confirm that our data is a matrix by using `is.matrix()`.
+
+```{r}
+is.matrix(mat_data)
+```
+
+### Array
+
+An array is quite similar to a matrix except that it can contain several layers of rows and columns.
+
+```{r}
+arr_data <- array(data = c(1:6, 10:16), dim = c(2, 3, 2))
+arr_data
+```
+
+As we can see, we have an array of 2 layers with each layer having 2 rows and 3 columns. By using the `str()` function, we can see that R recognises the array has integer values with 3 dimensions. The first dimension, `1:2` refers to the rows, the second dimension, `1:3` refers to the columns, and the last dimension, `1:2` refers to the layers.
+
+```{r}
+str(arr_data)
+```
+
+`is.array()` can be used to ensure the data structure.
+
+```{r}
+is.array(arr_data)
+```
+
+### Data frame
+
+A data frame is the extension of the matrix data structure. The difference between the former and the latter, the former contains the column names and each column may contain different data types.
+
+```{r}
+df_data <- data.frame(
+  ID = 1:5,
+  Name = c("Mamat", "Abu", "Ali", "Chong", "Eva"),
+  Age = c(25, 30, 22, 35, 28),
+  Score = c(89, 95, 76, 88, 92)
+)
+df_data
+```
+
+We can further check the data structure and type using `str()`. So, our data structure is data frame, consists of 4 columns; the first column is integer, second column is character, third and fourth column are numeric.
+
+```{r}
+str(df_data)
+```
+
+We can double-check the data structure using `is.data.frame()`.
+
+```{r}
+is.data.frame(df_data)
+```
+
+### List
+
+Lastly, we have a list. So, the list is a more advanced data structure in which we can have different data structures in a data structure. Let us see the example of a list in which we combine the previous vector and matrix data structures.
+
+```{r}
+list_data <- list(
+  "vector" = vec_data,
+  "matrix" = mat_data
+)
+list_data
+```
+
+We can further assess each data in the list using the `$` symbol.
+
+```{r}
+list_data$vector
+```
+
+By using `str()`, we see our data is a list with 2 elements or components; a vector and matrix.
+
+```{r}
+str(list_data)
+```
+
+To further confirm our data is a list, we can use `is.list()`.
+
+```{r}
+is.list(list_data)
+```
+
+## Packages
+
+A package is a collection of functions and sample data that can be utilised for certain tasks. Certain functions in R are already loaded when you open R or RStudio. However, to use more advanced functions we need to install and load a package.
+
+The packages can installed using `install.packages()`. For example the code below will install `dplyr` package which commonly utilise for data wrangling and manipulation.
+
+```{r eval=FALSE}
+install.packages("dplyr")
+```
+
+To use the installed packages, we need to load the packages using the `library()` function.
+
+```{r eval=FALSE}
+library(dplyr)
+```
+
+Now, that we know what is a package, we might wonder where exactly these packages coming from.
+
+The official packages in R are located in the \[Comprehensive R Archive Network (CRAN)\](<https://cran.r-project.org/>). \[This link\](<https://cran.r-project.org/web/packages/available_packages_by_name.html>) contains all available packages in CRAN. Additionally, there is \[CRAN Task Views\](<https://cran.r-project.org/web/views/>). At the time of this writing, CRAN contains 21,606 R packages intended for various tasks.
+
+Furthermore, for those interested in bioinformatics, the related packages are located in the \[Bioconductor\](<https://www.bioconductor.org/packages/release/BiocViews.html#___Software>). At the time of this writing, Bioconductor contains 2,289 R packages related to bioinformatics.
+
+In addition to CRAN and Bioconductor, there are unofficial R packages, which are usually located in the \[GitHub\](<https://github.com/>) and \[GitLab\](<https://gitlab.com/r-packages>). There are probably thousands of these unofficial packages. For example, \[`dmetar` \](<https://github.com/MathiasHarrer/dmetar>) which is located in GitHub, contains R functions and codes to facilitate the conduction of meta-analyses.
+
+More often than not, the official packages in CRAN also have their GitHub repositories in which they contains the latest development of R functions and codes before they going to be released in CRAN. So, current bugs and errors in the package are corrected first using the unofficial packages from the GitHub or GitLab before they are eventually release to the CRAN repositories.
+
+There are several packages that can help in installing the unofficial packages. The two most commonly used packages are `devtools` and `remote` (or at least I commonly used them).
+
+First, we need to install the packages.
+
+```{r eval=FALSE}
+install.packages("devtools")
+install.packages("remote")
+```
+
+Next, we can install the unofficial packages.
+
+```{r eval=FALSE}
+devtools::install_github("MathiasHarrer/dmetar")
+remotes::install_github("MathiasHarrer/dmetar")
+```
+
+`MathiasHarrer` is referring to the GitHub account or usually the author's account on the GitHub, followed by the name of the package. Depending on one's preference, we can choose to use either `devtools` or `remote`.
+
+## Chapter summary
+
+In this chapter, we learn about:
+
+1.  Data types
+2.  Data structures
+3.  R packages
+
+## Revision
+
+1.  List all the data types that we learn in this chapter.
+
+2.  List all the data structures that we learn in this chapter.
+
+3.  What is the difference between installing the package and loading the package?
