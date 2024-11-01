@@ -10,43 +10,13 @@
     ]
   },
   {
-    "objectID": "basic-r.html",
-    "href": "basic-r.html",
-    "title": "3  Basics of R",
+    "objectID": "what-is-r.html",
+    "href": "what-is-r.html",
+    "title": "1  What is R?",
     "section": "",
-    "text": "3.1 Data types in R\nThere are a few data types in R:\nLet us see the example in R:\nFor the numeric:\nx1 &lt;- 11\nx2 &lt;- 11.9\n\nclass(x1); class(x2)\n\n[1] \"numeric\"\n\n\n[1] \"numeric\"\nBoth numbers are recognised as numeric in R. For integers, the number should be denoted by ‘L’ to be recognised as an integer.\nx3 &lt;- 11L\n\nclass(x3)\n\n[1] \"integer\"\nFor logical values, the boolean operators such as ‘FALSE’ and ‘TRUE’ are examples of logical values.\nx4 &lt;- c(TRUE, FALSE)\n\nclass(x4)\n\n[1] \"logical\"\nNext, we have character values.\nx5 &lt;- c(\"fruit\", \"apple\")\n\nclass(x5)\n\n[1] \"character\"\nLastly, we have complex values. The type of data is usually used to store numbers and imaginary components (for example, i in the code below).\nx6 &lt;- 9 + 3i\n\nclass(x6)\n\n[1] \"complex\"\nIt is important to note the data type for each value as the function for numeric values can only be applied to numeric values. For example, if we want to find a mean value.\nnumeric_val &lt;- 1:10 #list out all numbers between 1 and 10\nnumeric_val\n\n [1]  1  2  3  4  5  6  7  8  9 10\n\ncharacter_val &lt;- letters[1:10] #list out the first 10 alphabets\ncharacter_val\n\n [1] \"a\" \"b\" \"c\" \"d\" \"e\" \"f\" \"g\" \"h\" \"i\" \"j\"\nNow, let us try applying the mean function to both data.\nmean(numeric_val)\n\n[1] 5.5\n\nmean(character_val)\n\nWarning in mean.default(character_val): argument is not numeric or logical:\nreturning NA\n\n\n[1] NA\nSo, R gives us a warning that the ‘character_val’ is not a numeric or logical value. Thus, the returning NA mean not available.",
+    "text": "R is a language and environment for statistical computing and graphics.\nThis chapter is currently under construction. Stay tuned for updates!",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Basics of R</span>"
-    ]
-  },
-  {
-    "objectID": "data-explore.html",
-    "href": "data-explore.html",
-    "title": "7  Data exploration",
-    "section": "",
-    "text": "This chapter is currently under construction. Stay tuned for updates!",
-    "crumbs": [
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Data exploration</span>"
-    ]
-  },
-  {
-    "objectID": "data-wrangling.html",
-    "href": "data-wrangling.html",
-    "title": "4  Data wrangling",
-    "section": "",
-    "text": "This chapter is currently under construction. Stay tuned for updates!",
-    "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Data wrangling</span>"
-    ]
-  },
-  {
-    "objectID": "descriptive-stat.html",
-    "href": "descriptive-stat.html",
-    "title": "7  Descriptive statistics",
-    "section": "",
-    "text": "This chapter is currently under construction. Stay tuned for updates!",
-    "crumbs": [
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Descriptive statistics</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>What is R?</span>"
     ]
   },
   {
@@ -60,23 +30,13 @@
     ]
   },
   {
-    "objectID": "plotting.html",
-    "href": "plotting.html",
-    "title": "5  Data visualisation",
+    "objectID": "basic-r.html",
+    "href": "basic-r.html",
+    "title": "3  Basics of R",
     "section": "",
-    "text": "This chapter is currently under construction. Stay tuned for updates!",
+    "text": "3.1 Data types in R\nThere are a few data types in R:\nLet us see the example in R:\nFor the numeric:\nx1 &lt;- 11\nx2 &lt;- 11.9\n\nclass(x1); class(x2)\n\n[1] \"numeric\"\n\n\n[1] \"numeric\"\nBoth numbers are recognised as numeric in R. For integers, the number should be denoted by ‘L’ to be recognised as an integer.\nx3 &lt;- 11L\n\nclass(x3)\n\n[1] \"integer\"\nFor logical values, the boolean operators such as ‘FALSE’ and ‘TRUE’ are examples of logical values.\nx4 &lt;- c(TRUE, FALSE)\n\nclass(x4)\n\n[1] \"logical\"\nNext, we have character values.\nx5 &lt;- c(\"fruit\", \"apple\")\n\nclass(x5)\n\n[1] \"character\"\nLastly, we have complex values. The type of data is usually used to store numbers and imaginary components (for example, i in the code below).\nx6 &lt;- 9 + 3i\n\nclass(x6)\n\n[1] \"complex\"\nIt is important to note the data type for each value as the function for numeric values can only be applied to numeric values. For example, if we want to find a mean value.\nnumeric_val &lt;- 1:10 #list out all numbers between 1 and 10\nnumeric_val\n\n [1]  1  2  3  4  5  6  7  8  9 10\n\ncharacter_val &lt;- letters[1:10] #list out the first 10 alphabets\ncharacter_val\n\n [1] \"a\" \"b\" \"c\" \"d\" \"e\" \"f\" \"g\" \"h\" \"i\" \"j\"\nNow, let us try applying the mean function to both data.\nmean(numeric_val)\n\n[1] 5.5\n\nmean(character_val)\n\nWarning in mean.default(character_val): argument is not numeric or logical:\nreturning NA\n\n\n[1] NA\nSo, R gives us a warning that the ‘character_val’ is not a numeric or logical value. Thus, the returning NA mean not available.",
     "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Data visualisation</span>"
-    ]
-  },
-  {
-    "objectID": "what-is-r.html",
-    "href": "what-is-r.html",
-    "title": "1  What is R?",
-    "section": "",
-    "text": "R is a language and environment for statistical computing and graphics.\nThis chapter is currently under construction. Stay tuned for updates!",
-    "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>What is R?</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Basics of R</span>"
     ]
   },
   {
@@ -130,13 +90,63 @@
     ]
   },
   {
+    "objectID": "data-wrangling.html",
+    "href": "data-wrangling.html",
+    "title": "4  Data wrangling",
+    "section": "",
+    "text": "This chapter is currently under construction. Stay tuned for updates!",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Data wrangling</span>"
+    ]
+  },
+  {
+    "objectID": "plotting.html",
+    "href": "plotting.html",
+    "title": "5  Data visualisation",
+    "section": "",
+    "text": "This chapter is currently under construction. Stay tuned for updates!",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Data visualisation</span>"
+    ]
+  },
+  {
     "objectID": "loop-function.html",
     "href": "loop-function.html",
-    "title": "6  Data exploration",
+    "title": "6  Loops and functions",
     "section": "",
     "text": "This chapter is currently under construction. Stay tuned for updates!",
     "crumbs": [
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Loops and functions</span>"
+    ]
+  },
+  {
+    "objectID": "data-explore.html",
+    "href": "data-explore.html",
+    "title": "7  Data exploration",
+    "section": "",
+    "text": "This chapter is currently under construction. Stay tuned for updates!",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Data exploration</span>"
+    ]
+  },
+  {
+    "objectID": "descriptive-stat.html",
+    "href": "descriptive-stat.html",
+    "title": "8  Descriptive statistics",
+    "section": "",
+    "text": "This chapter is currently under construction. Stay tuned for updates!",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Descriptive statistics</span>"
+    ]
+  },
+  {
+    "objectID": "summary.html",
+    "href": "summary.html",
+    "title": "9  Summary",
+    "section": "",
+    "text": "This chapter is currently under construction. Stay tuned for updates!",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Summary</span>"
     ]
   }
 ]
