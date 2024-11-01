@@ -14,6 +14,7 @@ book:
     - basic-r.qmd
     - data-wrangling.qmd
     - plotting.qmd
+    - loop-function.qmd
     - data-explore.qmd
     - descriptive-stat.qmd
     - summary.qmd

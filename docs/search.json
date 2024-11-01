@@ -22,11 +22,11 @@
   {
     "objectID": "data-explore.html",
     "href": "data-explore.html",
-    "title": "6  Data exploration",
+    "title": "7  Data exploration",
     "section": "",
     "text": "This chapter is currently under construction. Stay tuned for updates!",
     "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Data exploration</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Data exploration</span>"
     ]
   },
   {
@@ -127,6 +127,16 @@
     "text": "3.5 Revision\n\nList all the data types that we learn in this chapter.\nList all the data structures that we learn in this chapter.\nWhat is the difference between installing the package and loading the package?",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Basics of R</span>"
+    ]
+  },
+  {
+    "objectID": "loop-function.html",
+    "href": "loop-function.html",
+    "title": "6  Data exploration",
+    "section": "",
+    "text": "This chapter is currently under construction. Stay tuned for updates!",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Loops and functions</span>"
     ]
   }
 ]
