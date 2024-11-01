@@ -227,11 +227,11 @@ library(dplyr)
 
 Now, that we know what is a package, we might wonder where exactly these packages coming from.
 
-The official packages in R are located in the \[Comprehensive R Archive Network (CRAN)\](<https://cran.r-project.org/>). \[This link\](<https://cran.r-project.org/web/packages/available_packages_by_name.html>) contains all available packages in CRAN. Additionally, there is \[CRAN Task Views\](<https://cran.r-project.org/web/views/>). At the time of this writing, CRAN contains 21,606 R packages intended for various tasks.
+The official packages in R are located in the [Comprehensive R Archive Network (CRAN)](https://cran.r-project.org/). [This link](https://cran.r-project.org/web/packages/available_packages_by_name.html) contains all available packages in CRAN. Additionally, there is [CRAN Task Views](https://cran.r-project.org/web/views/). At the time of this writing, CRAN contains 21,606 R packages intended for various tasks.
 
-Furthermore, for those interested in bioinformatics, the related packages are located in the \[Bioconductor\](<https://www.bioconductor.org/packages/release/BiocViews.html#___Software>). At the time of this writing, Bioconductor contains 2,289 R packages related to bioinformatics.
+Furthermore, for those interested in bioinformatics, the related packages are located in the [Bioconductor](https://www.bioconductor.org/packages/release/BiocViews.html#___Software). At the time of this writing, Bioconductor contains 2,289 R packages related to bioinformatics.
 
-In addition to CRAN and Bioconductor, there are unofficial R packages, which are usually located in the \[GitHub\](<https://github.com/>) and \[GitLab\](<https://gitlab.com/r-packages>). There are probably thousands of these unofficial packages. For example, \[`dmetar` \](<https://github.com/MathiasHarrer/dmetar>) which is located in GitHub, contains R functions and codes to facilitate the conduction of meta-analyses.
+In addition to CRAN and Bioconductor, there are unofficial R packages, which are usually located in the [GitHub](https://github.com/) and [GitLab](https://gitlab.com/r-packages). There are probably thousands of these unofficial packages. For example, [`dmetar` ](https://github.com/MathiasHarrer/dmetar) which is located in GitHub, contains R functions and codes to facilitate the conduction of meta-analyses.
 
 More often than not, the official packages in CRAN also have their GitHub repositories in which they contains the latest development of R functions and codes before they going to be released in CRAN. So, current bugs and errors in the package are corrected first using the unofficial packages from the GitHub or GitLab before they are eventually release to the CRAN repositories.
 
