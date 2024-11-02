@@ -14,7 +14,7 @@
     "href": "what-is-r.html",
     "title": "1  What is R?",
     "section": "",
-    "text": "R is a language and environment for statistical computing and graphics.\nThis chapter is currently under construction. Stay tuned for updates!",
+    "text": "1.1 R\nR is a language and environment for statistical computing and graphics.\nThat basically summarises this whole chapter.\nReaders who are not interested in knowing more about R and its history can skip this chapter and move on to more practical chapters.\nWell, for those who keep reading this, I guess you are interested to know more about the story of how R came to be. Do not worry, this chapter is only going to cover a short version of the history of R, so, that we can appreciate this software.\nR was a successor of S language. It was developed by Ross Ihaka and Robert Gentleman at the University of Auckland in 1991. R was made known to the public only in 1993. The R version 1.0.0 was released in 2000.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>What is R?</span>"
     ]
@@ -147,6 +147,26 @@
     "text": "This chapter is currently under construction. Stay tuned for updates!",
     "crumbs": [
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>Summary</span>"
+    ]
+  },
+  {
+    "objectID": "what-is-r.html#r",
+    "href": "what-is-r.html#r",
+    "title": "1  What is R?",
+    "section": "",
+    "text": "The logo of R software",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>What is R?</span>"
+    ]
+  },
+  {
+    "objectID": "what-is-r.html#rstudio-and-posit",
+    "href": "what-is-r.html#rstudio-and-posit",
+    "title": "1  What is R?",
+    "section": "1.2 RStudio and Posit",
+    "text": "1.2 RStudio and Posit\n\n\n\nThe logo of RStudio\n\n\nIn 2009, a company known as RStudio, Inc. was founded by Joseph J. Allaire, which later developed the RStudio software. RStudio software is an integrated development environment (IDE) which helps make R more user-friendly, especially for those without a programming background. RStudio IDE is unequivocally the most commonly used IDE for R software. The company, RStudio, Inc. later changed its corporation to a public benefit corporation (PBC), thus, known as RStudio, PBC. Subsequently, the company changed its name to Posit Software, PBC to cater to a larger demography of the data science community.\n\n\n\nThe logo of Posit Software, PBC\n\n\nAs of now, despite the changes in Posit company, they still strongly support the development and maintenance of RStudio IDE.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>What is R?</span>"
     ]
   }
 ]
