@@ -26,12 +26,38 @@ In 2009, a company known as RStudio, Inc. was founded by Joseph J. Allaire, whic
 
 Despite the changes in Posit company, they still strongly support the development and maintenance of RStudio IDE specifically and R in general.
 
+## Other IDEs
+
+As you may have guessed, we going to use RStudio in this book. However, there are other IDEs available. A few that are more common are:
+
+1.  [Jupyter Notebook](https://jupyter.org/try)
+2.  [JupyterLab](https://jupyter.org/try)
+3.  [Visual Studio](https://code.visualstudio.com/docs/languages/r)
+
+Given that RStudio is initially developed for R (currently we can use Python as well in RStudio), a lot of functionalities work seamlessly with R. Thus, make it easier for R beginners and novices to use it.
+
+## Clouds
+
+There are a few options to use R in a cloud. Meaning that we do not need to install anything on our machines.
+
+1.  [Posit Cloud](https://posit.cloud/)
+2.  [Google Colab](https://colab.research.google.com/)
+3.  [Kaggle](https://www.kaggle.com/)
+
+The first two clouds are free with limited use, though you need to make an account. Kaggle is totally free to use as far as I know. However, Kaggle does not have functions such as code completion which is very helpful to beginners. This function is available in the first two clouds.
+
+However, if you are looking for something more familiar to RStudio, Posit Cloud is the best choice. The functionalities and the overall look of the Posit Cloud are identical to RStudio.
+
+![The interface of RStudio in Posit Cloud.](figs/ch1/posit_cloud.JPG){#fig-posit-cloud width="100%"}
+
 ## Chapter summary
 
-In this chapter, we learn about what is R and RStudio.
+In this chapter, we learn about what are R and RStudio.
 
 ## Revision
 
 1.  What is the difference between R and RStudio IDE?
 
 2.  What is the difference between RStudio IDE, RStudio, Inc., and RStudio, PBC?
+
+3.  What are other IDEs for R?
