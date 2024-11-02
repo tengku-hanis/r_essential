@@ -20,11 +20,11 @@ R was a successor of S language. It was developed by Ross Ihaka and Robert Gentl
 
 ![The logo of RStudio.](figs/ch1/rstudio_logo.png){#fig-rstudio-logo width="50%"}
 
-In 2009, a company known as RStudio, Inc. was founded by Joseph J. Allaire, which later developed the RStudio software. RStudio software is an integrated development environment (IDE) which helps make R more user-friendly, especially for those without a programming background. [RStudio IDE](https://posit.co/downloads/) is unequivocally the most commonly used IDE for R software. The company, RStudio, Inc. later changed its corporation to a public benefit corporation (PBC), thus, known as RStudio, PBC. Subsequently, the company changed its name to [Posit Software, PBC](https://posit.co/) to cater to a larger demography of the data science community.
+In 2009, a company known as RStudio, Inc. was founded by Joseph J. Allaire, which later developed the RStudio software. RStudio software is an integrated development environment (IDE) which helps make R more user-friendly, especially for those without a programming background. [RStudio IDE](https://posit.co/downloads/) is unequivocally the most commonly used IDE for R software. The company, RStudio, Inc. later changed its corporation to a public benefit corporation (PBC) in 2020, thus, known as RStudio, PBC. Subsequently, in 2022, the company changed its name to [Posit Software, PBC](https://posit.co/) to cater to a larger demography of the data science community.
 
 ![The logo of Posit Software, PBC.](figs/ch1/posit.png){#fig-posit-logo width="55%"}
 
-As of now, despite the changes in Posit company, they still strongly support the development and maintenance of RStudio IDE.
+Despite the changes in Posit company, they still strongly support the development and maintenance of RStudio IDE specifically and R in general.
 
 ## Chapter summary
 
