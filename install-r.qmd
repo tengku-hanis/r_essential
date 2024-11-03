@@ -2,6 +2,33 @@
 title: "Installing R and RStudio"
 ---
 
-This chapter is currently under construction. Stay tuned for updates!
+## Installing R
 
-![](figs/under_construction.gif){fig-align="left"}
+R can be installed regardless of your operating system. R is available for Windows, Mac, and Linux users. This page (<https://cran.r-project.org/>) contains all the necessary information needed to install R. Additionally, if you are stuck, I highly recommend you to watch a few YouTube videos on how to install R.
+
+## Installing RStudio
+
+Once you have installed R, you need to install RStudio IDE. This page (<https://posit.co/download/rstudio-desktop/>) contains all the information including the related links necessary to download and install RStudio. Again, if you are stuck, I highly recommend you watch a few YouTube videos on how to install RStudio.
+
+## Installing RTools
+
+This process is specific to Windows users only. If you are a Linux or Mac user, feel free to skip this part. Rtools is a collection of tools required to build R packages from source on Windows systems. Basically, you need RTools to install the unofficial packages from GitHub, GitLab or other repositories. We going to cover what are R packages in the [Chapter 3](basic-r.qmd). For now, just know that to fully utilise the capabilities of R, you need to have RTools in your machine.
+
+This page (<https://cran.r-project.org/bin/windows/Rtools/rtools40.html>) contains all the necessary information on how to install RTools on your machine. The basic steps as outlined on the page are:
+
+1.  Download RTools
+2.  Install the RTools
+3.  Put RTools on the PATH
+
+## Other alternatives
+
+On the rare occasion that you are unable to install R or RStudio, you always have the option to use the Posit Cloud. As long as you have a Google account, you should be able to use the Posit Cloud freely. The free account is limited, however, it is more than enough for you to use throughout this book. Additionally, you can use the Google Colab, though, the user interface is slightly different to RStudio.
+
+## Chapter summary
+
+In this chapter, we learn how to install R and RStudio.
+
+## Revision
+
+1.  What is RTools?
+2.  What are the options if you can not install R and RStudio?

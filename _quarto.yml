@@ -11,6 +11,7 @@ book:
     - index.qmd
     - what-is-r.qmd
     - install-r.qmd
+    - use-rstudio.qmd
     - basic-r.qmd
     - data-wrangling.qmd
     - plotting.qmd
