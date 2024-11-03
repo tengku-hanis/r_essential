@@ -101,4 +101,5 @@ In this chapter, we learn about:
 ## Revision
 
 1.  Change your working directory to your desktop.
+
 2.  Try creating a new R Script, rename it as Test.R, and save it in your new working directory.

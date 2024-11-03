@@ -31,4 +31,5 @@ In this chapter, we learn how to install R and RStudio.
 ## Revision
 
 1.  What is RTools?
+
 2.  What are the options if you can not install R and RStudio?
