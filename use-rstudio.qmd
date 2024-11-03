@@ -6,7 +6,7 @@ title: "Introduction to RStudio"
 
 The first time we open RStudio we will see three panes as in @fig-rstudio-interface.
 
-![RStudio interface.](figs/ch4/rstudio-interface.png){#fig-rstudio-interface alt="RStudio interface."}
+![RStudio interface.](figs/ch4/rstudio-interface.png){#fig-rstudio-interface}
 
 Pane 1 consists of three tabs:
 
@@ -68,11 +68,11 @@ There are a few ways to open the R script.
 
 2.  Click on the green plus button (below the File tab) \> R Script as shown in @fig-rsript1.
 
-![Opening the R Script.](figs/ch4/rscript1.JPG){#fig-rsript1 alt="Opening the R Script." width="70%"}
+![Opening the R Script.](figs/ch4/rscript1.JPG){#fig-rsript1 width="70%"}
 
 Once you manage to open the R Script, you will see an additional pane as shown in @fig-rscript2.
 
-![R Script interface.](figs/ch4/rscript2.png){#fig-rscript2 alt="R Script interface."}
+![R Script interface.](figs/ch4/rscript2.png){#fig-rscript2}
 
 The R Script can be saved and additionally, at the lower right side of the pane, we can see `R Script`, confirming that this newly open file is an R Script.
 
@@ -88,7 +88,7 @@ Once you run `installr::updateR()` either in the Console or R Script, this packa
 
 To update the RStudio, you can click the Help tab (at the top of the RStudio) \> Check for Updates.
 
-![Updating RStudio](figs/ch4/update-rstudio.png){#fig-update-rstudio alt="Updating RStudio" width="80%"}
+![Updating RStudio](figs/ch4/update-rstudio.png){#fig-update-rstudio width="80%"}
 
 ## Chapter summary
 
