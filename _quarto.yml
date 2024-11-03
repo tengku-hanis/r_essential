@@ -9,6 +9,7 @@ book:
   date-format: "MMM D, YYYY"
   chapters:
     - index.qmd
+    - about.qmd
     - what-is-r.qmd
     - install-r.qmd
     - use-rstudio.qmd

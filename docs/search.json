@@ -10,263 +10,273 @@
     ]
   },
   {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "1  About the book",
+    "section": "",
+    "text": "This chapter is currently under construction. Stay tuned for updates!",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>About the book</span>"
+    ]
+  },
+  {
     "objectID": "what-is-r.html",
     "href": "what-is-r.html",
-    "title": "1  What is R?",
+    "title": "2  What is R?",
     "section": "",
-    "text": "1.1 R\nR is a language and environment for statistical computing and graphics.\nThat basically summarises this whole chapter.\nReaders who are not interested in knowing more about R and its history can skip this chapter and move on to more practical chapters.\nWell, for those who keep reading this, I guess you are interested to know more about the story of how R came to be. Do not worry, this chapter is only going to cover a short version of the history of R, so, that we can appreciate this software.\nR was a successor of S language. It was developed by Ross Ihaka and Robert Gentleman at the University of Auckland in 1991. R was made known to the public only in 1993. The R version 1.0.0 was released in 2000.",
+    "text": "2.1 R\nR is a language and environment for statistical computing and graphics.\nThat basically summarises this whole chapter.\nReaders who are not interested in knowing more about R and its history can skip this chapter and move on to more practical chapters.\nWell, for those who keep reading this, I guess you are interested to know more about the story of how R came to be. Do not worry, this chapter is only going to cover a short version of the history of R, so, that we can appreciate this software.\nR was a successor of S language. It was developed by Ross Ihaka and Robert Gentleman at the University of Auckland in 1991. R was made known to the public only in 1993. The R version 1.0.0 was released in 2000.",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>What is R?</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>What is R?</span>"
     ]
   },
   {
     "objectID": "what-is-r.html#r",
     "href": "what-is-r.html#r",
-    "title": "1  What is R?",
+    "title": "2  What is R?",
     "section": "",
-    "text": "Figure 1.1: The logo of R software.",
+    "text": "Figure 2.1: The logo of R software.",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>What is R?</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>What is R?</span>"
     ]
   },
   {
     "objectID": "what-is-r.html#rstudio-and-posit",
     "href": "what-is-r.html#rstudio-and-posit",
-    "title": "1  What is R?",
-    "section": "1.2 RStudio and Posit",
-    "text": "1.2 RStudio and Posit\n\n\n\n\n\n\nFigure 1.2: The logo of RStudio.\n\n\n\nIn 2009, a company known as RStudio, Inc. was founded by Joseph J. Allaire, which later developed the RStudio software. RStudio software is an integrated development environment (IDE) which helps make R more user-friendly, especially for those without a programming background. RStudio IDE is unequivocally the most commonly used IDE for R software. The company, RStudio, Inc. later changed its corporation to a public benefit corporation (PBC) in 2020, thus, known as RStudio, PBC. Subsequently, in 2022, the company changed its name to Posit Software, PBC to cater to a larger demography of the data science community.\n\n\n\n\n\n\nFigure 1.3: The logo of Posit Software, PBC.\n\n\n\nDespite the changes in Posit company, they still strongly support the development and maintenance of RStudio IDE specifically and R in general.",
+    "title": "2  What is R?",
+    "section": "2.2 RStudio and Posit",
+    "text": "2.2 RStudio and Posit\n\n\n\n\n\n\nFigure 2.2: The logo of RStudio.\n\n\n\nIn 2009, a company known as RStudio, Inc. was founded by Joseph J. Allaire, which later developed the RStudio software. RStudio software is an integrated development environment (IDE) which helps make R more user-friendly, especially for those without a programming background. RStudio IDE is unequivocally the most commonly used IDE for R software. The company, RStudio, Inc. later changed its corporation to a public benefit corporation (PBC) in 2020, thus, known as RStudio, PBC. Subsequently, in 2022, the company changed its name to Posit Software, PBC to cater to a larger demography of the data science community.\n\n\n\n\n\n\nFigure 2.3: The logo of Posit Software, PBC.\n\n\n\nDespite the changes in Posit company, they still strongly support the development and maintenance of RStudio IDE specifically and R in general.",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>What is R?</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>What is R?</span>"
     ]
   },
   {
     "objectID": "what-is-r.html#other-ides",
     "href": "what-is-r.html#other-ides",
-    "title": "1  What is R?",
-    "section": "1.3 Other IDEs",
-    "text": "1.3 Other IDEs\nAs you may have guessed, we going to use RStudio in this book. However, there are other IDEs available. A few that are more common are:\n\nJupyter Notebook\nJupyterLab\nVisual Studio\n\nGiven that RStudio is initially developed for R (currently we can use Python as well in RStudio), a lot of functionalities work seamlessly with R. Thus, make it easier for R beginners and novices to use it.",
+    "title": "2  What is R?",
+    "section": "2.3 Other IDEs",
+    "text": "2.3 Other IDEs\nAs you may have guessed, we going to use RStudio in this book. However, there are other IDEs available. A few that are more common are:\n\nJupyter Notebook\nJupyterLab\nVisual Studio\n\nGiven that RStudio is initially developed for R (currently we can use Python as well in RStudio), a lot of functionalities work seamlessly with R. Thus, make it easier for R beginners and novices to use it.",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>What is R?</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>What is R?</span>"
     ]
   },
   {
     "objectID": "what-is-r.html#clouds",
     "href": "what-is-r.html#clouds",
-    "title": "1  What is R?",
-    "section": "1.4 Clouds",
-    "text": "1.4 Clouds\nThere are a few options to use R in a cloud. Meaning that we do not need to install anything on our machines.\n\nPosit Cloud\nGoogle Colab\nKaggle\n\nThe first two clouds are free with limited use, though you need to make an account. Kaggle is totally free to use as far as I know. However, Kaggle does not have functions such as code completion which is very helpful to beginners. This function is available in the first two clouds.\nHowever, if you are looking for something more familiar to RStudio, Posit Cloud is the best choice. The functionalities and the overall look of the Posit Cloud are identical to RStudio.\n\n\n\n\n\n\nFigure 1.4: The interface of RStudio in Posit Cloud.",
+    "title": "2  What is R?",
+    "section": "2.4 Clouds",
+    "text": "2.4 Clouds\nThere are a few options to use R in a cloud. Meaning that we do not need to install anything on our machines.\n\nPosit Cloud\nGoogle Colab\nKaggle\n\nThe first two clouds are free with limited use, though you need to make an account. Kaggle is totally free to use as far as I know. However, Kaggle does not have functions such as code completion which is very helpful to beginners. This function is available in the first two clouds.\nHowever, if you are looking for something more familiar to RStudio, Posit Cloud is the best choice. The functionalities and the overall look of the Posit Cloud are identical to RStudio.\n\n\n\n\n\n\nFigure 2.4: The interface of RStudio in Posit Cloud.",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>What is R?</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>What is R?</span>"
     ]
   },
   {
     "objectID": "what-is-r.html#chapter-summary",
     "href": "what-is-r.html#chapter-summary",
-    "title": "1  What is R?",
-    "section": "1.5 Chapter summary",
-    "text": "1.5 Chapter summary\nIn this chapter, we learn about what are R and RStudio.",
+    "title": "2  What is R?",
+    "section": "2.5 Chapter summary",
+    "text": "2.5 Chapter summary\nIn this chapter, we learn about what are R and RStudio.",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>What is R?</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>What is R?</span>"
     ]
   },
   {
     "objectID": "what-is-r.html#revision",
     "href": "what-is-r.html#revision",
-    "title": "1  What is R?",
-    "section": "1.6 Revision",
-    "text": "1.6 Revision\n\nWhat is the difference between R and RStudio IDE?\nWhat is the difference between RStudio IDE, RStudio, Inc., and RStudio, PBC?\nWhat are other IDEs for R?",
+    "title": "2  What is R?",
+    "section": "2.6 Revision",
+    "text": "2.6 Revision\n\nWhat is the difference between R and RStudio IDE?\nWhat is the difference between RStudio IDE, RStudio, Inc., and RStudio, PBC?\nWhat are other IDEs for R?",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>What is R?</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>What is R?</span>"
     ]
   },
   {
     "objectID": "install-r.html",
     "href": "install-r.html",
-    "title": "2  Installing R and RStudio",
+    "title": "3  Installing R and RStudio",
     "section": "",
-    "text": "2.1 Installing R\nR can be installed regardless of your operating system. R is available for Windows, Mac, and Linux users. This page (https://cran.r-project.org/) contains all the necessary information needed to install R. Additionally, if you are stuck, I highly recommend you to watch a few YouTube videos on how to install R.",
+    "text": "3.1 Installing R\nR can be installed regardless of your operating system. R is available for Windows, Mac, and Linux users. This page (https://cran.r-project.org/) contains all the necessary information needed to install R. Additionally, if you are stuck, I highly recommend you to watch a few YouTube videos on how to install R.",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Installing R and RStudio</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Installing R and RStudio</span>"
     ]
   },
   {
     "objectID": "install-r.html#installing-rstudio",
     "href": "install-r.html#installing-rstudio",
-    "title": "2  Installing R and RStudio",
-    "section": "2.2 Installing RStudio",
-    "text": "2.2 Installing RStudio\nOnce you have installed R, you need to install RStudio IDE. This page (https://posit.co/download/rstudio-desktop/) contains all the information including the related links necessary to download and install RStudio. Again, if you are stuck, I highly recommend you watch a few YouTube videos on how to install RStudio.",
+    "title": "3  Installing R and RStudio",
+    "section": "3.2 Installing RStudio",
+    "text": "3.2 Installing RStudio\nOnce you have installed R, you need to install RStudio IDE. This page (https://posit.co/download/rstudio-desktop/) contains all the information including the related links necessary to download and install RStudio. Again, if you are stuck, I highly recommend you watch a few YouTube videos on how to install RStudio.",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Installing R and RStudio</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Installing R and RStudio</span>"
     ]
   },
   {
     "objectID": "install-r.html#installing-rtools",
     "href": "install-r.html#installing-rtools",
-    "title": "2  Installing R and RStudio",
-    "section": "2.3 Installing RTools",
-    "text": "2.3 Installing RTools\nThis process is specific to Windows users only. If you are a Linux or Mac user, feel free to skip this part. Rtools is a collection of tools required to build R packages from source on Windows systems. Basically, you need RTools to install the unofficial packages from GitHub, GitLab or other repositories. We going to cover what are R packages in the Chapter 3. For now, just know that to fully utilise the capabilities of R, you need to have RTools in your machine.\nThis page (https://cran.r-project.org/bin/windows/Rtools/rtools40.html) contains all the necessary information on how to install RTools on your machine. The basic steps as outlined on the page are:\n\nDownload RTools\nInstall the RTools\nPut RTools on the PATH",
+    "title": "3  Installing R and RStudio",
+    "section": "3.3 Installing RTools",
+    "text": "3.3 Installing RTools\nThis process is specific to Windows users only. If you are a Linux or Mac user, feel free to skip this part. Rtools is a collection of tools required to build R packages from source on Windows systems. Basically, you need RTools to install the unofficial packages from GitHub, GitLab or other repositories. We going to cover what are R packages in the Chapter 3. For now, just know that to fully utilise the capabilities of R, you need to have RTools in your machine.\nThis page (https://cran.r-project.org/bin/windows/Rtools/rtools40.html) contains all the necessary information on how to install RTools on your machine. The basic steps as outlined on the page are:\n\nDownload RTools\nInstall the RTools\nPut RTools on the PATH",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Installing R and RStudio</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Installing R and RStudio</span>"
     ]
   },
   {
     "objectID": "install-r.html#other-alternatives",
     "href": "install-r.html#other-alternatives",
-    "title": "2  Installing R and RStudio",
-    "section": "2.4 Other alternatives",
-    "text": "2.4 Other alternatives\nOn the rare occasion that you are unable to install R or RStudio, you always have the option to use the Posit Cloud. As long as you have a Google account, you should be able to use the Posit Cloud freely. The free account is limited, however, it is more than enough for you to use throughout this book. Additionally, you can use the Google Colab, though, the user interface is slightly different to RStudio.",
+    "title": "3  Installing R and RStudio",
+    "section": "3.4 Other alternatives",
+    "text": "3.4 Other alternatives\nOn the rare occasion that you are unable to install R or RStudio, you always have the option to use the Posit Cloud. As long as you have a Google account, you should be able to use the Posit Cloud freely. The free account is limited, however, it is more than enough for you to use throughout this book. Additionally, you can use the Google Colab, though, the user interface is slightly different to RStudio.",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Installing R and RStudio</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Installing R and RStudio</span>"
     ]
   },
   {
     "objectID": "install-r.html#chapter-summary",
     "href": "install-r.html#chapter-summary",
-    "title": "2  Installing R and RStudio",
-    "section": "2.5 Chapter summary",
-    "text": "2.5 Chapter summary\nIn this chapter, we learn how to install R and RStudio.",
+    "title": "3  Installing R and RStudio",
+    "section": "3.5 Chapter summary",
+    "text": "3.5 Chapter summary\nIn this chapter, we learn how to install R and RStudio.",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Installing R and RStudio</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Installing R and RStudio</span>"
     ]
   },
   {
     "objectID": "install-r.html#revision",
     "href": "install-r.html#revision",
-    "title": "2  Installing R and RStudio",
-    "section": "2.6 Revision",
-    "text": "2.6 Revision\n\nWhat is RTools?\nWhat are the options if you can not install R and RStudio?",
+    "title": "3  Installing R and RStudio",
+    "section": "3.6 Revision",
+    "text": "3.6 Revision\n\nWhat is RTools?\nWhat are the options if you can not install R and RStudio?",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Installing R and RStudio</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Installing R and RStudio</span>"
     ]
   },
   {
     "objectID": "use-rstudio.html",
     "href": "use-rstudio.html",
-    "title": "3  Introduction to RStudio",
+    "title": "4  Introduction to RStudio",
     "section": "",
     "text": "This chapter is currently under construction. Stay tuned for updates!",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Introduction to RStudio</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Introduction to RStudio</span>"
     ]
   },
   {
     "objectID": "basic-r.html",
     "href": "basic-r.html",
-    "title": "4  Basics of R",
+    "title": "5  Basics of R",
     "section": "",
-    "text": "4.1 Data types in R\nThere are a few data types in R:\nLet us see the example in R:\nFor the numeric:\nx1 &lt;- 11\nx2 &lt;- 11.9\n\nclass(x1); class(x2)\n\n[1] \"numeric\"\n\n\n[1] \"numeric\"\nBoth numbers are recognised as numeric in R. For integers, the number should be denoted by ‘L’ to be recognised as an integer.\nx3 &lt;- 11L\n\nclass(x3)\n\n[1] \"integer\"\nFor logical values, the boolean operators such as ‘FALSE’ and ‘TRUE’ are examples of logical values.\nx4 &lt;- c(TRUE, FALSE)\n\nclass(x4)\n\n[1] \"logical\"\nNext, we have character values.\nx5 &lt;- c(\"fruit\", \"apple\")\n\nclass(x5)\n\n[1] \"character\"\nLastly, we have complex values. The type of data is usually used to store numbers and imaginary components (for example, i in the code below).\nx6 &lt;- 9 + 3i\n\nclass(x6)\n\n[1] \"complex\"\nIt is important to note the data type for each value as the function for numeric values can only be applied to numeric values. For example, if we want to find a mean value.\nnumeric_val &lt;- 1:10 #list out all numbers between 1 and 10\nnumeric_val\n\n [1]  1  2  3  4  5  6  7  8  9 10\n\ncharacter_val &lt;- letters[1:10] #list out the first 10 alphabets\ncharacter_val\n\n [1] \"a\" \"b\" \"c\" \"d\" \"e\" \"f\" \"g\" \"h\" \"i\" \"j\"\nNow, let us try applying the mean function to both data.\nmean(numeric_val)\n\n[1] 5.5\n\nmean(character_val)\n\nWarning in mean.default(character_val): argument is not numeric or logical:\nreturning NA\n\n\n[1] NA\nSo, R gives us a warning that the ‘character_val’ is not a numeric or logical value. Thus, the returning NA mean not available.",
+    "text": "5.1 Data types in R\nThere are a few data types in R:\nLet us see the example in R:\nFor the numeric:\nx1 &lt;- 11\nx2 &lt;- 11.9\n\nclass(x1); class(x2)\n\n[1] \"numeric\"\n\n\n[1] \"numeric\"\nBoth numbers are recognised as numeric in R. For integers, the number should be denoted by ‘L’ to be recognised as an integer.\nx3 &lt;- 11L\n\nclass(x3)\n\n[1] \"integer\"\nFor logical values, the boolean operators such as ‘FALSE’ and ‘TRUE’ are examples of logical values.\nx4 &lt;- c(TRUE, FALSE)\n\nclass(x4)\n\n[1] \"logical\"\nNext, we have character values.\nx5 &lt;- c(\"fruit\", \"apple\")\n\nclass(x5)\n\n[1] \"character\"\nLastly, we have complex values. The type of data is usually used to store numbers and imaginary components (for example, i in the code below).\nx6 &lt;- 9 + 3i\n\nclass(x6)\n\n[1] \"complex\"\nIt is important to note the data type for each value as the function for numeric values can only be applied to numeric values. For example, if we want to find a mean value.\nnumeric_val &lt;- 1:10 #list out all numbers between 1 and 10\nnumeric_val\n\n [1]  1  2  3  4  5  6  7  8  9 10\n\ncharacter_val &lt;- letters[1:10] #list out the first 10 alphabets\ncharacter_val\n\n [1] \"a\" \"b\" \"c\" \"d\" \"e\" \"f\" \"g\" \"h\" \"i\" \"j\"\nNow, let us try applying the mean function to both data.\nmean(numeric_val)\n\n[1] 5.5\n\nmean(character_val)\n\nWarning in mean.default(character_val): argument is not numeric or logical:\nreturning NA\n\n\n[1] NA\nSo, R gives us a warning that the ‘character_val’ is not a numeric or logical value. Thus, the returning NA mean not available.",
     "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Basics of R</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Basics of R</span>"
     ]
   },
   {
     "objectID": "basic-r.html#data-types-in-r",
     "href": "basic-r.html#data-types-in-r",
-    "title": "4  Basics of R",
+    "title": "5  Basics of R",
     "section": "",
     "text": "Numeric\nInteger\nLogical\nCharacter\nComplex",
     "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Basics of R</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Basics of R</span>"
     ]
   },
   {
     "objectID": "basic-r.html#data-structure-in-r",
     "href": "basic-r.html#data-structure-in-r",
-    "title": "4  Basics of R",
-    "section": "4.2 Data structure in R",
-    "text": "4.2 Data structure in R\nThere are a few data structures in R:\n\nVector\nMatrix\nArray\nData frame\nList\n\n\n\n\n\n\n\nFigure 4.1: Data structures in R.\n\n\n\nDepending on the fields, certain data structures are more common compared to others.\n\n4.2.1 Vector\nVector is the most basic data structure in R. It can contain one data type at a time.\n\nvec_data &lt;- c(1, 2, 3, 4)\nvec_data\n\n[1] 1 2 3 4\n\n\nThe structure of the data can be checked using the function str().\n\nstr(vec_data)\n\n num [1:4] 1 2 3 4\n\n\nWe can further confirm whether vec_data is a vector or not by using the is.vector() function.\n\nis.vector(vec_data)\n\n[1] TRUE\n\n\nA TRUE result indicates that the data is a vector type.\n\n\n4.2.2 Matrix\nA matrix contains at least a single row and a single column. Contrary, to a vector which contains only a single row or a single column.\n\nmat_data &lt;- matrix(data = c(1, 2, 3, 4, 5, 6), nrow = 3, ncol = 2)\nmat_data\n\n     [,1] [,2]\n[1,]    1    4\n[2,]    2    5\n[3,]    3    6\n\n\nBy using str() function, we can see that the values are numerical and we have a matrix with 3 rows and 2 columns.\n\nstr(mat_data)\n\n num [1:3, 1:2] 1 2 3 4 5 6\n\n\nNext, we can confirm that our data is a matrix by using is.matrix().\n\nis.matrix(mat_data)\n\n[1] TRUE\n\n\n\n\n4.2.3 Array\nAn array is quite similar to a matrix except that it can contain several layers of rows and columns.\n\narr_data &lt;- array(data = c(1:6, 10:16), dim = c(2, 3, 2))\narr_data\n\n, , 1\n\n     [,1] [,2] [,3]\n[1,]    1    3    5\n[2,]    2    4    6\n\n, , 2\n\n     [,1] [,2] [,3]\n[1,]   10   12   14\n[2,]   11   13   15\n\n\nAs we can see, we have an array of 2 layers with each layer having 2 rows and 3 columns. By using the str() function, we can see that R recognises the array has integer values with 3 dimensions. The first dimension, 1:2 refers to the rows, the second dimension, 1:3 refers to the columns, and the last dimension, 1:2 refers to the layers.\n\nstr(arr_data)\n\n int [1:2, 1:3, 1:2] 1 2 3 4 5 6 10 11 12 13 ...\n\n\nis.array() can be used to ensure the data structure.\n\nis.array(arr_data)\n\n[1] TRUE\n\n\n\n\n4.2.4 Data frame\nA data frame is the extension of the matrix data structure. The difference between the former and the latter, the former contains the column names and each column may contain different data types.\n\ndf_data &lt;- data.frame(\n  ID = 1:5,\n  Name = c(\"Mamat\", \"Abu\", \"Ali\", \"Chong\", \"Eva\"),\n  Age = c(25, 30, 22, 35, 28),\n  Score = c(89, 95, 76, 88, 92)\n)\ndf_data\n\n  ID  Name Age Score\n1  1 Mamat  25    89\n2  2   Abu  30    95\n3  3   Ali  22    76\n4  4 Chong  35    88\n5  5   Eva  28    92\n\n\nWe can further check the data structure and type using str(). So, our data structure is data frame, consists of 4 columns; the first column is integer, second column is character, third and fourth column are numeric.\n\nstr(df_data)\n\n'data.frame':   5 obs. of  4 variables:\n $ ID   : int  1 2 3 4 5\n $ Name : chr  \"Mamat\" \"Abu\" \"Ali\" \"Chong\" ...\n $ Age  : num  25 30 22 35 28\n $ Score: num  89 95 76 88 92\n\n\nWe can double-check the data structure using is.data.frame().\n\nis.data.frame(df_data)\n\n[1] TRUE\n\n\n\n\n4.2.5 List\nLastly, we have a list. So, the list is a more advanced data structure in which we can have different data structures in a data structure. Let us see the example of a list in which we combine the previous vector and matrix data structures.\n\nlist_data &lt;- list(\n  \"vector\" = vec_data,\n  \"matrix\" = mat_data\n)\nlist_data\n\n$vector\n[1] 1 2 3 4\n\n$matrix\n     [,1] [,2]\n[1,]    1    4\n[2,]    2    5\n[3,]    3    6\n\n\nWe can further assess each data in the list using the $ symbol.\n\nlist_data$vector\n\n[1] 1 2 3 4\n\n\nBy using str(), we see our data is a list with 2 elements or components; a vector and matrix.\n\nstr(list_data)\n\nList of 2\n $ vector: num [1:4] 1 2 3 4\n $ matrix: num [1:3, 1:2] 1 2 3 4 5 6\n\n\nTo further confirm our data is a list, we can use is.list().\n\nis.list(list_data)\n\n[1] TRUE",
+    "title": "5  Basics of R",
+    "section": "5.2 Data structure in R",
+    "text": "5.2 Data structure in R\nThere are a few data structures in R:\n\nVector\nMatrix\nArray\nData frame\nList\n\n\n\n\n\n\n\nFigure 5.1: Data structures in R.\n\n\n\nDepending on the fields, certain data structures are more common compared to others.\n\n5.2.1 Vector\nVector is the most basic data structure in R. It can contain one data type at a time.\n\nvec_data &lt;- c(1, 2, 3, 4)\nvec_data\n\n[1] 1 2 3 4\n\n\nThe structure of the data can be checked using the function str().\n\nstr(vec_data)\n\n num [1:4] 1 2 3 4\n\n\nWe can further confirm whether vec_data is a vector or not by using the is.vector() function.\n\nis.vector(vec_data)\n\n[1] TRUE\n\n\nA TRUE result indicates that the data is a vector type.\n\n\n5.2.2 Matrix\nA matrix contains at least a single row and a single column. Contrary, to a vector which contains only a single row or a single column.\n\nmat_data &lt;- matrix(data = c(1, 2, 3, 4, 5, 6), nrow = 3, ncol = 2)\nmat_data\n\n     [,1] [,2]\n[1,]    1    4\n[2,]    2    5\n[3,]    3    6\n\n\nBy using str() function, we can see that the values are numerical and we have a matrix with 3 rows and 2 columns.\n\nstr(mat_data)\n\n num [1:3, 1:2] 1 2 3 4 5 6\n\n\nNext, we can confirm that our data is a matrix by using is.matrix().\n\nis.matrix(mat_data)\n\n[1] TRUE\n\n\n\n\n5.2.3 Array\nAn array is quite similar to a matrix except that it can contain several layers of rows and columns.\n\narr_data &lt;- array(data = c(1:6, 10:16), dim = c(2, 3, 2))\narr_data\n\n, , 1\n\n     [,1] [,2] [,3]\n[1,]    1    3    5\n[2,]    2    4    6\n\n, , 2\n\n     [,1] [,2] [,3]\n[1,]   10   12   14\n[2,]   11   13   15\n\n\nAs we can see, we have an array of 2 layers with each layer having 2 rows and 3 columns. By using the str() function, we can see that R recognises the array has integer values with 3 dimensions. The first dimension, 1:2 refers to the rows, the second dimension, 1:3 refers to the columns, and the last dimension, 1:2 refers to the layers.\n\nstr(arr_data)\n\n int [1:2, 1:3, 1:2] 1 2 3 4 5 6 10 11 12 13 ...\n\n\nis.array() can be used to ensure the data structure.\n\nis.array(arr_data)\n\n[1] TRUE\n\n\n\n\n5.2.4 Data frame\nA data frame is the extension of the matrix data structure. The difference between the former and the latter, the former contains the column names and each column may contain different data types.\n\ndf_data &lt;- data.frame(\n  ID = 1:5,\n  Name = c(\"Mamat\", \"Abu\", \"Ali\", \"Chong\", \"Eva\"),\n  Age = c(25, 30, 22, 35, 28),\n  Score = c(89, 95, 76, 88, 92)\n)\ndf_data\n\n  ID  Name Age Score\n1  1 Mamat  25    89\n2  2   Abu  30    95\n3  3   Ali  22    76\n4  4 Chong  35    88\n5  5   Eva  28    92\n\n\nWe can further check the data structure and type using str(). So, our data structure is data frame, consists of 4 columns; the first column is integer, second column is character, third and fourth column are numeric.\n\nstr(df_data)\n\n'data.frame':   5 obs. of  4 variables:\n $ ID   : int  1 2 3 4 5\n $ Name : chr  \"Mamat\" \"Abu\" \"Ali\" \"Chong\" ...\n $ Age  : num  25 30 22 35 28\n $ Score: num  89 95 76 88 92\n\n\nWe can double-check the data structure using is.data.frame().\n\nis.data.frame(df_data)\n\n[1] TRUE\n\n\n\n\n5.2.5 List\nLastly, we have a list. So, the list is a more advanced data structure in which we can have different data structures in a data structure. Let us see the example of a list in which we combine the previous vector and matrix data structures.\n\nlist_data &lt;- list(\n  \"vector\" = vec_data,\n  \"matrix\" = mat_data\n)\nlist_data\n\n$vector\n[1] 1 2 3 4\n\n$matrix\n     [,1] [,2]\n[1,]    1    4\n[2,]    2    5\n[3,]    3    6\n\n\nWe can further assess each data in the list using the $ symbol.\n\nlist_data$vector\n\n[1] 1 2 3 4\n\n\nBy using str(), we see our data is a list with 2 elements or components; a vector and matrix.\n\nstr(list_data)\n\nList of 2\n $ vector: num [1:4] 1 2 3 4\n $ matrix: num [1:3, 1:2] 1 2 3 4 5 6\n\n\nTo further confirm our data is a list, we can use is.list().\n\nis.list(list_data)\n\n[1] TRUE",
     "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Basics of R</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Basics of R</span>"
     ]
   },
   {
     "objectID": "basic-r.html#packages",
     "href": "basic-r.html#packages",
-    "title": "4  Basics of R",
-    "section": "4.3 Packages",
-    "text": "4.3 Packages\nA package is a collection of functions and sample data that can be utilised for certain tasks. Certain functions in R are already loaded when you open R or RStudio. However, to use more advanced functions we need to install and load a package.\nThe packages can installed using install.packages(). For example the code below will install dplyr package which commonly utilise for data wrangling and manipulation.\n\ninstall.packages(\"dplyr\")\n\nTo use the installed packages, we need to load the packages using the library() function.\n\nlibrary(dplyr)\n\nNow, that we know what is a package, we might wonder where exactly these packages coming from.\nThe official packages in R are located in the Comprehensive R Archive Network (CRAN). This link contains all available packages in CRAN. Additionally, there is CRAN Task Views. At the time of this writing, CRAN contains 21,606 R packages intended for various tasks.\nFurthermore, for those interested in bioinformatics, the related packages are located in the Bioconductor. At the time of this writing, Bioconductor contains 2,289 R packages related to bioinformatics.\nIn addition to CRAN and Bioconductor, there are unofficial R packages, which are usually located in the GitHub and GitLab. There are probably thousands of these unofficial packages. For example, dmetar which is located in GitHub, contains R functions and codes to facilitate the conduction of meta-analyses.\nMore often than not, the official packages in CRAN also have their GitHub repositories in which they contains the latest development of R functions and codes before they going to be released in CRAN. So, current bugs and errors in the package are corrected first using the unofficial packages from the GitHub or GitLab before they are eventually release to the CRAN repositories.\nThere are several packages that can help in installing the unofficial packages. The two most commonly used packages are devtools and remote (or at least I commonly used them).\nFirst, we need to install the packages.\n\ninstall.packages(\"devtools\")\ninstall.packages(\"remote\")\n\nNext, we can install the unofficial packages.\n\ndevtools::install_github(\"MathiasHarrer/dmetar\")\nremotes::install_github(\"MathiasHarrer/dmetar\")\n\nMathiasHarrer is referring to the GitHub account or usually the author’s account on the GitHub, followed by the name of the package. Depending on one’s preference, we can choose to use either devtools or remote.",
+    "title": "5  Basics of R",
+    "section": "5.3 Packages",
+    "text": "5.3 Packages\nA package is a collection of functions and sample data that can be utilised for certain tasks. Certain functions in R are already loaded when you open R or RStudio. However, to use more advanced functions we need to install and load a package.\nThe packages can installed using install.packages(). For example the code below will install dplyr package which commonly utilise for data wrangling and manipulation.\n\ninstall.packages(\"dplyr\")\n\nTo use the installed packages, we need to load the packages using the library() function.\n\nlibrary(dplyr)\n\nNow, that we know what is a package, we might wonder where exactly these packages coming from.\nThe official packages in R are located in the Comprehensive R Archive Network (CRAN). This link contains all available packages in CRAN. Additionally, there is CRAN Task Views. At the time of this writing, CRAN contains 21,606 R packages intended for various tasks.\nFurthermore, for those interested in bioinformatics, the related packages are located in the Bioconductor. At the time of this writing, Bioconductor contains 2,289 R packages related to bioinformatics.\nIn addition to CRAN and Bioconductor, there are unofficial R packages, which are usually located in the GitHub and GitLab. There are probably thousands of these unofficial packages. For example, dmetar which is located in GitHub, contains R functions and codes to facilitate the conduction of meta-analyses.\nMore often than not, the official packages in CRAN also have their GitHub repositories in which they contains the latest development of R functions and codes before they going to be released in CRAN. So, current bugs and errors in the package are corrected first using the unofficial packages from the GitHub or GitLab before they are eventually release to the CRAN repositories.\nThere are several packages that can help in installing the unofficial packages. The two most commonly used packages are devtools and remote (or at least I commonly used them).\nFirst, we need to install the packages.\n\ninstall.packages(\"devtools\")\ninstall.packages(\"remote\")\n\nNext, we can install the unofficial packages.\n\ndevtools::install_github(\"MathiasHarrer/dmetar\")\nremotes::install_github(\"MathiasHarrer/dmetar\")\n\nMathiasHarrer is referring to the GitHub account or usually the author’s account on the GitHub, followed by the name of the package. Depending on one’s preference, we can choose to use either devtools or remote.",
     "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Basics of R</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Basics of R</span>"
     ]
   },
   {
     "objectID": "basic-r.html#chapter-summary",
     "href": "basic-r.html#chapter-summary",
-    "title": "4  Basics of R",
-    "section": "4.4 Chapter summary",
-    "text": "4.4 Chapter summary\nIn this chapter, we learn about:\n\nData types\nData structures\nR packages",
+    "title": "5  Basics of R",
+    "section": "5.4 Chapter summary",
+    "text": "5.4 Chapter summary\nIn this chapter, we learn about:\n\nData types\nData structures\nR packages",
     "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Basics of R</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Basics of R</span>"
     ]
   },
   {
     "objectID": "basic-r.html#revision",
     "href": "basic-r.html#revision",
-    "title": "4  Basics of R",
-    "section": "4.5 Revision",
-    "text": "4.5 Revision\n\nList all the data types that we learn in this chapter.\nList all the data structures that we learn in this chapter.\nWhat is the difference between installing the package and loading the package?",
+    "title": "5  Basics of R",
+    "section": "5.5 Revision",
+    "text": "5.5 Revision\n\nList all the data types that we learn in this chapter.\nList all the data structures that we learn in this chapter.\nWhat is the difference between installing the package and loading the package?",
     "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Basics of R</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Basics of R</span>"
     ]
   },
   {
     "objectID": "data-wrangling.html",
     "href": "data-wrangling.html",
-    "title": "5  Data wrangling",
+    "title": "6  Data wrangling",
     "section": "",
     "text": "This chapter is currently under construction. Stay tuned for updates!",
     "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Data wrangling</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Data wrangling</span>"
     ]
   },
   {
     "objectID": "plotting.html",
     "href": "plotting.html",
-    "title": "6  Data visualisation",
+    "title": "7  Data visualisation",
     "section": "",
     "text": "This chapter is currently under construction. Stay tuned for updates!",
     "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Data visualisation</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Data visualisation</span>"
     ]
   },
   {
     "objectID": "loop-function.html",
     "href": "loop-function.html",
-    "title": "7  Loops and functions",
+    "title": "8  Loops and functions",
     "section": "",
     "text": "This chapter is currently under construction. Stay tuned for updates!",
     "crumbs": [
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Loops and functions</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Loops and functions</span>"
     ]
   },
   {
     "objectID": "data-explore.html",
     "href": "data-explore.html",
-    "title": "8  Data exploration",
+    "title": "9  Data exploration",
     "section": "",
     "text": "This chapter is currently under construction. Stay tuned for updates!",
     "crumbs": [
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Data exploration</span>"
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Data exploration</span>"
     ]
   },
   {
     "objectID": "descriptive-stat.html",
     "href": "descriptive-stat.html",
-    "title": "9  Descriptive statistics",
+    "title": "10  Descriptive statistics",
     "section": "",
     "text": "This chapter is currently under construction. Stay tuned for updates!",
     "crumbs": [
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Descriptive statistics</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Descriptive statistics</span>"
     ]
   },
   {
     "objectID": "summary.html",
     "href": "summary.html",
-    "title": "10  Summary",
+    "title": "11  Summary",
     "section": "",
     "text": "This chapter is currently under construction. Stay tuned for updates!",
     "crumbs": [
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Summary</span>"
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Summary</span>"
     ]
   }
 ]

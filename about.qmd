@@ -1,0 +1,7 @@
+---
+title: "About the book"
+---
+
+This chapter is currently under construction. Stay tuned for updates!
+
+![](figs/under_construction.gif){fig-align="left"}
