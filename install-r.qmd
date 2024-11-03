@@ -12,7 +12,7 @@ Once you have installed R, you need to install RStudio IDE. This page (<https://
 
 ## Installing RTools
 
-This process is specific to Windows users only. If you are a Linux or Mac user, feel free to skip this part. Rtools is a collection of tools required to build R packages from source on Windows systems. Basically, you need RTools to install the unofficial packages from GitHub, GitLab or other repositories. We going to cover what are R packages in the [Chapter 3](basic-r.qmd). For now, just know that to fully utilise the capabilities of R, you need to have RTools in your machine.
+This process is specific to Windows users only. If you are a Linux or Mac user, feel free to skip this part. Rtools is a collection of tools required to build R packages from source on Windows systems. Basically, you need RTools to install the unofficial packages from GitHub, GitLab or other repositories. We going to cover what are R packages in the [Chapter 3](basic-r#packages.qmd). For now, just know that to fully utilise the capabilities of R, you need to have RTools in your machine.
 
 This page (<https://cran.r-project.org/bin/windows/Rtools/rtools40.html>) contains all the necessary information on how to install RTools on your machine. The basic steps as outlined on the page are:
 
