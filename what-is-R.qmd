@@ -8,7 +8,7 @@ R is a language and environment for statistical computing and graphics.
 
 That basically summarises this whole chapter.
 
-![The logo of R software.](figs/ch1/r_logo.png){#fig-r-logo width="25%"}
+![The logo of R software.](figs/ch2/r_logo.png){#fig-r-logo width="25%"}
 
 Readers who are not interested in knowing more about R and its history can skip this chapter and move on to more practical chapters.
 
@@ -18,11 +18,11 @@ R was a successor of S language. It was developed by Ross Ihaka and Robert Gentl
 
 ## RStudio and Posit
 
-![The logo of RStudio.](figs/ch1/rstudio_logo.png){#fig-rstudio-logo width="50%"}
+![The logo of RStudio.](figs/ch2/rstudio_logo.png){#fig-rstudio-logo width="55%"}
 
 In 2009, a company known as RStudio, Inc. was founded by Joseph J. Allaire, which later developed the RStudio software. RStudio software is an integrated development environment (IDE) which helps make R more user-friendly, especially for those without a programming background. [RStudio IDE](https://posit.co/downloads/) is unequivocally the most commonly used IDE for R software. The company, RStudio, Inc. later changed its corporation to a public benefit corporation (PBC) in 2020, thus, known as RStudio, PBC. Subsequently, in 2022, the company changed its name to [Posit Software, PBC](https://posit.co/) to cater to a larger demography of the data science community.
 
-![The logo of Posit Software, PBC.](figs/ch1/posit.png){#fig-posit-logo width="55%"}
+![The logo of Posit Software, PBC.](figs/ch2/posit.png){#fig-posit-logo width="55%"}
 
 Despite the changes in Posit company, they still strongly support the development and maintenance of RStudio IDE specifically and R in general.
 
@@ -48,7 +48,7 @@ The first two clouds are free with limited use, though you need to make an accou
 
 However, if you are looking for something more familiar to RStudio, Posit Cloud is the best choice. The functionalities and the overall look of the Posit Cloud are identical to RStudio.
 
-![The interface of RStudio in Posit Cloud.](figs/ch1/posit_cloud.JPG){#fig-posit-cloud width="100%"}
+![The interface of RStudio in Posit Cloud.](figs/ch2/posit_cloud.JPG){#fig-posit-cloud}
 
 ## Chapter summary
 

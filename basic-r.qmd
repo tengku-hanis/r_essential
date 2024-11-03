@@ -84,7 +84,7 @@ There are a few data structures in R:
 4.  Data frame
 5.  List
 
-![Data structures in R.](figs/ch3/data_structure.png){#fig-data-structure}
+![Data structures in R.](figs/ch5/data_structure.png){#fig-data-structure width="85%"}
 
 Depending on the fields, certain data structures are more common compared to others.
 
