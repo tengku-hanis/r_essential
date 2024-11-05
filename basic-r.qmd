@@ -2,6 +2,34 @@
 title: "Basics of R"
 ---
 
+## Getting help
+
+Probably the most basic thing to know is how to get help in R. Besides a quick Google search or asking ChatGPT, R also provides a help function. The help function can be accessed using `?`.
+
+```{r eval=FALSE}
+?mean()
+```
+
+The code above will open the `Help` pane, which explains what the function `mean()` does.
+
+![The Help pane in RStudio.](figs/ch5/help.JPG){#fig-help width="80%"}
+
+## Executing the code
+
+The codes can be typed either in R Script or Console. The code in R Scripts can be executed by placing the cursor at any line of the codes and clicking `Ctrl` + `Enter` in Windows and `Cmd` + `Enter` in Macs.
+
+```{r eval=FALSE}
+# Example 1: A single line of code
+mean(1:10) 
+
+# Example 2: A multiple lines of code
+c(1:10, 10.6, 11.9) |>
+  mean() |>
+  round(digits = 1)
+```
+
+In the second example (example of multiple lines of code), a cursor can be placed at any line of code. Additionally, the codes in the Console can be executed by clicking `Enter` only. If you want to run any code in this book, you should copy and paste it into the R Script instead of the Console, especially if there are multiple lines of code. Notably, the codes should be run in sequence unless the current line of codes is independent from the previous line of codes.
+
 ## Data types in R
 
 There are a few data types in R:
@@ -167,7 +195,7 @@ df_data <- data.frame(
 df_data
 ```
 
-We can further check the data structure and type using `str()`. So, our data structure is data frame, consists of 4 columns; the first column is integer, second column is character, third and fourth column are numeric.
+We can further check the data structure and type using `str()`. So, our data structure is a data frame, consisting of 4 columns; the first column is an integer, the second column is a character, third and fourth columns are numeric.
 
 ```{r}
 str(df_data)
@@ -209,11 +237,45 @@ To further confirm our data is a list, we can use `is.list()`.
 is.list(list_data)
 ```
 
+## Data in R
+
+R itself contains the internal data that you can load for practice or other purposes. You can run `data()` in the Console to see what are the data available in R.
+
+```{r eval=FALSE}
+data()
+```
+
+So, for example, if you want to load any of these data, you can type the name of the datasets. You will see under the `Environment` pane, the chickWeight dataset is loaded to your environment.
+
+```{r}
+data("ChickWeight")
+```
+
+Additionally, it is quite common that R packages have their own datasets as well. We will see this many times in this book going forward. Lastly, R is capable of reading different data formats.
+
+| Format        | R codes                |
+|---------------|------------------------|
+| .csv          | `read.csv()`           |
+| .sav (SPSS)   | `haven::read_sav()`    |
+| .xlsx (Excel) | `readxl::read_excel()` |
+| .txt          | `read.table()`         |
+| .dta (STATA)  | `haven::read_dta()`    |
+
+: Common data formats and corresponding R codes for reading them. {#tbl-data-format}
+
+The data formats that can be read are limited to the one listed in the table. Almost all data formats can be read in R. An efficient way to know whether R is capable of reading certain data formats by just a quick Google search.
+
+For the rest of the chapter we going to the `iris` dataset, which is already available in R. To know more about this dataset, you can type the below code in the console.
+
+```{r eval=FALSE}
+?iris
+```
+
 ## Packages
 
 A package is a collection of functions and sample data that can be utilised for certain tasks. Certain functions in R are already loaded when you open R or RStudio. However, to use more advanced functions we need to install and load a package.
 
-The packages can installed using `install.packages()`. For example the code below will install `dplyr` package which commonly utilise for data wrangling and manipulation.
+The packages can installed using `install.packages()`. For example, the code below will install the `dplyr` package which is commonly utilised for data wrangling and manipulation.
 
 ```{r eval=FALSE}
 install.packages("dplyr")
@@ -231,11 +293,11 @@ The official packages in R are located in the [Comprehensive R Archive Network (
 
 Furthermore, for those interested in bioinformatics, the related packages are located in the [Bioconductor](https://www.bioconductor.org/packages/release/BiocViews.html#___Software). At the time of this writing, Bioconductor contains 2,289 R packages related to bioinformatics.
 
-In addition to CRAN and Bioconductor, there are unofficial R packages, which are usually located in the [GitHub](https://github.com/) and [GitLab](https://gitlab.com/r-packages). There are probably thousands of these unofficial packages. For example, [`dmetar`](https://github.com/MathiasHarrer/dmetar) which is located in GitHub, contains R functions and codes to facilitate the conduction of meta-analyses.
+In addition to CRAN and Bioconductor, there are unofficial R packages, which are usually located in [GitHub](https://github.com/) and [GitLab](https://gitlab.com/r-packages). There are probably thousands of these unofficial packages. For example, [`dmetar`](https://github.com/MathiasHarrer/dmetar) which is located in GitHub, contains R functions and codes to facilitate the conduction of meta-analyses.
 
-More often than not, the official packages in CRAN also have their GitHub repositories in which they contains the latest development of R functions and codes before they going to be released in CRAN. So, current bugs and errors in the package are corrected first using the unofficial packages from the GitHub or GitLab before they are eventually release to the CRAN repositories.
+More often than not, the official packages in CRAN also have their GitHub repositories in which they contain the latest development of R functions and codes before they going to be released in CRAN. So, current bugs and errors in the package are corrected first using the unofficial packages from GitHub or GitLab before they are eventually released to the CRAN repositories.
 
-There are several packages that can help in installing the unofficial packages. The two most commonly used packages are `devtools` and `remote` (or at least I commonly used them).
+Several packages can help in installing the unofficial packages. The two most commonly used packages are `devtools` and `remote` (or at least I commonly used them).
 
 First, we need to install the packages.
 
@@ -251,20 +313,142 @@ devtools::install_github("MathiasHarrer/dmetar")
 remotes::install_github("MathiasHarrer/dmetar")
 ```
 
-`MathiasHarrer` is referring to the GitHub account or usually the author's account on the GitHub, followed by the name of the package. Depending on one's preference, we can choose to use either `devtools` or `remote`.
+`MathiasHarrer` refers to the GitHub account or usually the author's account on GitHub, followed by the name of the package. Depending on one's preference, we can choose to use either `devtools` or `remote`.
+
+## Functions
+
+A function in R is a block of code designed to perform a specific task. It consists of an argument, in which we need to supply it. For example, the `mean()` function is designed to find the mean or average across the numeric values. The numeric values are the argument that we need to supply to the function.
+
+```{r}
+num_values <- c(5, 6, 8, 10)
+mean(num_values)
+```
+
+The base R itself has numerous functions that are accessible to us. These base R functions can be used immediately once we open R (or RStudio or any other IDEs). In contrast, we also have R functions from the packages that we installed. First, we need to install the packages.
+
+```{r eval=FALSE}
+install.packages("tidyverse")
+```
+
+We will learn about `tidyverse` in a little bit. Coming on to our current installation, once you install the package there are two ways to use the function inside the package. First, by loading the package, subsequently, all the functions in the package are ready to be used by us. For example below, `bind_rows()` is one of the functions from the `dplyr` package.
+
+```{r eval=FALSE}
+# Load the package
+library(dplyr) 
+
+# Example of functions from dplyr package
+bind_rows()
+bind_cols()
+```
+
+Secondly, we can use `::` to access a single function that we are interested in. However, in this approach, only a single function is loaded.
+
+```{r eval=FALSE}
+# Example of dplyr functions
+dplyr::bind_rows()
+dplyr::bind_cols()
+```
+
+As we can see, every time we want to call a function from the `dplyr` package we type `dplyr::` as we do not load the package first.
+
+## Tidyverse package
+
+We have learned that R packages contain a collection of functions and R codes that we utilise once we load the packages. So, tidyverse is an opinionated collection of R packages designed for data science.
+
+```{r}
+# List of all packages in tidyverse
+tidyverse::tidyverse_packages(include_self = FALSE) |>
+  data.frame(Packages = _)
+```
+
+@tbl-tidyverse-packages below summarises common packages in `tidyverse` and its uses.
+
+| Packages | Summary |
+|------------------------------------|------------------------------------|
+| ggplot2 | For data visualisation. |
+| dplyr | Provides tools for data manipulation, including functions for filtering, selecting, grouping, and summarizing data. |
+| tidyr | Specializes in data tidying, allowing users to transform datasets into a tidy format ready for analysis or visualisation. |
+| readr | Used for reading rectangular data (e.g., CSV, TSV files) into R quickly and efficiently. |
+| purr | Introduces a functional programming paradigm in R with tools for applying functions to data structures like lists and vectors. |
+| tibble | Enhances data frames in R by making them more user-friendly with better printing options and stricter type checking |
+| stringr | Facilitates consistent handling of strings, offering functions for string manipulation, pattern matching, and transformations. |
+| forcats | Designed to work with categorical data (factors). |
+
+: Common packages in tidyverse. {#tbl-tidyverse-packages}
+
+`Tidyverse` is commonly utilised for data analysis and throughout this book, we going to use `tidyverse` functions numerous times.
+
+## Pipe operators
+
+There two types of pipe in R:
+
+1.  `|>`: this pipe is from base R, first introduced in R version 4.1.0.
+2.  `%>%`: this pipe is from the `magrittr` package, which presented `tidyverse`.
+
+To use `|>`, we do not actually need to load anything as it is already available in base R. However, to use `%>%`, you need to load `tidyverse`. Certain `tidyverse` associated packages such as `dplyr`, `forcats`, and `magrittr` also load the `%>%`.
+
+The main function of these pipe operators (regardless of which one we use) is to make our R codes more readable and intuitive. So, let us compare the codes without and with the pipe.
+
+```{r}
+mean_value <- mean(
+  subset(
+    data.frame(value = 1:10, group = rep(c("A", "B"), each = 5)),
+    group == "A"
+  )$value
+)
+mean_value
+```
+
+Now, compare the codes with the pipe.
+
+```{r}
+mean_value <- data.frame(value = 1:10, group = rep(c("A", "B"), each = 5)) |>
+  subset(group == "A") |>
+  with(mean(value))
+mean_value
+```
+
+Basically, what we do in both R codes are:
+
+1.  Create a data frame with ten rows and two columns.
+
+```{r}
+data.frame(value = 1:10, group = rep(c("A", "B"), each = 5))
+```
+
+2.  Filter out the group column to value A.
+3.  Calculate the mean.
+
+```{r}
+mean(c(1, 2, 3, 4, 5))
+```
+
+Coming back to both R codes, we can intuitively see that the codes with the pipe are more readable and clear compared to the other one. The codes with pipe can be read line by line, while the codes without the pipe need to be read inside out. As you can imagine, once our codes are more complex, the less readable the codes will become.
+
+So, which pipe operators to choose?
+
+In most cases, the differences are not significant enough to impact your code. Therefore, you can choose the pipe operator that best suits your preference or coding style. Most users will find that both options perform similarly for general tasks, so selecting one often comes down to familiarity or ease of use.
+
+`|>` is a built-in pipe operator which can be used immediately without the need to load any package. `%>%` can be used once the `tidyverse` package is loaded. The latter pipe has short cut built-in in RStudio. For Windows user, `Ctrl` + `Shift` + `M` and for Mac user, `Cmd` + `Shift` + `M`. Additionally, we can set up the shortcut for `|>` or further change the shortcut for `%>%`, though, this will not be covered in this book.
 
 ## Chapter summary
 
 In this chapter, we learn about:
 
-1.  Data types
-2.  Data structures
-3.  R packages
+1.  Data, its types and structures in R.
+2.  R packages and functions.
+3.  Pipe operators.
 
 ## Revision
 
-1.  List all the data types that we learn in this chapter.
+1.  What this `?` actually do in R?
 
-2.  List all the data structures that we learn in this chapter.
+2.  List all the data types that we learn in this chapter.
 
-3.  What is the difference between installing the package and loading the package?
+3.  List all the data structures that we learn in this chapter.
+
+4.  What is the difference between installing the package and loading the package?
+
+5.  Which one to choose between `|>` and `%>%`?
+
+6.  List three packages in `tidyverse` and summarise their functionalities.
