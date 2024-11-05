@@ -412,16 +412,24 @@ Basically, what we do in both R codes are:
 
 1.  Create a data frame with ten rows and two columns.
 
-```{r}
-data.frame(value = 1:10, group = rep(c("A", "B"), each = 5))
-```
+    ```{r}
+    data.frame(value = 1:10, group = rep(c("A", "B"), each = 5))
+    ```
+
+<!-- -->
 
 2.  Filter out the group column to value A.
+
+    ```{r}
+    data.frame(value = 1:10, group = rep(c("A", "B"), each = 5)) |>
+      subset(group == "A")
+    ```
+
 3.  Calculate the mean.
 
-```{r}
-mean(c(1, 2, 3, 4, 5))
-```
+    ```{r}
+    mean(c(1, 2, 3, 4, 5))
+    ```
 
 Coming back to both R codes, we can intuitively see that the codes with the pipe are more readable and clear compared to the other one. The codes with pipe can be read line by line, while the codes without the pipe need to be read inside out. As you can imagine, once our codes are more complex, the less readable the codes will become.
 
