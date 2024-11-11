@@ -1,6 +1,4 @@
----
-title: "About the book"
----
+# About the book {.unnumbered}
 
 ::: callout-warning
 ## This book is in its early drafting stages; many portions of the book are unfinished and all of it will go through significant revision and refinement.
@@ -14,7 +12,7 @@ Chapters 5 and 6 provide essential knowledge on basic R coding, commonly used in
 
 Chapter 7 focuses on basic visualizations and plotting techniques. Readers will learn how to use base R functions for visual representation and will be introduced to `ggplot2`, a highly regarded package for data visualisation in R.
 
-Chapter 8 covers loops and functions, a topic that may pose a challenge for beginners. This chapter aims to equip readers with the skills needed for more efficient R coding. While not critical for initial learning, understanding these concepts will become increasingly important as one progresses in data analysis.
+Chapter 8 covers loop, function, and apply, a topic that may pose a challenge for beginners. This chapter aims to equip readers with the skills needed for more efficient R coding. While not critical for initial learning, understanding these concepts will become increasingly important as one progresses in data analysis.
 
 Chapters 9 and 10 delve into essential skills for data exploration and descriptive statistics. Mastering these will enable readers to gain deeper insights into their data and prepare them for more advanced analysis techniques.
 

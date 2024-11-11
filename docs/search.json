@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "R Essentials: A Beginner’s Guide to Data Analysis",
     "section": "",
-    "text": "Welcome\n\n\n\n\n\n\n\nThis book is in its early drafting stages; several chapters of the book are unfinished and all of it will go through significant revision and refinement.\n\n\n\n\n\n\nThis book is intended for anyone interested in using R for applied statistical analysis and machine learning. I first encountered R (specifically RStudio) during my master’s studies, and it wasn’t an easy journey—especially as someone from a non-coding background. Initially, I was introduced to software like SPSS and STATA, and eventually R during my master’s studies. R felt unfamiliar and complex by comparison to the previous software. However, those who could use R proficiently seemed impressive to me, which motivated me to keep going. Surprisingly, the learning process became much easier as I keep using R.\nLooking back, I wish I had known certain things earlier or that experienced R users had shared their insights from the start. This book is my attempt to provide those insights, covering the key concepts and tips I wish I had had when I started. I hope it sparks interest in R for others and helps them fully utilize its capabilities.\nFinally, I just want to say thanks to my amazing wife, Asmaq, my parents, Tengku Mokhtar and Nor Malaysia, and my in-laws, Mazalan and Salmeh, for all their understanding. Writing this book means taking the time I would usually spend with them, and while they might not fully get my obsession with R and data analysis (especially my wife!), they’ve supported me every step of the way.\nTengku Muhammad Hanis Bin Tengku Mokhtar, PhD",
+    "text": "Welcome\n\n\n\n\n\n\nThis book is in its early drafting stages; several chapters of the book are unfinished and all of it will go through significant revision and refinement.\n\n\n\n\n\n\nThis book is intended for anyone interested in using R for applied statistical analysis and machine learning. I first encountered R (specifically RStudio) during my master’s studies, and it wasn’t an easy journey—especially as someone from a non-coding background. Initially, I was introduced to software like SPSS and STATA, and eventually R during my master’s studies. R felt unfamiliar and complex by comparison to the previous software. However, those who could use R proficiently seemed impressive to me, which motivated me to keep going. Surprisingly, the learning process became much easier as I keep using R.\nLooking back, I wish I had known certain things earlier or that experienced R users had shared their insights from the start. This book is my attempt to provide those insights, covering the key concepts and tips I wish I had had when I started. I hope it sparks interest in R for others and helps them fully utilize its capabilities.\nFinally, I just want to say thanks to my amazing wife, Asmaq, my parents, Tengku Mokhtar and Nor Malaysia, and my in-laws, Mazalan and Salmeh, for all their understanding. Writing this book means taking the time I would usually spend with them, and while they might not fully get my obsession with R and data analysis (especially my wife!), they’ve supported me every step of the way.\nTengku Muhammad Hanis Bin Tengku Mokhtar, PhD",
     "crumbs": [
       "Welcome"
     ]
@@ -12,501 +12,491 @@
   {
     "objectID": "about.html",
     "href": "about.html",
-    "title": "1  About the book",
+    "title": "About the book",
     "section": "",
-    "text": "This book is in its early drafting stages; many portions of the book are unfinished and all of it will go through significant revision and refinement.\n\n\n\n\n\n\nThis book is designed for beginner and novice R users, with chapters structured sequentially to introduce R step-by-step, starting with foundational topics and progressing to more complex material.\nChapters 2 to 4 introduce readers to R and RStudio. For those already somewhat familiar with R, these chapters may seem straightforward and can be skipped without issue.\nChapters 5 and 6 provide essential knowledge on basic R coding, commonly used in data analysis projects. It is advised to read these chapters thoroughly before moving on, as they lay the groundwork for more advanced topics.\nChapter 7 focuses on basic visualizations and plotting techniques. Readers will learn how to use base R functions for visual representation and will be introduced to ggplot2, a highly regarded package for data visualisation in R.\nChapter 8 covers loops and functions, a topic that may pose a challenge for beginners. This chapter aims to equip readers with the skills needed for more efficient R coding. While not critical for initial learning, understanding these concepts will become increasingly important as one progresses in data analysis.\nChapters 9 and 10 delve into essential skills for data exploration and descriptive statistics. Mastering these will enable readers to gain deeper insights into their data and prepare them for more advanced analysis techniques.\nChapter 11 concludes the book by summarizing previous content and offering guidance on next steps to further enhance R and data analysis skills.\nHappy learning!",
+    "text": "This book is in its early drafting stages; many portions of the book are unfinished and all of it will go through significant revision and refinement.\n\n\n\n\n\n\nThis book is designed for beginner and novice R users, with chapters structured sequentially to introduce R step-by-step, starting with foundational topics and progressing to more complex material.\nChapters 2 to 4 introduce readers to R and RStudio. For those already somewhat familiar with R, these chapters may seem straightforward and can be skipped without issue.\nChapters 5 and 6 provide essential knowledge on basic R coding, commonly used in data analysis projects. It is advised to read these chapters thoroughly before moving on, as they lay the groundwork for more advanced topics.\nChapter 7 focuses on basic visualizations and plotting techniques. Readers will learn how to use base R functions for visual representation and will be introduced to ggplot2, a highly regarded package for data visualisation in R.\nChapter 8 covers loop, function, and apply, a topic that may pose a challenge for beginners. This chapter aims to equip readers with the skills needed for more efficient R coding. While not critical for initial learning, understanding these concepts will become increasingly important as one progresses in data analysis.\nChapters 9 and 10 delve into essential skills for data exploration and descriptive statistics. Mastering these will enable readers to gain deeper insights into their data and prepare them for more advanced analysis techniques.\nChapter 11 concludes the book by summarizing previous content and offering guidance on next steps to further enhance R and data analysis skills.\nHappy learning!",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>About the book</span>"
+      "About the book"
     ]
   },
   {
     "objectID": "what-is-r.html",
     "href": "what-is-r.html",
-    "title": "2  What is R?",
+    "title": "1  What is R?",
     "section": "",
-    "text": "2.1 R\nR is a language and environment for statistical computing and graphics.\nThat basically summarises this whole chapter.\nReaders who are not interested in knowing more about R and its history can skip this chapter and move on to more practical chapters.\nWell, for those who keep reading this, I guess you are interested to know more about the story of how R came to be. Do not worry, this chapter is only going to cover a short version of the history of R, so, that we can appreciate this software.\nR was a successor of S language. It was developed by Ross Ihaka and Robert Gentleman at the University of Auckland in 1991. R was made known to the public only in 1993. The R version 1.0.0 was released in 2000.",
+    "text": "1.1 R\nR is a language and environment for statistical computing and graphics.\nThat basically summarises this whole chapter.\nReaders who are not interested in knowing more about R and its history can skip this chapter and move on to more practical chapters.\nWell, for those who keep reading this, I guess you are interested to know more about the story of how R came to be. Do not worry, this chapter is only going to cover a short version of the history of R, so, that we can appreciate this software.\nR was a successor of S language. It was developed by Ross Ihaka and Robert Gentleman at the University of Auckland in 1991. R was made known to the public only in 1993. The R version 1.0.0 was released in 2000.",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>What is R?</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>What is R?</span>"
     ]
   },
   {
     "objectID": "what-is-r.html#r",
     "href": "what-is-r.html#r",
-    "title": "2  What is R?",
+    "title": "1  What is R?",
     "section": "",
-    "text": "Figure 2.1: The logo of R software.",
+    "text": "Figure 1.1: The logo of R software.",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>What is R?</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>What is R?</span>"
     ]
   },
   {
     "objectID": "what-is-r.html#rstudio-and-posit",
     "href": "what-is-r.html#rstudio-and-posit",
-    "title": "2  What is R?",
-    "section": "2.2 RStudio and Posit",
-    "text": "2.2 RStudio and Posit\n\n\n\n\n\n\nFigure 2.2: The logo of RStudio.\n\n\n\nIn 2009, a company known as RStudio, Inc. was founded by Joseph J. Allaire, which later developed the RStudio software. RStudio software is an integrated development environment (IDE) which helps make R more user-friendly, especially for those without a programming background. RStudio IDE is unequivocally the most commonly used IDE for R software. The company, RStudio, Inc. later changed its corporation to a public benefit corporation (PBC) in 2020, thus, known as RStudio, PBC. Subsequently, in 2022, the company changed its name to Posit Software, PBC to cater to a larger demography of the data science community.\n\n\n\n\n\n\nFigure 2.3: The logo of Posit Software, PBC.\n\n\n\nDespite the changes in Posit company, they still strongly support the development and maintenance of RStudio IDE specifically and R in general.",
+    "title": "1  What is R?",
+    "section": "1.2 RStudio and Posit",
+    "text": "1.2 RStudio and Posit\n\n\n\n\n\n\nFigure 1.2: The logo of RStudio.\n\n\n\nIn 2009, a company known as RStudio, Inc. was founded by Joseph J. Allaire, which later developed the RStudio software. RStudio software is an integrated development environment (IDE) which helps make R more user-friendly, especially for those without a programming background. RStudio IDE is unequivocally the most commonly used IDE for R software. The company, RStudio, Inc. later changed its corporation to a public benefit corporation (PBC) in 2020, thus, known as RStudio, PBC. Subsequently, in 2022, the company changed its name to Posit Software, PBC to cater to a larger demography of the data science community.\n\n\n\n\n\n\nFigure 1.3: The logo of Posit Software, PBC.\n\n\n\nDespite the changes in Posit company, they still strongly support the development and maintenance of RStudio IDE specifically and R in general.",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>What is R?</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>What is R?</span>"
     ]
   },
   {
     "objectID": "what-is-r.html#other-ides",
     "href": "what-is-r.html#other-ides",
-    "title": "2  What is R?",
-    "section": "2.3 Other IDEs",
-    "text": "2.3 Other IDEs\nAs you may have guessed, we going to use RStudio in this book. However, there are other IDEs available. A few that are more common are:\n\nJupyter Notebook\nJupyterLab\nVisual Studio\n\nGiven that RStudio is initially developed for R (currently we can use Python as well in RStudio), a lot of functionalities work seamlessly with R. Thus, make it easier for R beginners and novices to use it.",
+    "title": "1  What is R?",
+    "section": "1.3 Other IDEs",
+    "text": "1.3 Other IDEs\nAs you may have guessed, we going to use RStudio in this book. However, there are other IDEs available. A few that are more common are:\n\nJupyter Notebook\nJupyterLab\nVisual Studio\n\nGiven that RStudio is initially developed for R (currently we can use Python as well in RStudio), a lot of functionalities work seamlessly with R. Thus, make it easier for R beginners and novices to use it.",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>What is R?</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>What is R?</span>"
     ]
   },
   {
     "objectID": "what-is-r.html#clouds",
     "href": "what-is-r.html#clouds",
-    "title": "2  What is R?",
-    "section": "2.4 Clouds",
-    "text": "2.4 Clouds\nThere are a few options to use R in a cloud. Meaning that we do not need to install anything on our machines.\n\nPosit Cloud\nGoogle Colab\nKaggle\n\nThe first two clouds are free with limited use, though you need to make an account. Kaggle is totally free to use as far as I know. However, Kaggle does not have functions such as code completion which is very helpful to beginners. This function is available in the first two clouds.\nHowever, if you are looking for something more familiar to RStudio, Posit Cloud is the best choice. The functionalities and the overall look of the Posit Cloud are identical to RStudio.\n\n\n\n\n\n\nFigure 2.4: The interface of RStudio in Posit Cloud.",
+    "title": "1  What is R?",
+    "section": "1.4 Clouds",
+    "text": "1.4 Clouds\nThere are a few options to use R in a cloud. Meaning that we do not need to install anything on our machines.\n\nPosit Cloud\nGoogle Colab\nKaggle\n\nThe first two clouds are free with limited use, though you need to make an account. Kaggle is totally free to use as far as I know. However, Kaggle does not have functions such as code completion which is very helpful to beginners. This function is available in the first two clouds.\nHowever, if you are looking for something more familiar to RStudio, Posit Cloud is the best choice. The functionalities and the overall look of the Posit Cloud are identical to RStudio.\n\n\n\n\n\n\nFigure 1.4: The interface of RStudio in Posit Cloud.",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>What is R?</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>What is R?</span>"
     ]
   },
   {
     "objectID": "what-is-r.html#chapter-summary",
     "href": "what-is-r.html#chapter-summary",
-    "title": "2  What is R?",
-    "section": "2.5 Chapter summary",
-    "text": "2.5 Chapter summary\nIn this chapter, we learn about what are R and RStudio.",
+    "title": "1  What is R?",
+    "section": "1.5 Chapter summary",
+    "text": "1.5 Chapter summary\nIn this chapter, we learn about what are R and RStudio.",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>What is R?</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>What is R?</span>"
     ]
   },
   {
     "objectID": "what-is-r.html#revision",
     "href": "what-is-r.html#revision",
-    "title": "2  What is R?",
-    "section": "2.6 Revision",
-    "text": "2.6 Revision\n\nWhat is the difference between R and RStudio IDE?\nWhat is the difference between RStudio IDE, RStudio, Inc., and RStudio, PBC?\nWhat are other IDEs for R?",
+    "title": "1  What is R?",
+    "section": "1.6 Revision",
+    "text": "1.6 Revision\n\nWhat is the difference between R and RStudio IDE?\nWhat is the difference between RStudio IDE, RStudio, Inc., and RStudio, PBC?\nWhat are other IDEs for R?",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>What is R?</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>What is R?</span>"
     ]
   },
   {
     "objectID": "install-r.html",
     "href": "install-r.html",
-    "title": "3  Installing R and RStudio",
+    "title": "2  Installing R and RStudio",
     "section": "",
-    "text": "3.1 Installing R\nR can be installed regardless of your operating system. R is available for Windows, Mac, and Linux users. This page (https://cran.r-project.org/) contains all the necessary information needed to install R. Additionally, if you are stuck, I highly recommend you to watch a few YouTube videos on how to install R.",
+    "text": "2.1 Installing R\nR can be installed regardless of your operating system. R is available for Windows, Mac, and Linux users. This page (https://cran.r-project.org/) contains all the necessary information needed to install R. Additionally, if you are stuck, I highly recommend you to watch a few YouTube videos on how to install R.",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Installing R and RStudio</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Installing R and RStudio</span>"
     ]
   },
   {
     "objectID": "install-r.html#installing-rstudio",
     "href": "install-r.html#installing-rstudio",
-    "title": "3  Installing R and RStudio",
-    "section": "3.2 Installing RStudio",
-    "text": "3.2 Installing RStudio\nOnce you have installed R, you need to install RStudio IDE. This page (https://posit.co/download/rstudio-desktop/) contains all the information including the related links necessary to download and install RStudio. Again, if you are stuck, I highly recommend you watch a few YouTube videos on how to install RStudio.",
+    "title": "2  Installing R and RStudio",
+    "section": "2.2 Installing RStudio",
+    "text": "2.2 Installing RStudio\nOnce you have installed R, you need to install RStudio IDE. This page (https://posit.co/download/rstudio-desktop/) contains all the information including the related links necessary to download and install RStudio. Again, if you are stuck, I highly recommend you watch a few YouTube videos on how to install RStudio.",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Installing R and RStudio</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Installing R and RStudio</span>"
     ]
   },
   {
     "objectID": "install-r.html#installing-rtools",
     "href": "install-r.html#installing-rtools",
-    "title": "3  Installing R and RStudio",
-    "section": "3.3 Installing RTools",
-    "text": "3.3 Installing RTools\nThis process is specific to Windows users only. If you are a Linux or Mac user, feel free to skip this part. Rtools is a collection of tools required to build R packages from source on Windows systems. Basically, you need RTools to install the unofficial packages from GitHub, GitLab or other repositories. We going to cover what are R packages in the Chapter 5. For now, just know that to fully utilise the capabilities of R, you need to have RTools in your machine.\nThis page (https://cran.r-project.org/bin/windows/Rtools/rtools40.html) contains all the necessary information on how to install RTools on your machine. The basic steps as outlined on the page are:\n\nDownload RTools\nInstall the RTools\nPut RTools on the PATH",
+    "title": "2  Installing R and RStudio",
+    "section": "2.3 Installing RTools",
+    "text": "2.3 Installing RTools\nThis process is specific to Windows users only. If you are a Linux or Mac user, feel free to skip this part. Rtools is a collection of tools required to build R packages from source on Windows systems. Basically, you need RTools to install the unofficial packages from GitHub, GitLab or other repositories. We going to cover what are R packages in the Chapter 5. For now, just know that to fully utilise the capabilities of R, you need to have RTools in your machine.\nThis page (https://cran.r-project.org/bin/windows/Rtools/rtools40.html) contains all the necessary information on how to install RTools on your machine. The basic steps as outlined on the page are:\n\nDownload RTools\nInstall the RTools\nPut RTools on the PATH",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Installing R and RStudio</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Installing R and RStudio</span>"
     ]
   },
   {
     "objectID": "install-r.html#other-alternatives",
     "href": "install-r.html#other-alternatives",
-    "title": "3  Installing R and RStudio",
-    "section": "3.4 Other alternatives",
-    "text": "3.4 Other alternatives\nOn the rare occasion that you are unable to install R or RStudio, you always have the option to use the Posit Cloud. As long as you have a Google account, you should be able to use the Posit Cloud freely. The free account is limited, however, it is more than enough for you to use throughout this book. Additionally, you can use the Google Colab, though, the user interface is slightly different to RStudio.",
+    "title": "2  Installing R and RStudio",
+    "section": "2.4 Other alternatives",
+    "text": "2.4 Other alternatives\nOn the rare occasion that you are unable to install R or RStudio, you always have the option to use the Posit Cloud. As long as you have a Google account, you should be able to use the Posit Cloud freely. The free account is limited, however, it is more than enough for you to use throughout this book. Additionally, you can use the Google Colab, though, the user interface is slightly different to RStudio.",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Installing R and RStudio</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Installing R and RStudio</span>"
     ]
   },
   {
     "objectID": "install-r.html#chapter-summary",
     "href": "install-r.html#chapter-summary",
-    "title": "3  Installing R and RStudio",
-    "section": "3.5 Chapter summary",
-    "text": "3.5 Chapter summary\nIn this chapter, we learn how to install R and RStudio.",
+    "title": "2  Installing R and RStudio",
+    "section": "2.5 Chapter summary",
+    "text": "2.5 Chapter summary\nIn this chapter, we learn how to install R and RStudio.",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Installing R and RStudio</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Installing R and RStudio</span>"
     ]
   },
   {
     "objectID": "install-r.html#revision",
     "href": "install-r.html#revision",
-    "title": "3  Installing R and RStudio",
-    "section": "3.6 Revision",
-    "text": "3.6 Revision\n\nWhat is RTools?\nWhat are the options if you can not install R and RStudio?",
+    "title": "2  Installing R and RStudio",
+    "section": "2.6 Revision",
+    "text": "2.6 Revision\n\nWhat is RTools?\nWhat are the options if you can not install R and RStudio?",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Installing R and RStudio</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Installing R and RStudio</span>"
     ]
   },
   {
     "objectID": "use-rstudio.html",
     "href": "use-rstudio.html",
-    "title": "4  Introduction to RStudio",
+    "title": "3  Introduction to RStudio",
     "section": "",
-    "text": "4.1 Panes in RStudio\nThe first time we open RStudio we will see three panes as in Figure 4.1.\nPane 1 consists of three tabs:\nNext, Pane 2 consists of four tabs:\nLastly, Pane 3 consists of five tabs:\nThe information can be quite overwhelming, especially if you are new to R and RStudio. At this moment, you do not actually need to know every detail functionalities of each pane and tab yet. Once you become more familiar with RStudio, all this information will become second-hand to you.",
+    "text": "3.1 Panes in RStudio\nThe first time we open RStudio we will see three panes as in Figure 3.1.\nPane 1 consists of three tabs:\nNext, Pane 2 consists of four tabs:\nLastly, Pane 3 consists of five tabs:\nThe information can be quite overwhelming, especially if you are new to R and RStudio. At this moment, you do not actually need to know every detail functionalities of each pane and tab yet. Once you become more familiar with RStudio, all this information will become second-hand to you.",
     "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Introduction to RStudio</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Introduction to RStudio</span>"
     ]
   },
   {
     "objectID": "use-rstudio.html#panes-in-rstudio",
     "href": "use-rstudio.html#panes-in-rstudio",
-    "title": "4  Introduction to RStudio",
+    "title": "3  Introduction to RStudio",
     "section": "",
-    "text": "Figure 4.1: RStudio interface.\n\n\n\n\n\nConsole - This pane is where R codes can be typed and executed. The console also is where the output will be displayed. However, any R codes typed into the console can not be saved.\nTerminal - This is a command-line interface that allows users to interact with the system shell, much like other terminal applications on your computer. It supports tasks such as navigating the file system, running command-line tools, and managing files, which can be useful for integrating non-R tasks into your workflow. However, for beginners, this tab is relatively unimportant.\nBackground Jobs - This pane enables users to run R scripts in the background without interrupting ongoing work in the Console. This feature is helps run long or complex tasks, as you can continue coding or working in the RStudio environment while the script executes independently.\n\n\n\nEnvironment - This pane displays all the active objects in the current R session, such as data frames, variables, functions, and vectors.\nHistory - This pane keeps a record of all commands that have been executed in the R console during the session\nConnections - This pane facilitates managing database connections within RStudio. It allows users to connect to external databases, view database contents, and run SQL queries directly from the IDE.\nTutorial - The Tutorial pane is part of RStudio’s learnr package, which hosts interactive tutorials directly within the IDE.\n\n\n\nFiles - This pane allows users to navigate, create, delete, and manage files within the current working directory. It helps in organizing project files, accessing scripts, data files, and outputs.\nPlots - This pane displays graphical output generated by R code, such as charts, graphs, and plots.\nPackages - This pane shows a list of installed R packages and their status (loaded or not). It also allows users to install, remove, or update packages, providing an easy way to manage package dependencies for projects.\nHelp - This pane provides access to documentation for R functions, packages, and commands.\nViewer - The Viewer pane is used for displaying web content such as interactive visualizations, markdown files, and other HTML outputs directly within RStudio.\nPresentation - This pane supports presenting R Markdown or Quarto documents in an interactive format. For example, if you are making a slide or HTML presentation, it will appear in this pane.",
+    "text": "Figure 3.1: RStudio interface.\n\n\n\n\n\nConsole - This pane is where R codes can be typed and executed. The console also is where the output will be displayed. However, any R codes typed into the console can not be saved.\nTerminal - This is a command-line interface that allows users to interact with the system shell, much like other terminal applications on your computer. It supports tasks such as navigating the file system, running command-line tools, and managing files, which can be useful for integrating non-R tasks into your workflow. However, for beginners, this tab is relatively unimportant.\nBackground Jobs - This pane enables users to run R scripts in the background without interrupting ongoing work in the Console. This feature is helps run long or complex tasks, as you can continue coding or working in the RStudio environment while the script executes independently.\n\n\n\nEnvironment - This pane displays all the active objects in the current R session, such as data frames, variables, functions, and vectors.\nHistory - This pane keeps a record of all commands that have been executed in the R console during the session\nConnections - This pane facilitates managing database connections within RStudio. It allows users to connect to external databases, view database contents, and run SQL queries directly from the IDE.\nTutorial - The Tutorial pane is part of RStudio’s learnr package, which hosts interactive tutorials directly within the IDE.\n\n\n\nFiles - This pane allows users to navigate, create, delete, and manage files within the current working directory. It helps in organizing project files, accessing scripts, data files, and outputs.\nPlots - This pane displays graphical output generated by R code, such as charts, graphs, and plots.\nPackages - This pane shows a list of installed R packages and their status (loaded or not). It also allows users to install, remove, or update packages, providing an easy way to manage package dependencies for projects.\nHelp - This pane provides access to documentation for R functions, packages, and commands.\nViewer - The Viewer pane is used for displaying web content such as interactive visualizations, markdown files, and other HTML outputs directly within RStudio.\nPresentation - This pane supports presenting R Markdown or Quarto documents in an interactive format. For example, if you are making a slide or HTML presentation, it will appear in this pane.",
     "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Introduction to RStudio</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Introduction to RStudio</span>"
     ]
   },
   {
     "objectID": "use-rstudio.html#working-directory",
     "href": "use-rstudio.html#working-directory",
-    "title": "4  Introduction to RStudio",
-    "section": "4.2 Working directory",
-    "text": "4.2 Working directory\nIn Figure 4.1, we have a Files tab in Pane 3. This is usually where your working directory is located. However, we can also check using the R code below:\n\ngetwd()\n\nAdditionally, the working directory can also be changed to your preferred location.\n\nsetwd(\"C:/Users/tengk/OneDrive/Desktop\")\n\nHere, I changed my working directory to my desktop folder. A good practice when running the analysis in R is to set up your working directory before you start any analysis project. So, any outputs and figures generated during the analysis will be saved in your preferred working directory.",
+    "title": "3  Introduction to RStudio",
+    "section": "3.2 Working directory",
+    "text": "3.2 Working directory\nIn Figure 3.1, we have a Files tab in Pane 3. This is usually where your working directory is located. However, we can also check using the R code below:\n\ngetwd()\n\nAdditionally, the working directory can also be changed to your preferred location.\n\nsetwd(\"C:/Users/tengk/OneDrive/Desktop\")\n\nHere, I changed my working directory to my desktop folder. A good practice when running the analysis in R is to set up your working directory before you start any analysis project. So, any outputs and figures generated during the analysis will be saved in your preferred working directory.",
     "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Introduction to RStudio</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Introduction to RStudio</span>"
     ]
   },
   {
     "objectID": "use-rstudio.html#r-script",
     "href": "use-rstudio.html#r-script",
-    "title": "4  Introduction to RStudio",
-    "section": "4.3 R script",
-    "text": "4.3 R script\nOne of the few things to do before running the analysis project (besides setting up the working directory) is to type the R codes in the R script. R scripts is a plain text file with the extension .R. R script can be saved and the R codes in it can be re-run if needed.\nThere are a few ways to open the R script.\n\nClick on File (upper left side of RStudio) &gt; New File &gt; R Script.\nClick on the green plus button (below the File tab) &gt; R Script as shown in Figure 4.2.\n\n\n\n\n\n\n\nFigure 4.2: Opening the R Script.\n\n\n\nOnce you manage to open the R Script, you will see an additional pane as shown in Figure 4.3.\n\n\n\n\n\n\nFigure 4.3: R Script interface.\n\n\n\nThe R Script can be saved and additionally, at the lower right side of the pane, we can see R Script, confirming that this newly open file is an R Script.",
+    "title": "3  Introduction to RStudio",
+    "section": "3.3 R script",
+    "text": "3.3 R script\nOne of the few things to do before running the analysis project (besides setting up the working directory) is to type the R codes in the R script. R scripts is a plain text file with the extension .R. R script can be saved and the R codes in it can be re-run if needed.\nThere are a few ways to open the R script.\n\nClick on File (upper left side of RStudio) &gt; New File &gt; R Script.\nClick on the green plus button (below the File tab) &gt; R Script as shown in Figure 3.2.\n\n\n\n\n\n\n\nFigure 3.2: Opening the R Script.\n\n\n\nOnce you manage to open the R Script, you will see an additional pane as shown in Figure 3.3.\n\n\n\n\n\n\nFigure 3.3: R Script interface.\n\n\n\nThe R Script can be saved and additionally, at the lower right side of the pane, we can see R Script, confirming that this newly open file is an R Script.",
     "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Introduction to RStudio</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Introduction to RStudio</span>"
     ]
   },
   {
     "objectID": "use-rstudio.html#updating-r-and-rstudio",
     "href": "use-rstudio.html#updating-r-and-rstudio",
-    "title": "4  Introduction to RStudio",
-    "section": "4.4 Updating R and RStudio",
-    "text": "4.4 Updating R and RStudio\ninstallr package can be used to update R. You will what is an R package and how to install it in Chapter 5.\n\ninstallr::updateR()\n\nOnce you run installr::updateR() either in the Console or R Script, this package will check whether there is a newer version of R or not. If the newer version of R is available, this package installs the newer version after asking a series of questions such as do you want to transfer your old packages to the new version of R and whether you want to update the packages or not.\nTo update the RStudio, you can click the Help tab (at the top of the RStudio) &gt; Check for Updates.\n\n\n\n\n\n\nFigure 4.4: Updating RStudio",
+    "title": "3  Introduction to RStudio",
+    "section": "3.4 Updating R and RStudio",
+    "text": "3.4 Updating R and RStudio\ninstallr package can be used to update R. You will what is an R package and how to install it in Chapter 5.\n\ninstallr::updateR()\n\nOnce you run installr::updateR() either in the Console or R Script, this package will check whether there is a newer version of R or not. If the newer version of R is available, this package installs the newer version after asking a series of questions such as do you want to transfer your old packages to the new version of R and whether you want to update the packages or not.\nTo update the RStudio, you can click the Help tab (at the top of the RStudio) &gt; Check for Updates.\n\n\n\n\n\n\nFigure 3.4: Updating RStudio",
     "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Introduction to RStudio</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Introduction to RStudio</span>"
     ]
   },
   {
     "objectID": "use-rstudio.html#chapter-summary",
     "href": "use-rstudio.html#chapter-summary",
-    "title": "4  Introduction to RStudio",
-    "section": "4.5 Chapter summary",
-    "text": "4.5 Chapter summary\nIn this chapter, we learn about:\n\nBasic interface of RStudio.\nHow to set up the working directory.\nHow to update R and RStudio.",
+    "title": "3  Introduction to RStudio",
+    "section": "3.5 Chapter summary",
+    "text": "3.5 Chapter summary\nIn this chapter, we learn about:\n\nBasic interface of RStudio.\nHow to set up the working directory.\nHow to update R and RStudio.",
     "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Introduction to RStudio</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Introduction to RStudio</span>"
     ]
   },
   {
     "objectID": "use-rstudio.html#revision",
     "href": "use-rstudio.html#revision",
-    "title": "4  Introduction to RStudio",
-    "section": "4.6 Revision",
-    "text": "4.6 Revision\n\nChange your working directory to your desktop.\nTry creating a new R Script, rename it as Test.R, and save it in your new working directory.",
+    "title": "3  Introduction to RStudio",
+    "section": "3.6 Revision",
+    "text": "3.6 Revision\n\nChange your working directory to your desktop.\nTry creating a new R Script, rename it as Test.R, and save it in your new working directory.",
     "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Introduction to RStudio</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Introduction to RStudio</span>"
     ]
   },
   {
     "objectID": "basic-r.html",
     "href": "basic-r.html",
-    "title": "5  Basics of R",
+    "title": "4  Basics of R",
     "section": "",
-    "text": "5.1 Getting help\nProbably the most basic thing to know is how to get help in R. Besides a quick Google search or asking ChatGPT, R also provides a help function. The help function can be accessed using ?.\n?mean()\nThe code above will open the Help pane, which explains what the function mean() does.",
+    "text": "4.1 Getting help\nProbably the most basic thing to know is how to get help in R. Besides a quick Google search or asking ChatGPT, R also provides a help function. The help function can be accessed using ?.\n?mean()\nThe code above will open the Help pane, which explains what the function mean() does.",
     "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Basics of R</span>"
-    ]
-  },
-  {
-    "objectID": "basic-r.html#data-types-in-r",
-    "href": "basic-r.html#data-types-in-r",
-    "title": "5  Basics of R",
-    "section": "5.3 Data types in R",
-    "text": "5.3 Data types in R\nThere are a few data types in R:\n\nNumeric\nInteger\nLogical\nCharacter\nComplex\n\nLet us see the example in R:\nFor the numeric:\n\nx1 &lt;- 11\nx2 &lt;- 11.9\n\nclass(x1); class(x2)\n\n[1] \"numeric\"\n\n\n[1] \"numeric\"\n\n\nBoth numbers are recognised as numeric in R. For integers, the number should be denoted by ‘L’ to be recognised as an integer.\n\nx3 &lt;- 11L\n\nclass(x3)\n\n[1] \"integer\"\n\n\nFor logical values, the boolean operators such as ‘FALSE’ and ‘TRUE’ are examples of logical values.\n\nx4 &lt;- c(TRUE, FALSE)\n\nclass(x4)\n\n[1] \"logical\"\n\n\nNext, we have character values.\n\nx5 &lt;- c(\"fruit\", \"apple\")\n\nclass(x5)\n\n[1] \"character\"\n\n\nLastly, we have complex values. The type of data is usually used to store numbers and imaginary components (for example, i in the code below).\n\nx6 &lt;- 9 + 3i\n\nclass(x6)\n\n[1] \"complex\"\n\n\nIt is important to note the data type for each value as the function for numeric values can only be applied to numeric values. For example, if we want to find a mean value.\n\nnumeric_val &lt;- 1:10 #list out all numbers between 1 and 10\nnumeric_val\n\n [1]  1  2  3  4  5  6  7  8  9 10\n\ncharacter_val &lt;- letters[1:10] #list out the first 10 alphabets\ncharacter_val\n\n [1] \"a\" \"b\" \"c\" \"d\" \"e\" \"f\" \"g\" \"h\" \"i\" \"j\"\n\n\nNow, let us try applying the mean function to both data.\n\nmean(numeric_val)\n\n[1] 5.5\n\nmean(character_val)\n\nWarning in mean.default(character_val): argument is not numeric or logical:\nreturning NA\n\n\n[1] NA\n\n\nSo, R gives us a warning that the ‘character_val’ is not a numeric or logical value. Thus, the returning NA mean not available.",
-    "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Basics of R</span>"
-    ]
-  },
-  {
-    "objectID": "basic-r.html#data-structure-in-r",
-    "href": "basic-r.html#data-structure-in-r",
-    "title": "5  Basics of R",
-    "section": "5.4 Data structure in R",
-    "text": "5.4 Data structure in R\nThere are a few data structures in R:\n\nVector\nMatrix\nArray\nData frame\nList\n\n\n\n\n\n\n\nFigure 5.2: Data structures in R.\n\n\n\nDepending on the fields, certain data structures are more common compared to others.\n\n5.4.1 Vector\nVector is the most basic data structure in R. It can contain one data type at a time.\n\nvec_data &lt;- c(1, 2, 3, 4)\nvec_data\n\n[1] 1 2 3 4\n\n\nThe structure of the data can be checked using the function str().\n\nstr(vec_data)\n\n num [1:4] 1 2 3 4\n\n\nWe can further confirm whether vec_data is a vector or not by using the is.vector() function.\n\nis.vector(vec_data)\n\n[1] TRUE\n\n\nA TRUE result indicates that the data is a vector type.\n\n\n5.4.2 Matrix\nA matrix contains at least a single row and a single column. Contrary, to a vector which contains only a single row or a single column.\n\nmat_data &lt;- matrix(data = c(1, 2, 3, 4, 5, 6), nrow = 3, ncol = 2)\nmat_data\n\n     [,1] [,2]\n[1,]    1    4\n[2,]    2    5\n[3,]    3    6\n\n\nBy using str() function, we can see that the values are numerical and we have a matrix with 3 rows and 2 columns.\n\nstr(mat_data)\n\n num [1:3, 1:2] 1 2 3 4 5 6\n\n\nNext, we can confirm that our data is a matrix by using is.matrix().\n\nis.matrix(mat_data)\n\n[1] TRUE\n\n\n\n\n5.4.3 Array\nAn array is quite similar to a matrix except that it can contain several layers of rows and columns.\n\narr_data &lt;- array(data = c(1:6, 10:16), dim = c(2, 3, 2))\narr_data\n\n, , 1\n\n     [,1] [,2] [,3]\n[1,]    1    3    5\n[2,]    2    4    6\n\n, , 2\n\n     [,1] [,2] [,3]\n[1,]   10   12   14\n[2,]   11   13   15\n\n\nAs we can see, we have an array of 2 layers with each layer having 2 rows and 3 columns. By using the str() function, we can see that R recognises the array has integer values with 3 dimensions. The first dimension, 1:2 refers to the rows, the second dimension, 1:3 refers to the columns, and the last dimension, 1:2 refers to the layers.\n\nstr(arr_data)\n\n int [1:2, 1:3, 1:2] 1 2 3 4 5 6 10 11 12 13 ...\n\n\nis.array() can be used to ensure the data structure.\n\nis.array(arr_data)\n\n[1] TRUE\n\n\n\n\n5.4.4 Data frame\nA data frame is the extension of the matrix data structure. The difference between the former and the latter, the former contains the column names and each column may contain different data types.\n\ndf_data &lt;- data.frame(\n  ID = 1:5,\n  Name = c(\"Mamat\", \"Abu\", \"Ali\", \"Chong\", \"Eva\"),\n  Age = c(25, 30, 22, 35, 28),\n  Score = c(89, 95, 76, 88, 92)\n)\ndf_data\n\n  ID  Name Age Score\n1  1 Mamat  25    89\n2  2   Abu  30    95\n3  3   Ali  22    76\n4  4 Chong  35    88\n5  5   Eva  28    92\n\n\nWe can further check the data structure and type using str(). So, our data structure is a data frame, consisting of 4 columns; the first column is an integer, the second column is a character, third and fourth columns are numeric.\n\nstr(df_data)\n\n'data.frame':   5 obs. of  4 variables:\n $ ID   : int  1 2 3 4 5\n $ Name : chr  \"Mamat\" \"Abu\" \"Ali\" \"Chong\" ...\n $ Age  : num  25 30 22 35 28\n $ Score: num  89 95 76 88 92\n\n\nWe can double-check the data structure using is.data.frame().\n\nis.data.frame(df_data)\n\n[1] TRUE\n\n\n\n\n5.4.5 List\nLastly, we have a list. So, the list is a more advanced data structure in which we can have different data structures in a data structure. Let us see the example of a list in which we combine the previous vector and matrix data structures.\n\nlist_data &lt;- list(\n  \"vector\" = vec_data,\n  \"matrix\" = mat_data\n)\nlist_data\n\n$vector\n[1] 1 2 3 4\n\n$matrix\n     [,1] [,2]\n[1,]    1    4\n[2,]    2    5\n[3,]    3    6\n\n\nWe can further assess each data in the list using the $ symbol.\n\nlist_data$vector\n\n[1] 1 2 3 4\n\n\nBy using str(), we see our data is a list with 2 elements or components; a vector and matrix.\n\nstr(list_data)\n\nList of 2\n $ vector: num [1:4] 1 2 3 4\n $ matrix: num [1:3, 1:2] 1 2 3 4 5 6\n\n\nTo further confirm our data is a list, we can use is.list().\n\nis.list(list_data)\n\n[1] TRUE",
-    "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Basics of R</span>"
-    ]
-  },
-  {
-    "objectID": "basic-r.html#packages",
-    "href": "basic-r.html#packages",
-    "title": "5  Basics of R",
-    "section": "5.6 Packages",
-    "text": "5.6 Packages\nA package is a collection of functions and sample data that can be utilised for certain tasks. Certain functions in R are already loaded when you open R or RStudio. However, to use more advanced functions we need to install and load a package.\nThe packages can installed using install.packages(). For example, the code below will install the dplyr package which is commonly utilised for data wrangling and manipulation.\n\ninstall.packages(\"dplyr\")\n\nTo use the installed packages, we need to load the packages using the library() function.\n\nlibrary(dplyr)\n\nNow, that we know what is a package, we might wonder where exactly these packages coming from.\nThe official packages in R are located in the Comprehensive R Archive Network (CRAN). This link contains all available packages in CRAN. Additionally, there is CRAN Task Views. At the time of this writing, CRAN contains 21,606 R packages intended for various tasks.\nFurthermore, for those interested in bioinformatics, the related packages are located in the Bioconductor. At the time of this writing, Bioconductor contains 2,289 R packages related to bioinformatics.\nIn addition to CRAN and Bioconductor, there are unofficial R packages, which are usually located in GitHub and GitLab. There are probably thousands of these unofficial packages. For example, dmetar which is located in GitHub, contains R functions and codes to facilitate the conduction of meta-analyses.\nMore often than not, the official packages in CRAN also have their GitHub repositories in which they contain the latest development of R functions and codes before they going to be released in CRAN. So, current bugs and errors in the package are corrected first using the unofficial packages from GitHub or GitLab before they are eventually released to the CRAN repositories.\nSeveral packages can help in installing the unofficial packages. The two most commonly used packages are devtools and remote (or at least I commonly used them).\nFirst, we need to install the packages.\n\ninstall.packages(\"devtools\")\ninstall.packages(\"remote\")\n\nNext, we can install the unofficial packages.\n\ndevtools::install_github(\"MathiasHarrer/dmetar\")\nremotes::install_github(\"MathiasHarrer/dmetar\")\n\nMathiasHarrer refers to the GitHub account or usually the author’s account on GitHub, followed by the name of the package. Depending on one’s preference, we can choose to use either devtools or remote.",
-    "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Basics of R</span>"
-    ]
-  },
-  {
-    "objectID": "basic-r.html#chapter-summary",
-    "href": "basic-r.html#chapter-summary",
-    "title": "5  Basics of R",
-    "section": "5.10 Chapter summary",
-    "text": "5.10 Chapter summary\nIn this chapter, we learn about:\n\nData, its types and structures in R.\nR packages and functions.\nPipe operators.",
-    "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Basics of R</span>"
-    ]
-  },
-  {
-    "objectID": "basic-r.html#revision",
-    "href": "basic-r.html#revision",
-    "title": "5  Basics of R",
-    "section": "5.11 Revision",
-    "text": "5.11 Revision\n\nWhat this ? actually do in R?\nList all the data types that we learn in this chapter.\nList all the data structures that we learn in this chapter.\nWhat is the difference between installing the package and loading the package?\nWhich one to choose between |&gt; and %&gt;%?\nList three packages in tidyverse and summarise their functionalities.",
-    "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Basics of R</span>"
-    ]
-  },
-  {
-    "objectID": "data-wrangling.html",
-    "href": "data-wrangling.html",
-    "title": "6  Data wrangling",
-    "section": "",
-    "text": "6.1 Load packages\nThe following packages will be used in this chapter. Please run these lines of code before proceeding to other sections.\nlibrary(tidyverse)",
-    "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Data wrangling</span>"
-    ]
-  },
-  {
-    "objectID": "plotting.html",
-    "href": "plotting.html",
-    "title": "7  Data visualisation",
-    "section": "",
-    "text": "This chapter is currently under construction. Stay tuned for updates!",
-    "crumbs": [
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Data visualisation</span>"
-    ]
-  },
-  {
-    "objectID": "loop-function.html",
-    "href": "loop-function.html",
-    "title": "8  Loop, function, and apply",
-    "section": "",
-    "text": "This chapter is currently under construction. Stay tuned for updates!",
-    "crumbs": [
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Loop, function, and apply</span>"
-    ]
-  },
-  {
-    "objectID": "data-explore.html",
-    "href": "data-explore.html",
-    "title": "9  Data exploration",
-    "section": "",
-    "text": "This chapter is currently under construction. Stay tuned for updates!",
-    "crumbs": [
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Data exploration</span>"
-    ]
-  },
-  {
-    "objectID": "descriptive-stat.html",
-    "href": "descriptive-stat.html",
-    "title": "10  Descriptive statistics",
-    "section": "",
-    "text": "This chapter is currently under construction. Stay tuned for updates!",
-    "crumbs": [
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Descriptive statistics</span>"
-    ]
-  },
-  {
-    "objectID": "summary.html",
-    "href": "summary.html",
-    "title": "11  Summary",
-    "section": "",
-    "text": "This chapter is currently under construction. Stay tuned for updates!",
-    "crumbs": [
-      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Summary</span>"
-    ]
-  },
-  {
-    "objectID": "basic-r.html#data",
-    "href": "basic-r.html#data",
-    "title": "5  Basics of R",
-    "section": "5.3 Data",
-    "text": "5.3 Data\nR itself contains the internal data that you can load for practice or other purposes. You can run data() in console to see what are the data available in R.\n\ndata()\n\nSo, for example, ifyou want to load any of these data, you can type the name of the datasets. You will see under the Environment pane, the chickWeight dataset is loaded to your environment.\n\ndata(\"ChickWeight\")\n\nAdditionally, it is quite common that R packages have their own datasets as well. We will see this many times in this book going forward. Lastly, R is capable to read different data format.\n\n\n\nTable 5.1: Common data formats and corresponding R codes for reading them.\n\n\n\n\n\nFormat\nR codes\n\n\n\n\n.csv\nread.csv()\n\n\n.sav (SPSS)\nhaven::read_sav()\n\n\n.xlsx (Excel)\nreadxl::read_excel()\n\n\n.txt\nread.table()\n\n\n.dta (STATA)\nhaven::read_dta()\n\n\n\n\n\n\nThe data formats that can be read by are limited to the one listed in the table. Almost all data formats can be read in R. An efficient way to know whether R is capable to read certain data formats by just a quick Google search.\nFor the rest of the chapter we going to iris dataset, which already available in R. To know more about this dataset, you can type the below code in the console.\n\n?iris",
-    "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Basics of R</span>"
-    ]
-  },
-  {
-    "objectID": "basic-r.html#functions",
-    "href": "basic-r.html#functions",
-    "title": "5  Basics of R",
-    "section": "5.7 Functions",
-    "text": "5.7 Functions\nA function in R is a block of code designed to perform a specific task. It consists of an argument, in which we need to supply it. For example, the mean() function is designed to find the mean or average across the numeric values. The numeric values are the argument that we need to supply to the function.\n\nnum_values &lt;- c(5, 6, 8, 10)\nmean(num_values)\n\n[1] 7.25\n\n\nThe base R itself has numerous functions that are accessible to us. These base R functions can be used immediately once we open R (or RStudio or any other IDEs). In contrast, we also have R functions from the packages that we installed. First, we need to install the packages.\n\ninstall.packages(\"tidyverse\")\n\nWe will learn about tidyverse in a little bit. Coming on to our current installation, once you install the package there are two ways to use the function inside the package. First, by loading the package, subsequently, all the functions in the package are ready to be used by us. For example below, bind_rows() is one of the functions from the dplyr package.\n\n# Load the package\nlibrary(dplyr) \n\n# Example of functions from dplyr package\nbind_rows()\nbind_cols()\n\nSecondly, we can use :: to access a single function that we are interested in. However, in this approach, only a single function is loaded.\n\n# Example of dplyr functions\ndplyr::bind_rows()\ndplyr::bind_cols()\n\nAs we can see, every time we want to call a function from the dplyr package we type dplyr:: as we do not load the package first.",
-    "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Basics of R</span>"
-    ]
-  },
-  {
-    "objectID": "basic-r.html#tidyverse-package",
-    "href": "basic-r.html#tidyverse-package",
-    "title": "5  Basics of R",
-    "section": "5.8 Tidyverse package",
-    "text": "5.8 Tidyverse package\nWe have learned that R packages contain a collection of functions and R codes that we utilise once we load the packages. So, tidyverse is an opinionated collection of R packages designed for data science.\n\n# List of all packages in tidyverse\ntidyverse::tidyverse_packages(include_self = FALSE) |&gt;\n  data.frame(Packages = _)\n\n        Packages\n1          broom\n2     conflicted\n3            cli\n4         dbplyr\n5          dplyr\n6         dtplyr\n7        forcats\n8        ggplot2\n9    googledrive\n10 googlesheets4\n11         haven\n12           hms\n13          httr\n14      jsonlite\n15     lubridate\n16      magrittr\n17        modelr\n18        pillar\n19         purrr\n20          ragg\n21         readr\n22        readxl\n23        reprex\n24         rlang\n25    rstudioapi\n26         rvest\n27       stringr\n28        tibble\n29         tidyr\n30          xml2\n\n\nTable 5.2 below summarises common packages in tidyverse and its uses.\n\n\n\nTable 5.2: Common packages in tidyverse.\n\n\n\n\n\n\n\n\n\nPackages\nSummary\n\n\n\n\nggplot2\nFor data visualisation.\n\n\ndplyr\nProvides tools for data manipulation, including functions for filtering, selecting, grouping, and summarizing data.\n\n\ntidyr\nSpecializes in data tidying, allowing users to transform datasets into a tidy format ready for analysis or visualisation.\n\n\nreadr\nUsed for reading rectangular data (e.g., CSV, TSV files) into R quickly and efficiently.\n\n\npurr\nIntroduces a functional programming paradigm in R with tools for applying functions to data structures like lists and vectors.\n\n\ntibble\nEnhances data frames in R by making them more user-friendly with better printing options and stricter type checking\n\n\nstringr\nFacilitates consistent handling of strings, offering functions for string manipulation, pattern matching, and transformations.\n\n\nforcats\nDesigned to work with categorical data (factors).\n\n\n\n\n\n\nTidyverse is commonly utilised for data analysis and throughout this book, we going to use tidyverse functions numerous times.",
-    "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Basics of R</span>"
-    ]
-  },
-  {
-    "objectID": "basic-r.html#pipe-operators",
-    "href": "basic-r.html#pipe-operators",
-    "title": "5  Basics of R",
-    "section": "5.9 Pipe operators",
-    "text": "5.9 Pipe operators\nThere are two types of pipe in R:\n\n|&gt;: this pipe is from base R, first introduced in R version 4.1.0.\n%&gt;%: this pipe is from the magrittr package, which presented tidyverse.\n\nTo use |&gt;, we do not actually need to load anything as it is already available in base R. However, to use %&gt;%, you need to load tidyverse. Certain tidyverse associated packages such as dplyr, forcats, and magrittr also load the %&gt;%.\nThe main function of these pipe operators (regardless of which one we use) is to make our R codes more readable and intuitive. So, let us compare the codes without and with the pipe.\n\nmean_value &lt;- mean(\n  subset(\n    data.frame(value = 1:10, group = rep(c(\"A\", \"B\"), each = 5)),\n    group == \"A\"\n  )$value\n)\nmean_value\n\n[1] 3\n\n\nNow, compare the codes with the pipe.\n\nmean_value &lt;- data.frame(value = 1:10, group = rep(c(\"A\", \"B\"), each = 5)) |&gt;\n  subset(group == \"A\") |&gt;\n  with(mean(value))\nmean_value\n\n[1] 3\n\n\nBasically, what we do in both R codes are:\n\nCreate a data frame with ten rows and two columns.\n\ndata.frame(value = 1:10, group = rep(c(\"A\", \"B\"), each = 5))\n\n   value group\n1      1     A\n2      2     A\n3      3     A\n4      4     A\n5      5     A\n6      6     B\n7      7     B\n8      8     B\n9      9     B\n10    10     B\n\n\n\n\n\nFilter out the group column to value A.\n\ndata.frame(value = 1:10, group = rep(c(\"A\", \"B\"), each = 5)) |&gt;\n  subset(group == \"A\")\n\n  value group\n1     1     A\n2     2     A\n3     3     A\n4     4     A\n5     5     A\n\n\nCalculate the mean.\n\nmean(c(1, 2, 3, 4, 5))\n\n[1] 3\n\n\n\nComing back to both R codes, we can intuitively see that the codes with the pipe are more readable and clear compared to the other one. The codes with pipe can be read line by line, while the codes without the pipe need to be read inside out. As you can imagine, once our codes are more complex, the less readable the codes will become.\nSo, which pipe operators to choose?\nIn most cases, the differences are not significant enough to impact your code. Therefore, you can choose the pipe operator that best suits your preference or coding style. Most users will find that both options perform similarly for general tasks, so selecting one often comes down to familiarity or ease of use.\n|&gt; is a built-in pipe operator which can be used immediately without the need to load any package. %&gt;% can be used once the tidyverse package is loaded. The latter pipe has short cut built-in in RStudio. For Windows user, Ctrl + Shift + M and for Mac user, Cmd + Shift + M. Additionally, we can set up the shortcut for |&gt; or further change the shortcut for %&gt;%, though, this will not be covered in this book.",
-    "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Basics of R</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Basics of R</span>"
     ]
   },
   {
     "objectID": "basic-r.html#getting-help",
     "href": "basic-r.html#getting-help",
-    "title": "5  Basics of R",
+    "title": "4  Basics of R",
     "section": "",
-    "text": "Figure 5.1: The Help pane in RStudio.",
+    "text": "Figure 4.1: The Help pane in RStudio.",
     "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Basics of R</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Basics of R</span>"
     ]
   },
   {
     "objectID": "basic-r.html#executing-the-code",
     "href": "basic-r.html#executing-the-code",
-    "title": "5  Basics of R",
-    "section": "5.2 Executing the code",
-    "text": "5.2 Executing the code\nThe codes can be typed either in R Script or Console. The code in R Scripts can be executed by placing the cursor at any line of the codes and clicking Ctrl + Enter in Windows and Cmd + Enter in Macs.\n\n# Example 1: A single line of code\nmean(1:10) \n\n# Example 2: A multiple lines of code\nc(1:10, 10.6, 11.9) |&gt;\n  mean() |&gt;\n  round(digits = 1)\n\nIn the second example (example of multiple lines of code), a cursor can be placed at any line of code. Additionally, the codes in the Console can be executed by clicking Enter only. If you want to run any code in this book, you should copy and paste it into the R Script instead of the Console, especially if there are multiple lines of code. Notably, the codes should be run in sequence unless the current line of codes is independent from the previous line of codes.",
+    "title": "4  Basics of R",
+    "section": "4.2 Executing the code",
+    "text": "4.2 Executing the code\nThe codes can be typed either in R Script or Console. The code in R Scripts can be executed by placing the cursor at any line of the codes and clicking Ctrl + Enter in Windows and Cmd + Enter in Macs.\n\n# Example 1: A single line of code\nmean(1:10) \n\n# Example 2: A multiple lines of code\nc(1:10, 10.6, 11.9) |&gt;\n  mean() |&gt;\n  round(digits = 1)\n\nIn the second example (example of multiple lines of code), a cursor can be placed at any line of code. Additionally, the codes in the Console can be executed by clicking Enter only. If you want to run any code in this book, you should copy and paste it into the R Script instead of the Console, especially if there are multiple lines of code. Notably, the codes should be run in sequence unless the current line of codes is independent from the previous line of codes.",
     "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Basics of R</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Basics of R</span>"
+    ]
+  },
+  {
+    "objectID": "basic-r.html#data-types-in-r",
+    "href": "basic-r.html#data-types-in-r",
+    "title": "4  Basics of R",
+    "section": "4.3 Data types in R",
+    "text": "4.3 Data types in R\nThere are a few data types in R:\n\nNumeric\nInteger\nLogical\nCharacter\nComplex\n\nLet us see the example in R:\nFor the numeric:\n\nx1 &lt;- 11\nx2 &lt;- 11.9\n\nclass(x1); class(x2)\n\n[1] \"numeric\"\n\n\n[1] \"numeric\"\n\n\nBoth numbers are recognised as numeric in R. For integers, the number should be denoted by ‘L’ to be recognised as an integer.\n\nx3 &lt;- 11L\n\nclass(x3)\n\n[1] \"integer\"\n\n\nFor logical values, the boolean operators such as ‘FALSE’ and ‘TRUE’ are examples of logical values.\n\nx4 &lt;- c(TRUE, FALSE)\n\nclass(x4)\n\n[1] \"logical\"\n\n\nNext, we have character values.\n\nx5 &lt;- c(\"fruit\", \"apple\")\n\nclass(x5)\n\n[1] \"character\"\n\n\nLastly, we have complex values. The type of data is usually used to store numbers and imaginary components (for example, i in the code below).\n\nx6 &lt;- 9 + 3i\n\nclass(x6)\n\n[1] \"complex\"\n\n\nIt is important to note the data type for each value as the function for numeric values can only be applied to numeric values. For example, if we want to find a mean value.\n\nnumeric_val &lt;- 1:10 #list out all numbers between 1 and 10\nnumeric_val\n\n [1]  1  2  3  4  5  6  7  8  9 10\n\ncharacter_val &lt;- letters[1:10] #list out the first 10 alphabets\ncharacter_val\n\n [1] \"a\" \"b\" \"c\" \"d\" \"e\" \"f\" \"g\" \"h\" \"i\" \"j\"\n\n\nNow, let us try applying the mean function to both data.\n\nmean(numeric_val)\n\n[1] 5.5\n\nmean(character_val)\n\nWarning in mean.default(character_val): argument is not numeric or logical:\nreturning NA\n\n\n[1] NA\n\n\nSo, R gives us a warning that the ‘character_val’ is not a numeric or logical value. Thus, the returning NA mean not available.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Basics of R</span>"
+    ]
+  },
+  {
+    "objectID": "basic-r.html#data-structure-in-r",
+    "href": "basic-r.html#data-structure-in-r",
+    "title": "4  Basics of R",
+    "section": "4.4 Data structure in R",
+    "text": "4.4 Data structure in R\nThere are a few data structures in R:\n\nVector\nMatrix\nArray\nData frame\nList\n\n\n\n\n\n\n\nFigure 4.2: Data structures in R.\n\n\n\nDepending on the fields, certain data structures are more common compared to others.\n\n4.4.1 Vector\nVector is the most basic data structure in R. It can contain one data type at a time.\n\nvec_data &lt;- c(1, 2, 3, 4)\nvec_data\n\n[1] 1 2 3 4\n\n\nThe structure of the data can be checked using the function str().\n\nstr(vec_data)\n\n num [1:4] 1 2 3 4\n\n\nWe can further confirm whether vec_data is a vector or not by using the is.vector() function.\n\nis.vector(vec_data)\n\n[1] TRUE\n\n\nA TRUE result indicates that the data is a vector type.\n\n\n4.4.2 Matrix\nA matrix contains at least a single row and a single column. Contrary, to a vector which contains only a single row or a single column.\n\nmat_data &lt;- matrix(data = c(1, 2, 3, 4, 5, 6), nrow = 3, ncol = 2)\nmat_data\n\n     [,1] [,2]\n[1,]    1    4\n[2,]    2    5\n[3,]    3    6\n\n\nBy using str() function, we can see that the values are numerical and we have a matrix with 3 rows and 2 columns.\n\nstr(mat_data)\n\n num [1:3, 1:2] 1 2 3 4 5 6\n\n\nNext, we can confirm that our data is a matrix by using is.matrix().\n\nis.matrix(mat_data)\n\n[1] TRUE\n\n\n\n\n4.4.3 Array\nAn array is quite similar to a matrix except that it can contain several layers of rows and columns.\n\narr_data &lt;- array(data = c(1:6, 10:16), dim = c(2, 3, 2))\narr_data\n\n, , 1\n\n     [,1] [,2] [,3]\n[1,]    1    3    5\n[2,]    2    4    6\n\n, , 2\n\n     [,1] [,2] [,3]\n[1,]   10   12   14\n[2,]   11   13   15\n\n\nAs we can see, we have an array of 2 layers with each layer having 2 rows and 3 columns. By using the str() function, we can see that R recognises the array has integer values with 3 dimensions. The first dimension, 1:2 refers to the rows, the second dimension, 1:3 refers to the columns, and the last dimension, 1:2 refers to the layers.\n\nstr(arr_data)\n\n int [1:2, 1:3, 1:2] 1 2 3 4 5 6 10 11 12 13 ...\n\n\nis.array() can be used to ensure the data structure.\n\nis.array(arr_data)\n\n[1] TRUE\n\n\n\n\n4.4.4 Data frame\nA data frame is the extension of the matrix data structure. The difference between the former and the latter, the former contains the column names and each column may contain different data types.\n\ndf_data &lt;- data.frame(\n  ID = 1:5,\n  Name = c(\"Mamat\", \"Abu\", \"Ali\", \"Chong\", \"Eva\"),\n  Age = c(25, 30, 22, 35, 28),\n  Score = c(89, 95, 76, 88, 92)\n)\ndf_data\n\n  ID  Name Age Score\n1  1 Mamat  25    89\n2  2   Abu  30    95\n3  3   Ali  22    76\n4  4 Chong  35    88\n5  5   Eva  28    92\n\n\nWe can further check the data structure and type using str(). So, our data structure is a data frame, consisting of 4 columns; the first column is an integer, the second column is a character, third and fourth columns are numeric.\n\nstr(df_data)\n\n'data.frame':   5 obs. of  4 variables:\n $ ID   : int  1 2 3 4 5\n $ Name : chr  \"Mamat\" \"Abu\" \"Ali\" \"Chong\" ...\n $ Age  : num  25 30 22 35 28\n $ Score: num  89 95 76 88 92\n\n\nWe can double-check the data structure using is.data.frame().\n\nis.data.frame(df_data)\n\n[1] TRUE\n\n\n\n\n4.4.5 List\nLastly, we have a list. So, the list is a more advanced data structure in which we can have different data structures in a data structure. Let us see the example of a list in which we combine the previous vector and matrix data structures.\n\nlist_data &lt;- list(\n  \"vector\" = vec_data,\n  \"matrix\" = mat_data\n)\nlist_data\n\n$vector\n[1] 1 2 3 4\n\n$matrix\n     [,1] [,2]\n[1,]    1    4\n[2,]    2    5\n[3,]    3    6\n\n\nWe can further assess each data in the list using the $ symbol.\n\nlist_data$vector\n\n[1] 1 2 3 4\n\n\nBy using str(), we see our data is a list with 2 elements or components; a vector and matrix.\n\nstr(list_data)\n\nList of 2\n $ vector: num [1:4] 1 2 3 4\n $ matrix: num [1:3, 1:2] 1 2 3 4 5 6\n\n\nTo further confirm our data is a list, we can use is.list().\n\nis.list(list_data)\n\n[1] TRUE",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Basics of R</span>"
     ]
   },
   {
     "objectID": "basic-r.html#data-in-r",
     "href": "basic-r.html#data-in-r",
-    "title": "5  Basics of R",
-    "section": "5.5 Data in R",
-    "text": "5.5 Data in R\nR itself contains the internal data that you can load for practice or other purposes. You can run data() in the Console to see what are the data available in R.\n\ndata()\n\nSo, for example, if you want to load any of these data, you can type the name of the datasets. You will see under the Environment pane, the chickWeight dataset is loaded to your environment.\n\ndata(\"ChickWeight\")\n\nAdditionally, it is quite common that R packages have their own datasets as well. We will see this many times in this book going forward. Lastly, R is capable of reading different data formats.\n\n\n\nTable 5.1: Common data formats and corresponding R codes for reading them.\n\n\n\n\n\nFormat\nR codes\n\n\n\n\n.csv\nread.csv()\n\n\n.sav (SPSS)\nhaven::read_sav()\n\n\n.xlsx (Excel)\nreadxl::read_excel()\n\n\n.txt\nread.table()\n\n\n.dta (STATA)\nhaven::read_dta()\n\n\n\n\n\n\nThe data formats that can be read are limited to the one listed in the table. Almost all data formats can be read in R. An efficient way to know whether R is capable of reading certain data formats by just a quick Google search.\nFor the rest of the chapter we going to the iris dataset, which is already available in R. To know more about this dataset, you can type the below code in the console.\n\n?iris",
+    "title": "4  Basics of R",
+    "section": "4.5 Data in R",
+    "text": "4.5 Data in R\nR itself contains the internal data that you can load for practice or other purposes. You can run data() in the Console to see what are the data available in R.\n\ndata()\n\nSo, for example, if you want to load any of these data, you can type the name of the datasets. You will see under the Environment pane, the chickWeight dataset is loaded to your environment.\n\ndata(\"ChickWeight\")\n\nAdditionally, it is quite common that R packages have their own datasets as well. We will see this many times in this book going forward. Lastly, R is capable of reading different data formats.\n\n\n\nTable 4.1: Common data formats and corresponding R codes for reading them.\n\n\n\n\n\nFormat\nR codes\n\n\n\n\n.csv\nread.csv()\n\n\n.sav (SPSS)\nhaven::read_sav()\n\n\n.xlsx (Excel)\nreadxl::read_excel()\n\n\n.txt\nread.table()\n\n\n.dta (STATA)\nhaven::read_dta()\n\n\n\n\n\n\nThe data formats that can be read are limited to the one listed in the table. Almost all data formats can be read in R. An efficient way to know whether R is capable of reading certain data formats by just a quick Google search.\nFor the rest of the chapter we going to the iris dataset, which is already available in R. To know more about this dataset, you can type the below code in the console.\n\n?iris",
     "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Basics of R</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Basics of R</span>"
+    ]
+  },
+  {
+    "objectID": "basic-r.html#packages",
+    "href": "basic-r.html#packages",
+    "title": "4  Basics of R",
+    "section": "4.6 Packages",
+    "text": "4.6 Packages\nA package is a collection of functions and sample data that can be utilised for certain tasks. Certain functions in R are already loaded when you open R or RStudio. However, to use more advanced functions we need to install and load a package.\nThe packages can installed using install.packages(). For example, the code below will install the dplyr package which is commonly utilised for data wrangling and manipulation.\n\ninstall.packages(\"dplyr\")\n\nTo use the installed packages, we need to load the packages using the library() function.\n\nlibrary(dplyr)\n\nNow, that we know what is a package, we might wonder where exactly these packages coming from.\nThe official packages in R are located in the Comprehensive R Archive Network (CRAN). This link contains all available packages in CRAN. Additionally, there is CRAN Task Views. At the time of this writing, CRAN contains 21,606 R packages intended for various tasks.\nFurthermore, for those interested in bioinformatics, the related packages are located in the Bioconductor. At the time of this writing, Bioconductor contains 2,289 R packages related to bioinformatics.\nIn addition to CRAN and Bioconductor, there are unofficial R packages, which are usually located in GitHub and GitLab. There are probably thousands of these unofficial packages. For example, dmetar which is located in GitHub, contains R functions and codes to facilitate the conduction of meta-analyses.\nMore often than not, the official packages in CRAN also have their GitHub repositories in which they contain the latest development of R functions and codes before they going to be released in CRAN. So, current bugs and errors in the package are corrected first using the unofficial packages from GitHub or GitLab before they are eventually released to the CRAN repositories.\nSeveral packages can help in installing the unofficial packages. The two most commonly used packages are devtools and remote (or at least I commonly used them).\nFirst, we need to install the packages.\n\ninstall.packages(\"devtools\")\ninstall.packages(\"remote\")\n\nNext, we can install the unofficial packages.\n\ndevtools::install_github(\"MathiasHarrer/dmetar\")\nremotes::install_github(\"MathiasHarrer/dmetar\")\n\nMathiasHarrer refers to the GitHub account or usually the author’s account on GitHub, followed by the name of the package. Depending on one’s preference, we can choose to use either devtools or remote.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Basics of R</span>"
+    ]
+  },
+  {
+    "objectID": "basic-r.html#functions",
+    "href": "basic-r.html#functions",
+    "title": "4  Basics of R",
+    "section": "4.7 Functions",
+    "text": "4.7 Functions\nA function in R is a block of code designed to perform a specific task. It consists of an argument, in which we need to supply it. For example, the mean() function is designed to find the mean or average across the numeric values. The numeric values are the argument that we need to supply to the function.\n\nnum_values &lt;- c(5, 6, 8, 10)\nmean(num_values)\n\n[1] 7.25\n\n\nThe base R itself has numerous functions that are accessible to us. These base R functions can be used immediately once we open R (or RStudio or any other IDEs). In contrast, we also have R functions from the packages that we installed. First, we need to install the packages.\n\ninstall.packages(\"tidyverse\")\n\nWe will learn about tidyverse in a little bit. Coming on to our current installation, once you install the package there are two ways to use the function inside the package. First, by loading the package, subsequently, all the functions in the package are ready to be used by us. For example below, bind_rows() is one of the functions from the dplyr package.\n\n# Load the package\nlibrary(dplyr) \n\n# Example of functions from dplyr package\nbind_rows()\nbind_cols()\n\nSecondly, we can use :: to access a single function that we are interested in. However, in this approach, only a single function is loaded.\n\n# Example of dplyr functions\ndplyr::bind_rows()\ndplyr::bind_cols()\n\nAs we can see, every time we want to call a function from the dplyr package we type dplyr:: as we do not load the package first.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Basics of R</span>"
+    ]
+  },
+  {
+    "objectID": "basic-r.html#tidyverse-package",
+    "href": "basic-r.html#tidyverse-package",
+    "title": "4  Basics of R",
+    "section": "4.8 Tidyverse package",
+    "text": "4.8 Tidyverse package\nWe have learned that R packages contain a collection of functions and R codes that we utilise once we load the packages. So, tidyverse is an opinionated collection of R packages designed for data science.\n\n# List of all packages in tidyverse\ntidyverse::tidyverse_packages(include_self = FALSE) |&gt;\n  data.frame(Packages = _)\n\n        Packages\n1          broom\n2     conflicted\n3            cli\n4         dbplyr\n5          dplyr\n6         dtplyr\n7        forcats\n8        ggplot2\n9    googledrive\n10 googlesheets4\n11         haven\n12           hms\n13          httr\n14      jsonlite\n15     lubridate\n16      magrittr\n17        modelr\n18        pillar\n19         purrr\n20          ragg\n21         readr\n22        readxl\n23        reprex\n24         rlang\n25    rstudioapi\n26         rvest\n27       stringr\n28        tibble\n29         tidyr\n30          xml2\n\n\nTable 4.2 below summarises common packages in tidyverse and its uses.\n\n\n\nTable 4.2: Common packages in tidyverse.\n\n\n\n\n\n\n\n\n\nPackages\nSummary\n\n\n\n\nggplot2\nFor data visualisation.\n\n\ndplyr\nProvides tools for data manipulation, including functions for filtering, selecting, grouping, and summarizing data.\n\n\ntidyr\nSpecializes in data tidying, allowing users to transform datasets into a tidy format ready for analysis or visualisation.\n\n\nreadr\nUsed for reading rectangular data (e.g., CSV, TSV files) into R quickly and efficiently.\n\n\npurr\nIntroduces a functional programming paradigm in R with tools for applying functions to data structures like lists and vectors.\n\n\ntibble\nEnhances data frames in R by making them more user-friendly with better printing options and stricter type checking\n\n\nstringr\nFacilitates consistent handling of strings, offering functions for string manipulation, pattern matching, and transformations.\n\n\nforcats\nDesigned to work with categorical data (factors).\n\n\n\n\n\n\nTidyverse is commonly utilised for data analysis and throughout this book, we going to use tidyverse functions numerous times.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Basics of R</span>"
+    ]
+  },
+  {
+    "objectID": "basic-r.html#pipe-operators",
+    "href": "basic-r.html#pipe-operators",
+    "title": "4  Basics of R",
+    "section": "4.9 Pipe operators",
+    "text": "4.9 Pipe operators\nThere are two types of pipe in R:\n\n|&gt;: this pipe is from base R, first introduced in R version 4.1.0.\n%&gt;%: this pipe is from the magrittr package, which presented tidyverse.\n\nTo use |&gt;, we do not actually need to load anything as it is already available in base R. However, to use %&gt;%, you need to load tidyverse. Certain tidyverse associated packages such as dplyr, forcats, and magrittr also load the %&gt;%.\nThe main function of these pipe operators (regardless of which one we use) is to make our R codes more readable and intuitive. So, let us compare the codes without and with the pipe.\n\nmean_value &lt;- mean(\n  subset(\n    data.frame(value = 1:10, group = rep(c(\"A\", \"B\"), each = 5)),\n    group == \"A\"\n  )$value\n)\nmean_value\n\n[1] 3\n\n\nNow, compare the codes with the pipe.\n\nmean_value &lt;- data.frame(value = 1:10, group = rep(c(\"A\", \"B\"), each = 5)) |&gt;\n  subset(group == \"A\") |&gt;\n  with(mean(value))\nmean_value\n\n[1] 3\n\n\nBasically, what we do in both R codes are:\n\nCreate a data frame with ten rows and two columns.\n\ndata.frame(value = 1:10, group = rep(c(\"A\", \"B\"), each = 5))\n\n   value group\n1      1     A\n2      2     A\n3      3     A\n4      4     A\n5      5     A\n6      6     B\n7      7     B\n8      8     B\n9      9     B\n10    10     B\n\n\n\n\n\nFilter out the group column to value A.\n\ndata.frame(value = 1:10, group = rep(c(\"A\", \"B\"), each = 5)) |&gt;\n  subset(group == \"A\")\n\n  value group\n1     1     A\n2     2     A\n3     3     A\n4     4     A\n5     5     A\n\n\nCalculate the mean.\n\nmean(c(1, 2, 3, 4, 5))\n\n[1] 3\n\n\n\nComing back to both R codes, we can intuitively see that the codes with the pipe are more readable and clear compared to the other one. The codes with pipe can be read line by line, while the codes without the pipe need to be read inside out. As you can imagine, once our codes are more complex, the less readable the codes will become.\nSo, which pipe operators to choose?\nIn most cases, the differences are not significant enough to impact your code. Therefore, you can choose the pipe operator that best suits your preference or coding style. Most users will find that both options perform similarly for general tasks, so selecting one often comes down to familiarity or ease of use.\n|&gt; is a built-in pipe operator which can be used immediately without the need to load any package. %&gt;% can be used once the tidyverse package is loaded. The latter pipe has short cut built-in in RStudio. For Windows user, Ctrl + Shift + M and for Mac user, Cmd + Shift + M. Additionally, we can set up the shortcut for |&gt; or further change the shortcut for %&gt;%, though, this will not be covered in this book.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Basics of R</span>"
+    ]
+  },
+  {
+    "objectID": "basic-r.html#chapter-summary",
+    "href": "basic-r.html#chapter-summary",
+    "title": "4  Basics of R",
+    "section": "4.10 Chapter summary",
+    "text": "4.10 Chapter summary\nIn this chapter, we learn about:\n\nData, its types and structures in R.\nR packages and functions.\nPipe operators.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Basics of R</span>"
+    ]
+  },
+  {
+    "objectID": "basic-r.html#revision",
+    "href": "basic-r.html#revision",
+    "title": "4  Basics of R",
+    "section": "4.11 Revision",
+    "text": "4.11 Revision\n\nWhat this ? actually do in R?\nList all the data types that we learn in this chapter.\nList all the data structures that we learn in this chapter.\nWhat is the difference between installing the package and loading the package?\nWhich one to choose between |&gt; and %&gt;%?\nList three packages in tidyverse and summarise their functionalities.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Basics of R</span>"
+    ]
+  },
+  {
+    "objectID": "data-wrangling.html",
+    "href": "data-wrangling.html",
+    "title": "5  Data wrangling",
+    "section": "",
+    "text": "5.1 Load packages\nThe following packages will be used in this chapter. Please run these lines of code before proceeding to other sections.\nlibrary(tidyverse)",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Data wrangling</span>"
     ]
   },
   {
     "objectID": "data-wrangling.html#sec-data-wrangle-index",
     "href": "data-wrangling.html#sec-data-wrangle-index",
-    "title": "6  Data wrangling",
-    "section": "6.2 Indexing",
-    "text": "6.2 Indexing\nIndexing involves selecting specific elements within data structures, which can be done using [].\n\n6.2.1 Vector\nFirst, let’s create a vector.\n\nvec_data &lt;- 1:10\nvec_data\n\n [1]  1  2  3  4  5  6  7  8  9 10\n\n\nTo select specific elements:\n\n# Select a single element\nvec_data[2]\n\n[1] 2\n\n# Select 3rd and 6th element\nvec_data[c(3,6)]\n\n[1] 3 6\n\n\n\n\n6.2.2 Data frame\nWe will use iris, a built-in dataset in R, to demonstrate indexing within a data frame. Detailed information about this dataset can be accessed by typing ?iris in the Console.\n\n?iris\n\nBelow is a summary of this dataset.\n\nsummary(iris)\n\n  Sepal.Length    Sepal.Width     Petal.Length    Petal.Width   \n Min.   :4.300   Min.   :2.000   Min.   :1.000   Min.   :0.100  \n 1st Qu.:5.100   1st Qu.:2.800   1st Qu.:1.600   1st Qu.:0.300  \n Median :5.800   Median :3.000   Median :4.350   Median :1.300  \n Mean   :5.843   Mean   :3.057   Mean   :3.758   Mean   :1.199  \n 3rd Qu.:6.400   3rd Qu.:3.300   3rd Qu.:5.100   3rd Qu.:1.800  \n Max.   :7.900   Max.   :4.400   Max.   :6.900   Max.   :2.500  \n       Species  \n setosa    :50  \n versicolor:50  \n virginica :50  \n                \n                \n                \n\n\nWe will use [], where the general syntax is [row, column].\n\n# Selecting the 1st row\niris[1, ]\n\n  Sepal.Length Sepal.Width Petal.Length Petal.Width Species\n1          5.1         3.5          1.4         0.2  setosa\n\n# Selecting the 1st and 2nd row\niris[c(1, 2), ]\n\n  Sepal.Length Sepal.Width Petal.Length Petal.Width Species\n1          5.1         3.5          1.4         0.2  setosa\n2          4.9         3.0          1.4         0.2  setosa\n\n\nNow let’s see how to index columns.\n\n# Selecting the 1st row\niris[, 1]\n\n# Selecting the 1st and 2nd row\niris[, c(1, 2)]\n\n\n\n[1] 5.1 4.9 4.7 4.6 5.0 5.4\n\n\n  Sepal.Length Sepal.Width\n1          5.1         3.5\n2          4.9         3.0\n3          4.7         3.2\n4          4.6         3.1\n5          5.0         3.6\n6          5.4         3.9\n\n\nBy default, this shows the entire column, but here we’ll limit the output to the first six items for clarity.\nInstead of numbers, we can also use column names:\n\n# Selecting the 1st row\niris[, \"Sepal.Length\"]\n\n# Selecting the 1st and 2nd row\niris[, c(\"Sepal.Length\", \"Sepal.Width\")]\n\n\n\n[1] 5.1 4.9 4.7 4.6 5.0 5.4\n\n\n  Sepal.Length Sepal.Width\n1          5.1         3.5\n2          4.9         3.0\n3          4.7         3.2\n4          4.6         3.1\n5          5.0         3.6\n6          5.4         3.9\n\n\nTo select both a specific row and column, we can combine what we’ve learned. For example, to select the first row and the first column:\n\n# Approach 1\niris[1, 1]\n\n[1] 5.1\n\n# Approach 2\niris[1, \"Sepal.Length\"]\n\n[1] 5.1\n\n\nTo select the first five rows and the first two columns:\n\n# Approach 1\niris[1:5, 1:2]\n\n  Sepal.Length Sepal.Width\n1          5.1         3.5\n2          4.9         3.0\n3          4.7         3.2\n4          4.6         3.1\n5          5.0         3.6\n\n# Approach 2\niris[1:5, c(\"Sepal.Length\", \"Sepal.Width\")]\n\n  Sepal.Length Sepal.Width\n1          5.1         3.5\n2          4.9         3.0\n3          4.7         3.2\n4          4.6         3.1\n5          5.0         3.6\n\n\nFor selecting a single column, an easier approach is to use $:\n\niris$Petal.Length\n\n\n\n[1] 1.4 1.4 1.3 1.5 1.4 1.7\n\n\n\n\n6.2.3 Selecting and slicing\nIn R, there are many ways to perform tasks. Rather than using [], dplyr provides select() and slice(), which are often preferred for their readability. The dplyr package is part of the tidyverse.\nThe select() function is used to choose specific columns.\n\n# Select a single column\niris %&gt;% \n  select(Sepal.Length)\n\n\n\n  Sepal.Length\n1          5.1\n2          4.9\n3          4.7\n4          4.6\n5          5.0\n6          5.4\n\n\n\n# Select several columns\niris %&gt;% \n  select(Sepal.Length, Sepal.Width)\n\n\n\n  Sepal.Length Sepal.Width\n1          5.1         3.5\n2          4.9         3.0\n3          4.7         3.2\n4          4.6         3.1\n5          5.0         3.6\n6          5.4         3.9\n\n\nSimilarly, slice() is used to extract specific rows.\n\n# Select a single row\niris %&gt;% \n  slice(100)\n\n  Sepal.Length Sepal.Width Petal.Length Petal.Width    Species\n1          5.7         2.8          4.1         1.3 versicolor\n\n\n\n# Select several rows\niris %&gt;% \n  slice(2, 5, 100)\n\n  Sepal.Length Sepal.Width Petal.Length Petal.Width    Species\n1          4.9         3.0          1.4         0.2     setosa\n2          5.0         3.6          1.4         0.2     setosa\n3          5.7         2.8          4.1         1.3 versicolor\n\n\nBy combining both select() and slice(), we can access specific rows and columns.\n\niris %&gt;% \n  select(Sepal.Length) %&gt;% \n  slice(1:5)\n\n  Sepal.Length\n1          5.1\n2          4.9\n3          4.7\n4          4.6\n5          5.0",
+    "title": "5  Data wrangling",
+    "section": "5.2 Indexing",
+    "text": "5.2 Indexing\nIndexing involves selecting specific elements within data structures, which can be done using [].\n\n5.2.1 Vector\nFirst, let’s create a vector.\n\nvec_data &lt;- 1:10\nvec_data\n\n [1]  1  2  3  4  5  6  7  8  9 10\n\n\nTo select specific elements:\n\n# Select a single element\nvec_data[2]\n\n[1] 2\n\n# Select 3rd and 6th element\nvec_data[c(3,6)]\n\n[1] 3 6\n\n\n\n\n5.2.2 Data frame\nWe will use iris, a built-in dataset in R, to demonstrate indexing within a data frame. Detailed information about this dataset can be accessed by typing ?iris in the Console.\n\n?iris\n\nBelow is a summary of this dataset.\n\nsummary(iris)\n\n  Sepal.Length    Sepal.Width     Petal.Length    Petal.Width   \n Min.   :4.300   Min.   :2.000   Min.   :1.000   Min.   :0.100  \n 1st Qu.:5.100   1st Qu.:2.800   1st Qu.:1.600   1st Qu.:0.300  \n Median :5.800   Median :3.000   Median :4.350   Median :1.300  \n Mean   :5.843   Mean   :3.057   Mean   :3.758   Mean   :1.199  \n 3rd Qu.:6.400   3rd Qu.:3.300   3rd Qu.:5.100   3rd Qu.:1.800  \n Max.   :7.900   Max.   :4.400   Max.   :6.900   Max.   :2.500  \n       Species  \n setosa    :50  \n versicolor:50  \n virginica :50  \n                \n                \n                \n\n\nWe will use [], where the general syntax is [row, column].\n\n# Selecting the 1st row\niris[1, ]\n\n  Sepal.Length Sepal.Width Petal.Length Petal.Width Species\n1          5.1         3.5          1.4         0.2  setosa\n\n# Selecting the 1st and 2nd row\niris[c(1, 2), ]\n\n  Sepal.Length Sepal.Width Petal.Length Petal.Width Species\n1          5.1         3.5          1.4         0.2  setosa\n2          4.9         3.0          1.4         0.2  setosa\n\n\nNow let’s see how to index columns.\n\n# Selecting the 1st row\niris[, 1]\n\n# Selecting the 1st and 2nd row\niris[, c(1, 2)]\n\n\n\n[1] 5.1 4.9 4.7 4.6 5.0 5.4\n\n\n  Sepal.Length Sepal.Width\n1          5.1         3.5\n2          4.9         3.0\n3          4.7         3.2\n4          4.6         3.1\n5          5.0         3.6\n6          5.4         3.9\n\n\nBy default, this shows the entire column, but here we’ll limit the output to the first six items for clarity.\nInstead of numbers, we can also use column names:\n\n# Selecting the 1st row\niris[, \"Sepal.Length\"]\n\n# Selecting the 1st and 2nd row\niris[, c(\"Sepal.Length\", \"Sepal.Width\")]\n\n\n\n[1] 5.1 4.9 4.7 4.6 5.0 5.4\n\n\n  Sepal.Length Sepal.Width\n1          5.1         3.5\n2          4.9         3.0\n3          4.7         3.2\n4          4.6         3.1\n5          5.0         3.6\n6          5.4         3.9\n\n\nTo select both a specific row and column, we can combine what we’ve learned. For example, to select the first row and the first column:\n\n# Approach 1\niris[1, 1]\n\n[1] 5.1\n\n# Approach 2\niris[1, \"Sepal.Length\"]\n\n[1] 5.1\n\n\nTo select the first five rows and the first two columns:\n\n# Approach 1\niris[1:5, 1:2]\n\n  Sepal.Length Sepal.Width\n1          5.1         3.5\n2          4.9         3.0\n3          4.7         3.2\n4          4.6         3.1\n5          5.0         3.6\n\n# Approach 2\niris[1:5, c(\"Sepal.Length\", \"Sepal.Width\")]\n\n  Sepal.Length Sepal.Width\n1          5.1         3.5\n2          4.9         3.0\n3          4.7         3.2\n4          4.6         3.1\n5          5.0         3.6\n\n\nFor selecting a single column, an easier approach is to use $:\n\niris$Petal.Length\n\n\n\n[1] 1.4 1.4 1.3 1.5 1.4 1.7\n\n\n\n\n5.2.3 Selecting and slicing\nIn R, there are many ways to perform tasks. Rather than using [], dplyr provides select() and slice(), which are often preferred for their readability. The dplyr package is part of the tidyverse.\nThe select() function is used to choose specific columns.\n\n# Select a single column\niris %&gt;% \n  select(Sepal.Length)\n\n\n\n  Sepal.Length\n1          5.1\n2          4.9\n3          4.7\n4          4.6\n5          5.0\n6          5.4\n\n\n\n# Select several columns\niris %&gt;% \n  select(Sepal.Length, Sepal.Width)\n\n\n\n  Sepal.Length Sepal.Width\n1          5.1         3.5\n2          4.9         3.0\n3          4.7         3.2\n4          4.6         3.1\n5          5.0         3.6\n6          5.4         3.9\n\n\nSimilarly, slice() is used to extract specific rows.\n\n# Select a single row\niris %&gt;% \n  slice(100)\n\n  Sepal.Length Sepal.Width Petal.Length Petal.Width    Species\n1          5.7         2.8          4.1         1.3 versicolor\n\n\n\n# Select several rows\niris %&gt;% \n  slice(2, 5, 100)\n\n  Sepal.Length Sepal.Width Petal.Length Petal.Width    Species\n1          4.9         3.0          1.4         0.2     setosa\n2          5.0         3.6          1.4         0.2     setosa\n3          5.7         2.8          4.1         1.3 versicolor\n\n\nBy combining both select() and slice(), we can access specific rows and columns.\n\niris %&gt;% \n  select(Sepal.Length) %&gt;% \n  slice(1:5)\n\n  Sepal.Length\n1          5.1\n2          4.9\n3          4.7\n4          4.6\n5          5.0",
     "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Data wrangling</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Data wrangling</span>"
     ]
   },
   {
     "objectID": "data-wrangling.html#filtering",
     "href": "data-wrangling.html#filtering",
-    "title": "6  Data wrangling",
-    "section": "6.3 Filtering",
-    "text": "6.3 Filtering\nFiltering allows us to select rows based on a condition. For example, if we want to filter the Species column for the value \"setosa\" in the iris dataset, we start by creating an index:\n\nind &lt;- iris$Species == \"setosa\"\n\nNext, we apply the index to the dataset.\n\niris[ind, ]\n\n\n\n  Sepal.Length Sepal.Width Petal.Length Petal.Width Species\n1          5.1         3.5          1.4         0.2  setosa\n2          4.9         3.0          1.4         0.2  setosa\n3          4.7         3.2          1.3         0.2  setosa\n4          4.6         3.1          1.5         0.2  setosa\n5          5.0         3.6          1.4         0.2  setosa\n6          5.4         3.9          1.7         0.4  setosa\n\n\nThe == symbol is a logical operator. Table 6.1 presents the most common logical operators in R.\n\n\n\nTable 6.1: Common logical operators in R.\n\n\n\n\n\nOperators\nDescription\n\n\n\n\n&lt;\nLess than\n\n\n&gt;\nGreater than\n\n\n&lt;=\nLess than or equal to\n\n\n&gt;=\nGreater than or equal to\n\n\n==\nEqual to\n\n\n!=\nNot equal to\n\n\n\n\n\n\nAlternatively, we can use filter() from dplyr for the same result.\n\niris %&gt;% \n  filter(Species == \"setosa\")\n\n\n\n  Sepal.Length Sepal.Width Petal.Length Petal.Width Species\n1          5.1         3.5          1.4         0.2  setosa\n2          4.9         3.0          1.4         0.2  setosa\n3          4.7         3.2          1.3         0.2  setosa\n4          4.6         3.1          1.5         0.2  setosa\n5          5.0         3.6          1.4         0.2  setosa\n6          5.4         3.9          1.7         0.4  setosa\n\n\nfilter() is often more readable, especially for beginners, though both methods yield the same output.\nAdditionally, we can combine multiple conditions using | (or) and & (and). For instance, to filter the iris dataset for rows where:\nAdditionally, we can further combine two or more conditions using | and &:\n\nSpecies is \"setosa\", and\nSepal.Length is greater than 5.6 cm:\n\n\n# Make an index\nind2 &lt;- iris$Species == \"setosa\" & iris$Sepal.Length &gt; 5.6\n\n# Apply the index to the dataset\niris[ind2, ]\n\n   Sepal.Length Sepal.Width Petal.Length Petal.Width Species\n15          5.8         4.0          1.2         0.2  setosa\n16          5.7         4.4          1.5         0.4  setosa\n19          5.7         3.8          1.7         0.3  setosa\n\n\nOr, with filter():\n\niris %&gt;% \n  filter(Species == \"setosa\" & Sepal.Length &gt; 5.6)\n\n  Sepal.Length Sepal.Width Petal.Length Petal.Width Species\n1          5.8         4.0          1.2         0.2  setosa\n2          5.7         4.4          1.5         0.4  setosa\n3          5.7         3.8          1.7         0.3  setosa",
+    "title": "5  Data wrangling",
+    "section": "5.3 Filtering",
+    "text": "5.3 Filtering\nFiltering allows us to select rows based on a condition. For example, if we want to filter the Species column for the value \"setosa\" in the iris dataset, we start by creating an index:\n\nind &lt;- iris$Species == \"setosa\"\n\nNext, we apply the index to the dataset.\n\niris[ind, ]\n\n\n\n  Sepal.Length Sepal.Width Petal.Length Petal.Width Species\n1          5.1         3.5          1.4         0.2  setosa\n2          4.9         3.0          1.4         0.2  setosa\n3          4.7         3.2          1.3         0.2  setosa\n4          4.6         3.1          1.5         0.2  setosa\n5          5.0         3.6          1.4         0.2  setosa\n6          5.4         3.9          1.7         0.4  setosa\n\n\nThe == symbol is a logical operator. Table 5.1 presents the most common logical operators in R.\n\n\n\nTable 5.1: Common logical operators in R.\n\n\n\n\n\nOperators\nDescription\n\n\n\n\n&lt;\nLess than\n\n\n&gt;\nGreater than\n\n\n&lt;=\nLess than or equal to\n\n\n&gt;=\nGreater than or equal to\n\n\n==\nEqual to\n\n\n!=\nNot equal to\n\n\n\n\n\n\nAlternatively, we can use filter() from dplyr for the same result.\n\niris %&gt;% \n  filter(Species == \"setosa\")\n\n\n\n  Sepal.Length Sepal.Width Petal.Length Petal.Width Species\n1          5.1         3.5          1.4         0.2  setosa\n2          4.9         3.0          1.4         0.2  setosa\n3          4.7         3.2          1.3         0.2  setosa\n4          4.6         3.1          1.5         0.2  setosa\n5          5.0         3.6          1.4         0.2  setosa\n6          5.4         3.9          1.7         0.4  setosa\n\n\nfilter() is often more readable, especially for beginners, though both methods yield the same output.\nAdditionally, we can combine multiple conditions using | (or) and & (and). For instance, to filter the iris dataset for rows where:\nAdditionally, we can further combine two or more conditions using | and &:\n\nSpecies is \"setosa\", and\nSepal.Length is greater than 5.6 cm:\n\n\n# Make an index\nind2 &lt;- iris$Species == \"setosa\" & iris$Sepal.Length &gt; 5.6\n\n# Apply the index to the dataset\niris[ind2, ]\n\n   Sepal.Length Sepal.Width Petal.Length Petal.Width Species\n15          5.8         4.0          1.2         0.2  setosa\n16          5.7         4.4          1.5         0.4  setosa\n19          5.7         3.8          1.7         0.3  setosa\n\n\nOr, with filter():\n\niris %&gt;% \n  filter(Species == \"setosa\" & Sepal.Length &gt; 5.6)\n\n  Sepal.Length Sepal.Width Petal.Length Petal.Width Species\n1          5.8         4.0          1.2         0.2  setosa\n2          5.7         4.4          1.5         0.4  setosa\n3          5.7         3.8          1.7         0.3  setosa",
     "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Data wrangling</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Data wrangling</span>"
     ]
   },
   {
     "objectID": "data-wrangling.html#sorting",
     "href": "data-wrangling.html#sorting",
-    "title": "6  Data wrangling",
-    "section": "6.4 Sorting",
-    "text": "6.4 Sorting\nSorting arranges the rows of a data frame by specific column values.\nTo demonstrate, let’s limit iris to its first ten rows for easier display. Using head() will give the top ten rows, while tail() provides the last rows.\n\niris_top10 &lt;- iris %&gt;% head(10)\niris_top10\n\n   Sepal.Length Sepal.Width Petal.Length Petal.Width Species\n1           5.1         3.5          1.4         0.2  setosa\n2           4.9         3.0          1.4         0.2  setosa\n3           4.7         3.2          1.3         0.2  setosa\n4           4.6         3.1          1.5         0.2  setosa\n5           5.0         3.6          1.4         0.2  setosa\n6           5.4         3.9          1.7         0.4  setosa\n7           4.6         3.4          1.4         0.3  setosa\n8           5.0         3.4          1.5         0.2  setosa\n9           4.4         2.9          1.4         0.2  setosa\n10          4.9         3.1          1.5         0.1  setosa\n\n\nTo sort by a single column, use sort(). Setting decreasing = FALSE sorts in ascending order.\n\nsort(iris_top10$Sepal.Length, decreasing = FALSE)\n\n [1] 4.4 4.6 4.6 4.7 4.9 4.9 5.0 5.0 5.1 5.4\n\n\nAnother useful function is order(), which returns the indices and can arrange the entire dataset.\n\n# Make an index\nind3 &lt;- order(iris_top10$Sepal.Length, decreasing = FALSE)\n\n# Apply the index to the dataset\niris_top10[ind3, ]\n\n   Sepal.Length Sepal.Width Petal.Length Petal.Width Species\n9           4.4         2.9          1.4         0.2  setosa\n4           4.6         3.1          1.5         0.2  setosa\n7           4.6         3.4          1.4         0.3  setosa\n3           4.7         3.2          1.3         0.2  setosa\n2           4.9         3.0          1.4         0.2  setosa\n10          4.9         3.1          1.5         0.1  setosa\n5           5.0         3.6          1.4         0.2  setosa\n8           5.0         3.4          1.5         0.2  setosa\n1           5.1         3.5          1.4         0.2  setosa\n6           5.4         3.9          1.7         0.4  setosa\n\n\nWith tidyverse, we have arrange(), equivalent to order() in base R:\n\niris_top10 %&gt;% \n  arrange(Sepal.Length)\n\n   Sepal.Length Sepal.Width Petal.Length Petal.Width Species\n1           4.4         2.9          1.4         0.2  setosa\n2           4.6         3.1          1.5         0.2  setosa\n3           4.6         3.4          1.4         0.3  setosa\n4           4.7         3.2          1.3         0.2  setosa\n5           4.9         3.0          1.4         0.2  setosa\n6           4.9         3.1          1.5         0.1  setosa\n7           5.0         3.6          1.4         0.2  setosa\n8           5.0         3.4          1.5         0.2  setosa\n9           5.1         3.5          1.4         0.2  setosa\n10          5.4         3.9          1.7         0.4  setosa\n\n\nTo sort in descending order, use desc():\n\niris_top10 %&gt;% \n  arrange(desc(Sepal.Length))\n\n   Sepal.Length Sepal.Width Petal.Length Petal.Width Species\n1           5.4         3.9          1.7         0.4  setosa\n2           5.1         3.5          1.4         0.2  setosa\n3           5.0         3.6          1.4         0.2  setosa\n4           5.0         3.4          1.5         0.2  setosa\n5           4.9         3.0          1.4         0.2  setosa\n6           4.9         3.1          1.5         0.1  setosa\n7           4.7         3.2          1.3         0.2  setosa\n8           4.6         3.1          1.5         0.2  setosa\n9           4.6         3.4          1.4         0.3  setosa\n10          4.4         2.9          1.4         0.2  setosa",
+    "title": "5  Data wrangling",
+    "section": "5.4 Sorting",
+    "text": "5.4 Sorting\nSorting arranges the rows of a data frame by specific column values.\nTo demonstrate, let’s limit iris to its first ten rows for easier display. Using head() will give the top ten rows, while tail() provides the last rows.\n\niris_top10 &lt;- iris %&gt;% head(10)\niris_top10\n\n   Sepal.Length Sepal.Width Petal.Length Petal.Width Species\n1           5.1         3.5          1.4         0.2  setosa\n2           4.9         3.0          1.4         0.2  setosa\n3           4.7         3.2          1.3         0.2  setosa\n4           4.6         3.1          1.5         0.2  setosa\n5           5.0         3.6          1.4         0.2  setosa\n6           5.4         3.9          1.7         0.4  setosa\n7           4.6         3.4          1.4         0.3  setosa\n8           5.0         3.4          1.5         0.2  setosa\n9           4.4         2.9          1.4         0.2  setosa\n10          4.9         3.1          1.5         0.1  setosa\n\n\nTo sort by a single column, use sort(). Setting decreasing = FALSE sorts in ascending order.\n\nsort(iris_top10$Sepal.Length, decreasing = FALSE)\n\n [1] 4.4 4.6 4.6 4.7 4.9 4.9 5.0 5.0 5.1 5.4\n\n\nAnother useful function is order(), which returns the indices and can arrange the entire dataset.\n\n# Make an index\nind3 &lt;- order(iris_top10$Sepal.Length, decreasing = FALSE)\n\n# Apply the index to the dataset\niris_top10[ind3, ]\n\n   Sepal.Length Sepal.Width Petal.Length Petal.Width Species\n9           4.4         2.9          1.4         0.2  setosa\n4           4.6         3.1          1.5         0.2  setosa\n7           4.6         3.4          1.4         0.3  setosa\n3           4.7         3.2          1.3         0.2  setosa\n2           4.9         3.0          1.4         0.2  setosa\n10          4.9         3.1          1.5         0.1  setosa\n5           5.0         3.6          1.4         0.2  setosa\n8           5.0         3.4          1.5         0.2  setosa\n1           5.1         3.5          1.4         0.2  setosa\n6           5.4         3.9          1.7         0.4  setosa\n\n\nWith tidyverse, we have arrange(), equivalent to order() in base R:\n\niris_top10 %&gt;% \n  arrange(Sepal.Length)\n\n   Sepal.Length Sepal.Width Petal.Length Petal.Width Species\n1           4.4         2.9          1.4         0.2  setosa\n2           4.6         3.1          1.5         0.2  setosa\n3           4.6         3.4          1.4         0.3  setosa\n4           4.7         3.2          1.3         0.2  setosa\n5           4.9         3.0          1.4         0.2  setosa\n6           4.9         3.1          1.5         0.1  setosa\n7           5.0         3.6          1.4         0.2  setosa\n8           5.0         3.4          1.5         0.2  setosa\n9           5.1         3.5          1.4         0.2  setosa\n10          5.4         3.9          1.7         0.4  setosa\n\n\nTo sort in descending order, use desc():\n\niris_top10 %&gt;% \n  arrange(desc(Sepal.Length))\n\n   Sepal.Length Sepal.Width Petal.Length Petal.Width Species\n1           5.4         3.9          1.7         0.4  setosa\n2           5.1         3.5          1.4         0.2  setosa\n3           5.0         3.6          1.4         0.2  setosa\n4           5.0         3.4          1.5         0.2  setosa\n5           4.9         3.0          1.4         0.2  setosa\n6           4.9         3.1          1.5         0.1  setosa\n7           4.7         3.2          1.3         0.2  setosa\n8           4.6         3.1          1.5         0.2  setosa\n9           4.6         3.4          1.4         0.3  setosa\n10          4.4         2.9          1.4         0.2  setosa",
     "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Data wrangling</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Data wrangling</span>"
     ]
   },
   {
     "objectID": "data-wrangling.html#rename",
     "href": "data-wrangling.html#rename",
-    "title": "6  Data wrangling",
-    "section": "6.5 Rename",
-    "text": "6.5 Rename\nFirst, let’s check the column names.\n\ncolnames(iris_top10)\n\n[1] \"Sepal.Length\" \"Sepal.Width\"  \"Petal.Length\" \"Petal.Width\"  \"Species\"     \n\n\nSuppose we want to rename the species column to type.\n\ncolnames(iris_top10)[5] &lt;- \"type\"\n\nNow, if we check the column names again:\n\ncolnames(iris_top10)\n\n[1] \"Sepal.Length\" \"Sepal.Width\"  \"Petal.Length\" \"Petal.Width\"  \"type\"        \n\n\nAlternatively, we can use the rename() function from dplyr. Here, we will rename Sepal.Length to LengthofSepal.\n\n# Change the column name\niris_top10 &lt;- \n  iris_top10 %&gt;% \n  rename(LengthofSepal = \"Sepal.Length\")\n\n# Check the column names\ncolnames(iris_top10)\n\n[1] \"LengthofSepal\" \"Sepal.Width\"   \"Petal.Length\"  \"Petal.Width\"  \n[5] \"type\"",
+    "title": "5  Data wrangling",
+    "section": "5.5 Rename",
+    "text": "5.5 Rename\nFirst, let’s check the column names.\n\ncolnames(iris_top10)\n\n[1] \"Sepal.Length\" \"Sepal.Width\"  \"Petal.Length\" \"Petal.Width\"  \"Species\"     \n\n\nSuppose we want to rename the species column to type.\n\ncolnames(iris_top10)[5] &lt;- \"type\"\n\nNow, if we check the column names again:\n\ncolnames(iris_top10)\n\n[1] \"Sepal.Length\" \"Sepal.Width\"  \"Petal.Length\" \"Petal.Width\"  \"type\"        \n\n\nAlternatively, we can use the rename() function from dplyr. Here, we will rename Sepal.Length to LengthofSepal.\n\n# Change the column name\niris_top10 &lt;- \n  iris_top10 %&gt;% \n  rename(LengthofSepal = \"Sepal.Length\")\n\n# Check the column names\ncolnames(iris_top10)\n\n[1] \"LengthofSepal\" \"Sepal.Width\"   \"Petal.Length\"  \"Petal.Width\"  \n[5] \"type\"",
     "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Data wrangling</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Data wrangling</span>"
     ]
   },
   {
     "objectID": "data-wrangling.html#create-new-column",
     "href": "data-wrangling.html#create-new-column",
-    "title": "6  Data wrangling",
-    "section": "6.6 Create new column",
-    "text": "6.6 Create new column\nLet’s create a smaller iris dataset first.\n\niris_bottom10 &lt;- tail(iris, 10)\n\nUsing base R functions, we can create a new column as follows:\n\niris_bottom10$Sepal.Lengthx2 &lt;- iris_bottom10$Sepal.Length * 2\nhead(iris_bottom10)\n\n    Sepal.Length Sepal.Width Petal.Length Petal.Width   Species Sepal.Lengthx2\n141          6.7         3.1          5.6         2.4 virginica           13.4\n142          6.9         3.1          5.1         2.3 virginica           13.8\n143          5.8         2.7          5.1         1.9 virginica           11.6\n144          6.8         3.2          5.9         2.3 virginica           13.6\n145          6.7         3.3          5.7         2.5 virginica           13.4\n146          6.7         3.0          5.2         2.3 virginica           13.4\n\n\nHere, we create a new variable Sepal.Lengthx2 by multiplying Sepal.Length by 2. Using tidyverse, we can achieve this with mutate().\n\niris_bottom10 &lt;- \n  iris_bottom10 %&gt;% \n  mutate(Sepal.Widthx2 = Sepal.Width * 2)\nhead(iris_bottom10)\n\n    Sepal.Length Sepal.Width Petal.Length Petal.Width   Species Sepal.Lengthx2\n141          6.7         3.1          5.6         2.4 virginica           13.4\n142          6.9         3.1          5.1         2.3 virginica           13.8\n143          5.8         2.7          5.1         1.9 virginica           11.6\n144          6.8         3.2          5.9         2.3 virginica           13.6\n145          6.7         3.3          5.7         2.5 virginica           13.4\n146          6.7         3.0          5.2         2.3 virginica           13.4\n    Sepal.Widthx2\n141           6.2\n142           6.2\n143           5.4\n144           6.4\n145           6.6\n146           6.0",
+    "title": "5  Data wrangling",
+    "section": "5.6 Create new column",
+    "text": "5.6 Create new column\nLet’s create a smaller iris dataset first.\n\niris_bottom10 &lt;- tail(iris, 10)\n\nUsing base R functions, we can create a new column as follows:\n\niris_bottom10$Sepal.Lengthx2 &lt;- iris_bottom10$Sepal.Length * 2\nhead(iris_bottom10)\n\n    Sepal.Length Sepal.Width Petal.Length Petal.Width   Species Sepal.Lengthx2\n141          6.7         3.1          5.6         2.4 virginica           13.4\n142          6.9         3.1          5.1         2.3 virginica           13.8\n143          5.8         2.7          5.1         1.9 virginica           11.6\n144          6.8         3.2          5.9         2.3 virginica           13.6\n145          6.7         3.3          5.7         2.5 virginica           13.4\n146          6.7         3.0          5.2         2.3 virginica           13.4\n\n\nHere, we create a new variable Sepal.Lengthx2 by multiplying Sepal.Length by 2. Using tidyverse, we can achieve this with mutate().\n\niris_bottom10 &lt;- \n  iris_bottom10 %&gt;% \n  mutate(Sepal.Widthx2 = Sepal.Width * 2)\nhead(iris_bottom10)\n\n    Sepal.Length Sepal.Width Petal.Length Petal.Width   Species Sepal.Lengthx2\n141          6.7         3.1          5.6         2.4 virginica           13.4\n142          6.9         3.1          5.1         2.3 virginica           13.8\n143          5.8         2.7          5.1         1.9 virginica           11.6\n144          6.8         3.2          5.9         2.3 virginica           13.6\n145          6.7         3.3          5.7         2.5 virginica           13.4\n146          6.7         3.0          5.2         2.3 virginica           13.4\n    Sepal.Widthx2\n141           6.2\n142           6.2\n143           5.4\n144           6.4\n145           6.6\n146           6.0",
     "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Data wrangling</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Data wrangling</span>"
     ]
   },
   {
     "objectID": "data-wrangling.html#change-data-format",
     "href": "data-wrangling.html#change-data-format",
-    "title": "6  Data wrangling",
-    "section": "6.7 Change data format",
-    "text": "6.7 Change data format\nData can be structured in two primary formats:\n\nLong format: Each row represents a single observation.\nWide format: Each subject has one row, with variables across columns.\n\nIn long format, each row represents a single observation. This format is commonly used for data manipulation and analysis. Let’s create an example of a long-format dataset. Here, five participants were given a dietary supplement to reduce weight, and the data contains:\n\nid: participant ID\ntime: either pre- or post-supplement\nweight: participant’s weight\n\n\n# Set seed for reproducibility\nset.seed(123) \n\n# Create a long format data\ndata_long &lt;- data.frame(\n  id = rep(1:5, each = 2),        \n  time = rep(c(\"Pre\", \"Post\"), 5),   \n  weight =  sample(x = 60:80, size = 10, replace = TRUE)              \n  )\n\n# View the data\ndata_long\n\n   id time weight\n1   1  Pre     74\n2   1 Post     78\n3   2  Pre     73\n4   2 Post     62\n5   3  Pre     69\n6   3 Post     77\n7   4  Pre     70\n8   4 Post     64\n9   5  Pre     79\n10  5 Post     73\n\n\nIn wide format, each subject has a single row, with each measurement in a separate column. Here is data_long converted to wide format.\n\n# Set seed for reproducibility\nset.seed(123)\n\n# Create a wide format data\ndata_wide &lt;- data.frame(\n  id = 1:5,\n  Pre = sample(60:80, 5, replace = TRUE),\n  Post = sample(60:80, 5, replace = TRUE)\n  )\n\n# View the data\ndata_wide\n\n  id Pre Post\n1  1  74   77\n2  2  78   70\n3  3  73   64\n4  4  62   79\n5  5  69   73\n\n\nIn the wide format, data is often easier to interpret. Converting between long and wide formats is simple in R. To transform data_wide into long format, use pivot_longer():\n\ndata_long2 &lt;- \n  data_wide %&gt;% \n  pivot_longer(cols = 2:3, names_to = \"time\", values_to = \"weight\")\ndata_long2\n\n# A tibble: 10 × 3\n      id time  weight\n   &lt;int&gt; &lt;chr&gt;  &lt;int&gt;\n 1     1 Pre       74\n 2     1 Post      77\n 3     2 Pre       78\n 4     2 Post      70\n 5     3 Pre       73\n 6     3 Post      64\n 7     4 Pre       62\n 8     4 Post      79\n 9     5 Pre       69\n10     5 Post      73\n\n\nFor pivot_longer(), we need to supply three arguments:\n\ncols: columns to be changed into a long format excluding the id column\nnames_to: name of a new column which consist of column names from a wide format data\nvalues_to: name of a new column which consist of values from cols\n\nTo convert data_long2 back to wide format, use pivot_wider():\n\ndata_wide2 &lt;- \n  data_long2 %&gt;% \n  pivot_wider(id_cols = \"id\", names_from = \"time\", values_from = \"weight\")\ndata_wide2\n\n# A tibble: 5 × 3\n     id   Pre  Post\n  &lt;int&gt; &lt;int&gt; &lt;int&gt;\n1     1    74    77\n2     2    78    70\n3     3    73    64\n4     4    62    79\n5     5    69    73\n\n\nTo use pivot_wider(), the three basic arguments needed are:\n\nid_cols: ID column\nnames_from: name of a column to get the column names for the wide data\nvalues_from: name of a column to get the values from\n\nBoth functions have additional arguments detailed in the Help pane (use ? in front of the function name).",
+    "title": "5  Data wrangling",
+    "section": "5.7 Change data format",
+    "text": "5.7 Change data format\nData can be structured in two primary formats:\n\nLong format: Each row represents a single observation.\nWide format: Each subject has one row, with variables across columns.\n\nIn long format, each row represents a single observation. This format is commonly used for data manipulation and analysis. Let’s create an example of a long-format dataset. Here, five participants were given a dietary supplement to reduce weight, and the data contains:\n\nid: participant ID\ntime: either pre- or post-supplement\nweight: participant’s weight\n\n\n# Set seed for reproducibility\nset.seed(123) \n\n# Create a long format data\ndata_long &lt;- data.frame(\n  id = rep(1:5, each = 2),        \n  time = rep(c(\"Pre\", \"Post\"), 5),   \n  weight =  sample(x = 60:80, size = 10, replace = TRUE)              \n  )\n\n# View the data\ndata_long\n\n   id time weight\n1   1  Pre     74\n2   1 Post     78\n3   2  Pre     73\n4   2 Post     62\n5   3  Pre     69\n6   3 Post     77\n7   4  Pre     70\n8   4 Post     64\n9   5  Pre     79\n10  5 Post     73\n\n\nIn wide format, each subject has a single row, with each measurement in a separate column. Here is data_long converted to wide format.\n\n# Set seed for reproducibility\nset.seed(123)\n\n# Create a wide format data\ndata_wide &lt;- data.frame(\n  id = 1:5,\n  Pre = sample(60:80, 5, replace = TRUE),\n  Post = sample(60:80, 5, replace = TRUE)\n  )\n\n# View the data\ndata_wide\n\n  id Pre Post\n1  1  74   77\n2  2  78   70\n3  3  73   64\n4  4  62   79\n5  5  69   73\n\n\nIn the wide format, data is often easier to interpret. Converting between long and wide formats is simple in R. To transform data_wide into long format, use pivot_longer():\n\ndata_long2 &lt;- \n  data_wide %&gt;% \n  pivot_longer(cols = 2:3, names_to = \"time\", values_to = \"weight\")\ndata_long2\n\n# A tibble: 10 × 3\n      id time  weight\n   &lt;int&gt; &lt;chr&gt;  &lt;int&gt;\n 1     1 Pre       74\n 2     1 Post      77\n 3     2 Pre       78\n 4     2 Post      70\n 5     3 Pre       73\n 6     3 Post      64\n 7     4 Pre       62\n 8     4 Post      79\n 9     5 Pre       69\n10     5 Post      73\n\n\nFor pivot_longer(), we need to supply three arguments:\n\ncols: columns to be changed into a long format excluding the id column\nnames_to: name of a new column which consist of column names from a wide format data\nvalues_to: name of a new column which consist of values from cols\n\nTo convert data_long2 back to wide format, use pivot_wider():\n\ndata_wide2 &lt;- \n  data_long2 %&gt;% \n  pivot_wider(id_cols = \"id\", names_from = \"time\", values_from = \"weight\")\ndata_wide2\n\n# A tibble: 5 × 3\n     id   Pre  Post\n  &lt;int&gt; &lt;int&gt; &lt;int&gt;\n1     1    74    77\n2     2    78    70\n3     3    73    64\n4     4    62    79\n5     5    69    73\n\n\nTo use pivot_wider(), the three basic arguments needed are:\n\nid_cols: ID column\nnames_from: name of a column to get the column names for the wide data\nvalues_from: name of a column to get the values from\n\nBoth functions have additional arguments detailed in the Help pane (use ? in front of the function name).",
     "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Data wrangling</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Data wrangling</span>"
     ]
   },
   {
     "objectID": "data-wrangling.html#change-variable-type",
     "href": "data-wrangling.html#change-variable-type",
-    "title": "6  Data wrangling",
-    "section": "6.8 Change variable type",
-    "text": "6.8 Change variable type\nHere are the main variable types in R:\n\n\n\nTable 6.2: Example of each of variable type in R.\n\n\n\n\n\nVariables\nExamples\n\n\n\n\nInteger\n100, 77\n\n\nNumeric\n100.2, 77.8\n\n\nCharacter\n“hello”, “ahmad”\n\n\nLogical\nTRUE, FALSE\n\n\nFactor\n“male”, “female”\n\n\nDate\n9/7/2024, 9 July 2024\n\n\n\n\n\n\nThe most common types in data are numeric, factor, and date. When importing data from software such as SPSS, STATA, or Excel, R may not always recognise the correct types. Let’s create a sample dataset and explore handling these issues.\n\n# Create a data frame with mixed-up variable types\ndata_messed_up &lt;- data.frame(\n  id = as.character(1:6),                \n  score = as.character(sample(1:100, 6)),    \n  gender = rep(c(\"Male\", \"Female\"), length.out = 6)\n  )\n\n# View the variable types\nstr(data_messed_up)\n\n'data.frame':   6 obs. of  3 variables:\n $ id    : chr  \"1\" \"2\" \"3\" \"4\" ...\n $ score : chr  \"25\" \"90\" \"91\" \"69\" ...\n $ gender: chr  \"Male\" \"Female\" \"Male\" \"Female\" ...\n\n# View the data\ndata_messed_up\n\n  id score gender\n1  1    25   Male\n2  2    90 Female\n3  3    91   Male\n4  4    69 Female\n5  5    98   Male\n6  6    57 Female\n\n\nWe can see that score should be numeric and gender a factor. To convert these types, use as.numeric() and as.factor(). Let’s create a copy of data_messed_up for demonstration purposes.\n\ndata_messed_up2 &lt;- data_messed_up\n\nUsing base R functions, we can adjust the types:\n\n# Change score column to numeric\ndata_messed_up$score &lt;- as.numeric(data_messed_up$score)\n\n# Change gender column to factor\ndata_messed_up$gender &lt;- as.factor(data_messed_up$gender)\n\n# View variable type\nstr(data_messed_up)\n\n'data.frame':   6 obs. of  3 variables:\n $ id    : chr  \"1\" \"2\" \"3\" \"4\" ...\n $ score : num  25 90 91 69 98 57\n $ gender: Factor w/ 2 levels \"Female\",\"Male\": 2 1 2 1 2 1\n\n\nUsing tidyverse, we can achieve the same result with mutate():\n\n# Change variable types for score and gender\ndata_messed_up2 &lt;- \n  data_messed_up2 %&gt;% \n  mutate(score = as.numeric(score),\n         gender = as.factor(gender))\n\n# View variable type\nstr(data_messed_up2)\n\n'data.frame':   6 obs. of  3 variables:\n $ id    : chr  \"1\" \"2\" \"3\" \"4\" ...\n $ score : num  25 90 91 69 98 57\n $ gender: Factor w/ 2 levels \"Female\",\"Male\": 2 1 2 1 2 1\n\n\n\n6.8.1 Handling date\nDates can be tricky. For date variables, the standard format is YYYY-MM-DD. Using lubridate, we can work with various date formats easily. Let’s look at a few examples:\n\n# Using base R \ndate_data &lt;- as.Date(\"2024-11-30\")\nstr(date_data)\n\n Date[1:1], format: \"2024-11-30\"\n\n# Using lubridate\ndate_data2 &lt;- as_date(\"2024-11-30\")\nstr(date_data2)\n\n Date[1:1], format: \"2024-11-30\"\n\n\nFor non-standard formats, use lubridate functions ymd(), dmy(), and mdy().\n\n# DD-MM-YYYY\ndate_data3 &lt;- dmy(\"30-11-2024\")\nstr(date_data3)\n\n Date[1:1], format: \"2024-11-30\"\n\n# MM-DD-YY\ndate_data4 &lt;- mdy(\"11-30-2024\")\nstr(date_data4)\n\n Date[1:1], format: \"2024-11-30\"\n\n\nCorrectly formatted date variables allow for operations such as:\n\nDate calculation: adding days to a date.\n\ndate_data4 + 7 \n\n[1] \"2024-12-07\"\n\n\nExtracting date components usch as month and year.\n\n# Extract month\nmonth(date_data4)\n\n[1] 11\n\n# Extract year\nyear(date_data4)\n\n[1] 2024\n\n\n\nTo demonstrate dates in a dataset, we’ll recreate data_messed_up with a date column.\n\n# Create a data frame with mixed-up variable types\ndata_messed_up &lt;- data.frame(\n  id = as.character(1:6),                \n  score = as.character(sample(1:100, 6)),    \n  gender = rep(c(\"Male\", \"Female\"), length.out = 6),\n  date = as.character(Sys.Date() - 1:6)\n  )\n\n# View variable type\nstr(data_messed_up)\n\n'data.frame':   6 obs. of  4 variables:\n $ id    : chr  \"1\" \"2\" \"3\" \"4\" ...\n $ score : chr  \"92\" \"9\" \"93\" \"72\" ...\n $ gender: chr  \"Male\" \"Female\" \"Male\" \"Female\" ...\n $ date  : chr  \"2024-11-11\" \"2024-11-10\" \"2024-11-09\" \"2024-11-08\" ...\n\n\nThe date column is recognised as a character. To convert date to a date format, use as_date().\n\n# Change variable types for score, gender, and date\ndata_messed_up &lt;- \n  data_messed_up %&gt;% \n  mutate(score = as.numeric(score),\n         gender = as.factor(gender),\n         date = as_date(date))\n\n# View variable type\nstr(data_messed_up)\n\n'data.frame':   6 obs. of  4 variables:\n $ id    : chr  \"1\" \"2\" \"3\" \"4\" ...\n $ score : num  92 9 93 72 26 7\n $ gender: Factor w/ 2 levels \"Female\",\"Male\": 2 1 2 1 2 1\n $ date  : Date, format: \"2024-11-11\" \"2024-11-10\" ...\n\n\nThe simplest solution for the date issue is to make sure we properly input the date according to the right format (YYYY-MM-DD) during the data collection process properly.",
+    "title": "5  Data wrangling",
+    "section": "5.8 Change variable type",
+    "text": "5.8 Change variable type\nHere are the main variable types in R:\n\n\n\nTable 5.2: Example of each of variable type in R.\n\n\n\n\n\nVariables\nExamples\n\n\n\n\nInteger\n100, 77\n\n\nNumeric\n100.2, 77.8\n\n\nCharacter\n“hello”, “ahmad”\n\n\nLogical\nTRUE, FALSE\n\n\nFactor\n“male”, “female”\n\n\nDate\n9/7/2024, 9 July 2024\n\n\n\n\n\n\nThe most common types in data are numeric, factor, and date. When importing data from software such as SPSS, STATA, or Excel, R may not always recognise the correct types. Let’s create a sample dataset and explore handling these issues.\n\n# Create a data frame with mixed-up variable types\ndata_messed_up &lt;- data.frame(\n  id = as.character(1:6),                \n  score = as.character(sample(1:100, 6)),    \n  gender = rep(c(\"Male\", \"Female\"), length.out = 6)\n  )\n\n# View the variable types\nstr(data_messed_up)\n\n'data.frame':   6 obs. of  3 variables:\n $ id    : chr  \"1\" \"2\" \"3\" \"4\" ...\n $ score : chr  \"25\" \"90\" \"91\" \"69\" ...\n $ gender: chr  \"Male\" \"Female\" \"Male\" \"Female\" ...\n\n# View the data\ndata_messed_up\n\n  id score gender\n1  1    25   Male\n2  2    90 Female\n3  3    91   Male\n4  4    69 Female\n5  5    98   Male\n6  6    57 Female\n\n\nWe can see that score should be numeric and gender a factor. To convert these types, use as.numeric() and as.factor(). Let’s create a copy of data_messed_up for demonstration purposes.\n\ndata_messed_up2 &lt;- data_messed_up\n\nUsing base R functions, we can adjust the types:\n\n# Change score column to numeric\ndata_messed_up$score &lt;- as.numeric(data_messed_up$score)\n\n# Change gender column to factor\ndata_messed_up$gender &lt;- as.factor(data_messed_up$gender)\n\n# View variable type\nstr(data_messed_up)\n\n'data.frame':   6 obs. of  3 variables:\n $ id    : chr  \"1\" \"2\" \"3\" \"4\" ...\n $ score : num  25 90 91 69 98 57\n $ gender: Factor w/ 2 levels \"Female\",\"Male\": 2 1 2 1 2 1\n\n\nUsing tidyverse, we can achieve the same result with mutate():\n\n# Change variable types for score and gender\ndata_messed_up2 &lt;- \n  data_messed_up2 %&gt;% \n  mutate(score = as.numeric(score),\n         gender = as.factor(gender))\n\n# View variable type\nstr(data_messed_up2)\n\n'data.frame':   6 obs. of  3 variables:\n $ id    : chr  \"1\" \"2\" \"3\" \"4\" ...\n $ score : num  25 90 91 69 98 57\n $ gender: Factor w/ 2 levels \"Female\",\"Male\": 2 1 2 1 2 1\n\n\n\n5.8.1 Handling date\nDates can be tricky. For date variables, the standard format is YYYY-MM-DD. Using lubridate, we can work with various date formats easily. Let’s look at a few examples:\n\n# Using base R \ndate_data &lt;- as.Date(\"2024-11-30\")\nstr(date_data)\n\n Date[1:1], format: \"2024-11-30\"\n\n# Using lubridate\ndate_data2 &lt;- as_date(\"2024-11-30\")\nstr(date_data2)\n\n Date[1:1], format: \"2024-11-30\"\n\n\nFor non-standard formats, use lubridate functions ymd(), dmy(), and mdy().\n\n# DD-MM-YYYY\ndate_data3 &lt;- dmy(\"30-11-2024\")\nstr(date_data3)\n\n Date[1:1], format: \"2024-11-30\"\n\n# MM-DD-YY\ndate_data4 &lt;- mdy(\"11-30-2024\")\nstr(date_data4)\n\n Date[1:1], format: \"2024-11-30\"\n\n\nCorrectly formatted date variables allow for operations such as:\n\nDate calculation: adding days to a date.\n\ndate_data4 + 7 \n\n[1] \"2024-12-07\"\n\n\nExtracting date components usch as month and year.\n\n# Extract month\nmonth(date_data4)\n\n[1] 11\n\n# Extract year\nyear(date_data4)\n\n[1] 2024\n\n\n\nTo demonstrate dates in a dataset, we’ll recreate data_messed_up with a date column.\n\n# Create a data frame with mixed-up variable types\ndata_messed_up &lt;- data.frame(\n  id = as.character(1:6),                \n  score = as.character(sample(1:100, 6)),    \n  gender = rep(c(\"Male\", \"Female\"), length.out = 6),\n  date = as.character(Sys.Date() - 1:6)\n  )\n\n# View variable type\nstr(data_messed_up)\n\n'data.frame':   6 obs. of  4 variables:\n $ id    : chr  \"1\" \"2\" \"3\" \"4\" ...\n $ score : chr  \"92\" \"9\" \"93\" \"72\" ...\n $ gender: chr  \"Male\" \"Female\" \"Male\" \"Female\" ...\n $ date  : chr  \"2024-11-11\" \"2024-11-10\" \"2024-11-09\" \"2024-11-08\" ...\n\n\nThe date column is recognised as a character. To convert date to a date format, use as_date().\n\n# Change variable types for score, gender, and date\ndata_messed_up &lt;- \n  data_messed_up %&gt;% \n  mutate(score = as.numeric(score),\n         gender = as.factor(gender),\n         date = as_date(date))\n\n# View variable type\nstr(data_messed_up)\n\n'data.frame':   6 obs. of  4 variables:\n $ id    : chr  \"1\" \"2\" \"3\" \"4\" ...\n $ score : num  92 9 93 72 26 7\n $ gender: Factor w/ 2 levels \"Female\",\"Male\": 2 1 2 1 2 1\n $ date  : Date, format: \"2024-11-11\" \"2024-11-10\" ...\n\n\nThe simplest solution for the date issue is to make sure we properly input the date according to the right format (YYYY-MM-DD) during the data collection process properly.",
     "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Data wrangling</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Data wrangling</span>"
     ]
   },
   {
     "objectID": "data-wrangling.html#merge-datasets",
     "href": "data-wrangling.html#merge-datasets",
-    "title": "6  Data wrangling",
-    "section": "6.9 Merge datasets",
-    "text": "6.9 Merge datasets\nIf you collect data from different sources, you may need to combine datasets by row or column. rbind() combines datasets by row, while cbind() combines them by column.\nLet us see how to combine two iris datasets.\n\n# Data collected from area A\ndata1 &lt;- iris\n\n# Data collected from area B\ndata2 &lt;- iris\n\n# Combine both datasets by a row\ndata_combined_row &lt;- rbind(data1, data2)\n\nNow, we can check the dimensions of the data. The first element represents a row and the second element represents the column.\n\n# Dimension of data1\ndim(data1)\n\n[1] 150   5\n\n# Dimension of data2\ndim(data2)\n\n[1] 150   5\n\n# Dimension of the combined data\ndim(data_combined_row)\n\n[1] 300   5\n\n\nWe can see that the rows of data1 and data2 each are 150. Combining both data by a row gives us 300 rows. It is to be noted that to use rbind(), both data should have the same column numbers and names. Additionally, rbind() is not limited to two data only.\nNext, let us see the cbind(). Using the same data, we can combine both data by a column.\n\n# Combine both datasets by a column\ndata_combined_col &lt;- cbind(data1, data2)\n\nThus, by further checking the dimension, we can see that the total column of data_combined_col is 10, which is the sum of 5 columns in each of the data1 and data2, while the row remained the same.\n\n# Dimension of data1\ndim(data1)\n\n[1] 150   5\n\n# Dimension of data2\ndim(data2)\n\n[1] 150   5\n\n# Dimension of the combined data\ndim(data_combined_col)\n\n[1] 150  10\n\n\nHowever, similar to rbind(), to use the cbind(), the rows of both data should be identical. If participant A is in the first row of data1, the, in data2, participant A should also be in the first row.\nThere is another set of functions that is more efficient than cbind(), in which we can combine two or more datasets according to the id. Let us create two datasets that are related and have the same ID.\n\n# Set seed for reproducibility\nset.seed(123)\n\n# Create the first half of the data\ndata_half1 &lt;- data.frame(\n  name = c(\"Ahmad\", \"Ali\", \"Cheng\", \"Rama\", \"Wei\"),\n  height_cm = sample(160:180, 5, replace = FALSE)\n  )\n\n# Create the second half of the data\ndata_half2 &lt;- data.frame(\n  name = c(\"Ahmad\", \"Ali\", \"Cheng\", \"Rama\", \"Karim\"),\n  weight_kg = sample(70:90, 5, replace = FALSE)\n  )\n\n# The first dataset\ndata_half1\n\n   name height_cm\n1 Ahmad       174\n2   Ali       178\n3 Cheng       173\n4  Rama       162\n5   Wei       169\n\n# The second dataset\ndata_half2\n\n   name weight_kg\n1 Ahmad        87\n2   Ali        80\n3 Cheng        74\n4  Rama        83\n5 Karim        88\n\n\nNotice that the last row of both datasets is not similar. To combine both datasets, we can use either left_join() or right_join(). Both produce the same result. If there is a mismatch between the two datasets, left_join() will keep the first dataset as a reference, and any of the id of the second dataset that does not match the first one will be removed. right_join() works similar to the left_join() but in the opposite.\n\n# Combine the data\ndata_full_left &lt;- \n  data_half1 %&gt;% #first datasets\n  left_join(data_half2, by = \"name\") #second datasets\n\n# View the combined data\ndata_full_left\n\n   name height_cm weight_kg\n1 Ahmad       174        87\n2   Ali       178        80\n3 Cheng       173        74\n4  Rama       162        83\n5   Wei       169        NA\n\n\nWe can see that karim in the second dataset is excluded. Let’s see what will happen if we use right_join().\n\n# Combine the data\ndata_full_right &lt;- \n  data_half1 %&gt;% #first datasets\n  right_join(data_half2, by = \"name\") #second datasets\n\n# View the combined data\ndata_full_right\n\n   name height_cm weight_kg\n1 Ahmad       174        87\n2   Ali       178        80\n3 Cheng       173        74\n4  Rama       162        83\n5 Karim        NA        88\n\n\nWe can see that Wei in the first dataset is excluded. To include all the participants, despite the mismatch of the id is by using full_join().\n\n# Combine the data\ndata_full &lt;- \n  data_half1 %&gt;% \n  full_join(data_half2, by = \"name\") \n\n# View the combined data\ndata_full\n\n   name height_cm weight_kg\n1 Ahmad       174        87\n2   Ali       178        80\n3 Cheng       173        74\n4  Rama       162        83\n5   Wei       169        NA\n6 Karim        NA        88\n\n\nBoth Wei and Karim are kept in the combined dataset. Additionally, there is inner_join(), which will exclude both Wei and Karim. This function keeps the data that the name is present in both datasets only.\n\n# Combine the data\ndata_full_inner &lt;- \n  data_half1 %&gt;% \n  inner_join(data_half2, by = \"name\") \n\n# View the combined data\ndata_full_inner\n\n   name height_cm weight_kg\n1 Ahmad       174        87\n2   Ali       178        80\n3 Cheng       173        74\n4  Rama       162        83",
+    "title": "5  Data wrangling",
+    "section": "5.9 Merge datasets",
+    "text": "5.9 Merge datasets\nIf you collect data from different sources, you may need to combine datasets by row or column. rbind() combines datasets by row, while cbind() combines them by column.\nLet us see how to combine two iris datasets.\n\n# Data collected from area A\ndata1 &lt;- iris\n\n# Data collected from area B\ndata2 &lt;- iris\n\n# Combine both datasets by a row\ndata_combined_row &lt;- rbind(data1, data2)\n\nNow, we can check the dimensions of the data. The first element represents a row and the second element represents the column.\n\n# Dimension of data1\ndim(data1)\n\n[1] 150   5\n\n# Dimension of data2\ndim(data2)\n\n[1] 150   5\n\n# Dimension of the combined data\ndim(data_combined_row)\n\n[1] 300   5\n\n\nWe can see that the rows of data1 and data2 each are 150. Combining both data by a row gives us 300 rows. It is to be noted that to use rbind(), both data should have the same column numbers and names. Additionally, rbind() is not limited to two data only.\nNext, let us see the cbind(). Using the same data, we can combine both data by a column.\n\n# Combine both datasets by a column\ndata_combined_col &lt;- cbind(data1, data2)\n\nThus, by further checking the dimension, we can see that the total column of data_combined_col is 10, which is the sum of 5 columns in each of the data1 and data2, while the row remained the same.\n\n# Dimension of data1\ndim(data1)\n\n[1] 150   5\n\n# Dimension of data2\ndim(data2)\n\n[1] 150   5\n\n# Dimension of the combined data\ndim(data_combined_col)\n\n[1] 150  10\n\n\nHowever, similar to rbind(), to use the cbind(), the rows of both data should be identical. If participant A is in the first row of data1, the, in data2, participant A should also be in the first row.\nThere is another set of functions that is more efficient than cbind(), in which we can combine two or more datasets according to the id. Let us create two datasets that are related and have the same ID.\n\n# Set seed for reproducibility\nset.seed(123)\n\n# Create the first half of the data\ndata_half1 &lt;- data.frame(\n  name = c(\"Ahmad\", \"Ali\", \"Cheng\", \"Rama\", \"Wei\"),\n  height_cm = sample(160:180, 5, replace = FALSE)\n  )\n\n# Create the second half of the data\ndata_half2 &lt;- data.frame(\n  name = c(\"Ahmad\", \"Ali\", \"Cheng\", \"Rama\", \"Karim\"),\n  weight_kg = sample(70:90, 5, replace = FALSE)\n  )\n\n# The first dataset\ndata_half1\n\n   name height_cm\n1 Ahmad       174\n2   Ali       178\n3 Cheng       173\n4  Rama       162\n5   Wei       169\n\n# The second dataset\ndata_half2\n\n   name weight_kg\n1 Ahmad        87\n2   Ali        80\n3 Cheng        74\n4  Rama        83\n5 Karim        88\n\n\nNotice that the last row of both datasets is not similar. To combine both datasets, we can use either left_join() or right_join(). Both produce the same result. If there is a mismatch between the two datasets, left_join() will keep the first dataset as a reference, and any of the id of the second dataset that does not match the first one will be removed. right_join() works similar to the left_join() but in the opposite.\n\n# Combine the data\ndata_full_left &lt;- \n  data_half1 %&gt;% #first datasets\n  left_join(data_half2, by = \"name\") #second datasets\n\n# View the combined data\ndata_full_left\n\n   name height_cm weight_kg\n1 Ahmad       174        87\n2   Ali       178        80\n3 Cheng       173        74\n4  Rama       162        83\n5   Wei       169        NA\n\n\nWe can see that karim in the second dataset is excluded. Let’s see what will happen if we use right_join().\n\n# Combine the data\ndata_full_right &lt;- \n  data_half1 %&gt;% #first datasets\n  right_join(data_half2, by = \"name\") #second datasets\n\n# View the combined data\ndata_full_right\n\n   name height_cm weight_kg\n1 Ahmad       174        87\n2   Ali       178        80\n3 Cheng       173        74\n4  Rama       162        83\n5 Karim        NA        88\n\n\nWe can see that Wei in the first dataset is excluded. To include all the participants, despite the mismatch of the id is by using full_join().\n\n# Combine the data\ndata_full &lt;- \n  data_half1 %&gt;% \n  full_join(data_half2, by = \"name\") \n\n# View the combined data\ndata_full\n\n   name height_cm weight_kg\n1 Ahmad       174        87\n2   Ali       178        80\n3 Cheng       173        74\n4  Rama       162        83\n5   Wei       169        NA\n6 Karim        NA        88\n\n\nBoth Wei and Karim are kept in the combined dataset. Additionally, there is inner_join(), which will exclude both Wei and Karim. This function keeps the data that the name is present in both datasets only.\n\n# Combine the data\ndata_full_inner &lt;- \n  data_half1 %&gt;% \n  inner_join(data_half2, by = \"name\") \n\n# View the combined data\ndata_full_inner\n\n   name height_cm weight_kg\n1 Ahmad       174        87\n2   Ali       178        80\n3 Cheng       173        74\n4  Rama       162        83",
     "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Data wrangling</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Data wrangling</span>"
     ]
   },
   {
     "objectID": "data-wrangling.html#chapter-summary",
     "href": "data-wrangling.html#chapter-summary",
-    "title": "6  Data wrangling",
-    "section": "6.10 Chapter summary",
-    "text": "6.10 Chapter summary\nIn this chapter, we covered the most common and basic operations in data wrangling. More operations were not covered in this chapter as this book is intended for beginners.\nTo summarise, we have covered:\n\nHow to select a column and a row\nHow to filter a dataset based on a condition applied to columns\nHow to rename and create a column\nHow to manage variable types\nHow to combine several datasets into one",
+    "title": "5  Data wrangling",
+    "section": "5.10 Chapter summary",
+    "text": "5.10 Chapter summary\nIn this chapter, we covered the most common and basic operations in data wrangling. More operations were not covered in this chapter as this book is intended for beginners.\nTo summarise, we have covered:\n\nHow to select a column and a row\nHow to filter a dataset based on a condition applied to columns\nHow to rename and create a column\nHow to manage variable types\nHow to combine several datasets into one",
     "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Data wrangling</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Data wrangling</span>"
     ]
   },
   {
     "objectID": "data-wrangling.html#revision",
     "href": "data-wrangling.html#revision",
-    "title": "6  Data wrangling",
-    "section": "6.11 Revision",
-    "text": "6.11 Revision\n\nLoad mtcars dataset in R.\n\nhead(mtcars)\n\n                   mpg cyl disp  hp drat    wt  qsec vs am gear carb\nMazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4\nMazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4\nDatsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1\nHornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1\nHornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2\nValiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1\n\n\nRead aboutmtcars.\n\n?mtcars\n\nHow many cars have mpg &gt; 25?\nHow many cars have mpg &gt; 25 and a number of carburetors of 2?\nHow many cars have a V-shaped engine?\nChange vs and am into a factor.\nChange the wide format data below into a long or tidy format.\n\n# Set seed for reproducibility\nset.seed(123)  \n\n# Create a wide format data\ndata_wide &lt;- data.frame(\n  id = 1:10,\n  time1 = sample(1:100, 10, replace = TRUE),\n  time2 = sample(1:100, 10, replace = TRUE),\n  time3 = sample(1:100, 10, replace = TRUE), \n  age = sample(18:80, 10, replace = TRUE)\n  )\n\n# View the data frame\nhead(data_wide)\n\n  id time1 time2 time3 age\n1  1    31    90    26  32\n2  2    79    91     7  49\n3  3    51    69    42  59\n4  4    14    91     9  62\n5  5    67    57    83  24\n6  6    42    92    36  26\n\n\nThe result of the long format data should appear like this.\n\n\n\n\n\nid\nage\ntime_points\ntime_minute\n\n\n\n\n1\n32\ntime1\n31\n\n\n1\n32\ntime2\n90\n\n\n1\n32\ntime3\n26\n\n\n2\n49\ntime1\n79\n\n\n2\n49\ntime2\n91\n\n\n2\n49\ntime3\n7\n\n\n3\n59\ntime1\n51\n\n\n3\n59\ntime2\n69\n\n\n3\n59\ntime3\n42\n\n\n4\n62\ntime1\n14\n\n\n4\n62\ntime2\n91\n\n\n4\n62\ntime3\n9\n\n\n5\n24\ntime1\n67\n\n\n5\n24\ntime2\n57\n\n\n5\n24\ntime3\n83\n\n\n6\n26\ntime1\n42\n\n\n6\n26\ntime2\n92\n\n\n6\n26\ntime3\n36\n\n\n7\n58\ntime1\n50\n\n\n7\n58\ntime2\n9\n\n\n7\n58\ntime3\n78\n\n\n8\n27\ntime1\n43\n\n\n8\n27\ntime2\n93\n\n\n8\n27\ntime3\n81\n\n\n9\n40\ntime1\n14\n\n\n9\n40\ntime2\n99\n\n\n9\n40\ntime3\n43\n\n\n10\n44\ntime1\n25\n\n\n10\n44\ntime2\n72\n\n\n10\n44\ntime3\n76",
+    "title": "5  Data wrangling",
+    "section": "5.11 Revision",
+    "text": "5.11 Revision\n\nLoad mtcars dataset in R.\n\nhead(mtcars)\n\n                   mpg cyl disp  hp drat    wt  qsec vs am gear carb\nMazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4\nMazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4\nDatsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1\nHornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1\nHornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2\nValiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1\n\n\nRead aboutmtcars.\n\n?mtcars\n\nHow many cars have mpg &gt; 25?\nHow many cars have mpg &gt; 25 and a number of carburetors of 2?\nHow many cars have a V-shaped engine?\nChange vs and am into a factor.\nChange the wide format data below into a long or tidy format.\n\n# Set seed for reproducibility\nset.seed(123)  \n\n# Create a wide format data\ndata_wide &lt;- data.frame(\n  id = 1:10,\n  time1 = sample(1:100, 10, replace = TRUE),\n  time2 = sample(1:100, 10, replace = TRUE),\n  time3 = sample(1:100, 10, replace = TRUE), \n  age = sample(18:80, 10, replace = TRUE)\n  )\n\n# View the data frame\nhead(data_wide)\n\n  id time1 time2 time3 age\n1  1    31    90    26  32\n2  2    79    91     7  49\n3  3    51    69    42  59\n4  4    14    91     9  62\n5  5    67    57    83  24\n6  6    42    92    36  26\n\n\nThe result of the long format data should appear like this.\n\n\n\n\n\nid\nage\ntime_points\ntime_minute\n\n\n\n\n1\n32\ntime1\n31\n\n\n1\n32\ntime2\n90\n\n\n1\n32\ntime3\n26\n\n\n2\n49\ntime1\n79\n\n\n2\n49\ntime2\n91\n\n\n2\n49\ntime3\n7\n\n\n3\n59\ntime1\n51\n\n\n3\n59\ntime2\n69\n\n\n3\n59\ntime3\n42\n\n\n4\n62\ntime1\n14\n\n\n4\n62\ntime2\n91\n\n\n4\n62\ntime3\n9\n\n\n5\n24\ntime1\n67\n\n\n5\n24\ntime2\n57\n\n\n5\n24\ntime3\n83\n\n\n6\n26\ntime1\n42\n\n\n6\n26\ntime2\n92\n\n\n6\n26\ntime3\n36\n\n\n7\n58\ntime1\n50\n\n\n7\n58\ntime2\n9\n\n\n7\n58\ntime3\n78\n\n\n8\n27\ntime1\n43\n\n\n8\n27\ntime2\n93\n\n\n8\n27\ntime3\n81\n\n\n9\n40\ntime1\n14\n\n\n9\n40\ntime2\n99\n\n\n9\n40\ntime3\n43\n\n\n10\n44\ntime1\n25\n\n\n10\n44\ntime2\n72\n\n\n10\n44\ntime3\n76",
     "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Data wrangling</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Data wrangling</span>"
+    ]
+  },
+  {
+    "objectID": "plotting.html",
+    "href": "plotting.html",
+    "title": "6  Data visualisation",
+    "section": "",
+    "text": "This chapter is currently under construction. Stay tuned for updates!",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Data visualisation</span>"
+    ]
+  },
+  {
+    "objectID": "loop-function.html",
+    "href": "loop-function.html",
+    "title": "7  Loop, function, and apply",
+    "section": "",
+    "text": "This chapter is currently under construction. Stay tuned for updates!",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Loop, function, and apply</span>"
+    ]
+  },
+  {
+    "objectID": "data-explore.html",
+    "href": "data-explore.html",
+    "title": "8  Data exploration",
+    "section": "",
+    "text": "This chapter is currently under construction. Stay tuned for updates!",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Data exploration</span>"
+    ]
+  },
+  {
+    "objectID": "descriptive-stat.html",
+    "href": "descriptive-stat.html",
+    "title": "9  Descriptive statistics",
+    "section": "",
+    "text": "This chapter is currently under construction. Stay tuned for updates!",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Descriptive statistics</span>"
+    ]
+  },
+  {
+    "objectID": "summary.html",
+    "href": "summary.html",
+    "title": "10  Summary",
+    "section": "",
+    "text": "This chapter is currently under construction. Stay tuned for updates!",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Summary</span>"
     ]
   }
 ]

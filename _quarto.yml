@@ -7,6 +7,8 @@ book:
   author: "Tengku Muhammad Hanis Bin Tengku Mokhtar, PhD"
   date: today
   date-format: "MMM D, YYYY"
+  cover-image: images/book_cover.png
+  favicon: images/book_cover.png
   chapters:
     - index.qmd
     - about.qmd
@@ -23,6 +25,7 @@ book:
     - references.qmd
 
 bibliography: references.bib
+
 
 format:
   html:
