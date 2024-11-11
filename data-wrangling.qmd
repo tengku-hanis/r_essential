@@ -2,6 +2,754 @@
 title: "Data wrangling"
 ---
 
-This chapter is currently under construction. Stay tuned for updates!
+Data wrangling refers to the process of transforming and preparing raw data into a clean and structured format suitable for analysis. This involves various steps, such as data cleaning, reshaping, merging, and filtering, to ensure the dataset is ready for statistical analysis or visualisation.
 
-![](figs/under_construction.gif){fig-align="left"}
+In most cases, data wrangling can occupy a significant portion of the time required for data analysis, often more than other stages. In this chapter, we will explore common operations in data wrangling. You will learn how to perform these operations using either base R functions, `tidyverse` functions, or both.
+
+## Load packages
+
+The following packages will be used in this chapter. Please run these lines of code before proceeding to other sections.
+
+```{r message=FALSE, warning=FALSE}
+library(tidyverse)
+```
+
+## Indexing {#sec-data-wrangle-index}
+
+Indexing involves selecting specific elements within data structures, which can be done using `[]`.
+
+### Vector
+
+First, let’s create a vector.
+
+```{r}
+vec_data <- 1:10
+vec_data
+```
+
+To select specific elements:
+
+```{r}
+# Select a single element
+vec_data[2]
+
+# Select 3rd and 6th element
+vec_data[c(3,6)]
+```
+
+### Data frame
+
+We will use `iris`, a built-in dataset in R, to demonstrate indexing within a data frame. Detailed information about this dataset can be accessed by typing `?iris` in the Console.
+
+```{r eval=FALSE}
+?iris
+```
+
+Below is a summary of this dataset.
+
+```{r}
+summary(iris)
+```
+
+We will use `[]`, where the general syntax is `[row, column]`.
+
+```{r}
+# Selecting the 1st row
+iris[1, ]
+
+# Selecting the 1st and 2nd row
+iris[c(1, 2), ]
+```
+
+Now let’s see how to index columns.
+
+```{r eval=FALSE}
+# Selecting the 1st row
+iris[, 1]
+
+# Selecting the 1st and 2nd row
+iris[, c(1, 2)]
+```
+
+```{r echo=FALSE}
+# Selecting the 1st row
+iris[, 1] |> head()
+
+# Selecting the 1st and 2nd row
+iris[, c(1, 2)] |> head()
+```
+
+By default, this shows the entire column, but here we’ll limit the output to the first six items for clarity.
+
+Instead of numbers, we can also use column names:
+
+```{r eval=FALSE}
+# Selecting the 1st row
+iris[, "Sepal.Length"]
+
+# Selecting the 1st and 2nd row
+iris[, c("Sepal.Length", "Sepal.Width")]
+```
+
+```{r echo=FALSE}
+# Selecting the 1st row
+iris[, 1] |> head()
+
+# Selecting the 1st and 2nd row
+iris[, c(1, 2)] |> head()
+```
+
+To select both a specific row and column, we can combine what we’ve learned. For example, to select the first row and the first column:
+
+```{r}
+# Approach 1
+iris[1, 1]
+
+# Approach 2
+iris[1, "Sepal.Length"]
+```
+
+To select the first five rows and the first two columns:
+
+```{r}
+# Approach 1
+iris[1:5, 1:2]
+
+# Approach 2
+iris[1:5, c("Sepal.Length", "Sepal.Width")]
+```
+
+For selecting a single column, an easier approach is to use `$`:
+
+```{r eval=FALSE}
+iris$Petal.Length
+```
+
+```{r echo=FALSE}
+iris$Petal.Length |> head()
+```
+
+### Selecting and slicing
+
+In R, there are many ways to perform tasks. Rather than using `[]`, `dplyr` provides `select()` and `slice()`, which are often preferred for their readability. The `dplyr` package is part of the `tidyverse`.
+
+The `select()` function is used to choose specific columns.
+
+```{r eval=FALSE}
+# Select a single column
+iris %>% 
+  select(Sepal.Length)
+```
+
+```{r warning=FALSE, message=FALSE, echo=FALSE}
+# Select a single column
+iris %>% 
+  select(Sepal.Length) %>% 
+  head()
+```
+
+```{r eval=FALSE}
+# Select several columns
+iris %>% 
+  select(Sepal.Length, Sepal.Width)
+```
+
+```{r warning=FALSE, message=FALSE, echo=FALSE}
+# Select several columns
+iris %>% 
+  select(Sepal.Length, Sepal.Width) %>% 
+  head()
+```
+
+Similarly, `slice()` is used to extract specific rows.
+
+```{r}
+# Select a single row
+iris %>% 
+  slice(100)
+```
+
+```{r}
+# Select several rows
+iris %>% 
+  slice(2, 5, 100)
+```
+
+By combining both `select()` and `slice()`, we can access specific rows and columns.
+
+```{r}
+iris %>% 
+  select(Sepal.Length) %>% 
+  slice(1:5)
+```
+
+## Filtering
+
+Filtering allows us to select rows based on a condition. For example, if we want to filter the `Species` column for the value `"setosa"` in the `iris` dataset, we start by creating an index:
+
+```{r}
+ind <- iris$Species == "setosa"
+```
+
+Next, we apply the index to the dataset.
+
+```{r eval=FALSE}
+iris[ind, ]
+```
+
+```{r echo=FALSE}
+iris[ind, ] |> head()
+```
+
+The `==` symbol is a logical operator. @tbl-logical-operator presents the most common logical operators in R.
+
+| Operators | Description              |
+|-----------|--------------------------|
+| \<        | Less than                |
+| \>        | Greater than             |
+| \<=       | Less than or equal to    |
+| \>=       | Greater than or equal to |
+| ==        | Equal to                 |
+| !=        | Not equal to             |
+
+: Common logical operators in R. {#tbl-logical-operator}
+
+Alternatively, we can use `filter()` from `dplyr` for the same result.
+
+```{r eval=FALSE}
+iris %>% 
+  filter(Species == "setosa")
+```
+
+```{r echo=FALSE}
+iris %>% 
+  filter(Species == "setosa") %>% 
+  head()
+```
+
+`filter()` is often more readable, especially for beginners, though both methods yield the same output.
+
+Additionally, we can combine multiple conditions using `|` (or) and `&` (and). For instance, to filter the `iris` dataset for rows where:
+
+Additionally, we can further combine two or more conditions using `|` and `&`:
+
+1.  `Species` is `"setosa"`, and
+2.  `Sepal.Length` is greater than 5.6 cm:
+
+```{r}
+# Make an index
+ind2 <- iris$Species == "setosa" & iris$Sepal.Length > 5.6
+
+# Apply the index to the dataset
+iris[ind2, ]
+```
+
+Or, with `filter()`:
+
+```{r}
+iris %>% 
+  filter(Species == "setosa" & Sepal.Length > 5.6)
+```
+
+## Sorting
+
+Sorting arranges the rows of a data frame by specific column values.
+
+To demonstrate, let’s limit `iris` to its first ten rows for easier display. Using `head()` will give the top ten rows, while `tail()` provides the last rows.
+
+```{r}
+iris_top10 <- iris %>% head(10)
+iris_top10
+```
+
+To sort by a single column, use `sort()`. Setting `decreasing = FALSE` sorts in ascending order.
+
+```{r}
+sort(iris_top10$Sepal.Length, decreasing = FALSE)
+```
+
+Another useful function is `order()`, which returns the indices and can arrange the entire dataset.
+
+```{r}
+# Make an index
+ind3 <- order(iris_top10$Sepal.Length, decreasing = FALSE)
+
+# Apply the index to the dataset
+iris_top10[ind3, ]
+```
+
+With `tidyverse`, we have `arrange()`, equivalent to `order()` in base R:
+
+```{r}
+iris_top10 %>% 
+  arrange(Sepal.Length)
+```
+
+To sort in descending order, use `desc()`:
+
+```{r}
+iris_top10 %>% 
+  arrange(desc(Sepal.Length))
+```
+
+## Rename
+
+First, let’s check the column names.
+
+```{r}
+colnames(iris_top10)
+```
+
+Suppose we want to rename the `species` column to `type`.
+
+```{r}
+colnames(iris_top10)[5] <- "type"
+```
+
+Now, if we check the column names again:
+
+```{r}
+colnames(iris_top10)
+```
+
+Alternatively, we can use the `rename()` function from `dplyr`. Here, we will rename `Sepal.Length` to `LengthofSepal`.
+
+```{r}
+# Change the column name
+iris_top10 <- 
+  iris_top10 %>% 
+  rename(LengthofSepal = "Sepal.Length")
+
+# Check the column names
+colnames(iris_top10)
+```
+
+## Create new column
+
+Let’s create a smaller iris dataset first.
+
+```{r}
+iris_bottom10 <- tail(iris, 10)
+```
+
+Using base R functions, we can create a new column as follows:
+
+```{r}
+iris_bottom10$Sepal.Lengthx2 <- iris_bottom10$Sepal.Length * 2
+head(iris_bottom10)
+```
+
+Here, we create a new variable `Sepal.Lengthx2` by multiplying `Sepal.Length` by 2. Using `tidyverse`, we can achieve this with `mutate()`.
+
+```{r}
+iris_bottom10 <- 
+  iris_bottom10 %>% 
+  mutate(Sepal.Widthx2 = Sepal.Width * 2)
+head(iris_bottom10)
+```
+
+## Change data format
+
+Data can be structured in two primary formats:
+
+-   **Long format**: Each row represents a single observation.
+-   **Wide format**: Each subject has one row, with variables across columns.
+
+In long format, each row represents a single observation. This format is commonly used for data manipulation and analysis. Let’s create an example of a long-format dataset. Here, five participants were given a dietary supplement to reduce weight, and the data contains:
+
+1.  `id`: participant ID
+2.  `time`: either pre- or post-supplement
+3.  `weight`: participant’s weight
+
+```{r}
+# Set seed for reproducibility
+set.seed(123) 
+
+# Create a long format data
+data_long <- data.frame(
+  id = rep(1:5, each = 2),        
+  time = rep(c("Pre", "Post"), 5),   
+  weight =  sample(x = 60:80, size = 10, replace = TRUE)              
+  )
+
+# View the data
+data_long
+```
+
+In wide format, each subject has a single row, with each measurement in a separate column. Here is `data_long` converted to wide format.
+
+```{r}
+# Set seed for reproducibility
+set.seed(123)
+
+# Create a wide format data
+data_wide <- data.frame(
+  id = 1:5,
+  Pre = sample(60:80, 5, replace = TRUE),
+  Post = sample(60:80, 5, replace = TRUE)
+  )
+
+# View the data
+data_wide
+```
+
+In the wide format, data is often easier to interpret. Converting between long and wide formats is simple in R. To transform `data_wide` into long format, use `pivot_longer()`:
+
+```{r}
+data_long2 <- 
+  data_wide %>% 
+  pivot_longer(cols = 2:3, names_to = "time", values_to = "weight")
+data_long2
+```
+
+For `pivot_longer()`, we need to supply three arguments:
+
+-   `cols`: columns to be changed into a long format excluding the id column
+-   `names_to`: name of a new column which consist of column names from a wide format data
+-   `values_to`: name of a new column which consist of values from `cols`
+
+To convert `data_long2` back to wide format, use `pivot_wider()`:
+
+```{r}
+data_wide2 <- 
+  data_long2 %>% 
+  pivot_wider(id_cols = "id", names_from = "time", values_from = "weight")
+data_wide2
+```
+
+To use `pivot_wider()`, the three basic arguments needed are:
+
+-   `id_cols`: ID column
+-   `names_from`: name of a column to get the column names for the wide data
+-   `values_from`: name of a column to get the values from
+
+Both functions have additional arguments detailed in the `Help` pane (use `?` in front of the function name).
+
+## Change variable type
+
+Here are the main variable types in R:
+
+| Variables | Examples              |
+|-----------|-----------------------|
+| Integer   | 100, 77               |
+| Numeric   | 100.2, 77.8           |
+| Character | "hello", "ahmad"      |
+| Logical   | TRUE, FALSE           |
+| Factor    | "male", "female"      |
+| Date      | 9/7/2024, 9 July 2024 |
+
+: Example of each of variable type in R. {#tbl-variable-type-example}
+
+The most common types in data are numeric, factor, and date. When importing data from software such as SPSS, STATA, or Excel, R may not always recognise the correct types. Let’s create a sample dataset and explore handling these issues.
+
+```{r}
+# Create a data frame with mixed-up variable types
+data_messed_up <- data.frame(
+  id = as.character(1:6),                
+  score = as.character(sample(1:100, 6)),    
+  gender = rep(c("Male", "Female"), length.out = 6)
+  )
+
+# View the variable types
+str(data_messed_up)
+
+# View the data
+data_messed_up
+```
+
+We can see that `score` should be numeric and `gender` a factor. To convert these types, use `as.numeric()` and `as.factor()`. Let’s create a copy of `data_messed_up` for demonstration purposes.
+
+```{r}
+data_messed_up2 <- data_messed_up
+```
+
+Using base R functions, we can adjust the types:
+
+```{r}
+# Change score column to numeric
+data_messed_up$score <- as.numeric(data_messed_up$score)
+
+# Change gender column to factor
+data_messed_up$gender <- as.factor(data_messed_up$gender)
+
+# View variable type
+str(data_messed_up)
+```
+
+Using `tidyverse`, we can achieve the same result with `mutate()`:
+
+```{r}
+# Change variable types for score and gender
+data_messed_up2 <- 
+  data_messed_up2 %>% 
+  mutate(score = as.numeric(score),
+         gender = as.factor(gender))
+
+# View variable type
+str(data_messed_up2)
+```
+
+### Handling date
+
+Dates can be tricky. For date variables, the standard format is `YYYY-MM-DD`. Using `lubridate`, we can work with various date formats easily. Let’s look at a few examples:
+
+```{r}
+# Using base R 
+date_data <- as.Date("2024-11-30")
+str(date_data)
+
+# Using lubridate
+date_data2 <- as_date("2024-11-30")
+str(date_data2)
+```
+
+For non-standard formats, use `lubridate` functions `ymd()`, `dmy()`, and `mdy()`.
+
+```{r}
+# DD-MM-YYYY
+date_data3 <- dmy("30-11-2024")
+str(date_data3)
+
+# MM-DD-YY
+date_data4 <- mdy("11-30-2024")
+str(date_data4)
+```
+
+Correctly formatted date variables allow for operations such as:
+
+-   Date calculation: adding days to a date.
+
+    ```{r}
+    date_data4 + 7 
+    ```
+
+-   Extracting date components usch as month and year.
+
+    ```{r}
+    # Extract month
+    month(date_data4)
+
+    # Extract year
+    year(date_data4)
+    ```
+
+To demonstrate dates in a dataset, we’ll recreate `data_messed_up` with a date column.
+
+```{r}
+# Create a data frame with mixed-up variable types
+data_messed_up <- data.frame(
+  id = as.character(1:6),                
+  score = as.character(sample(1:100, 6)),    
+  gender = rep(c("Male", "Female"), length.out = 6),
+  date = as.character(Sys.Date() - 1:6)
+  )
+
+# View variable type
+str(data_messed_up)
+```
+
+The `date` column is recognised as a character. To convert `date` to a date format, use `as_date()`.
+
+```{r}
+# Change variable types for score, gender, and date
+data_messed_up <- 
+  data_messed_up %>% 
+  mutate(score = as.numeric(score),
+         gender = as.factor(gender),
+         date = as_date(date))
+
+# View variable type
+str(data_messed_up)
+```
+
+The simplest solution for the date issue is to make sure we properly input the date according to the right format (`YYYY-MM-DD`) during the data collection process properly.
+
+## Merge datasets
+
+If you collect data from different sources, you may need to combine datasets by row or column. `rbind()` combines datasets by row, while `cbind()` combines them by column.
+
+Let us see how to combine two iris datasets.
+
+```{r}
+# Data collected from area A
+data1 <- iris
+
+# Data collected from area B
+data2 <- iris
+
+# Combine both datasets by a row
+data_combined_row <- rbind(data1, data2)
+```
+
+Now, we can check the dimensions of the data. The first element represents a row and the second element represents the column.
+
+```{r}
+# Dimension of data1
+dim(data1)
+
+# Dimension of data2
+dim(data2)
+
+# Dimension of the combined data
+dim(data_combined_row)
+```
+
+We can see that the rows of `data1` and `data2` each are 150. Combining both data by a row gives us 300 rows. It is to be noted that to use `rbind()`, both data should have the same column numbers and names. Additionally, `rbind()` is not limited to two data only.
+
+Next, let us see the `cbind()`. Using the same data, we can combine both data by a column.
+
+```{r}
+# Combine both datasets by a column
+data_combined_col <- cbind(data1, data2)
+```
+
+Thus, by further checking the dimension, we can see that the total column of `data_combined_col` is 10, which is the sum of 5 columns in each of the `data1` and `data2`, while the row remained the same.
+
+```{r}
+# Dimension of data1
+dim(data1)
+
+# Dimension of data2
+dim(data2)
+
+# Dimension of the combined data
+dim(data_combined_col)
+```
+
+However, similar to `rbind()`, to use the `cbind()`, the rows of both data should be identical. If participant A is in the first row of `data1`, the, in `data2`, participant A should also be in the first row.
+
+There is another set of functions that is more efficient than `cbind()`, in which we can combine two or more datasets according to the id. Let us create two datasets that are related and have the same ID.
+
+```{r}
+# Set seed for reproducibility
+set.seed(123)
+
+# Create the first half of the data
+data_half1 <- data.frame(
+  name = c("Ahmad", "Ali", "Cheng", "Rama", "Wei"),
+  height_cm = sample(160:180, 5, replace = FALSE)
+  )
+
+# Create the second half of the data
+data_half2 <- data.frame(
+  name = c("Ahmad", "Ali", "Cheng", "Rama", "Karim"),
+  weight_kg = sample(70:90, 5, replace = FALSE)
+  )
+
+# The first dataset
+data_half1
+
+# The second dataset
+data_half2
+```
+
+Notice that the last row of both datasets is not similar. To combine both datasets, we can use either `left_join()` or `right_join()`. Both produce the same result. If there is a mismatch between the two datasets, `left_join()` will keep the first dataset as a reference, and any of the id of the second dataset that does not match the first one will be removed. `right_join()` works similar to the `left_join()` but in the opposite.
+
+```{r}
+# Combine the data
+data_full_left <- 
+  data_half1 %>% #first datasets
+  left_join(data_half2, by = "name") #second datasets
+
+# View the combined data
+data_full_left
+```
+
+We can see that `karim` in the second dataset is excluded. Let's see what will happen if we use `right_join()`.
+
+```{r}
+# Combine the data
+data_full_right <- 
+  data_half1 %>% #first datasets
+  right_join(data_half2, by = "name") #second datasets
+
+# View the combined data
+data_full_right
+```
+
+We can see that `Wei` in the first dataset is excluded. To include all the participants, despite the mismatch of the id is by using `full_join()`.
+
+```{r}
+# Combine the data
+data_full <- 
+  data_half1 %>% 
+  full_join(data_half2, by = "name") 
+
+# View the combined data
+data_full
+```
+
+Both `Wei` and `Karim` are kept in the combined dataset. Additionally, there is `inner_join()`, which will exclude both `Wei` and `Karim`. This function keeps the data that the `name` is present in both datasets only.
+
+```{r}
+# Combine the data
+data_full_inner <- 
+  data_half1 %>% 
+  inner_join(data_half2, by = "name") 
+
+# View the combined data
+data_full_inner
+
+```
+
+## Chapter summary
+
+In this chapter, we covered the most common and basic operations in data wrangling. More operations were not covered in this chapter as this book is intended for beginners.
+
+To summarise, we have covered:
+
+-   How to select a column and a row
+-   How to filter a dataset based on a condition applied to columns
+-   How to rename and create a column
+-   How to manage variable types
+-   How to combine several datasets into one
+
+## Revision
+
+1.  Load `mtcars` dataset in R.
+
+    ```{r}
+    head(mtcars)
+    ```
+
+2.  Read about`mtcars`.
+
+    ```{r eval=FALSE}
+    ?mtcars
+    ```
+
+3.  How many cars have `mpg` \> 25?
+
+4.  How many cars have `mpg` \> 25 and a number of carburetors of 2?
+
+5.  How many cars have a V-shaped engine?
+
+6.  Change `vs` and `am` into a factor.
+
+7.  Change the wide format data below into a long or tidy format.
+
+    ```{r}
+    # Set seed for reproducibility
+    set.seed(123)  
+
+    # Create a wide format data
+    data_wide <- data.frame(
+      id = 1:10,
+      time1 = sample(1:100, 10, replace = TRUE),
+      time2 = sample(1:100, 10, replace = TRUE),
+      time3 = sample(1:100, 10, replace = TRUE), 
+      age = sample(18:80, 10, replace = TRUE)
+      )
+
+    # View the data frame
+    head(data_wide)
+    ```
+
+    The result of the long format data should appear like this.
+
+    ```{r echo=FALSE}
+    data_long <- 
+      data_wide %>% 
+      pivot_longer(cols = 2:4, names_to = "time_points", values_to = "time_minute")
+    kableExtra::kable(data_long, format = "simple", align = 'cccc')
+    ```

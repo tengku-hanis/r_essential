@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -157,7 +191,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./loop-function.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Loops and functions</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Loop, function, and apply</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -189,8 +223,32 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#load-packages" id="toc-load-packages" class="nav-link active" data-scroll-target="#load-packages"><span class="header-section-number">6.1</span> Load packages</a></li>
+  <li><a href="#sec-data-wrangle-index" id="toc-sec-data-wrangle-index" class="nav-link" data-scroll-target="#sec-data-wrangle-index"><span class="header-section-number">6.2</span> Indexing</a>
+  <ul class="collapse">
+  <li><a href="#vector" id="toc-vector" class="nav-link" data-scroll-target="#vector"><span class="header-section-number">6.2.1</span> Vector</a></li>
+  <li><a href="#data-frame" id="toc-data-frame" class="nav-link" data-scroll-target="#data-frame"><span class="header-section-number">6.2.2</span> Data frame</a></li>
+  <li><a href="#selecting-and-slicing" id="toc-selecting-and-slicing" class="nav-link" data-scroll-target="#selecting-and-slicing"><span class="header-section-number">6.2.3</span> Selecting and slicing</a></li>
+  </ul></li>
+  <li><a href="#filtering" id="toc-filtering" class="nav-link" data-scroll-target="#filtering"><span class="header-section-number">6.3</span> Filtering</a></li>
+  <li><a href="#sorting" id="toc-sorting" class="nav-link" data-scroll-target="#sorting"><span class="header-section-number">6.4</span> Sorting</a></li>
+  <li><a href="#rename" id="toc-rename" class="nav-link" data-scroll-target="#rename"><span class="header-section-number">6.5</span> Rename</a></li>
+  <li><a href="#create-new-column" id="toc-create-new-column" class="nav-link" data-scroll-target="#create-new-column"><span class="header-section-number">6.6</span> Create new column</a></li>
+  <li><a href="#change-data-format" id="toc-change-data-format" class="nav-link" data-scroll-target="#change-data-format"><span class="header-section-number">6.7</span> Change data format</a></li>
+  <li><a href="#change-variable-type" id="toc-change-variable-type" class="nav-link" data-scroll-target="#change-variable-type"><span class="header-section-number">6.8</span> Change variable type</a>
+  <ul class="collapse">
+  <li><a href="#handling-date" id="toc-handling-date" class="nav-link" data-scroll-target="#handling-date"><span class="header-section-number">6.8.1</span> Handling date</a></li>
+  </ul></li>
+  <li><a href="#merge-datasets" id="toc-merge-datasets" class="nav-link" data-scroll-target="#merge-datasets"><span class="header-section-number">6.9</span> Merge datasets</a></li>
+  <li><a href="#chapter-summary" id="toc-chapter-summary" class="nav-link" data-scroll-target="#chapter-summary"><span class="header-section-number">6.10</span> Chapter summary</a></li>
+  <li><a href="#revision" id="toc-revision" class="nav-link" data-scroll-target="#revision"><span class="header-section-number">6.11</span> Revision</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -214,14 +272,1283 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This chapter is currently under construction. Stay tuned for updates!</p>
-<div class="quarto-figure quarto-figure-left">
-<figure class="figure">
-<p><img src="figs/under_construction.gif" class="img-fluid quarto-figure quarto-figure-left figure-img"></p>
+<p>Data wrangling refers to the process of transforming and preparing raw data into a clean and structured format suitable for analysis. This involves various steps, such as data cleaning, reshaping, merging, and filtering, to ensure the dataset is ready for statistical analysis or visualisation.</p>
+<p>In most cases, data wrangling can occupy a significant portion of the time required for data analysis, often more than other stages. In this chapter, we will explore common operations in data wrangling. You will learn how to perform these operations using either base R functions, <code>tidyverse</code> functions, or both.</p>
+<section id="load-packages" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="load-packages"><span class="header-section-number">6.1</span> Load packages</h2>
+<p>The following packages will be used in this chapter. Please run these lines of code before proceeding to other sections.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="sec-data-wrangle-index" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="sec-data-wrangle-index"><span class="header-section-number">6.2</span> Indexing</h2>
+<p>Indexing involves selecting specific elements within data structures, which can be done using <code>[]</code>.</p>
+<section id="vector" class="level3" data-number="6.2.1">
+<h3 data-number="6.2.1" class="anchored" data-anchor-id="vector"><span class="header-section-number">6.2.1</span> Vector</h3>
+<p>First, let’s create a vector.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>vec_data <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>vec_data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
+</div>
+</div>
+<p>To select specific elements:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Select a single element</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>vec_data[<span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Select 3rd and 6th element</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>vec_data[<span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">6</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3 6</code></pre>
+</div>
+</div>
+</section>
+<section id="data-frame" class="level3" data-number="6.2.2">
+<h3 data-number="6.2.2" class="anchored" data-anchor-id="data-frame"><span class="header-section-number">6.2.2</span> Data frame</h3>
+<p>We will use <code>iris</code>, a built-in dataset in R, to demonstrate indexing within a data frame. Detailed information about this dataset can be accessed by typing <code>?iris</code> in the Console.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>?iris</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Below is a summary of this dataset.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(iris)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Sepal.Length    Sepal.Width     Petal.Length    Petal.Width   
+ Min.   :4.300   Min.   :2.000   Min.   :1.000   Min.   :0.100  
+ 1st Qu.:5.100   1st Qu.:2.800   1st Qu.:1.600   1st Qu.:0.300  
+ Median :5.800   Median :3.000   Median :4.350   Median :1.300  
+ Mean   :5.843   Mean   :3.057   Mean   :3.758   Mean   :1.199  
+ 3rd Qu.:6.400   3rd Qu.:3.300   3rd Qu.:5.100   3rd Qu.:1.800  
+ Max.   :7.900   Max.   :4.400   Max.   :6.900   Max.   :2.500  
+       Species  
+ setosa    :50  
+ versicolor:50  
+ virginica :50  
+                
+                
+                </code></pre>
+</div>
+</div>
+<p>We will use <code>[]</code>, where the general syntax is <code>[row, column]</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Selecting the 1st row</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>iris[<span class="dv">1</span>, ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+1          5.1         3.5          1.4         0.2  setosa</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Selecting the 1st and 2nd row</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>iris[<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+1          5.1         3.5          1.4         0.2  setosa
+2          4.9         3.0          1.4         0.2  setosa</code></pre>
+</div>
+</div>
+<p>Now let’s see how to index columns.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Selecting the 1st row</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>iris[, <span class="dv">1</span>]</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Selecting the 1st and 2nd row</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>iris[, <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 5.1 4.9 4.7 4.6 5.0 5.4</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Sepal.Length Sepal.Width
+1          5.1         3.5
+2          4.9         3.0
+3          4.7         3.2
+4          4.6         3.1
+5          5.0         3.6
+6          5.4         3.9</code></pre>
+</div>
+</div>
+<p>By default, this shows the entire column, but here we’ll limit the output to the first six items for clarity.</p>
+<p>Instead of numbers, we can also use column names:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Selecting the 1st row</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>iris[, <span class="st">"Sepal.Length"</span>]</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Selecting the 1st and 2nd row</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>iris[, <span class="fu">c</span>(<span class="st">"Sepal.Length"</span>, <span class="st">"Sepal.Width"</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 5.1 4.9 4.7 4.6 5.0 5.4</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Sepal.Length Sepal.Width
+1          5.1         3.5
+2          4.9         3.0
+3          4.7         3.2
+4          4.6         3.1
+5          5.0         3.6
+6          5.4         3.9</code></pre>
+</div>
+</div>
+<p>To select both a specific row and column, we can combine what we’ve learned. For example, to select the first row and the first column:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Approach 1</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>iris[<span class="dv">1</span>, <span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 5.1</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Approach 2</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>iris[<span class="dv">1</span>, <span class="st">"Sepal.Length"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 5.1</code></pre>
+</div>
+</div>
+<p>To select the first five rows and the first two columns:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Approach 1</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>iris[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Sepal.Length Sepal.Width
+1          5.1         3.5
+2          4.9         3.0
+3          4.7         3.2
+4          4.6         3.1
+5          5.0         3.6</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Approach 2</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>iris[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="fu">c</span>(<span class="st">"Sepal.Length"</span>, <span class="st">"Sepal.Width"</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Sepal.Length Sepal.Width
+1          5.1         3.5
+2          4.9         3.0
+3          4.7         3.2
+4          4.6         3.1
+5          5.0         3.6</code></pre>
+</div>
+</div>
+<p>For selecting a single column, an easier approach is to use <code>$</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>iris<span class="sc">$</span>Petal.Length</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.4 1.4 1.3 1.5 1.4 1.7</code></pre>
+</div>
+</div>
+</section>
+<section id="selecting-and-slicing" class="level3" data-number="6.2.3">
+<h3 data-number="6.2.3" class="anchored" data-anchor-id="selecting-and-slicing"><span class="header-section-number">6.2.3</span> Selecting and slicing</h3>
+<p>In R, there are many ways to perform tasks. Rather than using <code>[]</code>, <code>dplyr</code> provides <code>select()</code> and <code>slice()</code>, which are often preferred for their readability. The <code>dplyr</code> package is part of the <code>tidyverse</code>.</p>
+<p>The <code>select()</code> function is used to choose specific columns.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Select a single column</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>iris <span class="sc">%&gt;%</span> </span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Sepal.Length)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>  Sepal.Length
+1          5.1
+2          4.9
+3          4.7
+4          4.6
+5          5.0
+6          5.4</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Select several columns</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>iris <span class="sc">%&gt;%</span> </span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Sepal.Length, Sepal.Width)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>  Sepal.Length Sepal.Width
+1          5.1         3.5
+2          4.9         3.0
+3          4.7         3.2
+4          4.6         3.1
+5          5.0         3.6
+6          5.4         3.9</code></pre>
+</div>
+</div>
+<p>Similarly, <code>slice()</code> is used to extract specific rows.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Select a single row</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>iris <span class="sc">%&gt;%</span> </span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">100</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Sepal.Length Sepal.Width Petal.Length Petal.Width    Species
+1          5.7         2.8          4.1         1.3 versicolor</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Select several rows</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>iris <span class="sc">%&gt;%</span> </span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">100</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Sepal.Length Sepal.Width Petal.Length Petal.Width    Species
+1          4.9         3.0          1.4         0.2     setosa
+2          5.0         3.6          1.4         0.2     setosa
+3          5.7         2.8          4.1         1.3 versicolor</code></pre>
+</div>
+</div>
+<p>By combining both <code>select()</code> and <code>slice()</code>, we can access specific rows and columns.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>iris <span class="sc">%&gt;%</span> </span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Sepal.Length) <span class="sc">%&gt;%</span> </span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Sepal.Length
+1          5.1
+2          4.9
+3          4.7
+4          4.6
+5          5.0</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="filtering" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="filtering"><span class="header-section-number">6.3</span> Filtering</h2>
+<p>Filtering allows us to select rows based on a condition. For example, if we want to filter the <code>Species</code> column for the value <code>"setosa"</code> in the <code>iris</code> dataset, we start by creating an index:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>ind <span class="ot">&lt;-</span> iris<span class="sc">$</span>Species <span class="sc">==</span> <span class="st">"setosa"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Next, we apply the index to the dataset.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>iris[ind, ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>  Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+1          5.1         3.5          1.4         0.2  setosa
+2          4.9         3.0          1.4         0.2  setosa
+3          4.7         3.2          1.3         0.2  setosa
+4          4.6         3.1          1.5         0.2  setosa
+5          5.0         3.6          1.4         0.2  setosa
+6          5.4         3.9          1.7         0.4  setosa</code></pre>
+</div>
+</div>
+<p>The <code>==</code> symbol is a logical operator. <a href="#tbl-logical-operator" class="quarto-xref">Table&nbsp;<span>6.1</span></a> presents the most common logical operators in R.</p>
+<div id="tbl-logical-operator" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-logical-operator-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;6.1: Common logical operators in R.
+</figcaption>
+<div aria-describedby="tbl-logical-operator-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Operators</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>&lt;</td>
+<td>Less than</td>
+</tr>
+<tr class="even">
+<td>&gt;</td>
+<td>Greater than</td>
+</tr>
+<tr class="odd">
+<td>&lt;=</td>
+<td>Less than or equal to</td>
+</tr>
+<tr class="even">
+<td>&gt;=</td>
+<td>Greater than or equal to</td>
+</tr>
+<tr class="odd">
+<td>==</td>
+<td>Equal to</td>
+</tr>
+<tr class="even">
+<td>!=</td>
+<td>Not equal to</td>
+</tr>
+</tbody>
+</table>
+</div>
 </figure>
 </div>
+<p>Alternatively, we can use <code>filter()</code> from <code>dplyr</code> for the same result.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>iris <span class="sc">%&gt;%</span> </span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Species <span class="sc">==</span> <span class="st">"setosa"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>  Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+1          5.1         3.5          1.4         0.2  setosa
+2          4.9         3.0          1.4         0.2  setosa
+3          4.7         3.2          1.3         0.2  setosa
+4          4.6         3.1          1.5         0.2  setosa
+5          5.0         3.6          1.4         0.2  setosa
+6          5.4         3.9          1.7         0.4  setosa</code></pre>
+</div>
+</div>
+<p><code>filter()</code> is often more readable, especially for beginners, though both methods yield the same output.</p>
+<p>Additionally, we can combine multiple conditions using <code>|</code> (or) and <code>&amp;</code> (and). For instance, to filter the <code>iris</code> dataset for rows where:</p>
+<p>Additionally, we can further combine two or more conditions using <code>|</code> and <code>&amp;</code>:</p>
+<ol type="1">
+<li><code>Species</code> is <code>"setosa"</code>, and</li>
+<li><code>Sepal.Length</code> is greater than 5.6 cm:</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Make an index</span></span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>ind2 <span class="ot">&lt;-</span> iris<span class="sc">$</span>Species <span class="sc">==</span> <span class="st">"setosa"</span> <span class="sc">&amp;</span> iris<span class="sc">$</span>Sepal.Length <span class="sc">&gt;</span> <span class="fl">5.6</span></span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Apply the index to the dataset</span></span>
+<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a>iris[ind2, ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+15          5.8         4.0          1.2         0.2  setosa
+16          5.7         4.4          1.5         0.4  setosa
+19          5.7         3.8          1.7         0.3  setosa</code></pre>
+</div>
+</div>
+<p>Or, with <code>filter()</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>iris <span class="sc">%&gt;%</span> </span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Species <span class="sc">==</span> <span class="st">"setosa"</span> <span class="sc">&amp;</span> Sepal.Length <span class="sc">&gt;</span> <span class="fl">5.6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+1          5.8         4.0          1.2         0.2  setosa
+2          5.7         4.4          1.5         0.4  setosa
+3          5.7         3.8          1.7         0.3  setosa</code></pre>
+</div>
+</div>
+</section>
+<section id="sorting" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="sorting"><span class="header-section-number">6.4</span> Sorting</h2>
+<p>Sorting arranges the rows of a data frame by specific column values.</p>
+<p>To demonstrate, let’s limit <code>iris</code> to its first ten rows for easier display. Using <code>head()</code> will give the top ten rows, while <code>tail()</code> provides the last rows.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>iris_top10 <span class="ot">&lt;-</span> iris <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="dv">10</span>)</span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>iris_top10</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+1           5.1         3.5          1.4         0.2  setosa
+2           4.9         3.0          1.4         0.2  setosa
+3           4.7         3.2          1.3         0.2  setosa
+4           4.6         3.1          1.5         0.2  setosa
+5           5.0         3.6          1.4         0.2  setosa
+6           5.4         3.9          1.7         0.4  setosa
+7           4.6         3.4          1.4         0.3  setosa
+8           5.0         3.4          1.5         0.2  setosa
+9           4.4         2.9          1.4         0.2  setosa
+10          4.9         3.1          1.5         0.1  setosa</code></pre>
+</div>
+</div>
+<p>To sort by a single column, use <code>sort()</code>. Setting <code>decreasing = FALSE</code> sorts in ascending order.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span>(iris_top10<span class="sc">$</span>Sepal.Length, <span class="at">decreasing =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] 4.4 4.6 4.6 4.7 4.9 4.9 5.0 5.0 5.1 5.4</code></pre>
+</div>
+</div>
+<p>Another useful function is <code>order()</code>, which returns the indices and can arrange the entire dataset.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Make an index</span></span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>ind3 <span class="ot">&lt;-</span> <span class="fu">order</span>(iris_top10<span class="sc">$</span>Sepal.Length, <span class="at">decreasing =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Apply the index to the dataset</span></span>
+<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a>iris_top10[ind3, ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+9           4.4         2.9          1.4         0.2  setosa
+4           4.6         3.1          1.5         0.2  setosa
+7           4.6         3.4          1.4         0.3  setosa
+3           4.7         3.2          1.3         0.2  setosa
+2           4.9         3.0          1.4         0.2  setosa
+10          4.9         3.1          1.5         0.1  setosa
+5           5.0         3.6          1.4         0.2  setosa
+8           5.0         3.4          1.5         0.2  setosa
+1           5.1         3.5          1.4         0.2  setosa
+6           5.4         3.9          1.7         0.4  setosa</code></pre>
+</div>
+</div>
+<p>With <code>tidyverse</code>, we have <code>arrange()</code>, equivalent to <code>order()</code> in base R:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>iris_top10 <span class="sc">%&gt;%</span> </span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(Sepal.Length)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+1           4.4         2.9          1.4         0.2  setosa
+2           4.6         3.1          1.5         0.2  setosa
+3           4.6         3.4          1.4         0.3  setosa
+4           4.7         3.2          1.3         0.2  setosa
+5           4.9         3.0          1.4         0.2  setosa
+6           4.9         3.1          1.5         0.1  setosa
+7           5.0         3.6          1.4         0.2  setosa
+8           5.0         3.4          1.5         0.2  setosa
+9           5.1         3.5          1.4         0.2  setosa
+10          5.4         3.9          1.7         0.4  setosa</code></pre>
+</div>
+</div>
+<p>To sort in descending order, use <code>desc()</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>iris_top10 <span class="sc">%&gt;%</span> </span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(Sepal.Length))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+1           5.4         3.9          1.7         0.4  setosa
+2           5.1         3.5          1.4         0.2  setosa
+3           5.0         3.6          1.4         0.2  setosa
+4           5.0         3.4          1.5         0.2  setosa
+5           4.9         3.0          1.4         0.2  setosa
+6           4.9         3.1          1.5         0.1  setosa
+7           4.7         3.2          1.3         0.2  setosa
+8           4.6         3.1          1.5         0.2  setosa
+9           4.6         3.4          1.4         0.3  setosa
+10          4.4         2.9          1.4         0.2  setosa</code></pre>
+</div>
+</div>
+</section>
+<section id="rename" class="level2" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="rename"><span class="header-section-number">6.5</span> Rename</h2>
+<p>First, let’s check the column names.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(iris_top10)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Sepal.Length" "Sepal.Width"  "Petal.Length" "Petal.Width"  "Species"     </code></pre>
+</div>
+</div>
+<p>Suppose we want to rename the <code>species</code> column to <code>type</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(iris_top10)[<span class="dv">5</span>] <span class="ot">&lt;-</span> <span class="st">"type"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Now, if we check the column names again:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(iris_top10)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Sepal.Length" "Sepal.Width"  "Petal.Length" "Petal.Width"  "type"        </code></pre>
+</div>
+</div>
+<p>Alternatively, we can use the <code>rename()</code> function from <code>dplyr</code>. Here, we will rename <code>Sepal.Length</code> to <code>LengthofSepal</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Change the column name</span></span>
+<span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a>iris_top10 <span class="ot">&lt;-</span> </span>
+<span id="cb65-3"><a href="#cb65-3" aria-hidden="true" tabindex="-1"></a>  iris_top10 <span class="sc">%&gt;%</span> </span>
+<span id="cb65-4"><a href="#cb65-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">LengthofSepal =</span> <span class="st">"Sepal.Length"</span>)</span>
+<span id="cb65-5"><a href="#cb65-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-6"><a href="#cb65-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Check the column names</span></span>
+<span id="cb65-7"><a href="#cb65-7" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(iris_top10)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "LengthofSepal" "Sepal.Width"   "Petal.Length"  "Petal.Width"  
+[5] "type"         </code></pre>
+</div>
+</div>
+</section>
+<section id="create-new-column" class="level2" data-number="6.6">
+<h2 data-number="6.6" class="anchored" data-anchor-id="create-new-column"><span class="header-section-number">6.6</span> Create new column</h2>
+<p>Let’s create a smaller iris dataset first.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a>iris_bottom10 <span class="ot">&lt;-</span> <span class="fu">tail</span>(iris, <span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Using base R functions, we can create a new column as follows:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a>iris_bottom10<span class="sc">$</span>Sepal.Lengthx2 <span class="ot">&lt;-</span> iris_bottom10<span class="sc">$</span>Sepal.Length <span class="sc">*</span> <span class="dv">2</span></span>
+<span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(iris_bottom10)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    Sepal.Length Sepal.Width Petal.Length Petal.Width   Species Sepal.Lengthx2
+141          6.7         3.1          5.6         2.4 virginica           13.4
+142          6.9         3.1          5.1         2.3 virginica           13.8
+143          5.8         2.7          5.1         1.9 virginica           11.6
+144          6.8         3.2          5.9         2.3 virginica           13.6
+145          6.7         3.3          5.7         2.5 virginica           13.4
+146          6.7         3.0          5.2         2.3 virginica           13.4</code></pre>
+</div>
+</div>
+<p>Here, we create a new variable <code>Sepal.Lengthx2</code> by multiplying <code>Sepal.Length</code> by 2. Using <code>tidyverse</code>, we can achieve this with <code>mutate()</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a>iris_bottom10 <span class="ot">&lt;-</span> </span>
+<span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a>  iris_bottom10 <span class="sc">%&gt;%</span> </span>
+<span id="cb70-3"><a href="#cb70-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Sepal.Widthx2 =</span> Sepal.Width <span class="sc">*</span> <span class="dv">2</span>)</span>
+<span id="cb70-4"><a href="#cb70-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(iris_bottom10)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    Sepal.Length Sepal.Width Petal.Length Petal.Width   Species Sepal.Lengthx2
+141          6.7         3.1          5.6         2.4 virginica           13.4
+142          6.9         3.1          5.1         2.3 virginica           13.8
+143          5.8         2.7          5.1         1.9 virginica           11.6
+144          6.8         3.2          5.9         2.3 virginica           13.6
+145          6.7         3.3          5.7         2.5 virginica           13.4
+146          6.7         3.0          5.2         2.3 virginica           13.4
+    Sepal.Widthx2
+141           6.2
+142           6.2
+143           5.4
+144           6.4
+145           6.6
+146           6.0</code></pre>
+</div>
+</div>
+</section>
+<section id="change-data-format" class="level2" data-number="6.7">
+<h2 data-number="6.7" class="anchored" data-anchor-id="change-data-format"><span class="header-section-number">6.7</span> Change data format</h2>
+<p>Data can be structured in two primary formats:</p>
+<ul>
+<li><strong>Long format</strong>: Each row represents a single observation.</li>
+<li><strong>Wide format</strong>: Each subject has one row, with variables across columns.</li>
+</ul>
+<p>In long format, each row represents a single observation. This format is commonly used for data manipulation and analysis. Let’s create an example of a long-format dataset. Here, five participants were given a dietary supplement to reduce weight, and the data contains:</p>
+<ol type="1">
+<li><code>id</code>: participant ID</li>
+<li><code>time</code>: either pre- or post-supplement</li>
+<li><code>weight</code>: participant’s weight</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set seed for reproducibility</span></span>
+<span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>) </span>
+<span id="cb72-3"><a href="#cb72-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb72-4"><a href="#cb72-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a long format data</span></span>
+<span id="cb72-5"><a href="#cb72-5" aria-hidden="true" tabindex="-1"></a>data_long <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb72-6"><a href="#cb72-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">id =</span> <span class="fu">rep</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">each =</span> <span class="dv">2</span>),        </span>
+<span id="cb72-7"><a href="#cb72-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">time =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"Pre"</span>, <span class="st">"Post"</span>), <span class="dv">5</span>),   </span>
+<span id="cb72-8"><a href="#cb72-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">weight =</span>  <span class="fu">sample</span>(<span class="at">x =</span> <span class="dv">60</span><span class="sc">:</span><span class="dv">80</span>, <span class="at">size =</span> <span class="dv">10</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)              </span>
+<span id="cb72-9"><a href="#cb72-9" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb72-10"><a href="#cb72-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb72-11"><a href="#cb72-11" aria-hidden="true" tabindex="-1"></a><span class="co"># View the data</span></span>
+<span id="cb72-12"><a href="#cb72-12" aria-hidden="true" tabindex="-1"></a>data_long</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   id time weight
+1   1  Pre     74
+2   1 Post     78
+3   2  Pre     73
+4   2 Post     62
+5   3  Pre     69
+6   3 Post     77
+7   4  Pre     70
+8   4 Post     64
+9   5  Pre     79
+10  5 Post     73</code></pre>
+</div>
+</div>
+<p>In wide format, each subject has a single row, with each measurement in a separate column. Here is <code>data_long</code> converted to wide format.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set seed for reproducibility</span></span>
+<span id="cb74-2"><a href="#cb74-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb74-3"><a href="#cb74-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb74-4"><a href="#cb74-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a wide format data</span></span>
+<span id="cb74-5"><a href="#cb74-5" aria-hidden="true" tabindex="-1"></a>data_wide <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb74-6"><a href="#cb74-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">id =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>,</span>
+<span id="cb74-7"><a href="#cb74-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">Pre =</span> <span class="fu">sample</span>(<span class="dv">60</span><span class="sc">:</span><span class="dv">80</span>, <span class="dv">5</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb74-8"><a href="#cb74-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">Post =</span> <span class="fu">sample</span>(<span class="dv">60</span><span class="sc">:</span><span class="dv">80</span>, <span class="dv">5</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb74-9"><a href="#cb74-9" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb74-10"><a href="#cb74-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb74-11"><a href="#cb74-11" aria-hidden="true" tabindex="-1"></a><span class="co"># View the data</span></span>
+<span id="cb74-12"><a href="#cb74-12" aria-hidden="true" tabindex="-1"></a>data_wide</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  id Pre Post
+1  1  74   77
+2  2  78   70
+3  3  73   64
+4  4  62   79
+5  5  69   73</code></pre>
+</div>
+</div>
+<p>In the wide format, data is often easier to interpret. Converting between long and wide formats is simple in R. To transform <code>data_wide</code> into long format, use <code>pivot_longer()</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a>data_long2 <span class="ot">&lt;-</span> </span>
+<span id="cb76-2"><a href="#cb76-2" aria-hidden="true" tabindex="-1"></a>  data_wide <span class="sc">%&gt;%</span> </span>
+<span id="cb76-3"><a href="#cb76-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="dv">2</span><span class="sc">:</span><span class="dv">3</span>, <span class="at">names_to =</span> <span class="st">"time"</span>, <span class="at">values_to =</span> <span class="st">"weight"</span>)</span>
+<span id="cb76-4"><a href="#cb76-4" aria-hidden="true" tabindex="-1"></a>data_long2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 10 × 3
+      id time  weight
+   &lt;int&gt; &lt;chr&gt;  &lt;int&gt;
+ 1     1 Pre       74
+ 2     1 Post      77
+ 3     2 Pre       78
+ 4     2 Post      70
+ 5     3 Pre       73
+ 6     3 Post      64
+ 7     4 Pre       62
+ 8     4 Post      79
+ 9     5 Pre       69
+10     5 Post      73</code></pre>
+</div>
+</div>
+<p>For <code>pivot_longer()</code>, we need to supply three arguments:</p>
+<ul>
+<li><code>cols</code>: columns to be changed into a long format excluding the id column</li>
+<li><code>names_to</code>: name of a new column which consist of column names from a wide format data</li>
+<li><code>values_to</code>: name of a new column which consist of values from <code>cols</code></li>
+</ul>
+<p>To convert <code>data_long2</code> back to wide format, use <code>pivot_wider()</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a>data_wide2 <span class="ot">&lt;-</span> </span>
+<span id="cb78-2"><a href="#cb78-2" aria-hidden="true" tabindex="-1"></a>  data_long2 <span class="sc">%&gt;%</span> </span>
+<span id="cb78-3"><a href="#cb78-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">id_cols =</span> <span class="st">"id"</span>, <span class="at">names_from =</span> <span class="st">"time"</span>, <span class="at">values_from =</span> <span class="st">"weight"</span>)</span>
+<span id="cb78-4"><a href="#cb78-4" aria-hidden="true" tabindex="-1"></a>data_wide2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 3
+     id   Pre  Post
+  &lt;int&gt; &lt;int&gt; &lt;int&gt;
+1     1    74    77
+2     2    78    70
+3     3    73    64
+4     4    62    79
+5     5    69    73</code></pre>
+</div>
+</div>
+<p>To use <code>pivot_wider()</code>, the three basic arguments needed are:</p>
+<ul>
+<li><code>id_cols</code>: ID column</li>
+<li><code>names_from</code>: name of a column to get the column names for the wide data</li>
+<li><code>values_from</code>: name of a column to get the values from</li>
+</ul>
+<p>Both functions have additional arguments detailed in the <code>Help</code> pane (use <code>?</code> in front of the function name).</p>
+</section>
+<section id="change-variable-type" class="level2" data-number="6.8">
+<h2 data-number="6.8" class="anchored" data-anchor-id="change-variable-type"><span class="header-section-number">6.8</span> Change variable type</h2>
+<p>Here are the main variable types in R:</p>
+<div id="tbl-variable-type-example" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-variable-type-example-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;6.2: Example of each of variable type in R.
+</figcaption>
+<div aria-describedby="tbl-variable-type-example-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Variables</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Integer</td>
+<td>100, 77</td>
+</tr>
+<tr class="even">
+<td>Numeric</td>
+<td>100.2, 77.8</td>
+</tr>
+<tr class="odd">
+<td>Character</td>
+<td>“hello”, “ahmad”</td>
+</tr>
+<tr class="even">
+<td>Logical</td>
+<td>TRUE, FALSE</td>
+</tr>
+<tr class="odd">
+<td>Factor</td>
+<td>“male”, “female”</td>
+</tr>
+<tr class="even">
+<td>Date</td>
+<td>9/7/2024, 9 July 2024</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>The most common types in data are numeric, factor, and date. When importing data from software such as SPSS, STATA, or Excel, R may not always recognise the correct types. Let’s create a sample dataset and explore handling these issues.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a data frame with mixed-up variable types</span></span>
+<span id="cb80-2"><a href="#cb80-2" aria-hidden="true" tabindex="-1"></a>data_messed_up <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb80-3"><a href="#cb80-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">id =</span> <span class="fu">as.character</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>),                </span>
+<span id="cb80-4"><a href="#cb80-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">score =</span> <span class="fu">as.character</span>(<span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>, <span class="dv">6</span>)),    </span>
+<span id="cb80-5"><a href="#cb80-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">gender =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"Male"</span>, <span class="st">"Female"</span>), <span class="at">length.out =</span> <span class="dv">6</span>)</span>
+<span id="cb80-6"><a href="#cb80-6" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb80-7"><a href="#cb80-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb80-8"><a href="#cb80-8" aria-hidden="true" tabindex="-1"></a><span class="co"># View the variable types</span></span>
+<span id="cb80-9"><a href="#cb80-9" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(data_messed_up)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>'data.frame':   6 obs. of  3 variables:
+ $ id    : chr  "1" "2" "3" "4" ...
+ $ score : chr  "25" "90" "91" "69" ...
+ $ gender: chr  "Male" "Female" "Male" "Female" ...</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a><span class="co"># View the data</span></span>
+<span id="cb82-2"><a href="#cb82-2" aria-hidden="true" tabindex="-1"></a>data_messed_up</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  id score gender
+1  1    25   Male
+2  2    90 Female
+3  3    91   Male
+4  4    69 Female
+5  5    98   Male
+6  6    57 Female</code></pre>
+</div>
+</div>
+<p>We can see that <code>score</code> should be numeric and <code>gender</code> a factor. To convert these types, use <code>as.numeric()</code> and <code>as.factor()</code>. Let’s create a copy of <code>data_messed_up</code> for demonstration purposes.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a>data_messed_up2 <span class="ot">&lt;-</span> data_messed_up</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Using base R functions, we can adjust the types:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb85"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb85-1"><a href="#cb85-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Change score column to numeric</span></span>
+<span id="cb85-2"><a href="#cb85-2" aria-hidden="true" tabindex="-1"></a>data_messed_up<span class="sc">$</span>score <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(data_messed_up<span class="sc">$</span>score)</span>
+<span id="cb85-3"><a href="#cb85-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb85-4"><a href="#cb85-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Change gender column to factor</span></span>
+<span id="cb85-5"><a href="#cb85-5" aria-hidden="true" tabindex="-1"></a>data_messed_up<span class="sc">$</span>gender <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(data_messed_up<span class="sc">$</span>gender)</span>
+<span id="cb85-6"><a href="#cb85-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb85-7"><a href="#cb85-7" aria-hidden="true" tabindex="-1"></a><span class="co"># View variable type</span></span>
+<span id="cb85-8"><a href="#cb85-8" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(data_messed_up)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>'data.frame':   6 obs. of  3 variables:
+ $ id    : chr  "1" "2" "3" "4" ...
+ $ score : num  25 90 91 69 98 57
+ $ gender: Factor w/ 2 levels "Female","Male": 2 1 2 1 2 1</code></pre>
+</div>
+</div>
+<p>Using <code>tidyverse</code>, we can achieve the same result with <code>mutate()</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb87"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb87-1"><a href="#cb87-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Change variable types for score and gender</span></span>
+<span id="cb87-2"><a href="#cb87-2" aria-hidden="true" tabindex="-1"></a>data_messed_up2 <span class="ot">&lt;-</span> </span>
+<span id="cb87-3"><a href="#cb87-3" aria-hidden="true" tabindex="-1"></a>  data_messed_up2 <span class="sc">%&gt;%</span> </span>
+<span id="cb87-4"><a href="#cb87-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">score =</span> <span class="fu">as.numeric</span>(score),</span>
+<span id="cb87-5"><a href="#cb87-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">gender =</span> <span class="fu">as.factor</span>(gender))</span>
+<span id="cb87-6"><a href="#cb87-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb87-7"><a href="#cb87-7" aria-hidden="true" tabindex="-1"></a><span class="co"># View variable type</span></span>
+<span id="cb87-8"><a href="#cb87-8" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(data_messed_up2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>'data.frame':   6 obs. of  3 variables:
+ $ id    : chr  "1" "2" "3" "4" ...
+ $ score : num  25 90 91 69 98 57
+ $ gender: Factor w/ 2 levels "Female","Male": 2 1 2 1 2 1</code></pre>
+</div>
+</div>
+<section id="handling-date" class="level3" data-number="6.8.1">
+<h3 data-number="6.8.1" class="anchored" data-anchor-id="handling-date"><span class="header-section-number">6.8.1</span> Handling date</h3>
+<p>Dates can be tricky. For date variables, the standard format is <code>YYYY-MM-DD</code>. Using <code>lubridate</code>, we can work with various date formats easily. Let’s look at a few examples:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb89"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb89-1"><a href="#cb89-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Using base R </span></span>
+<span id="cb89-2"><a href="#cb89-2" aria-hidden="true" tabindex="-1"></a>date_data <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(<span class="st">"2024-11-30"</span>)</span>
+<span id="cb89-3"><a href="#cb89-3" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(date_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> Date[1:1], format: "2024-11-30"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb91"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb91-1"><a href="#cb91-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Using lubridate</span></span>
+<span id="cb91-2"><a href="#cb91-2" aria-hidden="true" tabindex="-1"></a>date_data2 <span class="ot">&lt;-</span> <span class="fu">as_date</span>(<span class="st">"2024-11-30"</span>)</span>
+<span id="cb91-3"><a href="#cb91-3" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(date_data2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> Date[1:1], format: "2024-11-30"</code></pre>
+</div>
+</div>
+<p>For non-standard formats, use <code>lubridate</code> functions <code>ymd()</code>, <code>dmy()</code>, and <code>mdy()</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb93"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb93-1"><a href="#cb93-1" aria-hidden="true" tabindex="-1"></a><span class="co"># DD-MM-YYYY</span></span>
+<span id="cb93-2"><a href="#cb93-2" aria-hidden="true" tabindex="-1"></a>date_data3 <span class="ot">&lt;-</span> <span class="fu">dmy</span>(<span class="st">"30-11-2024"</span>)</span>
+<span id="cb93-3"><a href="#cb93-3" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(date_data3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> Date[1:1], format: "2024-11-30"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb95"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb95-1"><a href="#cb95-1" aria-hidden="true" tabindex="-1"></a><span class="co"># MM-DD-YY</span></span>
+<span id="cb95-2"><a href="#cb95-2" aria-hidden="true" tabindex="-1"></a>date_data4 <span class="ot">&lt;-</span> <span class="fu">mdy</span>(<span class="st">"11-30-2024"</span>)</span>
+<span id="cb95-3"><a href="#cb95-3" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(date_data4)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> Date[1:1], format: "2024-11-30"</code></pre>
+</div>
+</div>
+<p>Correctly formatted date variables allow for operations such as:</p>
+<ul>
+<li><p>Date calculation: adding days to a date.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb97"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb97-1"><a href="#cb97-1" aria-hidden="true" tabindex="-1"></a>date_data4 <span class="sc">+</span> <span class="dv">7</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "2024-12-07"</code></pre>
+</div>
+</div></li>
+<li><p>Extracting date components usch as month and year.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb99"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb99-1"><a href="#cb99-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract month</span></span>
+<span id="cb99-2"><a href="#cb99-2" aria-hidden="true" tabindex="-1"></a><span class="fu">month</span>(date_data4)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 11</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb101"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb101-1"><a href="#cb101-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract year</span></span>
+<span id="cb101-2"><a href="#cb101-2" aria-hidden="true" tabindex="-1"></a><span class="fu">year</span>(date_data4)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2024</code></pre>
+</div>
+</div></li>
+</ul>
+<p>To demonstrate dates in a dataset, we’ll recreate <code>data_messed_up</code> with a date column.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb103"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb103-1"><a href="#cb103-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a data frame with mixed-up variable types</span></span>
+<span id="cb103-2"><a href="#cb103-2" aria-hidden="true" tabindex="-1"></a>data_messed_up <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb103-3"><a href="#cb103-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">id =</span> <span class="fu">as.character</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>),                </span>
+<span id="cb103-4"><a href="#cb103-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">score =</span> <span class="fu">as.character</span>(<span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>, <span class="dv">6</span>)),    </span>
+<span id="cb103-5"><a href="#cb103-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">gender =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"Male"</span>, <span class="st">"Female"</span>), <span class="at">length.out =</span> <span class="dv">6</span>),</span>
+<span id="cb103-6"><a href="#cb103-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">date =</span> <span class="fu">as.character</span>(<span class="fu">Sys.Date</span>() <span class="sc">-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>)</span>
+<span id="cb103-7"><a href="#cb103-7" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb103-8"><a href="#cb103-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-9"><a href="#cb103-9" aria-hidden="true" tabindex="-1"></a><span class="co"># View variable type</span></span>
+<span id="cb103-10"><a href="#cb103-10" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(data_messed_up)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>'data.frame':   6 obs. of  4 variables:
+ $ id    : chr  "1" "2" "3" "4" ...
+ $ score : chr  "92" "9" "93" "72" ...
+ $ gender: chr  "Male" "Female" "Male" "Female" ...
+ $ date  : chr  "2024-11-11" "2024-11-10" "2024-11-09" "2024-11-08" ...</code></pre>
+</div>
+</div>
+<p>The <code>date</code> column is recognised as a character. To convert <code>date</code> to a date format, use <code>as_date()</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb105"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb105-1"><a href="#cb105-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Change variable types for score, gender, and date</span></span>
+<span id="cb105-2"><a href="#cb105-2" aria-hidden="true" tabindex="-1"></a>data_messed_up <span class="ot">&lt;-</span> </span>
+<span id="cb105-3"><a href="#cb105-3" aria-hidden="true" tabindex="-1"></a>  data_messed_up <span class="sc">%&gt;%</span> </span>
+<span id="cb105-4"><a href="#cb105-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">score =</span> <span class="fu">as.numeric</span>(score),</span>
+<span id="cb105-5"><a href="#cb105-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">gender =</span> <span class="fu">as.factor</span>(gender),</span>
+<span id="cb105-6"><a href="#cb105-6" aria-hidden="true" tabindex="-1"></a>         <span class="at">date =</span> <span class="fu">as_date</span>(date))</span>
+<span id="cb105-7"><a href="#cb105-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb105-8"><a href="#cb105-8" aria-hidden="true" tabindex="-1"></a><span class="co"># View variable type</span></span>
+<span id="cb105-9"><a href="#cb105-9" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(data_messed_up)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>'data.frame':   6 obs. of  4 variables:
+ $ id    : chr  "1" "2" "3" "4" ...
+ $ score : num  92 9 93 72 26 7
+ $ gender: Factor w/ 2 levels "Female","Male": 2 1 2 1 2 1
+ $ date  : Date, format: "2024-11-11" "2024-11-10" ...</code></pre>
+</div>
+</div>
+<p>The simplest solution for the date issue is to make sure we properly input the date according to the right format (<code>YYYY-MM-DD</code>) during the data collection process properly.</p>
+</section>
+</section>
+<section id="merge-datasets" class="level2" data-number="6.9">
+<h2 data-number="6.9" class="anchored" data-anchor-id="merge-datasets"><span class="header-section-number">6.9</span> Merge datasets</h2>
+<p>If you collect data from different sources, you may need to combine datasets by row or column. <code>rbind()</code> combines datasets by row, while <code>cbind()</code> combines them by column.</p>
+<p>Let us see how to combine two iris datasets.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb107"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb107-1"><a href="#cb107-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Data collected from area A</span></span>
+<span id="cb107-2"><a href="#cb107-2" aria-hidden="true" tabindex="-1"></a>data1 <span class="ot">&lt;-</span> iris</span>
+<span id="cb107-3"><a href="#cb107-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb107-4"><a href="#cb107-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Data collected from area B</span></span>
+<span id="cb107-5"><a href="#cb107-5" aria-hidden="true" tabindex="-1"></a>data2 <span class="ot">&lt;-</span> iris</span>
+<span id="cb107-6"><a href="#cb107-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb107-7"><a href="#cb107-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Combine both datasets by a row</span></span>
+<span id="cb107-8"><a href="#cb107-8" aria-hidden="true" tabindex="-1"></a>data_combined_row <span class="ot">&lt;-</span> <span class="fu">rbind</span>(data1, data2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Now, we can check the dimensions of the data. The first element represents a row and the second element represents the column.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb108"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb108-1"><a href="#cb108-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Dimension of data1</span></span>
+<span id="cb108-2"><a href="#cb108-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(data1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 150   5</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb110"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb110-1"><a href="#cb110-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Dimension of data2</span></span>
+<span id="cb110-2"><a href="#cb110-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(data2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 150   5</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb112"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb112-1"><a href="#cb112-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Dimension of the combined data</span></span>
+<span id="cb112-2"><a href="#cb112-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(data_combined_row)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 300   5</code></pre>
+</div>
+</div>
+<p>We can see that the rows of <code>data1</code> and <code>data2</code> each are 150. Combining both data by a row gives us 300 rows. It is to be noted that to use <code>rbind()</code>, both data should have the same column numbers and names. Additionally, <code>rbind()</code> is not limited to two data only.</p>
+<p>Next, let us see the <code>cbind()</code>. Using the same data, we can combine both data by a column.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb114"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb114-1"><a href="#cb114-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Combine both datasets by a column</span></span>
+<span id="cb114-2"><a href="#cb114-2" aria-hidden="true" tabindex="-1"></a>data_combined_col <span class="ot">&lt;-</span> <span class="fu">cbind</span>(data1, data2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Thus, by further checking the dimension, we can see that the total column of <code>data_combined_col</code> is 10, which is the sum of 5 columns in each of the <code>data1</code> and <code>data2</code>, while the row remained the same.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb115"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb115-1"><a href="#cb115-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Dimension of data1</span></span>
+<span id="cb115-2"><a href="#cb115-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(data1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 150   5</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb117"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb117-1"><a href="#cb117-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Dimension of data2</span></span>
+<span id="cb117-2"><a href="#cb117-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(data2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 150   5</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb119"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb119-1"><a href="#cb119-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Dimension of the combined data</span></span>
+<span id="cb119-2"><a href="#cb119-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(data_combined_col)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 150  10</code></pre>
+</div>
+</div>
+<p>However, similar to <code>rbind()</code>, to use the <code>cbind()</code>, the rows of both data should be identical. If participant A is in the first row of <code>data1</code>, the, in <code>data2</code>, participant A should also be in the first row.</p>
+<p>There is another set of functions that is more efficient than <code>cbind()</code>, in which we can combine two or more datasets according to the id. Let us create two datasets that are related and have the same ID.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb121"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb121-1"><a href="#cb121-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set seed for reproducibility</span></span>
+<span id="cb121-2"><a href="#cb121-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb121-3"><a href="#cb121-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb121-4"><a href="#cb121-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the first half of the data</span></span>
+<span id="cb121-5"><a href="#cb121-5" aria-hidden="true" tabindex="-1"></a>data_half1 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb121-6"><a href="#cb121-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">name =</span> <span class="fu">c</span>(<span class="st">"Ahmad"</span>, <span class="st">"Ali"</span>, <span class="st">"Cheng"</span>, <span class="st">"Rama"</span>, <span class="st">"Wei"</span>),</span>
+<span id="cb121-7"><a href="#cb121-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">height_cm =</span> <span class="fu">sample</span>(<span class="dv">160</span><span class="sc">:</span><span class="dv">180</span>, <span class="dv">5</span>, <span class="at">replace =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb121-8"><a href="#cb121-8" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb121-9"><a href="#cb121-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb121-10"><a href="#cb121-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the second half of the data</span></span>
+<span id="cb121-11"><a href="#cb121-11" aria-hidden="true" tabindex="-1"></a>data_half2 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb121-12"><a href="#cb121-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">name =</span> <span class="fu">c</span>(<span class="st">"Ahmad"</span>, <span class="st">"Ali"</span>, <span class="st">"Cheng"</span>, <span class="st">"Rama"</span>, <span class="st">"Karim"</span>),</span>
+<span id="cb121-13"><a href="#cb121-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">weight_kg =</span> <span class="fu">sample</span>(<span class="dv">70</span><span class="sc">:</span><span class="dv">90</span>, <span class="dv">5</span>, <span class="at">replace =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb121-14"><a href="#cb121-14" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb121-15"><a href="#cb121-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb121-16"><a href="#cb121-16" aria-hidden="true" tabindex="-1"></a><span class="co"># The first dataset</span></span>
+<span id="cb121-17"><a href="#cb121-17" aria-hidden="true" tabindex="-1"></a>data_half1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   name height_cm
+1 Ahmad       174
+2   Ali       178
+3 Cheng       173
+4  Rama       162
+5   Wei       169</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb123"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb123-1"><a href="#cb123-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The second dataset</span></span>
+<span id="cb123-2"><a href="#cb123-2" aria-hidden="true" tabindex="-1"></a>data_half2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   name weight_kg
+1 Ahmad        87
+2   Ali        80
+3 Cheng        74
+4  Rama        83
+5 Karim        88</code></pre>
+</div>
+</div>
+<p>Notice that the last row of both datasets is not similar. To combine both datasets, we can use either <code>left_join()</code> or <code>right_join()</code>. Both produce the same result. If there is a mismatch between the two datasets, <code>left_join()</code> will keep the first dataset as a reference, and any of the id of the second dataset that does not match the first one will be removed. <code>right_join()</code> works similar to the <code>left_join()</code> but in the opposite.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb125"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb125-1"><a href="#cb125-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Combine the data</span></span>
+<span id="cb125-2"><a href="#cb125-2" aria-hidden="true" tabindex="-1"></a>data_full_left <span class="ot">&lt;-</span> </span>
+<span id="cb125-3"><a href="#cb125-3" aria-hidden="true" tabindex="-1"></a>  data_half1 <span class="sc">%&gt;%</span> <span class="co">#first datasets</span></span>
+<span id="cb125-4"><a href="#cb125-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(data_half2, <span class="at">by =</span> <span class="st">"name"</span>) <span class="co">#second datasets</span></span>
+<span id="cb125-5"><a href="#cb125-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb125-6"><a href="#cb125-6" aria-hidden="true" tabindex="-1"></a><span class="co"># View the combined data</span></span>
+<span id="cb125-7"><a href="#cb125-7" aria-hidden="true" tabindex="-1"></a>data_full_left</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   name height_cm weight_kg
+1 Ahmad       174        87
+2   Ali       178        80
+3 Cheng       173        74
+4  Rama       162        83
+5   Wei       169        NA</code></pre>
+</div>
+</div>
+<p>We can see that <code>karim</code> in the second dataset is excluded. Let’s see what will happen if we use <code>right_join()</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb127"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb127-1"><a href="#cb127-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Combine the data</span></span>
+<span id="cb127-2"><a href="#cb127-2" aria-hidden="true" tabindex="-1"></a>data_full_right <span class="ot">&lt;-</span> </span>
+<span id="cb127-3"><a href="#cb127-3" aria-hidden="true" tabindex="-1"></a>  data_half1 <span class="sc">%&gt;%</span> <span class="co">#first datasets</span></span>
+<span id="cb127-4"><a href="#cb127-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">right_join</span>(data_half2, <span class="at">by =</span> <span class="st">"name"</span>) <span class="co">#second datasets</span></span>
+<span id="cb127-5"><a href="#cb127-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb127-6"><a href="#cb127-6" aria-hidden="true" tabindex="-1"></a><span class="co"># View the combined data</span></span>
+<span id="cb127-7"><a href="#cb127-7" aria-hidden="true" tabindex="-1"></a>data_full_right</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   name height_cm weight_kg
+1 Ahmad       174        87
+2   Ali       178        80
+3 Cheng       173        74
+4  Rama       162        83
+5 Karim        NA        88</code></pre>
+</div>
+</div>
+<p>We can see that <code>Wei</code> in the first dataset is excluded. To include all the participants, despite the mismatch of the id is by using <code>full_join()</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb129"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb129-1"><a href="#cb129-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Combine the data</span></span>
+<span id="cb129-2"><a href="#cb129-2" aria-hidden="true" tabindex="-1"></a>data_full <span class="ot">&lt;-</span> </span>
+<span id="cb129-3"><a href="#cb129-3" aria-hidden="true" tabindex="-1"></a>  data_half1 <span class="sc">%&gt;%</span> </span>
+<span id="cb129-4"><a href="#cb129-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">full_join</span>(data_half2, <span class="at">by =</span> <span class="st">"name"</span>) </span>
+<span id="cb129-5"><a href="#cb129-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb129-6"><a href="#cb129-6" aria-hidden="true" tabindex="-1"></a><span class="co"># View the combined data</span></span>
+<span id="cb129-7"><a href="#cb129-7" aria-hidden="true" tabindex="-1"></a>data_full</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   name height_cm weight_kg
+1 Ahmad       174        87
+2   Ali       178        80
+3 Cheng       173        74
+4  Rama       162        83
+5   Wei       169        NA
+6 Karim        NA        88</code></pre>
+</div>
+</div>
+<p>Both <code>Wei</code> and <code>Karim</code> are kept in the combined dataset. Additionally, there is <code>inner_join()</code>, which will exclude both <code>Wei</code> and <code>Karim</code>. This function keeps the data that the <code>name</code> is present in both datasets only.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb131"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb131-1"><a href="#cb131-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Combine the data</span></span>
+<span id="cb131-2"><a href="#cb131-2" aria-hidden="true" tabindex="-1"></a>data_full_inner <span class="ot">&lt;-</span> </span>
+<span id="cb131-3"><a href="#cb131-3" aria-hidden="true" tabindex="-1"></a>  data_half1 <span class="sc">%&gt;%</span> </span>
+<span id="cb131-4"><a href="#cb131-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">inner_join</span>(data_half2, <span class="at">by =</span> <span class="st">"name"</span>) </span>
+<span id="cb131-5"><a href="#cb131-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb131-6"><a href="#cb131-6" aria-hidden="true" tabindex="-1"></a><span class="co"># View the combined data</span></span>
+<span id="cb131-7"><a href="#cb131-7" aria-hidden="true" tabindex="-1"></a>data_full_inner</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   name height_cm weight_kg
+1 Ahmad       174        87
+2   Ali       178        80
+3 Cheng       173        74
+4  Rama       162        83</code></pre>
+</div>
+</div>
+</section>
+<section id="chapter-summary" class="level2" data-number="6.10">
+<h2 data-number="6.10" class="anchored" data-anchor-id="chapter-summary"><span class="header-section-number">6.10</span> Chapter summary</h2>
+<p>In this chapter, we covered the most common and basic operations in data wrangling. More operations were not covered in this chapter as this book is intended for beginners.</p>
+<p>To summarise, we have covered:</p>
+<ul>
+<li>How to select a column and a row</li>
+<li>How to filter a dataset based on a condition applied to columns</li>
+<li>How to rename and create a column</li>
+<li>How to manage variable types</li>
+<li>How to combine several datasets into one</li>
+</ul>
+</section>
+<section id="revision" class="level2" data-number="6.11">
+<h2 data-number="6.11" class="anchored" data-anchor-id="revision"><span class="header-section-number">6.11</span> Revision</h2>
+<ol type="1">
+<li><p>Load <code>mtcars</code> dataset in R.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb133"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb133-1"><a href="#cb133-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(mtcars)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                   mpg cyl disp  hp drat    wt  qsec vs am gear carb
+Mazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
+Mazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
+Datsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1
+Hornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1
+Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2
+Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre>
+</div>
+</div></li>
+<li><p>Read about<code>mtcars</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb135"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb135-1"><a href="#cb135-1" aria-hidden="true" tabindex="-1"></a>?mtcars</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></li>
+<li><p>How many cars have <code>mpg</code> &gt; 25?</p></li>
+<li><p>How many cars have <code>mpg</code> &gt; 25 and a number of carburetors of 2?</p></li>
+<li><p>How many cars have a V-shaped engine?</p></li>
+<li><p>Change <code>vs</code> and <code>am</code> into a factor.</p></li>
+<li><p>Change the wide format data below into a long or tidy format.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb136"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb136-1"><a href="#cb136-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set seed for reproducibility</span></span>
+<span id="cb136-2"><a href="#cb136-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)  </span>
+<span id="cb136-3"><a href="#cb136-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb136-4"><a href="#cb136-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a wide format data</span></span>
+<span id="cb136-5"><a href="#cb136-5" aria-hidden="true" tabindex="-1"></a>data_wide <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb136-6"><a href="#cb136-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">id =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>,</span>
+<span id="cb136-7"><a href="#cb136-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">time1 =</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>, <span class="dv">10</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb136-8"><a href="#cb136-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">time2 =</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>, <span class="dv">10</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb136-9"><a href="#cb136-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">time3 =</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>, <span class="dv">10</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>), </span>
+<span id="cb136-10"><a href="#cb136-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">age =</span> <span class="fu">sample</span>(<span class="dv">18</span><span class="sc">:</span><span class="dv">80</span>, <span class="dv">10</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb136-11"><a href="#cb136-11" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb136-12"><a href="#cb136-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb136-13"><a href="#cb136-13" aria-hidden="true" tabindex="-1"></a><span class="co"># View the data frame</span></span>
+<span id="cb136-14"><a href="#cb136-14" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data_wide)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  id time1 time2 time3 age
+1  1    31    90    26  32
+2  2    79    91     7  49
+3  3    51    69    42  59
+4  4    14    91     9  62
+5  5    67    57    83  24
+6  6    42    92    36  26</code></pre>
+</div>
+</div>
+<p>The result of the long format data should appear like this.</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: center;">id</th>
+<th style="text-align: center;">age</th>
+<th style="text-align: center;">time_points</th>
+<th style="text-align: center;">time_minute</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">32</td>
+<td style="text-align: center;">time1</td>
+<td style="text-align: center;">31</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">32</td>
+<td style="text-align: center;">time2</td>
+<td style="text-align: center;">90</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">32</td>
+<td style="text-align: center;">time3</td>
+<td style="text-align: center;">26</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">49</td>
+<td style="text-align: center;">time1</td>
+<td style="text-align: center;">79</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">49</td>
+<td style="text-align: center;">time2</td>
+<td style="text-align: center;">91</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">49</td>
+<td style="text-align: center;">time3</td>
+<td style="text-align: center;">7</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">59</td>
+<td style="text-align: center;">time1</td>
+<td style="text-align: center;">51</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">59</td>
+<td style="text-align: center;">time2</td>
+<td style="text-align: center;">69</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">59</td>
+<td style="text-align: center;">time3</td>
+<td style="text-align: center;">42</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">62</td>
+<td style="text-align: center;">time1</td>
+<td style="text-align: center;">14</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">62</td>
+<td style="text-align: center;">time2</td>
+<td style="text-align: center;">91</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">62</td>
+<td style="text-align: center;">time3</td>
+<td style="text-align: center;">9</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">24</td>
+<td style="text-align: center;">time1</td>
+<td style="text-align: center;">67</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">24</td>
+<td style="text-align: center;">time2</td>
+<td style="text-align: center;">57</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">24</td>
+<td style="text-align: center;">time3</td>
+<td style="text-align: center;">83</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">26</td>
+<td style="text-align: center;">time1</td>
+<td style="text-align: center;">42</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">26</td>
+<td style="text-align: center;">time2</td>
+<td style="text-align: center;">92</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">26</td>
+<td style="text-align: center;">time3</td>
+<td style="text-align: center;">36</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">58</td>
+<td style="text-align: center;">time1</td>
+<td style="text-align: center;">50</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">58</td>
+<td style="text-align: center;">time2</td>
+<td style="text-align: center;">9</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">58</td>
+<td style="text-align: center;">time3</td>
+<td style="text-align: center;">78</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">27</td>
+<td style="text-align: center;">time1</td>
+<td style="text-align: center;">43</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">27</td>
+<td style="text-align: center;">time2</td>
+<td style="text-align: center;">93</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">27</td>
+<td style="text-align: center;">time3</td>
+<td style="text-align: center;">81</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">40</td>
+<td style="text-align: center;">time1</td>
+<td style="text-align: center;">14</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">40</td>
+<td style="text-align: center;">time2</td>
+<td style="text-align: center;">99</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">40</td>
+<td style="text-align: center;">time3</td>
+<td style="text-align: center;">43</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">44</td>
+<td style="text-align: center;">time1</td>
+<td style="text-align: center;">25</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">44</td>
+<td style="text-align: center;">time2</td>
+<td style="text-align: center;">72</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">44</td>
+<td style="text-align: center;">time3</td>
+<td style="text-align: center;">76</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div></li>
+</ol>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

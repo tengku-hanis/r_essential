@@ -1,5 +1,5 @@
 ---
-title: "Loops and functions"
+title: "Loop, function, and apply"
 ---
 
 This chapter is currently under construction. Stay tuned for updates!

@@ -380,7 +380,7 @@ tidyverse::tidyverse_packages(include_self = FALSE) |>
 
 ## Pipe operators
 
-There two types of pipe in R:
+There are two types of pipe in R:
 
 1.  `|>`: this pipe is from base R, first introduced in R version 4.1.0.
 2.  `%>%`: this pipe is from the `magrittr` package, which presented `tidyverse`.
