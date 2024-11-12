@@ -231,8 +231,6 @@ iris %>%
 
 Additionally, we can combine multiple conditions using `|` (or) and `&` (and). For instance, to filter the `iris` dataset for rows where:
 
-Additionally, we can further combine two or more conditions using `|` and `&`:
-
 1.  `Species` is `"setosa"`, and
 2.  `Sepal.Length` is greater than 5.6 cm:
 
