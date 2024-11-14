@@ -454,7 +454,7 @@
     "href": "plotting.html",
     "title": "6  Data visualisation",
     "section": "",
-    "text": "This chapter is currently under construction. Stay tuned for updates!",
+    "text": "6.1 Load packages\nPlease load a tidyverse package before proceeding to the next section. We do not need to load the ggplot2 package as it is part of the tidyverse meta package.\nlibrary(tidyverse)",
     "crumbs": [
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Data visualisation</span>"
     ]
@@ -497,6 +497,86 @@
     "text": "This chapter is currently under construction. Stay tuned for updates!",
     "crumbs": [
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>Summary</span>"
+    ]
+  },
+  {
+    "objectID": "plotting.html#data",
+    "href": "plotting.html#data",
+    "title": "6  Data visualisation",
+    "section": "6.2 Data",
+    "text": "6.2 Data\nIn this chapter, we going to utilise ChickWeight a built-in dataset in R. This dataset is about the effect of different diet regimens on the weight of the chicks.\n\n# More info about the ChickWeight data\n?ChickWeight\ndata(\"ChickWeight\")\n\nLet’s create a new variable from the Time variable. In this dataset, the weight of the chicks was weighted each day until 21 days.\n\nchick_data &lt;- \n  ChickWeight %&gt;% \n  mutate(Time_group = cut(Time, breaks = 3, labels = c(\"Period 1\", \"Period 2\", \"Period 3\")))\n\nWe can check the variables.\n\nstr(chick_data)\n\nClasses 'nfnGroupedData', 'nfGroupedData', 'groupedData' and 'data.frame':  578 obs. of  5 variables:\n $ weight    : num  42 51 59 64 76 93 106 125 149 171 ...\n $ Time      : num  0 2 4 6 8 10 12 14 16 18 ...\n $ Chick     : Ord.factor w/ 50 levels \"18\"&lt;\"16\"&lt;\"15\"&lt;..: 15 15 15 15 15 15 15 15 15 15 ...\n $ Diet      : Factor w/ 4 levels \"1\",\"2\",\"3\",\"4\": 1 1 1 1 1 1 1 1 1 1 ...\n $ Time_group: Factor w/ 3 levels \"Period 1\",\"Period 2\",..: 1 1 1 1 2 2 2 2 3 3 ...\n\n\nThe second data we going to use is ToothGrowth. The data is about the effect of vitamin C on tooth growth in guinea pigs.\n\n# More info about the data\n?ToothGrowth\ndata(\"ToothGrowth\")\n\nLet’s create a new variable based variable dose.\n\ntooth_data &lt;- \n  ToothGrowth %&gt;% \n  mutate(dose_group = case_when(dose == 0.5 ~ \"low\",\n                                dose == 1 ~ \"intermediate\",\n                                .default = \"high\"),\n         dose_group = as.factor(dose_group))\n\nHere, we use case_when() to classify the dose into 3 groups:\n\n0.5 as low dose\n1 as intermediate dose\n2 as high dose\n\n\n# Dose variable\ntable(tooth_data$dose)\n\n\n0.5   1   2 \n 20  20  20 \n\n# Dose group variable\ntable(tooth_data$dose_group)\n\n\n        high intermediate          low \n          20           20           20 \n\n\nThen, we can check the variable types.\n\nstr(tooth_data)\n\n'data.frame':   60 obs. of  4 variables:\n $ len       : num  4.2 11.5 7.3 5.8 6.4 10 11.2 11.2 5.2 7 ...\n $ supp      : Factor w/ 2 levels \"OJ\",\"VC\": 2 2 2 2 2 2 2 2 2 2 ...\n $ dose      : num  0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 ...\n $ dose_group: Factor w/ 3 levels \"high\",\"intermediate\",..: 3 3 3 3 3 3 3 3 3 3 ...\n\n\nLastly, the third data that we going to use in this chapter is the cars dataset, another built-in dataset in R. The data is about the speed of the cars and the distances taken by the cars to stop.\n\n# More info about the data\n?cars\ndata(\"cars\")\n\nNext, we going to create a new variable, a type of car.\n\n# Set seed for reproducibility\nset.seed(123)\n\n# Create a new variable\ncars_data &lt;- \n  cars %&gt;% \n  mutate(car = sample(c(\"A\", \"B\", \"C\"), size = 50, replace = TRUE),\n         car = as.factor(car))\n\nWe can check the new variable by using table().\n\ntable(cars_data$car)\n\n\n A  B  C \n16 15 19 \n\n\nAlso, we need to check the variable type.\n\nstr(cars_data)\n\n'data.frame':   50 obs. of  3 variables:\n $ speed: num  4 4 7 7 8 9 10 10 10 11 ...\n $ dist : num  2 10 4 22 16 10 18 26 34 17 ...\n $ car  : Factor w/ 3 levels \"A\",\"B\",\"C\": 3 3 3 2 3 2 2 2 3 1 ...",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Data visualisation</span>"
+    ]
+  },
+  {
+    "objectID": "plotting.html#barplot",
+    "href": "plotting.html#barplot",
+    "title": "6  Data visualisation",
+    "section": "6.3 Barplot",
+    "text": "6.3 Barplot\nBarplot is utilised when a variable is categorical. Let’s explore the ChickWeight data. To use barplot(), the data should be a matrix.\n\ndiet_table &lt;- \n  chick_data %&gt;% \n  select(Diet) %&gt;% \n  table()\n\nNext, we can plot the Diet information.\n\nbarplot(diet_table)\n\n\n\n\n\n\n\n\nLet’s beautify the plot by setting up a colour, axis label and title. The arguments needed for those are:\n\ncol: specifies the colour.\nxlab: name of the x-axis.\nylab: name of the y-axis.\nmain: the title of the barplot.\n\n\nbarplot(diet_table, col = \"steelblue\", \n        xlab = \"Diet regimen\", \n        ylab = \"Number of chicks\", \n        main = \"Protein diet regimens received by the chicks\")\n\n\n\n\n\n\n\n\nNow, let’s do this in ggplot2. In ggplot2, the R codes are stacked on one over another. ggplot() initialises a ggplot object, and it sort of sets up the canvas for the plot. This part is aaplies to all the plots in ggplot2.\n\nggplot()\n\n\n\n\n\n\n\n\nNext, we specify what type of plots that we want. Here, by using geom_bar(), we can see that the x- and y-axis are labelled.\n\nggplot() +\n  geom_bar()\n\n\n\n\n\n\n\n\nLet’s supply the data for the barplot. The x argument specifies the column on the x-axis that we want to plot.\n\nchick_data %&gt;% \n  ggplot(aes(x = Diet)) +\n  geom_bar()\n\n\n\n\n\n\n\n\nWe can further beautify the plot by adding colour, labelling the axis, putting a title, and changing the theme of the plot. The arguments needed are:\n\nfill: specifies the colour.\nx: name of the x-axis.\ny: name of the y-axis.\ntitle: the title of the barplot.\ntheme_bw(): specify the theme of the barplot.\n\n\nchick_data %&gt;% \n  ggplot(aes(x = Diet)) +\n  geom_bar(fill = \"steelblue\") +\n  labs(title = \"Protein diet regimens received by the chicks\", \n       x = \"Diet regimen\",\n       y = \"Number of chicks\") +\n  theme_bw()\n\n\n\n\n\n\n\n\nWe can further add another variable, Time_group, that we created earlier. We remove the colour argument and add these arguments:\n\nfill in ggplot(): another group variable (must be a factor).\nposition: dodge position allows us to maintain the vertical position of the plot.\nfill in labs(): the legend title.\n\n\nchick_data %&gt;% \n  ggplot(aes(x = Diet, fill = Time_group)) +\n  geom_bar(position = \"dodge\") +\n  labs(title = \"Protein diet regimens received by the chicks\", \n       x = \"Diet regimen\",\n       y = \"Number of chicks\",\n       fill = \"Time period:\") +\n  theme_bw()",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Data visualisation</span>"
+    ]
+  },
+  {
+    "objectID": "plotting.html#histogram",
+    "href": "plotting.html#histogram",
+    "title": "6  Data visualisation",
+    "section": "6.4 Histogram",
+    "text": "6.4 Histogram\nA histogram is used when a variable is numerical. It reflects the frequency distribution of the data.\nLet’s do the histogram in base R.\n\nhist(chick_data$weight)\n\n\n\n\n\n\n\n\nWe can see that from the histogram, most chicks in our data weigh around 50-100 grams regardless of time and diet regimen. We can further beautify the histogram by adding a colour, and naming the x-axis and the title. The arguments are similar to the barplot previously.\n\nhist(chick_data$weight,\n     xlab = \"Weight in grams\",\n     ylab = \"Frequency of the chicks\",\n     main = \"Histogram of the weight of the chicks (grams)\",\n     col = \"lightgreen\")\n\n\n\n\n\n\n\n\nNext, let’s do the basic histogram in ggplot2 using geom_histogram(). The bins specifies the number of intervals used to group the data. By bins = 50, we divide the data into 50 equally spaced intervals or bins.\n\nchick_data %&gt;% \n  ggplot(aes(x = weight)) +\n  geom_histogram(bins = 50)\n\n\n\n\n\n\n\n\nWe can add a colour, title, and axis labels, and change the theme.\n\nchick_data %&gt;% \n  ggplot(aes(x = weight)) +\n  geom_histogram(bins = 50, fill = \"lightgreen\") +\n  labs(title = \"Histogram of the weight of the chicks (grams)\",\n       x = \"Weight in grams\",\n       y = \"Frequency of the chicks\") +\n  theme_minimal()\n\n\n\n\n\n\n\n\nWe can also add another variable (a factor variable). Let’s say we want to see the distribution of the chick’s weight across different diet regimens. However, instead of displaying all groups of diet regimens in a single plot, we display it across different plots in rows. facet_grid() specifies which column to use to divide across the rows.\n\nchick_data %&gt;% \n  ggplot(aes(x = weight)) +\n  geom_histogram(bins = 20) +\n  labs(title = \"Histogram of the weight of the chicks (grams)\",\n       x = \"Weight in grams\",\n       y = \"Frequency of the chicks\") +\n  facet_grid(rows = vars(Diet)) +\n  theme_minimal()\n\n\n\n\n\n\n\n\nHere, we can see more clearly that the weight of the chicks in diet regimen 1 is skewed to the left side, while the weight of the chicks in diet regimen 4 is distributed more uniformly.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Data visualisation</span>"
+    ]
+  },
+  {
+    "objectID": "plotting.html#boxplot",
+    "href": "plotting.html#boxplot",
+    "title": "6  Data visualisation",
+    "section": "6.5 Boxplot",
+    "text": "6.5 Boxplot\nBoxplot is utilised when a variable is numerical. The main use of the boxplot is to display the spread of the data and further identify outliers and extreme values. Outliers are observations that lie far from the majority of the data. An extreme value may not be an outlier, but an outlier is always an extreme value.\nLet’s plot the boxplot using base R.\n\nboxplot(tooth_data$len)\n\n\n\n\n\n\n\n\nWe can further beautify the plot.\n\nboxplot(tooth_data$len,\n        col = \"orange\",\n        main = \"Boxplot of the tooth length of the guinea pigs\")\n\n\n\n\n\n\n\n\nLet’s do a similar boxplot using ggplot2.\n\ntooth_data %&gt;% \n  ggplot(aes(y = len)) +\n  geom_boxplot()\n\n\n\n\n\n\n\n\nTo beautify the plot.\n\ntooth_data %&gt;% \n  ggplot(aes(y = len)) +\n  geom_boxplot(fill = \"orange\") +\n  labs(title = \"Boxplot the tooth length of the guinea pigs\",\n       y = \"Length of tooth\")\n\n\n\n\n\n\n\n\nWe can further divide the boxplots by dose_group.\n\ntooth_data %&gt;% \n  ggplot(aes(x = dose_group, y = len)) +\n  geom_boxplot(fill = \"orange\") +\n  labs(title = \"Boxplot the tooth length of the guinea pigs\",\n       y = \"Length of tooth\",\n       x = \"Dose groups\") +\n  theme_classic()\n\n\n\n\n\n\n\n\nWe can see that we may have an outlier in a low-dose group.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Data visualisation</span>"
+    ]
+  },
+  {
+    "objectID": "plotting.html#violin-plot",
+    "href": "plotting.html#violin-plot",
+    "title": "6  Data visualisation",
+    "section": "6.6 Violin plot",
+    "text": "6.6 Violin plot\nA violin plot allows us to visualise the distribution of the numeric variable according to a factor variable. It is a combination of a boxplot and a density plot. In contrast to the boxplot, the violin plot needs two variables.\nThere is no function in base R to plot the violin plot. However, we can use ggplot2 to plot the violin plot.\n\ntooth_data %&gt;% \n  ggplot(aes(x = len, y = dose_group)) +\n  geom_violin()\n\n\n\n\n\n\n\n\nWe can further beautify the plot.\n\ntooth_data %&gt;% \n  ggplot(aes(x = len, y = dose_group)) +\n  geom_violin(fill = \"pink\") +\n  labs(title = \"Violin plot of the tooth length based on the dose group\",\n       y = \"Dose group\",\n       x = \"Length of the tooth\")\n\n\n\n\n\n\n\n\nWe can further add the boxplot on top of the violin plot.\n\ntooth_data %&gt;% \n  ggplot(aes(x = len, y = dose_group)) +\n  geom_violin(fill = \"pink\", alpha = 0.4) +\n  geom_boxplot(width = 0.1, color = \"red\") +\n  labs(title = \"Violin plot of the tooth length based on the dose group\",\n       y = \"Dose group\",\n       x = \"Length of the tooth\") +\n  theme_bw()\n\n\n\n\n\n\n\n\nThe argument width specifies the width of the boxplot and alpha specifies the colour density.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Data visualisation</span>"
+    ]
+  },
+  {
+    "objectID": "plotting.html#scatter-plot",
+    "href": "plotting.html#scatter-plot",
+    "title": "6  Data visualisation",
+    "section": "6.7 Scatter plot",
+    "text": "6.7 Scatter plot\nScatter plots allow us to plot two continuous variables.\nLet’s plot a scatter plot using base R. We going to use the last dataset, cars_data.\n\nplot(x = cars_data$speed, y = cars_data$dist)\n\n\n\n\n\n\n\n\nWe can see that as the speed increases, the distance taken to stop also increases. Next, to beautify the plot, we name the axis and title, and specify a colour.\n\nplot(x = cars_data$speed, \n     y = cars_data$dist,\n     col = \"red\",\n     main = \"Speed vs. stopping distance\",\n     ylab = \"Speed (Mile/hour)\",\n     xlab = \"Stopping distance (ft)\")\n\n\n\n\n\n\n\n\nNow, let’s do the plot using ggplot2.\n\ncars_data %&gt;% \n  ggplot(aes(x = dist, y = speed)) +\n  geom_point()\n\n\n\n\n\n\n\n\nSimilarly to the plot in base R, we can further beautify the scatter plot.\n\ncars_data %&gt;% \n  ggplot(aes(x = dist, y = speed)) +\n  geom_point(colour = \"red\") +\n  labs(title = \"Speed vs. stopping distance\",\n       y = \"Speed (Mile/hour)\",\n       x = \"Stopping distance (ft)\") +\n  theme_bw()\n\n\n\n\n\n\n\n\nLastly, we further add another variable.\n\ncars_data %&gt;% \n  ggplot(aes(x = dist, y = speed, colour = car)) +\n  geom_point() +\n  labs(title = \"Speed vs. stopping distance\",\n       y = \"Speed (Mile/hour)\",\n       x = \"Stopping distance (ft)\",\n       colour = \"Type of car:\") +\n  theme_bw()",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Data visualisation</span>"
+    ]
+  },
+  {
+    "objectID": "plotting.html#chapter-summary",
+    "href": "plotting.html#chapter-summary",
+    "title": "6  Data visualisation",
+    "section": "6.8 Chapter summary",
+    "text": "6.8 Chapter summary\nIn this chapter, we have learned about five different plots.\n\n\n\nTable 6.1: Commonly used plots in data analysis.\n\n\n\n\n\n\n\n\n\n\nPlots\nVariables\nApplication\n\n\n\n\nBarplot\n1 factor variable\nDisplay the proportion of a factor variable\n\n\nHistogram\n1 numerical variable\n\nDisplay the frequency distribution of a numerical variable\nIdentify the pattern of the data (skewed or normally distributed)\n\n\n\nBoxplot\n1 numerical variable\n\nDisplay the spread of distribution of a numerical variable\nIdentify extreme values and outliers\n\n\n\nViolin plot\n1 numerical variable vs. 1 factor variable\nDisplay the frequency distribution of a numerical variable based on another factor variable\n\n\nScatter plot\n1 numerical variable vs. 1 numerical variable\nDisplay a relationship between two numerical variables",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Data visualisation</span>"
+    ]
+  },
+  {
+    "objectID": "plotting.html#revision",
+    "href": "plotting.html#revision",
+    "title": "6  Data visualisation",
+    "section": "6.9 Revision",
+    "text": "6.9 Revision\n\nLoad and read about mtcars dataset from base R.\n\n# Load the data\ndata(\"mtcars\")\n\n# Read about the data\n?mtcars\n\n\nCreate a histogram using base R for the mpg variable using base R. The plot should look like the one below.\n\n\n\n\n\n\n\n\n\nCreate a boxplot for the wt variable using base R. The plot should look like the one below.\n\n\n\n\n\n\n\n\n\nCreate a scatter plot for mpg vs. wt variables using base R. The plot should look like the one below.\n\nplot(mtcars$mpg, mtcars$wt, \n     col = \"purple\", \n     main = \"Weight vs. miles per gallon\",\n     xlab = \"Mile per gallon\",\n     ylab = \"Weight (1000 lbs)\")\n\n\n\n\n\n\n\n\n\nLoad and read about diamonds data from the ggplot2 package.\n\n# Load the packages\nlibrary(tidyverse)\n\n# Load the data\ndata(\"diamonds\")\n\n# Read about the data\n?diamonds\n\n\nCreate a barplot of the color variable using ggplot2. The plot should look like the one below.\n\n\n\n\n\n\n\n\n\nCreate a scatter plot between carat and price using ggplot2. The plot should look like the one below.\n\n\n\n\n\n\n\n\n\nCreate a violin plot between price and color and further separate it by cut The plot should look like this.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Data visualisation</span>"
     ]
   }
 ]
