@@ -18,4 +18,6 @@ Chapters 8 and 9 delve into essential skills for data exploration and descriptiv
 
 Chapter 10 concludes the book by summarizing previous content and offering guidance on next steps to further enhance R and data analysis skills.
 
+Each chapter kicks off with a quote—I hope you enjoy it! To wrap things up, each chapter ends with chapter summary and revision questions.
+
 Happy learning!

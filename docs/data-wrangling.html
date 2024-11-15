@@ -273,6 +273,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
+<blockquote class="blockquote">
+<p>“Without clean data, or clean enough data, your data science is worthless.”</p>
+<p>–Michael Stonebraker</p>
+</blockquote>
 <p>Data wrangling refers to the process of transforming and preparing raw data into a clean and structured format suitable for analysis. This involves various steps, such as data cleaning, reshaping, merging, and filtering, to ensure the dataset is ready for statistical analysis or visualisation.</p>
 <p>In most cases, data wrangling can occupy a significant portion of the time required for data analysis, often more than other stages. In this chapter, we will explore common operations in data wrangling. You will learn how to perform these operations using either base R functions, <code>tidyverse</code> functions, or both.</p>
 <section id="load-packages" class="level2" data-number="5.1">
@@ -1093,7 +1097,7 @@ Table&nbsp;5.2: Example of each of variable type in R.
  $ id    : chr  "1" "2" "3" "4" ...
  $ score : chr  "92" "9" "93" "72" ...
  $ gender: chr  "Male" "Female" "Male" "Female" ...
- $ date  : chr  "2024-11-11" "2024-11-10" "2024-11-09" "2024-11-08" ...</code></pre>
+ $ date  : chr  "2024-11-14" "2024-11-13" "2024-11-12" "2024-11-11" ...</code></pre>
 </div>
 </div>
 <p>The <code>date</code> column is recognised as a character. To convert <code>date</code> to a date format, use <code>as_date()</code>.</p>
@@ -1112,7 +1116,7 @@ Table&nbsp;5.2: Example of each of variable type in R.
  $ id    : chr  "1" "2" "3" "4" ...
  $ score : num  92 9 93 72 26 7
  $ gender: Factor w/ 2 levels "Female","Male": 2 1 2 1 2 1
- $ date  : Date, format: "2024-11-11" "2024-11-10" ...</code></pre>
+ $ date  : Date, format: "2024-11-14" "2024-11-13" ...</code></pre>
 </div>
 </div>
 <p>The simplest solution for the date issue is to make sure we properly input the date according to the right format (<code>YYYY-MM-DD</code>) during the data collection process properly.</p>

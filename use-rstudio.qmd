@@ -2,6 +2,10 @@
 title: "Introduction to RStudio"
 ---
 
+> "When I wrote this code, only God and I understood what I did. Now only God knows."
+>
+> -- Anonymous
+
 ## Panes in RStudio
 
 The first time we open RStudio we will see three panes as in @fig-rstudio-interface.

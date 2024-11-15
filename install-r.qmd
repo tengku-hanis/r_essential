@@ -2,6 +2,10 @@
 title: "Installing R and RStudio"
 ---
 
+> "Everyone should learn how to code, it teaches you how to think."
+>
+> -- Steve Jobs
+
 ## Installing R
 
 R can be installed regardless of your operating system. R is available for Windows, Mac, and Linux users. This page (<https://cran.r-project.org/>) contains all the necessary information needed to install R. Additionally, if you are stuck, I highly recommend you to watch a few YouTube videos on how to install R.
