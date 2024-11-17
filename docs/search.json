@@ -414,7 +414,7 @@
     "href": "data-wrangling.html#change-variable-type",
     "title": "5  Data wrangling",
     "section": "5.8 Change variable type",
-    "text": "5.8 Change variable type\nHere are the main variable types in R:\n\n\n\nTable 5.2: Example of each of variable type in R.\n\n\n\n\n\nVariables\nExamples\n\n\n\n\nInteger\n100, 77\n\n\nNumeric\n100.2, 77.8\n\n\nCharacter\n“hello”, “ahmad”\n\n\nLogical\nTRUE, FALSE\n\n\nFactor\n“male”, “female”\n\n\nDate\n9/7/2024, 9 July 2024\n\n\n\n\n\n\nThe most common types in data are numeric, factor, and date. When importing data from software such as SPSS, STATA, or Excel, R may not always recognise the correct types. Let’s create a sample dataset and explore handling these issues.\n\n# Create a data frame with mixed-up variable types\ndata_messed_up &lt;- data.frame(\n  id = as.character(1:6),                \n  score = as.character(sample(1:100, 6)),    \n  gender = rep(c(\"Male\", \"Female\"), length.out = 6)\n  )\n\n# View the variable types\nstr(data_messed_up)\n\n'data.frame':   6 obs. of  3 variables:\n $ id    : chr  \"1\" \"2\" \"3\" \"4\" ...\n $ score : chr  \"25\" \"90\" \"91\" \"69\" ...\n $ gender: chr  \"Male\" \"Female\" \"Male\" \"Female\" ...\n\n# View the data\ndata_messed_up\n\n  id score gender\n1  1    25   Male\n2  2    90 Female\n3  3    91   Male\n4  4    69 Female\n5  5    98   Male\n6  6    57 Female\n\n\nWe can see that score should be numeric and gender a factor. To convert these types, use as.numeric() and as.factor(). Let’s create a copy of data_messed_up for demonstration purposes.\n\ndata_messed_up2 &lt;- data_messed_up\n\nUsing base R functions, we can adjust the types:\n\n# Change score column to numeric\ndata_messed_up$score &lt;- as.numeric(data_messed_up$score)\n\n# Change gender column to factor\ndata_messed_up$gender &lt;- as.factor(data_messed_up$gender)\n\n# View variable type\nstr(data_messed_up)\n\n'data.frame':   6 obs. of  3 variables:\n $ id    : chr  \"1\" \"2\" \"3\" \"4\" ...\n $ score : num  25 90 91 69 98 57\n $ gender: Factor w/ 2 levels \"Female\",\"Male\": 2 1 2 1 2 1\n\n\nUsing tidyverse, we can achieve the same result with mutate():\n\n# Change variable types for score and gender\ndata_messed_up2 &lt;- \n  data_messed_up2 %&gt;% \n  mutate(score = as.numeric(score),\n         gender = as.factor(gender))\n\n# View variable type\nstr(data_messed_up2)\n\n'data.frame':   6 obs. of  3 variables:\n $ id    : chr  \"1\" \"2\" \"3\" \"4\" ...\n $ score : num  25 90 91 69 98 57\n $ gender: Factor w/ 2 levels \"Female\",\"Male\": 2 1 2 1 2 1\n\n\n\n5.8.1 Handling date\nDates can be tricky. For date variables, the standard format is YYYY-MM-DD. Using lubridate, we can work with various date formats easily. Let’s look at a few examples:\n\n# Using base R \ndate_data &lt;- as.Date(\"2024-11-30\")\nstr(date_data)\n\n Date[1:1], format: \"2024-11-30\"\n\n# Using lubridate\ndate_data2 &lt;- as_date(\"2024-11-30\")\nstr(date_data2)\n\n Date[1:1], format: \"2024-11-30\"\n\n\nFor non-standard formats, use lubridate functions ymd(), dmy(), and mdy().\n\n# DD-MM-YYYY\ndate_data3 &lt;- dmy(\"30-11-2024\")\nstr(date_data3)\n\n Date[1:1], format: \"2024-11-30\"\n\n# MM-DD-YY\ndate_data4 &lt;- mdy(\"11-30-2024\")\nstr(date_data4)\n\n Date[1:1], format: \"2024-11-30\"\n\n\nCorrectly formatted date variables allow for operations such as:\n\nDate calculation: adding days to a date.\n\ndate_data4 + 7 \n\n[1] \"2024-12-07\"\n\n\nExtracting date components usch as month and year.\n\n# Extract month\nmonth(date_data4)\n\n[1] 11\n\n# Extract year\nyear(date_data4)\n\n[1] 2024\n\n\n\nTo demonstrate dates in a dataset, we’ll recreate data_messed_up with a date column.\n\n# Create a data frame with mixed-up variable types\ndata_messed_up &lt;- data.frame(\n  id = as.character(1:6),                \n  score = as.character(sample(1:100, 6)),    \n  gender = rep(c(\"Male\", \"Female\"), length.out = 6),\n  date = as.character(Sys.Date() - 1:6)\n  )\n\n# View variable type\nstr(data_messed_up)\n\n'data.frame':   6 obs. of  4 variables:\n $ id    : chr  \"1\" \"2\" \"3\" \"4\" ...\n $ score : chr  \"92\" \"9\" \"93\" \"72\" ...\n $ gender: chr  \"Male\" \"Female\" \"Male\" \"Female\" ...\n $ date  : chr  \"2024-11-14\" \"2024-11-13\" \"2024-11-12\" \"2024-11-11\" ...\n\n\nThe date column is recognised as a character. To convert date to a date format, use as_date().\n\n# Change variable types for score, gender, and date\ndata_messed_up &lt;- \n  data_messed_up %&gt;% \n  mutate(score = as.numeric(score),\n         gender = as.factor(gender),\n         date = as_date(date))\n\n# View variable type\nstr(data_messed_up)\n\n'data.frame':   6 obs. of  4 variables:\n $ id    : chr  \"1\" \"2\" \"3\" \"4\" ...\n $ score : num  92 9 93 72 26 7\n $ gender: Factor w/ 2 levels \"Female\",\"Male\": 2 1 2 1 2 1\n $ date  : Date, format: \"2024-11-14\" \"2024-11-13\" ...\n\n\nThe simplest solution for the date issue is to make sure we properly input the date according to the right format (YYYY-MM-DD) during the data collection process properly.",
+    "text": "5.8 Change variable type\nHere are the main variable types in R:\n\n\n\nTable 5.2: Example of each of variable type in R.\n\n\n\n\n\nVariables\nExamples\n\n\n\n\nInteger\n100, 77\n\n\nNumeric\n100.2, 77.8\n\n\nCharacter\n“hello”, “ahmad”\n\n\nLogical\nTRUE, FALSE\n\n\nFactor\n“male”, “female”\n\n\nDate\n9/7/2024, 9 July 2024\n\n\n\n\n\n\nThe most common types in data are numeric, factor, and date. When importing data from software such as SPSS, STATA, or Excel, R may not always recognise the correct types. Let’s create a sample dataset and explore handling these issues.\n\n# Create a data frame with mixed-up variable types\ndata_messed_up &lt;- data.frame(\n  id = as.character(1:6),                \n  score = as.character(sample(1:100, 6)),    \n  gender = rep(c(\"Male\", \"Female\"), length.out = 6)\n  )\n\n# View the variable types\nstr(data_messed_up)\n\n'data.frame':   6 obs. of  3 variables:\n $ id    : chr  \"1\" \"2\" \"3\" \"4\" ...\n $ score : chr  \"25\" \"90\" \"91\" \"69\" ...\n $ gender: chr  \"Male\" \"Female\" \"Male\" \"Female\" ...\n\n# View the data\ndata_messed_up\n\n  id score gender\n1  1    25   Male\n2  2    90 Female\n3  3    91   Male\n4  4    69 Female\n5  5    98   Male\n6  6    57 Female\n\n\nWe can see that score should be numeric and gender a factor. To convert these types, use as.numeric() and as.factor(). Let’s create a copy of data_messed_up for demonstration purposes.\n\ndata_messed_up2 &lt;- data_messed_up\n\nUsing base R functions, we can adjust the types:\n\n# Change score column to numeric\ndata_messed_up$score &lt;- as.numeric(data_messed_up$score)\n\n# Change gender column to factor\ndata_messed_up$gender &lt;- as.factor(data_messed_up$gender)\n\n# View variable type\nstr(data_messed_up)\n\n'data.frame':   6 obs. of  3 variables:\n $ id    : chr  \"1\" \"2\" \"3\" \"4\" ...\n $ score : num  25 90 91 69 98 57\n $ gender: Factor w/ 2 levels \"Female\",\"Male\": 2 1 2 1 2 1\n\n\nUsing tidyverse, we can achieve the same result with mutate():\n\n# Change variable types for score and gender\ndata_messed_up2 &lt;- \n  data_messed_up2 %&gt;% \n  mutate(score = as.numeric(score),\n         gender = as.factor(gender))\n\n# View variable type\nstr(data_messed_up2)\n\n'data.frame':   6 obs. of  3 variables:\n $ id    : chr  \"1\" \"2\" \"3\" \"4\" ...\n $ score : num  25 90 91 69 98 57\n $ gender: Factor w/ 2 levels \"Female\",\"Male\": 2 1 2 1 2 1\n\n\n\n5.8.1 Handling date\nDates can be tricky. For date variables, the standard format is YYYY-MM-DD. Using lubridate, we can work with various date formats easily. Let’s look at a few examples:\n\n# Using base R \ndate_data &lt;- as.Date(\"2024-11-30\")\nstr(date_data)\n\n Date[1:1], format: \"2024-11-30\"\n\n# Using lubridate\ndate_data2 &lt;- as_date(\"2024-11-30\")\nstr(date_data2)\n\n Date[1:1], format: \"2024-11-30\"\n\n\nFor non-standard formats, use lubridate functions ymd(), dmy(), and mdy().\n\n# DD-MM-YYYY\ndate_data3 &lt;- dmy(\"30-11-2024\")\nstr(date_data3)\n\n Date[1:1], format: \"2024-11-30\"\n\n# MM-DD-YY\ndate_data4 &lt;- mdy(\"11-30-2024\")\nstr(date_data4)\n\n Date[1:1], format: \"2024-11-30\"\n\n\nCorrectly formatted date variables allow for operations such as:\n\nDate calculation: adding days to a date.\n\ndate_data4 + 7 \n\n[1] \"2024-12-07\"\n\n\nExtracting date components usch as month and year.\n\n# Extract month\nmonth(date_data4)\n\n[1] 11\n\n# Extract year\nyear(date_data4)\n\n[1] 2024\n\n\n\nTo demonstrate dates in a dataset, we’ll recreate data_messed_up with a date column.\n\n# Create a data frame with mixed-up variable types\ndata_messed_up &lt;- data.frame(\n  id = as.character(1:6),                \n  score = as.character(sample(1:100, 6)),    \n  gender = rep(c(\"Male\", \"Female\"), length.out = 6),\n  date = as.character(Sys.Date() - 1:6)\n  )\n\n# View variable type\nstr(data_messed_up)\n\n'data.frame':   6 obs. of  4 variables:\n $ id    : chr  \"1\" \"2\" \"3\" \"4\" ...\n $ score : chr  \"92\" \"9\" \"93\" \"72\" ...\n $ gender: chr  \"Male\" \"Female\" \"Male\" \"Female\" ...\n $ date  : chr  \"2024-11-17\" \"2024-11-16\" \"2024-11-15\" \"2024-11-14\" ...\n\n\nThe date column is recognised as a character. To convert date to a date format, use as_date().\n\n# Change variable types for score, gender, and date\ndata_messed_up &lt;- \n  data_messed_up %&gt;% \n  mutate(score = as.numeric(score),\n         gender = as.factor(gender),\n         date = as_date(date))\n\n# View variable type\nstr(data_messed_up)\n\n'data.frame':   6 obs. of  4 variables:\n $ id    : chr  \"1\" \"2\" \"3\" \"4\" ...\n $ score : num  92 9 93 72 26 7\n $ gender: Factor w/ 2 levels \"Female\",\"Male\": 2 1 2 1 2 1\n $ date  : Date, format: \"2024-11-17\" \"2024-11-16\" ...\n\n\nThe simplest solution for the date issue is to make sure we properly input the date according to the right format (YYYY-MM-DD) during the data collection process properly.",
     "crumbs": [
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Data wrangling</span>"
     ]
@@ -457,46 +457,6 @@
     "text": "6.1 Load packages\nPlease load a tidyverse package before proceeding to the next section. We do not need to load the ggplot2 package as it is part of the tidyverse meta package.\nlibrary(tidyverse)",
     "crumbs": [
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Data visualisation</span>"
-    ]
-  },
-  {
-    "objectID": "loop-function.html",
-    "href": "loop-function.html",
-    "title": "7  Loop, function, and apply",
-    "section": "",
-    "text": "7.1 Load packages\nPlease load a tidyverse package before moving to the next section.\nlibrary(tidyverse)",
-    "crumbs": [
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Loop, function, and apply</span>"
-    ]
-  },
-  {
-    "objectID": "data-explore.html",
-    "href": "data-explore.html",
-    "title": "8  Data exploration",
-    "section": "",
-    "text": "This chapter is currently under construction. Stay tuned for updates!",
-    "crumbs": [
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Data exploration</span>"
-    ]
-  },
-  {
-    "objectID": "descriptive-stat.html",
-    "href": "descriptive-stat.html",
-    "title": "9  Descriptive statistics",
-    "section": "",
-    "text": "This chapter is currently under construction. Stay tuned for updates!",
-    "crumbs": [
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Descriptive statistics</span>"
-    ]
-  },
-  {
-    "objectID": "summary.html",
-    "href": "summary.html",
-    "title": "10  Summary",
-    "section": "",
-    "text": "This chapter is currently under construction. Stay tuned for updates!",
-    "crumbs": [
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Summary</span>"
     ]
   },
   {
@@ -580,6 +540,16 @@
     ]
   },
   {
+    "objectID": "loop-function.html",
+    "href": "loop-function.html",
+    "title": "7  Loop, function, and apply",
+    "section": "",
+    "text": "7.1 Load packages\nPlease load a tidyverse package before moving to the next section.\nlibrary(tidyverse)",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Loop, function, and apply</span>"
+    ]
+  },
+  {
     "objectID": "loop-function.html#loop",
     "href": "loop-function.html#loop",
     "title": "7  Loop, function, and apply",
@@ -630,11 +600,41 @@
     ]
   },
   {
+    "objectID": "data-explore.html",
+    "href": "data-explore.html",
+    "title": "8  Data exploration",
+    "section": "",
+    "text": "This chapter is currently under construction. Stay tuned for updates!",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Data exploration</span>"
+    ]
+  },
+  {
+    "objectID": "descriptive-stat.html",
+    "href": "descriptive-stat.html",
+    "title": "9  Descriptive statistics",
+    "section": "",
+    "text": "This chapter is currently under construction. Stay tuned for updates!",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Descriptive statistics</span>"
+    ]
+  },
+  {
+    "objectID": "summary.html",
+    "href": "summary.html",
+    "title": "10  Summary",
+    "section": "",
+    "text": "This chapter is currently under construction. Stay tuned for updates!",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Summary</span>"
+    ]
+  },
+  {
     "objectID": "references.html",
     "href": "references.html",
     "title": "References",
     "section": "",
-    "text": "Wickham, Hadley, and Garrett Grolemund. 2017. R for Data\nScience. \" O’Reilly Media, Inc.\".",
+    "text": "Wickham, Hadley, Mine Çetinkaya-Rundel, and Garrett Grolemund. 2023.\nR for Data Science. \" O’Reilly Media, Inc.\".\n\n\nWickham, Hadley, and Garrett Grolemund. 2017. R for Data\nScience. \" O’Reilly Media, Inc.\".",
     "crumbs": [
       "References"
     ]
