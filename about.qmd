@@ -12,7 +12,7 @@ Chapters 4 and 5 provide essential knowledge on basic R coding, commonly used in
 
 Chapter 6 focuses on basic visualizations and plotting techniques. Readers will learn how to use base R functions for visual representation and will be introduced to `ggplot2`, a highly regarded package for data visualisation in R.
 
-Chapter 7 covers loop, function, and apply, a topic that may pose a challenge for beginners. This chapter aims to equip readers with the skills needed for more efficient R coding. While not critical for initial learning, understanding these concepts will become increasingly important as one progresses in data analysis.
+Chapter 7 covers loop, apply family, and function, topics that may pose a challenge for beginners. This chapter aims to equip readers with the skills needed for more efficient R coding. While not critical for initial learning, understanding these concepts will become increasingly important as one progresses in data analysis.
 
 Chapters 8 and 9 delve into essential skills for data exploration and descriptive statistics. Mastering these will enable readers to gain deeper insights into their data and prepare them for more advanced analysis techniques.
 

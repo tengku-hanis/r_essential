@@ -1,12 +1,12 @@
 ---
-title: "Loop, function, and apply"
+title: "Loop, apply, and function"
 ---
 
 > “I think you can have a ridiculously enormous and complex data set, but if you have the right tools and methodology, then it’s not a problem.”
 >
 > -- Aaron Koblin
 
-In this chapter, we going to cover what is a loop, how to make a function, and how to use an apply family function. For beginners, this chapter will be quite challenging. So, it is completely understandable if you need to read this chapter several times. In fact, if you are free to skip this chapter for the time being, and come back again once you become more familiar with R.
+In this chapter, we going to cover what is a loop, how to make a function, and how to use an apply family function. For beginners, this chapter will be quite challenging. So, it is completely understandable if you need to read this chapter several times. In fact, you are free to skip this chapter for the time being, and come back again once you become more familiar with R.
 
 This chapter will introduce the use of a loop, function and apply family. Mastering these topics is crucial especially once you become more advanced in using R. More often than not, you will have a large data and you need to repeat the analysis several times, thus, knowing these topics, makes the R codes more efficient and readable (not completely readable to beginners though).
 

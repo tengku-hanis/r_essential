@@ -275,7 +275,7 @@ For the rest of the chapter we going to the `iris` dataset, which is already ava
 ?iris
 ```
 
-## Packages
+## Packages {#sec-basic-r-packages}
 
 A package is a collection of functions and sample data that can be utilised for certain tasks. Certain functions in R are already loaded when you open R or RStudio. However, to use more advanced functions we need to install and load a package.
 
