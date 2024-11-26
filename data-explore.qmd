@@ -2,6 +2,463 @@
 title: "Data exploration"
 ---
 
-This chapter is currently under construction. Stay tuned for updates!
+> “Data is like garbage. You’d better know what you are going to do with it before you collect it.”
+>
+> -- Mark Twain
 
-![](figs/under_construction.gif){fig-align="left"}
+Data exploration, as the name suggests involves the process of exploring the data to understand its structures, identifying underlying patterns, and discovering its characteristics. This process is the first stage in analysing the data and gaining insight from it. Doing data analysis without data exploration is akin to going to war without a proper strategy.
+
+R provides numerous functions and packages that can help to explore the data efficiently and systematically. Thus, this chapter intends to introduce those functions and packages to readers adequately and further equip the readers to do any data analysis.
+
+## Missing data
+
+Missing data are recognised as `NA` in R. Let's use `airquality` data, a built-in dataset in R to see how R recognised missing values.
+
+```{r}
+# Data with missing data
+data("airquality")
+```
+
+By using `summary()`, we can see that the first two columns have missing values, recognised as `NA`.
+
+```{r}
+summary(airquality)
+```
+
+Another function to give a quick answer to whether we have available data or not is `anyNA()`.
+
+```{r}
+anyNA(airquality)
+```
+
+To get the count of missing values, we can use `is.na()`:
+
+```{r}
+is.na(airquality) |> table()
+```
+
+`TRUE` is 44, which means that we have 44 missing values across individual cells in our dataset. To drop the missing values, we can use `complete.cases()`:
+
+```{r}
+# Make an index
+na_index <- complete.cases(airquality)
+
+# Apply the index to drop the NA's
+airquality_noNA <- airquality[na_index, ]
+```
+
+Alternatively, it is easier to use `na.omit()`:
+
+```{r}
+airquality_noNA2 <- na.omit(airquality)
+```
+
+Both, `complete.cases()` and `na.omit()` return an identical output.
+
+```{r}
+# Drop NA's using complete.cases()
+dim(airquality_noNA)
+
+# Drop NA's using na.omit()
+dim(airquality_noNA2)
+```
+
+We may want to explore the data with missing values. Thus, we can use `complete.cases()` plus `!` in our codes to isolate the data with missing values.
+
+```{r}
+# Make an index
+na_index <- complete.cases(airquality)
+
+# Apply the index to drop the NA's
+airquality_NA_only <- airquality[!na_index, ]
+
+# Data with missing values
+dim(airquality_NA_only)
+```
+
+Notice that the `airquality_NA_only` returns 44 rows of data with missing values, while using `is.na()` earlier we get 44 missing values. `airquality_NA_only` returns rows of data with missing values. The missing values may exist in more than a single column in the dataset. The `is.na()` function counts all the missing values regardless of the position.
+
+## Outliers
+
+An outlier is a data point that lies significantly outside the range of most other observations in a dataset. It is an extreme value, either unusually high or low, that differs markedly from other data points. Outliers can occur due to variability in the data, errors in measurement, or experimental anomalies.
+
+Since outliers may not be representative of the data and may distort statistical measures such as mean and standard deviation, it is important to identify them early during the data exploration stage.
+
+There are two methods to identify outliers:
+
+1.  Interquartile range (IQR) method:
+
+    The IQR method identifies outliers as data points lying below Q1 − 1.5 × IQR or above Q3 + 1.5 × IQR , where Q1 and Q3 are the first and third quartiles, respectively. This is the method that applies in the boxplot.
+
+    Let's use `airquality_noNA` data to demonstrate:
+
+    ```{r}
+    out_bp <- boxplot(airquality_noNA$Wind, main = "Outliers in the wind column")
+    ```
+
+    To access the values of the outliers:
+
+    ```{r}
+    out_bp$out
+    ```
+
+    To see the rows with the outliers:
+
+    ```{r}
+    airquality_noNA |> 
+      dplyr::filter(Wind == c(20.1, 18.4, 20.7))
+    ```
+
+2.  Z-score method:
+
+    This method standardizes data and identifies outliers as those with a z-score greater than a threshold (commonly 3 or -3). The z-score (also called a standard score) is a statistical measure that indicates how many standard deviations a data point is from the mean of the dataset.
+
+    Basically, the z-score is a distribution which reflects our dataset and it shows how far each value is from the average. So, in this context, outliers are the values that are significantly far from the average.
+
+    Now, let's focus on understanding how we can detect the outliers using this method.
+
+    ```{r}
+    # Create z-score for the data
+    z_scores <- scale(airquality_noNA$Wind)
+
+    # How many outliers
+    table(abs(z_scores) > 3)
+    ```
+
+    `TRUE` is 1, which means that we have a single outlier in our data. Let's see which value is the outlier.
+
+    ```{r}
+    airquality_noNA$Wind[abs(z_scores) > 3]
+    ```
+
+    To see the row with the outlier:
+
+    ```{r}
+    airquality_noNA |> 
+      dplyr::filter(Wind == 20.7)
+    ```
+
+There are other advanced methods to detect outliers. However, the basics to understand those methods are beyond the scope of this book.
+
+## Useful packages
+
+In this section, we going to see several useful R packages to explore the data. We are only going to cover the main functions of each package.
+
+### skimr
+
+The `skimr` package provides various helpful functions to do data exploration. Firstly, we need to install `skimr`, and then load the packages. We going to use the `dplyr` package together with the `skimr` package.
+
+```{r eval=FALSE}
+# Install the package
+install.packages("skimr")
+
+# Load the necessary packages
+library(skimr)
+library(dplyr)
+```
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+library(skimr)
+library(dplyr)
+```
+
+To explore the whole dataset, we can use `skim`.
+
+```{r}
+# Let's use the iris dataset
+data("iris")
+
+# Use skim
+skim(iris)
+```
+
+The `skim` function will return the basic statistics for our data including the information on the missing values (`n_missing` and `complete_rate`) and a histogram for the numerical variables. Additionally, we can get the basic statistics based on a certain group. For example, here we use `group_by()`, then, we apply `skim()`.
+
+```{r}
+iris %>% 
+  group_by(Species) %>% 
+  skim()
+```
+
+Readers interested in learning more about the `skimr` package can explore its [comprehensive documentation](https://docs.ropensci.org/skimr/) for more details and examples.
+
+### naniar
+
+`naniar` package provides tidy ways to summarise, visualise, and manipulate missing data. First, let's install and load the necessary packages.
+
+```{r eval=FALSE}
+# Install the package
+install.packages("naniar")
+
+# Load the necessary packages
+library(naniar)
+library(dplyr)
+```
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+library(naniar)
+library(dplyr)
+```
+
+Let's use the `oceanbuoys` data, a dataset from the `naniar` package. First, let's summarise the missing data according to a variable. Further detail on the dataset can be found by running `?oceanbuoys` in the `Console`.
+
+```{r}
+# Load the data
+data("oceanbuoys")
+
+# Missing values summary based on variables
+miss_var_summary(oceanbuoys)
+```
+
+`n_miss` is the number of missing values and `pct_miss` is the percentage of missing values. We can further group the missing values according to a certain variable.
+
+```{r}
+oceanbuoys %>% 
+  group_by(year) %>% 
+  miss_var_summary()
+```
+
+`naniar` also provides a visual summary for missing values.
+
+```{r}
+gg_miss_var(oceanbuoys)
+```
+
+We can further group by a variable using the `facet` argument.
+
+```{r}
+gg_miss_var(oceanbuoys, facet = year)
+```
+
+The content we just covered provides only a glimpse of the powerful features and capabilities of the `naniar` package. For a deeper understanding and comprehensive insights, readers are encouraged to explore the [`naniar` documentation website](https://naniar.njtierney.com/index.html).
+
+### DataExplorer
+
+`DataExplorer` provides various helpful functions for data exploration. First, let's install and load the necessary packages.
+
+```{r eval=FALSE}
+# Install package
+install.packages("DataExplorer")
+
+# Load the necessary packages
+library(DataExplorer)
+library(dplyr)
+```
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+library(DataExplorer)
+library(dplyr)
+```
+
+Let's use `oceanbuoys` data from the `naniar` package previously.
+
+```{r}
+# Load the data 
+data("oceanbuoys", package = "naniar")
+```
+
+`DataExplorer` provides a general function to explore the data.
+
+```{r}
+plot_intro(oceanbuoys)
+```
+
+From the plot, we understand that our data consists of all continuous (numeric) columns and no discrete (categorical) columns. No missing columns but we have 3% missing observations.
+
+To investigate the missing observations, we can use `plot_missing()`:
+
+```{r}
+plot_missing(oceanbuoys)
+```
+
+Alternatively, we can get a summary instead of a plot.
+
+```{r}
+profile_missing(oceanbuoys)
+```
+
+Additionally, `DataExplorer` provides a function to plot a correlation matrix. Correlation is a measure of association between two numerical variables. It ranges between -1 and 1. Values close to 1 indicate a high positive correlation between the two variables, while values close to -1 indicate a high negative correlation between the two numerical variables. Values close to 0 indicate a low correlation between the two values.
+
+```{r}
+oceanbuoys %>% 
+  na.omit() %>% 
+  plot_correlation()
+```
+
+To do a correlation or in this case correlation plot, the variables should be numerical and have no missing values (hence, the use of `na.omit()` in the code). If for example, we want to apply this function to the `iris` dataset, in which we know that one of the variables is categorical, we need to exclude the variable first.
+
+```{r}
+iris %>% 
+  select(-Species) %>% 
+  plot_correlation()
+```
+
+Alternatively, the more efficient code to exclude the non-numerical variable is using the `select_if()`.
+
+```{r}
+iris %>% 
+  select_if(is.numeric) %>% 
+  plot_correlation()
+```
+
+`DataExplorer` provides more useful functions, which can not be extensively covered in this section. Interested readers can further study [its documentation](https://boxuancui.github.io/DataExplorer/index.html) for more.
+
+### VIM
+
+The `VIM` package contains tools for the visualisation of missing and/or imputed values. Imputation of the missing values is beyond the scope of this book. However, we going to see how functions from the `VIM` package can be utilised to explore the pattern of missingness.
+
+First, make sure to install the `VIM` package and load the necessary packages.
+
+```{r eval=FALSE}
+# Install package
+install.packages("VIM")
+
+# Load the necessary packages
+library(VIM)
+library(dplyr)
+```
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+library(VIM)
+library(dplyr)
+```
+
+Let's use `oceanbuoys` data from the `naniar` package previously.
+
+```{r}
+# Load the data 
+data("oceanbuoys", package = "naniar")
+```
+
+The `aggr()` function will plot our data and visualise the pattern of missing values. `numbers = TRUE` and `prop = FALSE` to make sure the number missing values in a number not a proportion.
+
+```{r}
+aggr(oceanbuoys, numbers = TRUE, prop = FALSE)
+```
+
+The red colour represents the missing values, and the blue colour represents the observed values. The first plot on the left presents the proportion of missing values according to variables. The second plot on the right presents the combination of missing values. Notice that if we have too many variables, the variable names will not be fully displayed. For example in the second plot, for a combination of `sea_temp_c`, `air_temp_c`, and `humidity`, we have 2 values missing.
+
+The `aggr()` function is suitable to be utilised when we have a small to intermediate number of variables. For data with a large number of variables, `matrixplot()` may be more appropriate.
+
+```{r}
+matrixplot(oceanbuoys)
+```
+
+`matrixplot()` scales the data into 0 (white) and 1 (black). The higher values will become close to 1, and the lower values will become close to 0. The red colour represents the missing values.
+
+The `VIM` package contains more useful functions, however, the majority of them are for exploring the imputation methods and values. Interested readers can further study [its documentation](https://statistikat.github.io/VIM/index.html) for more details.
+
+### dlookr
+
+The `dlookr` package provides various helpful functions especially related to outliers. First, we need to install the `dlookr` package and load the necessary packages.
+
+```{r eval=FALSE}
+# Install package
+install.packages("dlookr")
+
+# Load the packages
+library(dlookr)
+library(dplyr)
+```
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+library(dplyr)
+library(dlookr)
+```
+
+Let's use the `Carseats` dataset, a dataset from `dlookr` package. The `diagnose_numeric()` function from the `dlookr` package is particularly useful for diagnosing numeric variables.
+
+```{r}
+# Load the data
+data("Carseats")
+
+# Diagnose function
+diagnose_numeric(Carseats)
+```
+
+Among its results, it provides the following insights:
+
+-   `zero`: the number of zero values in the data.
+-   `minus`: the count of negative values.
+-   `outlier`: the number of potential outliers detected in the dataset.
+
+Additionally, we have `diagnose_category()` which summarises categorical variables. This function returns several outputs:
+
+-   `levels`: level for each categorical variable.
+-   `N`: number of observations.
+-   `freq`: number of observations at the levels.
+-   `ratio`: percentage of observations at the levels
+-   `rank`: rank of occupancy ratio of levels
+
+```{r}
+diagnose_category(Carseats)
+```
+
+We can further explore the outliers identified by `diagnose_numeric()` using `diagnose_outlier()`.
+
+```{r}
+diagnose_outlier(Carseats)
+```
+
+This function returns:
+
+-   `outliers_cnt`: number of outliers.
+-   `outliers_ratio`: percent of outliers.
+-   `outliers_mean`: mean of outliers.
+-   `with_mean`: mean of values with outliers.
+-   `without_mean`: mean of values of without outliers.
+
+In fact, we can further simplify the result using the `filter()` from the `dplyr` package.
+
+```{r}
+diagnose_outlier(Carseats) %>% 
+  filter(outliers_cnt > 0)
+```
+
+Furthermore, `dlookr` provides another useful function to visualise the outliers. However, for this example, we going to select a single variable.
+
+```{r}
+Carseats %>% 
+  select(Sales) %>% 
+  plot_outlier()
+```
+
+This function returns a boxplot and histogram for values with and without outliers. Thus, we can see how much the outliers in the variables change the distribution of the data. `dlookr` actually provides more functions than the ones we covered in this section. Readers are suggested to go through its [documentation](https://choonghyunryu.github.io/dlookr/index.html) to further learn this package.
+
+## Chapter summary
+
+In this chapter, we have covered how missing data and outliers were identified in R using base R functions. Moreover, we have covered several useful functions from five R packages:
+
+1.  skimr
+2.  naniar
+3.  DataExplorer
+4.  VIM
+5.  dlookr
+
+`skimr` provides general functions for data exploration [@skimr-rubia2024]. `naniar`, `DataExplorer`, and `VIM` provide additional functions to explore and investigate missing data [@naniar-tierney2023; @dataexplorer-cui2024; @vim-kowarik2016]. Lastly, `dlookr` provides more functions for investigating outliers in the dataset [@dlookr-ryu2024].
+
+While this chapter highlights the capabilities of these five packages, it is important to note that R offers many additional packages that can further enhance your analysis. Readers are encouraged to explore beyond these tools to find packages best suited to their specific needs.
+
+## Revision
+
+1.  Why is data exploration considered a crucial first step in data analysis, and what are some R functions and packages that can help in this process?
+
+2.  Write an R code to check for missing values in each column of the `riskfactors` dataset, a dataset from the `naniar` package. Then, count how many `NA` values exist in total.
+
+    ```{r eval=FALSE}
+    # Load the data
+    data("riskfactors", package = "naniar")
+    ```
+
+3.  Using the `riskfactors` dataset in question 2), emove all missing values in the dataset and determine how many rows are left.
+
+4.  Besides dropping the missing values, what are the possible solutions to missing values?
+
+5.  What are the possible solutions for outliers?
+
+6.  What are the pros and cons of dropping:
+
+    1.  Missing values
+    2.  Outliers
+
+7.  Name three packages for data exploration besides the five packages covered in this chaer.

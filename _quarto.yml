@@ -18,7 +18,7 @@ book:
     - basic-r.qmd
     - data-wrangling.qmd
     - plotting.qmd
-    - loop-function.qmd
+    - efficient-coding.qmd
     - data-explore.qmd
     - descriptive-stat.qmd
     - summary.qmd
