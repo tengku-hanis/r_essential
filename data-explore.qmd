@@ -450,7 +450,7 @@ While this chapter highlights the capabilities of these five packages, it is imp
     data("riskfactors", package = "naniar")
     ```
 
-3.  Using the `riskfactors` dataset in question 2), emove all missing values in the dataset and determine how many rows are left.
+3.  Using the `riskfactors` dataset from question 2, write R code to remove all missing values in the dataset and determine how many rows are left.
 
 4.  Besides dropping the missing values, what are the possible solutions to missing values?
 
@@ -461,4 +461,4 @@ While this chapter highlights the capabilities of these five packages, it is imp
     1.  Missing values
     2.  Outliers
 
-7.  Name three packages for data exploration besides the five packages covered in this chaer.
+7.  Name three packages for data exploration besides the five packages covered in this chapter.
