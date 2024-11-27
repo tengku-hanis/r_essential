@@ -290,7 +290,7 @@ div.csl-indent {
 <p>“I think you can have a ridiculously enormous and complex data set, but if you have the right tools and methodology, then it’s not a problem.”</p>
 <p>– Aaron Koblin</p>
 </blockquote>
-<p>This chapter covers how to write a clear, concise, and optimized code to handle data and computations effectively in R. We going to cover what is a loop, how to make a function, and how to use an apply family function. For beginners, this chapter will be quite challenging. So, it is completely understandable if you need to read this chapter several times. In fact, you are free to skip this chapter for the time being, and come back again once you become more familiar with R.</p>
+<p>This chapter covers how to write a clear, concise, and optimised code to handle data and computations effectively in R. We going to cover what is a loop, how to make a function, and how to use an apply family function. For beginners, this chapter will be quite challenging. So, it is completely understandable if you need to read this chapter several times. In fact, you are free to skip this chapter for the time being, and come back again once you become more familiar with R.</p>
 <p>Mastering the topics such as a loop, apply family and functions is crucial especially once you become more advanced in using R. More often than not, you will have a large data and you need to repeat the analysis several times, thus, knowing these topics, makes the R codes more efficient and concise (though not completely readable to beginners).</p>
 <p>This chapter does not aim to cover everything on these topics. However, this chapter intends to provide a brief introduction to these topics for beginners and novices in R.</p>
 <section id="load-packages" class="level2" data-number="7.1">
@@ -740,7 +740,7 @@ Median (IQR) "5.8 (1.3)"   "3 (0.5)"     "4.35 (3.5)"  "1.3 (1.5)" </code></pre>
 </div>
 </div>
 <p>The function <code>function(col_name)</code> defines an anonymous function to process each column name in <code>names(df)</code>. Using <code>walk()</code> allows us to generate multiple boxplots, as it executes the function for its side effects without returning any output. In contrast, using <code>lapply()</code> for this task would return additional information, specifically the statistics for each boxplot, alongside creating the plots.</p>
-<p>To observe this difference, try running the code below on your machine and compare the behaviour of `walk()` and `lapply()` in this context.</p>
+<p>To observe this difference, try running the code below on your machine and compare the behaviour of <code>walk()</code> and <code>lapply()</code> in this context.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Select numeric columns only from iris</span></span>
 <span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> iris[, <span class="sc">-</span><span class="dv">5</span>]</span>

@@ -6,7 +6,7 @@ title: "Efficient coding"
 >
 > -- Aaron Koblin
 
-This chapter covers how to write a clear, concise, and optimized code to handle data and computations effectively in R. We going to cover what is a loop, how to make a function, and how to use an apply family function. For beginners, this chapter will be quite challenging. So, it is completely understandable if you need to read this chapter several times. In fact, you are free to skip this chapter for the time being, and come back again once you become more familiar with R.
+This chapter covers how to write a clear, concise, and optimised code to handle data and computations effectively in R. We going to cover what is a loop, how to make a function, and how to use an apply family function. For beginners, this chapter will be quite challenging. So, it is completely understandable if you need to read this chapter several times. In fact, you are free to skip this chapter for the time being, and come back again once you become more familiar with R.
 
 Mastering the topics such as a loop, apply family and functions is crucial especially once you become more advanced in using R. More often than not, you will have a large data and you need to repeat the analysis several times, thus, knowing these topics, makes the R codes more efficient and concise (though not completely readable to beginners).
 
@@ -360,7 +360,7 @@ walk(names(df), function(col_name) {
 
 The function `function(col_name)` defines an anonymous function to process each column name in `names(df)`. Using `walk()` allows us to generate multiple boxplots, as it executes the function for its side effects without returning any output. In contrast, using `lapply()` for this task would return additional information, specifically the statistics for each boxplot, alongside creating the plots.
 
-To observe this difference, try running the code below on your machine and compare the behaviour of \`walk()\` and \`lapply()\` in this context.
+To observe this difference, try running the code below on your machine and compare the behaviour of `walk()` and `lapply()` in this context.
 
 ```{r eval=FALSE}
 # Select numeric columns only from iris
