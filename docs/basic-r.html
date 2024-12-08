@@ -54,7 +54,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -710,7 +730,7 @@ Table&nbsp;4.1: Common data formats and corresponding R codes for reading them.
 </section>
 <section id="tidyverse-package" class="level2" data-number="4.8">
 <h2 data-number="4.8" class="anchored" data-anchor-id="tidyverse-package"><span class="header-section-number">4.8</span> Tidyverse package</h2>
-<p>We have learned that R packages contain a collection of functions and R codes that we utilise once we load the packages. So, tidyverse is an opinionated collection of R packages designed for data science.</p>
+<p>We have learned that R packages contain a collection of functions and R codes that we utilise once we load the packages. So, tidyverse is an opinionated collection of R packages designed for data science <span class="citation" data-cites="tidyverse">(<a href="references.html#ref-tidyverse" role="doc-biblioref">Wickham et al. 2019</a>)</span>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb67"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="co"># List of all packages in tidyverse</span></span>
 <span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a>tidyverse<span class="sc">::</span><span class="fu">tidyverse_packages</span>(<span class="at">include_self =</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span></span>
@@ -907,6 +927,11 @@ Table&nbsp;4.2: Common packages in tidyverse.
 </ol>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-tidyverse" class="csl-entry" role="listitem">
+Wickham, Hadley, Mara Averick, Jennifer Bryan, Winston Chang, Lucy D’Agostino McGowan, Romain François, Garrett Grolemund, et al. 2019. <span>“Welcome to the <span class="nocase">tidyverse</span>.”</span> <em>Journal of Open Source Software</em> 4 (43): 1686. <a href="https://doi.org/10.21105/joss.01686">https://doi.org/10.21105/joss.01686</a>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->

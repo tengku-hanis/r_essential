@@ -54,7 +54,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -277,7 +297,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Violin plot</li>
 <li>Scatter plot</li>
 </ol>
-<p>We going to focus more on the <code>ggplot2</code> and only cover the basics for base R plotting. <code>ggplot2</code> is widely used for plotting and visualisation in the R community.</p>
+<p>We going to focus more on the <code>ggplot2</code> and only cover the basics for base R plotting. <code>ggplot2</code> is widely used for plotting and visualisation in the R community <span class="citation" data-cites="ggplot2">(<a href="references.html#ref-ggplot2" role="doc-biblioref">Wickham 2016</a>)</span>.</p>
 <section id="load-packages" class="level2" data-number="6.1">
 <h2 data-number="6.1" class="anchored" data-anchor-id="load-packages"><span class="header-section-number">6.1</span> Load packages</h2>
 <p>Please load a <code>tidyverse</code> package before proceeding to the next section. We do not need to load the <code>ggplot2</code> package as it is part of the <code>tidyverse</code> meta package.</p>
@@ -958,6 +978,11 @@ Table&nbsp;6.1: Commonly used plots in data analysis.
 </ol>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-ggplot2" class="csl-entry" role="listitem">
+Wickham, Hadley. 2016. <em>Ggplot2: Elegant Graphics for Data Analysis</em>. Springer-Verlag New York. <a href="https://ggplot2.tidyverse.org">https://ggplot2.tidyverse.org</a>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->

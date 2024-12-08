@@ -741,6 +741,8 @@ We have learned how to interpret and implement each measure in R. Additionally, 
 1.  `summarytools`
 2.  `gtsummary`
 
+For more information on `summarytools` [@summarytools], refer to its [official documentation](https://cran.r-project.org/web/packages/summarytools/vignettes/introduction.html). Similarly, detailed guidance on `gtsummary` [@gtsummary] is available on [its documentation page](https://www.danieldsjoberg.com/gtsummary/).
+
 ## Revision
 
 1.  Explain measures of central tendency.

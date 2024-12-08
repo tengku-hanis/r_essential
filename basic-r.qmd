@@ -357,7 +357,7 @@ As we can see, every time we want to call a function from the `dplyr` package we
 
 ## Tidyverse package
 
-We have learned that R packages contain a collection of functions and R codes that we utilise once we load the packages. So, tidyverse is an opinionated collection of R packages designed for data science.
+We have learned that R packages contain a collection of functions and R codes that we utilise once we load the packages. So, tidyverse is an opinionated collection of R packages designed for data science [@tidyverse].
 
 ```{r}
 # List of all packages in tidyverse
@@ -368,7 +368,7 @@ tidyverse::tidyverse_packages(include_self = FALSE) |>
 @tbl-tidyverse-packages below summarises common packages in `tidyverse` and its uses.
 
 | Packages | Summary |
-|----|----|
+|------------------------------------|------------------------------------|
 | ggplot2 | For data visualisation. |
 | dplyr | Provides tools for data manipulation, including functions for filtering, selecting, grouping, and summarizing data. |
 | tidyr | Specializes in data tidying, allowing users to transform datasets into a tidy format ready for analysis or visualisation. |

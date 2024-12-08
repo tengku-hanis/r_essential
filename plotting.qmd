@@ -18,7 +18,7 @@ In this chapter, we going to cover how to create plots using base R and `ggplot2
 4.  Violin plot
 5.  Scatter plot
 
-We going to focus more on the `ggplot2` and only cover the basics for base R plotting. `ggplot2` is widely used for plotting and visualisation in the R community.
+We going to focus more on the `ggplot2` and only cover the basics for base R plotting. `ggplot2` is widely used for plotting and visualisation in the R community [@ggplot2].
 
 ## Load packages
 
