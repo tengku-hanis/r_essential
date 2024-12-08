@@ -594,7 +594,7 @@ We have covered in @sec-data-explore-useful-packages several general packages fo
 
 `summarytools` provides an easy-to-use function for descriptive statistics. For numerical variables, we can use `descr()`. We going to use the `iris` dataset to demonstrate the capabilities of `summarytools`. More details on the `iris` dataset can be read by typing `?iris` in the
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 # Load packages
 library(summarytools)
 
