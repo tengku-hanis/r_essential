@@ -715,7 +715,7 @@ library(gtsummary)
 tbl_summary(data = iris)
 ```
 
-We can further adjust this summary table. For example, we want to:
+We can further adjust this summary table. For example, can:
 
 1.  Change the median (Q1, Q3) to the mean and standard deviation.
 2.  Change all values to 1 decimal point.
