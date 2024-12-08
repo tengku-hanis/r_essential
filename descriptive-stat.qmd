@@ -36,7 +36,7 @@ library(tidyverse)
 
 Measures of central tendency aim to identify the centre or typical value within a dataset. It provides a summary of the data by describing the point around which most values cluster.
 
-**Mean**
+### Mean
 
 The mean represents the average of a dataset. It is calculated by summing all the values in the dataset and dividing the total by the number of values. $$
 Mean(\overline{x}) = \frac{\sum x}{n}
@@ -69,7 +69,7 @@ x_mean = c(5, 6, 7, 8, 13, 2)
 mean(x_mean)
 ```
 
-**Median**
+### Median
 
 The median represents the middle value in a sorted dataset. It divides the dataset into two halves: 50% of the data values are smaller than the median, and 50% are larger.
 
@@ -101,7 +101,7 @@ x_med = c(5, 6, 7, 8, 13, 2)
 median(x_med)
 ```
 
-**Mode**
+### Mode
 
 The mode represents the most frequently occurring value in a dataset. It is the value that appears the most times. Unlike the mean or median, the mode can be used for both numerical and categorical data.
 
@@ -163,7 +163,7 @@ The `Mode()` function from `DescTools` returns the mode value and the frequency 
 
 ### Comparison of mean, median, and mode
 
-**Mean vs. median**
+#### Mean vs. median
 
 The mean is sensitive to outliers compared to the median and mode. In the presence of outliers, the median is more robust and thus, preferred to describe the central tendency of the data. Let's demonstrate the change of mean and median in the presence of the outliers.
 
@@ -352,7 +352,7 @@ distribution_data_long %>%
 
 In the normal distribution, despite the values of mean and median being close, the mean is preferred as it takes into account the whole range of values mathematically. However, in the skewed distribution, the median is preferred as it is less affected by the extreme values and sparsity of the values as compared to the mean.
 
-**Mode vs. mean and median**
+#### Mode vs. mean and median
 
 Lastly, the mode is less useful for the data analysis compared to the mean and median. Moreover, the mode may not be unique or exist in certain datasets. Let's demonstrate these cases:
 
@@ -380,7 +380,7 @@ Lastly, the mode is less useful for the data analysis compared to the mean and m
 
 Measures of variability describe the spread or dispersion of data points in a dataset. These measures indicate how much the data values differ from each other and from the central tendency (e.g., mean or median).
 
-**Range**
+### Range
 
 The range is the difference between maximum and minimum values in a dataset.
 
@@ -422,7 +422,7 @@ To calculate the range in R, we can utilise `max()` and `min()` functions, which
 max(x_range) - min(x_range)
 ```
 
-**Variance**
+### Variance
 
 Variance measures the average squared difference of each data point from the mean. It shows how data points spread around the mean in squared units.
 
@@ -477,7 +477,7 @@ Notice the slight differences in the denominators of the two equations. Sample v
 
 In practical data analysis, we are almost always working with a sample rather than the entire population. As a result, the formula for sample variance is typically used to estimate the variability of the dataset.
 
-**Standard deviation**
+### Standard deviation
 
 Standard deviation is the square root of the variance, providing a measure of dispersion in the same units as the data. A smaller value indicates less variability and a larger value indicates greater variability.
 
@@ -513,7 +513,7 @@ x_sd <- c(3, 5, 6, 8, 2, 9)
 sd(x_sd)
 ```
 
-**Interquartile range**
+### Interquartile range
 
 The interquartile range describes the range of the middle 50% of the data (the difference between the third quartile and first quartile).
 
@@ -590,7 +590,7 @@ Briefly, I suggest using `type = 7` or `type = 8` for calculating the quartile a
 
 We have covered in @sec-data-explore-useful-packages several general packages for data exploration which includes descriptive statistics. In this, section we going to explore two useful packages for descriptive statistics: `summarytools` and `gtsummary`. It is to be noted that there are several other R packages available for descriptive statistics, to name a few: `psych`, `pastecs`, and `Hmisc`.
 
-**summarytools**
+### summarytools
 
 `summarytools` provides an easy-to-use function for descriptive statistics. For numerical variables, we can use `descr()`. We going to use the `iris` dataset to demonstrate the capabilities of `summarytools`. More details on the `iris` dataset can be read by typing `?iris` in the
 
@@ -706,7 +706,7 @@ ctable(dat$Sepal_Length_Cat, dat$Species)
 
 The first variable will appear as row names and the second variable will appear as column names. In our code, `Sepal_Length_Cat` will appear as a row, and `Species` will appear as a column.
 
-**gtsummary**
+### gtsummary
 
 The `gtsummary` package provides an easy way to create a publication-ready summary table. We going to use the `iris` dataset to demonstrate the capabilities of `gtsummary`.
 
