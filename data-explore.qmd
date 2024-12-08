@@ -140,7 +140,7 @@ There are two methods to identify outliers:
 
 There are other advanced methods to detect outliers. However, the basics to understand those methods are beyond the scope of this book.
 
-## Useful packages
+## Useful packages {#sec-data-explore-useful-packages}
 
 In this section, we going to see several useful R packages to explore the data. We are only going to cover the main functions of each package.
 
@@ -458,7 +458,7 @@ While this chapter highlights the capabilities of these five packages, it is imp
 
 6.  What are the pros and cons of dropping:
 
-    1.  Missing values
-    2.  Outliers
+    a.  Missing values
+    b.  Outliers
 
 7.  Name three packages for data exploration besides the five packages covered in this chapter.
