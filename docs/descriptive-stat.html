@@ -399,7 +399,7 @@ Mean(\overline{x}) = \frac{\sum x}{n}
 5, 6, 7, 8, 13, 2, 8, 1
 \]</span></p>
 <p>The mode is the most frequent value which is 8.</p>
-<p>In R, there is no function in base R to determine the mode. We can manually determine the mode in R.</p>
+<p>In R, there is no function in base R to determine the value of mode. However, we can manually determine the its value in R.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Range of values</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>x_mode_num <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">13</span>, <span class="dv">2</span>, <span class="dv">8</span>, <span class="dv">1</span>)</span>
@@ -1080,36 +1080,36 @@ Type: Factor
 </div>
 <p>Lastly, we can do a cross-tabulation between two categorical variables. To demonstrate this function, we need to create an additional categorical variable for the <code>iris</code> dataset.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a>iris <span class="sc">%&gt;%</span> </span>
-<span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Sepal_Length_Cat =</span> <span class="fu">ifelse</span>(Sepal.Length <span class="sc">&gt;</span> <span class="dv">5</span>, <span class="st">"large"</span>, <span class="st">"small"</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb66-3"><a href="#cb66-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Sepal_Length_Cat, Species) <span class="sc">%&gt;%</span> </span>
-<span id="cb66-4"><a href="#cb66-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ctable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Error : Can't find NULL</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a new categorical variable</span></span>
+<span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> </span>
+<span id="cb66-3"><a href="#cb66-3" aria-hidden="true" tabindex="-1"></a>  iris <span class="sc">%&gt;%</span> </span>
+<span id="cb66-4"><a href="#cb66-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Sepal_Length_Cat =</span> <span class="fu">ifelse</span>(Sepal.Length <span class="sc">&gt;</span> <span class="dv">5</span>, <span class="st">"large"</span>, <span class="st">"small"</span>)) </span>
+<span id="cb66-5"><a href="#cb66-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb66-6"><a href="#cb66-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Cross-tabulation</span></span>
+<span id="cb66-7"><a href="#cb66-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ctable</span>(dat<span class="sc">$</span>Sepal_Length_Cat, dat<span class="sc">$</span>Species)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Cross-Tabulation, Row Proportions  
-"large" * "small"  
-Data Frame: iris  
+Sepal_Length_Cat * Species  
+Data Frame: dat  
 
---------- --------- ------------ ------------ ------------ --------------
-            "small"       setosa   versicolor    virginica          Total
-  "large"                                                                
-    large             22 (18.6%)   47 (39.8%)   49 (41.5%)   118 (100.0%)
-    small             28 (87.5%)    3 ( 9.4%)    1 ( 3.1%)    32 (100.0%)
-    Total             50 (33.3%)   50 (33.3%)   50 (33.3%)   150 (100.0%)
---------- --------- ------------ ------------ ------------ --------------</code></pre>
+------------------ --------- ------------ ------------ ------------ --------------
+                     Species       setosa   versicolor    virginica          Total
+  Sepal_Length_Cat                                                                
+             large             22 (18.6%)   47 (39.8%)   49 (41.5%)   118 (100.0%)
+             small             28 (87.5%)    3 ( 9.4%)    1 ( 3.1%)    32 (100.0%)
+             Total             50 (33.3%)   50 (33.3%)   50 (33.3%)   150 (100.0%)
+------------------ --------- ------------ ------------ ------------ --------------</code></pre>
 </div>
 </div>
 <p>The first variable will appear as row names and the second variable will appear as column names. In our code, <code>Sepal_Length_Cat</code> will appear as a row, and <code>Species</code> will appear as a column.</p>
 <p><strong>gtsummary</strong></p>
 <p>The <code>gtsummary</code> package provides an easy way to create a publication-ready summary table. We going to use the <code>iris</code> dataset to demonstrate the capabilities of <code>gtsummary</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load packages</span></span>
-<span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gtsummary)</span>
-<span id="cb69-3"><a href="#cb69-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb69-4"><a href="#cb69-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a summary table</span></span>
-<span id="cb69-5"><a href="#cb69-5" aria-hidden="true" tabindex="-1"></a><span class="fu">tbl_summary</span>(<span class="at">data =</span> iris)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load packages</span></span>
+<span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gtsummary)</span>
+<span id="cb68-3"><a href="#cb68-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb68-4"><a href="#cb68-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a summary table</span></span>
+<span id="cb68-5"><a href="#cb68-5" aria-hidden="true" tabindex="-1"></a><span class="fu">tbl_summary</span>(<span class="at">data =</span> iris)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="ikenekxmtd" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#ikenekxmtd table {
@@ -1627,12 +1627,12 @@ Data Frame: iris
 <li>Change all values to 1 decimal point.</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tbl_summary</span>(</span>
-<span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> iris,</span>
-<span id="cb70-3"><a href="#cb70-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">statistic =</span> <span class="fu">all_continuous</span>() <span class="sc">~</span> <span class="st">"{mean} ({sd})"</span>, <span class="co"># Use mean and standard deviation</span></span>
-<span id="cb70-4"><a href="#cb70-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">digits =</span> <span class="fu">list</span>(<span class="fu">all_continuous</span>() <span class="sc">~</span> <span class="dv">1</span>, <span class="co"># numerical variables to 1 decimal place</span></span>
-<span id="cb70-5"><a href="#cb70-5" aria-hidden="true" tabindex="-1"></a>                <span class="fu">all_categorical</span>() <span class="sc">~</span> <span class="dv">1</span>) <span class="co"># categorical variable to 1 decimal place</span></span>
-<span id="cb70-6"><a href="#cb70-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tbl_summary</span>(</span>
+<span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> iris,</span>
+<span id="cb69-3"><a href="#cb69-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">statistic =</span> <span class="fu">all_continuous</span>() <span class="sc">~</span> <span class="st">"{mean} ({sd})"</span>, <span class="co"># Use mean and standard deviation</span></span>
+<span id="cb69-4"><a href="#cb69-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">digits =</span> <span class="fu">list</span>(<span class="fu">all_continuous</span>() <span class="sc">~</span> <span class="dv">1</span>, <span class="co"># numerical variables to 1 decimal place</span></span>
+<span id="cb69-5"><a href="#cb69-5" aria-hidden="true" tabindex="-1"></a>                <span class="fu">all_categorical</span>() <span class="sc">~</span> <span class="dv">1</span>) <span class="co"># categorical variable to 1 decimal place</span></span>
+<span id="cb69-6"><a href="#cb69-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="zddzayqudq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#zddzayqudq table {
@@ -2168,7 +2168,7 @@ Data Frame: iris
 <li><p>Explain the differences between sample variance and population variance.</p></li>
 <li><p>Read about <code>airquality</code> data by typing <code>?airquality</code> in the <code>Console</code>. Next, using the data:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"airquality"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"airquality"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol type="a">
 <li>Find the median for each numerical variable in the dataset.</li>
@@ -2177,7 +2177,7 @@ Data Frame: iris
 </ol></li>
 <li><p>Read about <code>CO2</code> data by typing <code>?CO2</code> in the <code>Console</code>. Next, using the data:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"CO2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"CO2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol type="a">
 <li><p>Get descriptive statistics for <code>uptake</code> stratified by <code>Type</code>.</p></li>

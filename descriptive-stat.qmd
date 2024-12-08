@@ -113,7 +113,7 @@ $$
 
 The mode is the most frequent value which is 8.
 
-In R, there is no function in base R to determine the mode. We can manually determine the mode in R.
+In R, there is no function in base R to determine the value of mode. However, we can manually determine the its value in R.
 
 ```{r}
 # Range of values
@@ -694,11 +694,14 @@ freq(iris$Species)
 
 Lastly, we can do a cross-tabulation between two categorical variables. To demonstrate this function, we need to create an additional categorical variable for the `iris` dataset.
 
-```{r}
-iris %>% 
-  mutate(Sepal_Length_Cat = ifelse(Sepal.Length > 5, "large", "small")) %>% 
-  select(Sepal_Length_Cat, Species) %>% 
-  ctable()
+```{r warning=FALSE, message=FALSE, error=FALSE}
+# Create a new categorical variable
+dat <- 
+  iris %>% 
+  mutate(Sepal_Length_Cat = ifelse(Sepal.Length > 5, "large", "small")) 
+
+# Cross-tabulation
+ctable(dat$Sepal_Length_Cat, dat$Species)
 ```
 
 The first variable will appear as row names and the second variable will appear as column names. In our code, `Sepal_Length_Cat` will appear as a row, and `Species` will appear as a column.
