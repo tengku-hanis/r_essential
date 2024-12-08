@@ -682,7 +682,7 @@ Additionally, we can get descriptive statistics based on certain variables. For 
 ```{r}
 iris %>% 
   group_by(Species) %>% 
-  descr()
+  descr(Petal.Length)
 ```
 
 For the descriptive statistics for the categorical variables, we can use the `freq()` function which calculates count and percentage.
