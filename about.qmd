@@ -1,7 +1,7 @@
 # About the book {.unnumbered}
 
 ::: callout-warning
-## This book is in its early drafting stages; many portions of the book are unfinished and all of it will go through significant revision and refinement.
+## This book is currently in its drafting stages and has not yet been published. While all the chapters are complete, most of them are still undergoing further revision and refinement.
 :::
 
 This book is designed for beginner and novice R users, with chapters structured sequentially to introduce R step-by-step, starting with foundational topics and progressing to more complex material.
