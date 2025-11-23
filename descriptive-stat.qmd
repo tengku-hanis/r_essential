@@ -466,12 +466,10 @@ var(x_variance)
 
 The equation that we used to calculate the variance manually and the one in R is known as sample variance. There is another equation known as population variance. The sample variance is used to describe the spread out of the values in a sample, while population variance describes the spread out of the values in a population.
 
-$$
 \begin{align*}
 \text{Sample variance}(s^{2}) = \frac{\sum (x_{i} - \overline{x})^{2}}{n-1}\\
 \text{Population variance}(\sigma^{2})= \frac{\sum (x_{i} - \mu)^{2}}{N}
 \end{align*}
-$$
 
 Notice the slight differences in the denominators of the two equations. Sample variance is calculated for a subset of data and includes an adjustment for smaller sample sizes by dividing by $n-1$ instead of $n$. This correction (known as Bessel's correction) ensures that the sample variance is an unbiased estimate of the population variance. In contrast, population variance is calculated for the entire dataset and does not require this adjustment. Additionally, instead of using sample mean ($\overline{x}$), population variance is using the population mean ($\mu$).
 
@@ -528,23 +526,19 @@ $$
 $$
 
 1.  Divide the data into lower half and upper half
-
-    $$
+    
     \begin{align*}
     \text{Lower half} = 2, 3, 5\\
     \text{Upper half} = 6, 8, 9
     \end{align*}
-    $$
 
 2.  Identify the median of the lower half (first quartile, $Q_{1}$) and the median of the upper half (third quartile, $Q_{3}$).
-
-    $$
+    
     \begin{align*}
     \text{Median of lower half}(Q_{1}) = 3\\
     \text{Median of the upper half} (Q_{3}) = 8
     \end{align*}
-    $$
-
+    
 3.  Calculate the interquartile range.
 
     $$
@@ -614,13 +608,11 @@ We can see that `descr()` returns several familiar measures for descriptive stat
 
     -   CV or coefficient of variation is a relative measure of variability. It reflects the ratio of standard deviation ($s^{2}$) to the mean ($\overline{x}$).
 
-    -   $$
-        \begin{align*}
+    -   \begin{align*}
         CV = \frac{s^{2}}{\overline{x}}\\
         0.47 =\frac{1.77}{3.76}
         \end{align*}
-        $$
-
+        
     -   Low CV indicates less variability relative to the mean, suggesting consistency and uniformity in the dataset, while high CV indicates greater variability relative to the mean, which could imply inconsistency or a wide spread of data values.
 
     -   There is no exact value of CV that we can rate the variability of the data, however, as a rule of thumb:
