@@ -235,6 +235,7 @@ chick_data %>%
   theme_bw()
 ```
 
+
 ## Histogram
 
 A histogram is used when a variable is numerical. It reflects the frequency distribution of the data.
