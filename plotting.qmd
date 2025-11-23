@@ -211,6 +211,30 @@ chick_data %>%
   theme_bw() 
 ```
 
+Additionally, we can do bar plot based on another numerical variable in the data. For example, let's plot diet regiemn based on the `weight`. Here, instead of `geom_bar()`, we are going to use `geom_col()`.
+
+```{r}
+chick_data %>% 
+  ggplot(aes(x = Diet, y = weight)) +
+  geom_col(fill = "steelblue") +
+  labs(title = "Protein diet regimens based on the weight of chicks", 
+       x = "Diet regimen",
+       y = "Weight of chicks (gm)") +
+  theme_bw()
+```
+
+Also, we can add the third variable, `Time_group`. However, we need to specify `position_dodge()` in `geom_col()` to let R knows we want it side by side.
+
+```{r}
+chick_data %>% 
+  ggplot(aes(x = Diet, y = weight, fill = Time_group)) +
+  geom_col(position = position_dodge()) +
+  labs(title = "Protein diet regimens based on the weight of chicks and time groups", 
+       x = "Diet regimen",
+       y = "Weight of chicks (gm)") +
+  theme_bw()
+```
+
 ## Histogram
 
 A histogram is used when a variable is numerical. It reflects the frequency distribution of the data.
