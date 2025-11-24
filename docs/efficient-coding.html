@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>7&nbsp; Efficient coding – R Essentials: A Beginner’s Guide to Data Analysis</title>
+<title>8&nbsp; Efficient coding – R Essentials: A Beginner’s Guide to Data Analysis</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -139,7 +139,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./efficient-coding.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Efficient coding</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./efficient-coding.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Efficient coding</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -210,26 +210,26 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./descriptive-stat.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Descriptive statistics</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./plotting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data visualisation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data visualisation</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./efficient-coding.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Efficient coding</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Efficient coding</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./data-explore.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Data exploration</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./descriptive-stat.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Descriptive statistics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Data exploration</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -254,18 +254,18 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#load-packages" id="toc-load-packages" class="nav-link active" data-scroll-target="#load-packages"><span class="header-section-number">7.1</span> Load packages</a></li>
-  <li><a href="#loop" id="toc-loop" class="nav-link" data-scroll-target="#loop"><span class="header-section-number">7.2</span> Loop</a></li>
-  <li><a href="#apply" id="toc-apply" class="nav-link" data-scroll-target="#apply"><span class="header-section-number">7.3</span> Apply</a>
+  <li><a href="#load-packages" id="toc-load-packages" class="nav-link active" data-scroll-target="#load-packages"><span class="header-section-number">8.1</span> Load packages</a></li>
+  <li><a href="#loop" id="toc-loop" class="nav-link" data-scroll-target="#loop"><span class="header-section-number">8.2</span> Loop</a></li>
+  <li><a href="#apply" id="toc-apply" class="nav-link" data-scroll-target="#apply"><span class="header-section-number">8.3</span> Apply</a>
   <ul class="collapse">
-  <li><a href="#purrr" id="toc-purrr" class="nav-link" data-scroll-target="#purrr"><span class="header-section-number">7.3.1</span> <code>purrr</code></a></li>
+  <li><a href="#purrr" id="toc-purrr" class="nav-link" data-scroll-target="#purrr"><span class="header-section-number">8.3.1</span> <code>purrr</code></a></li>
   </ul></li>
-  <li><a href="#sec-loop-function" id="toc-sec-loop-function" class="nav-link" data-scroll-target="#sec-loop-function"><span class="header-section-number">7.4</span> Function</a>
+  <li><a href="#sec-loop-function" id="toc-sec-loop-function" class="nav-link" data-scroll-target="#sec-loop-function"><span class="header-section-number">8.4</span> Function</a>
   <ul class="collapse">
-  <li><a href="#anonymous-function" id="toc-anonymous-function" class="nav-link" data-scroll-target="#anonymous-function"><span class="header-section-number">7.4.1</span> Anonymous function</a></li>
+  <li><a href="#anonymous-function" id="toc-anonymous-function" class="nav-link" data-scroll-target="#anonymous-function"><span class="header-section-number">8.4.1</span> Anonymous function</a></li>
   </ul></li>
-  <li><a href="#chapter-summary" id="toc-chapter-summary" class="nav-link" data-scroll-target="#chapter-summary"><span class="header-section-number">7.5</span> Chapter summary</a></li>
-  <li><a href="#revision" id="toc-revision" class="nav-link" data-scroll-target="#revision"><span class="header-section-number">7.6</span> Revision</a></li>
+  <li><a href="#chapter-summary" id="toc-chapter-summary" class="nav-link" data-scroll-target="#chapter-summary"><span class="header-section-number">8.5</span> Chapter summary</a></li>
+  <li><a href="#revision" id="toc-revision" class="nav-link" data-scroll-target="#revision"><span class="header-section-number">8.6</span> Revision</a></li>
   </ul>
 </nav>
     </div>
@@ -274,7 +274,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Efficient coding</span></h1>
+<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Efficient coding</span></h1>
 </div>
 
 
@@ -298,15 +298,15 @@ div.csl-indent {
 <p>This chapter covers how to write a clear, concise, and optimised code to handle data and computations effectively in R. We going to cover what is a loop, how to make a function, and how to use an apply family function. For beginners, this chapter will be quite challenging. So, it is completely understandable if you need to read this chapter several times. In fact, you are free to skip this chapter for the time being, and come back again once you become more familiar with R.</p>
 <p>Mastering the topics such as a loop, apply family and functions is crucial especially once you become more advanced in using R. More often than not, you will have a large data and you need to repeat the analysis several times, thus, knowing these topics, makes the R codes more efficient and concise (though not completely readable to beginners).</p>
 <p>This chapter does not aim to cover everything on these topics. However, this chapter intends to provide a brief introduction to these topics for beginners and novices in R.</p>
-<section id="load-packages" class="level2" data-number="7.1">
-<h2 data-number="7.1" class="anchored" data-anchor-id="load-packages"><span class="header-section-number">7.1</span> Load packages</h2>
+<section id="load-packages" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="load-packages"><span class="header-section-number">8.1</span> Load packages</h2>
 <p>Please load a <code>tidyverse</code> package before moving to the next section.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="loop" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="loop"><span class="header-section-number">7.2</span> Loop</h2>
+<section id="loop" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="loop"><span class="header-section-number">8.2</span> Loop</h2>
 <p>A loop is utilised in the case of an iterative process. Generally, there are two types of loops:</p>
 <ol type="1">
 <li>For loop</li>
@@ -483,8 +483,8 @@ div.csl-indent {
 <p>The last line of the codes is just to print the result. For now, you do not actually need to understand it.</p>
 <p>Generally, the for loop is more popular and commonly used compared to the while loop. However, knowing both loops, at least at the basic level will definitely benefit you in future. Additionally, the loop functions are not only available in R but in other programming software such as Python, Julia, MATLAB and Stata.</p>
 </section>
-<section id="apply" class="level2" data-number="7.3">
-<h2 data-number="7.3" class="anchored" data-anchor-id="apply"><span class="header-section-number">7.3</span> Apply</h2>
+<section id="apply" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="apply"><span class="header-section-number">8.3</span> Apply</h2>
 <p>The apply family function in R is utilised to apply a specific operation over elements of data structures such as vectors, matrices, and data frames. This function is relatively similar to the loop function. However, in R, generally, the apply family functions are faster and more efficient compared to the loop functions.</p>
 <p>There are 7 types of apply family functions:</p>
 <ol type="1">
@@ -556,8 +556,8 @@ $Petal.Width
 </div>
 <p>The output is formatted in a more simplified, and in this case, the output format is similar to the one in the <code>apply()</code> function section.</p>
 <p>So, we have seen three functions from the apply family functions. As the example in the for loop, we can also use the apply family function to plot several plots.</p>
-<section id="purrr" class="level3" data-number="7.3.1">
-<h3 data-number="7.3.1" class="anchored" data-anchor-id="purrr"><span class="header-section-number">7.3.1</span> <code>purrr</code></h3>
+<section id="purrr" class="level3" data-number="8.3.1">
+<h3 data-number="8.3.1" class="anchored" data-anchor-id="purrr"><span class="header-section-number">8.3.1</span> <code>purrr</code></h3>
 <p><code>purrr</code> package is part of <code>tidyverse</code>, which contains many functions that are equivalent to base R apply family functions.</p>
 <p>The equivalent of <code>lapply()</code> function is <code>map()</code>.</p>
 <div class="cell">
@@ -579,8 +579,8 @@ $Petal.Width
 <p>There are many more functions in the <code>purrr</code> package that are highly beneficial to learn. However, most of these functions are more advanced and require a deeper understanding of R, which goes beyond what is covered in this book. As such, they may not be suitable for beginners and novices at this stage.</p>
 </section>
 </section>
-<section id="sec-loop-function" class="level2" data-number="7.4">
-<h2 data-number="7.4" class="anchored" data-anchor-id="sec-loop-function"><span class="header-section-number">7.4</span> Function</h2>
+<section id="sec-loop-function" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="sec-loop-function"><span class="header-section-number">8.4</span> Function</h2>
 <p>One of the flexibility in R is we can make our own function. Let’s make a basic function that adds two numbers.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>add_num <span class="ot">&lt;-</span> <span class="cf">function</span>(number1, number2) {</span>
@@ -685,8 +685,8 @@ Median (IQR) "5.8 (1.3)"   "3 (0.5)"     "4.35 (3.5)"  "1.3 (1.5)" </code></pre>
 </div>
 </div>
 <p>What we have learned just now, is known as named function. It is probably the most commonly used function.</p>
-<section id="anonymous-function" class="level3" data-number="7.4.1">
-<h3 data-number="7.4.1" class="anchored" data-anchor-id="anonymous-function"><span class="header-section-number">7.4.1</span> Anonymous function</h3>
+<section id="anonymous-function" class="level3" data-number="8.4.1">
+<h3 data-number="8.4.1" class="anchored" data-anchor-id="anonymous-function"><span class="header-section-number">8.4.1</span> Anonymous function</h3>
 <p>There is another type of function in R, known as the anonymous function. It is defined without a name and is often used temporarily.</p>
 <p>For example, let’s create an anonymous function that squares a number.</p>
 <div class="cell">
@@ -760,13 +760,13 @@ Median (IQR) "5.8 (1.3)"   "3 (0.5)"     "4.35 (3.5)"  "1.3 (1.5)" </code></pre>
 </div>
 </section>
 </section>
-<section id="chapter-summary" class="level2" data-number="7.5">
-<h2 data-number="7.5" class="anchored" data-anchor-id="chapter-summary"><span class="header-section-number">7.5</span> Chapter summary</h2>
+<section id="chapter-summary" class="level2" data-number="8.5">
+<h2 data-number="8.5" class="anchored" data-anchor-id="chapter-summary"><span class="header-section-number">8.5</span> Chapter summary</h2>
 <p>We have covered adequately about the loop, apply family, and function.</p>
 <div id="tbl-summary-loop-apply-function" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-summary-loop-apply-function-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;7.1: Brief summary of loop, apply family, and function.
+Table&nbsp;8.1: Brief summary of loop, apply family, and function.
 </figcaption>
 <div aria-describedby="tbl-summary-loop-apply-function-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
@@ -805,8 +805,8 @@ Table&nbsp;7.1: Brief summary of loop, apply family, and function.
 </div>
 <p>For readers seeking a greater challenge, I recommend reading the <a href="https://r4ds.hadley.nz/">second edition of <em>R for Data Science</em> book</a>, particularly <a href="https://r4ds.hadley.nz/functions">Chapter 25</a> on functions and <a href="https://r4ds.hadley.nz/base-r">Chapter 27</a> on loops and the apply family <span class="citation" data-cites="wickham2023r">(<a href="references.html#ref-wickham2023r" role="doc-biblioref">Wickham, Çetinkaya-Rundel, and Grolemund 2023</a>)</span>. Additionally, I suggest exploring <a href="https://r4ds.had.co.nz/iteration.html">Chapter 21</a> of the <a href="https://r4ds.had.co.nz/index.html">first edition of <em>R for Data Science</em></a>, as it covers the loops and apply family more extensively <span class="citation" data-cites="wickham2017r">(<a href="references.html#ref-wickham2017r" role="doc-biblioref">Wickham and Grolemund 2017</a>)</span>.</p>
 </section>
-<section id="revision" class="level2" data-number="7.6">
-<h2 data-number="7.6" class="anchored" data-anchor-id="revision"><span class="header-section-number">7.6</span> Revision</h2>
+<section id="revision" class="level2" data-number="8.6">
+<h2 data-number="8.6" class="anchored" data-anchor-id="revision"><span class="header-section-number">8.6</span> Revision</h2>
 <ol type="1">
 <li><p>Using <code>USJudgeRatings</code> dataset, a built-in dataset in R, write a for loop that calculates the median for the first two columns and prints the result. Ensure the medians are rounded to two decimal places.</p>
 <div class="cell">
@@ -835,7 +835,7 @@ Table&nbsp;7.1: Brief summary of loop, apply family, and function.
 <span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a><span class="fu">lapply</span>(iris <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="sc">-</span>Species), mean)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div></li>
 <li><p>What are the difference between <code>lapply()</code> and <code>sapply()</code>.</p></li>
-<li><p>Using the <code>summary_func()</code> function in <a href="#sec-loop-function" class="quarto-xref"><span>Section 7.4</span></a>, calculate the statistical summaries (mean, SD, median, IQR) for all numeric columns in the <code>USJudgeRatings</code> dataset, a built-in dataset in R. Use the <code>sapply()</code> function and for loop implementation.</p>
+<li><p>Using the <code>summary_func()</code> function in <a href="#sec-loop-function" class="quarto-xref"><span>Section 8.4</span></a>, calculate the statistical summaries (mean, SD, median, IQR) for all numeric columns in the <code>USJudgeRatings</code> dataset, a built-in dataset in R. Use the <code>sapply()</code> function and for loop implementation.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"USJudgeRatings"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div></li>
@@ -846,7 +846,7 @@ Table&nbsp;7.1: Brief summary of loop, apply family, and function.
 <pre><code>[1] 200</code></pre>
 </div>
 </div></li>
-<li><p>Modify the <code>avg_num()</code> function in <a href="#sec-loop-function" class="quarto-xref"><span>Section 7.4</span></a> to include an optional argument <code>round()</code> that rounds the mean to a specified number of decimal places. Test it with the <code>iris$Sepal.Length</code> column, rounding to 3 decimal places. The function should result an output as below.</p>
+<li><p>Modify the <code>avg_num()</code> function in <a href="#sec-loop-function" class="quarto-xref"><span>Section 8.4</span></a> to include an optional argument <code>round()</code> that rounds the mean to a specified number of decimal places. Test it with the <code>iris$Sepal.Length</code> column, rounding to 3 decimal places. The function should result an output as below.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="fu">avg_num</span>(iris<span class="sc">$</span>Sepal.Length)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -1271,12 +1271,12 @@ Wickham, Hadley, and Garrett Grolemund. 2017. <em>R for Data Science</em>. O’R
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./plotting.html" class="pagination-link" aria-label="Data visualisation">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data visualisation</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data visualisation</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./data-explore.html" class="pagination-link" aria-label="Data exploration">
-        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Data exploration</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Data exploration</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

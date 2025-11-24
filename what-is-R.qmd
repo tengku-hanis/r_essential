@@ -56,7 +56,7 @@ There are a few options to use R in a cloud. Meaning that we do not need to inst
 
 The first two clouds are free with limited use, though you need to make an account. Kaggle is totally free to use as far as I know. However, Kaggle does not have functions such as code completion which is very helpful to beginners. This function is available in the first two clouds.
 
-However, if you are looking for something more familiar to RStudio, Posit Cloud is the best choice. The functionalities and the overall look of the Posit Cloud are identical to RStudio.
+However, if you are looking for something more familiar to RStudio, Posit Cloud is the best choice. The functionalities and the overall look of the Posit Cloud are identical to RStudio as you can see in @fig-posit-cloud.
 
 ![The interface of RStudio in Posit Cloud.](figs/ch2/posit_cloud.JPG){#fig-posit-cloud}
 

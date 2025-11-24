@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>8&nbsp; Data exploration – R Essentials: A Beginner’s Guide to Data Analysis</title>
+<title>9&nbsp; Data exploration – R Essentials: A Beginner’s Guide to Data Analysis</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -85,7 +85,7 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./descriptive-stat.html" rel="next">
+<link href="./summary.html" rel="next">
 <link href="./efficient-coding.html" rel="prev">
 <link href="./images/thumbnail2.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
@@ -139,7 +139,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./data-explore.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Data exploration</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./data-explore.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Data exploration</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -210,26 +210,26 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./descriptive-stat.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Descriptive statistics</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./plotting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data visualisation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data visualisation</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./efficient-coding.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Efficient coding</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Efficient coding</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./data-explore.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Data exploration</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./descriptive-stat.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Descriptive statistics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Data exploration</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -254,18 +254,18 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#missing-data" id="toc-missing-data" class="nav-link active" data-scroll-target="#missing-data"><span class="header-section-number">8.1</span> Missing data</a></li>
-  <li><a href="#outliers" id="toc-outliers" class="nav-link" data-scroll-target="#outliers"><span class="header-section-number">8.2</span> Outliers</a></li>
-  <li><a href="#sec-data-explore-useful-packages" id="toc-sec-data-explore-useful-packages" class="nav-link" data-scroll-target="#sec-data-explore-useful-packages"><span class="header-section-number">8.3</span> Useful packages</a>
+  <li><a href="#missing-data" id="toc-missing-data" class="nav-link active" data-scroll-target="#missing-data"><span class="header-section-number">9.1</span> Missing data</a></li>
+  <li><a href="#outliers" id="toc-outliers" class="nav-link" data-scroll-target="#outliers"><span class="header-section-number">9.2</span> Outliers</a></li>
+  <li><a href="#sec-data-explore-useful-packages" id="toc-sec-data-explore-useful-packages" class="nav-link" data-scroll-target="#sec-data-explore-useful-packages"><span class="header-section-number">9.3</span> Useful packages</a>
   <ul class="collapse">
-  <li><a href="#skimr" id="toc-skimr" class="nav-link" data-scroll-target="#skimr"><span class="header-section-number">8.3.1</span> skimr</a></li>
-  <li><a href="#naniar" id="toc-naniar" class="nav-link" data-scroll-target="#naniar"><span class="header-section-number">8.3.2</span> naniar</a></li>
-  <li><a href="#dataexplorer" id="toc-dataexplorer" class="nav-link" data-scroll-target="#dataexplorer"><span class="header-section-number">8.3.3</span> DataExplorer</a></li>
-  <li><a href="#vim" id="toc-vim" class="nav-link" data-scroll-target="#vim"><span class="header-section-number">8.3.4</span> VIM</a></li>
-  <li><a href="#dlookr" id="toc-dlookr" class="nav-link" data-scroll-target="#dlookr"><span class="header-section-number">8.3.5</span> dlookr</a></li>
+  <li><a href="#skimr" id="toc-skimr" class="nav-link" data-scroll-target="#skimr"><span class="header-section-number">9.3.1</span> skimr</a></li>
+  <li><a href="#naniar" id="toc-naniar" class="nav-link" data-scroll-target="#naniar"><span class="header-section-number">9.3.2</span> naniar</a></li>
+  <li><a href="#dataexplorer" id="toc-dataexplorer" class="nav-link" data-scroll-target="#dataexplorer"><span class="header-section-number">9.3.3</span> DataExplorer</a></li>
+  <li><a href="#vim" id="toc-vim" class="nav-link" data-scroll-target="#vim"><span class="header-section-number">9.3.4</span> VIM</a></li>
+  <li><a href="#dlookr" id="toc-dlookr" class="nav-link" data-scroll-target="#dlookr"><span class="header-section-number">9.3.5</span> dlookr</a></li>
   </ul></li>
-  <li><a href="#chapter-summary" id="toc-chapter-summary" class="nav-link" data-scroll-target="#chapter-summary"><span class="header-section-number">8.4</span> Chapter summary</a></li>
-  <li><a href="#revision" id="toc-revision" class="nav-link" data-scroll-target="#revision"><span class="header-section-number">8.5</span> Revision</a></li>
+  <li><a href="#chapter-summary" id="toc-chapter-summary" class="nav-link" data-scroll-target="#chapter-summary"><span class="header-section-number">9.4</span> Chapter summary</a></li>
+  <li><a href="#revision" id="toc-revision" class="nav-link" data-scroll-target="#revision"><span class="header-section-number">9.5</span> Revision</a></li>
   </ul>
 </nav>
     </div>
@@ -274,7 +274,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Data exploration</span></h1>
+<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Data exploration</span></h1>
 </div>
 
 
@@ -297,8 +297,8 @@ div.csl-indent {
 </blockquote>
 <p>Data exploration, as the name suggests involves the process of exploring the data to understand its structures, identifying underlying patterns, and discovering its characteristics. This process is the first stage in analysing the data and gaining insight from it. Doing data analysis without data exploration is akin to going to war without a proper strategy.</p>
 <p>R provides numerous functions and packages that can help to explore the data efficiently and systematically. Thus, this chapter intends to introduce those functions and packages to readers adequately and further equip the readers to do any data analysis.</p>
-<section id="missing-data" class="level2" data-number="8.1">
-<h2 data-number="8.1" class="anchored" data-anchor-id="missing-data"><span class="header-section-number">8.1</span> Missing data</h2>
+<section id="missing-data" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="missing-data"><span class="header-section-number">9.1</span> Missing data</h2>
 <p>Missing data are recognised as <code>NA</code> in R. Let’s use <code>airquality</code> data, a built-in dataset in R to see how R recognised missing values.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Data with missing data</span></span>
@@ -383,8 +383,8 @@ FALSE  TRUE
 </div>
 <p>Notice that the <code>airquality_NA_only</code> returns 44 rows of data with missing values, while using <code>is.na()</code> earlier we get 44 missing values. <code>airquality_NA_only</code> returns rows of data with missing values. The missing values may exist in more than a single column in the dataset. The <code>is.na()</code> function counts all the missing values regardless of the position.</p>
 </section>
-<section id="outliers" class="level2" data-number="8.2">
-<h2 data-number="8.2" class="anchored" data-anchor-id="outliers"><span class="header-section-number">8.2</span> Outliers</h2>
+<section id="outliers" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="outliers"><span class="header-section-number">9.2</span> Outliers</h2>
 <p>An outlier is a data point that lies significantly outside the range of most other observations in a dataset. It is an extreme value, either unusually high or low, that differs markedly from other data points. Outliers can occur due to variability in the data, errors in measurement, or experimental anomalies.</p>
 <p>Since outliers may not be representative of the data and may distort statistical measures such as mean and standard deviation, it is important to identify them early during the data exploration stage.</p>
 <p>There are two methods to identify outliers:</p>
@@ -455,11 +455,11 @@ FALSE  TRUE
 </ol>
 <p>There are other advanced methods to detect outliers. However, the basics to understand those methods are beyond the scope of this book.</p>
 </section>
-<section id="sec-data-explore-useful-packages" class="level2" data-number="8.3">
-<h2 data-number="8.3" class="anchored" data-anchor-id="sec-data-explore-useful-packages"><span class="header-section-number">8.3</span> Useful packages</h2>
+<section id="sec-data-explore-useful-packages" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="sec-data-explore-useful-packages"><span class="header-section-number">9.3</span> Useful packages</h2>
 <p>In this section, we going to see several useful R packages to explore the data. We are only going to cover the main functions of each package.</p>
-<section id="skimr" class="level3" data-number="8.3.1">
-<h3 data-number="8.3.1" class="anchored" data-anchor-id="skimr"><span class="header-section-number">8.3.1</span> skimr</h3>
+<section id="skimr" class="level3" data-number="9.3.1">
+<h3 data-number="9.3.1" class="anchored" data-anchor-id="skimr"><span class="header-section-number">9.3.1</span> skimr</h3>
 <p>The <code>skimr</code> package provides various helpful functions to do data exploration. Firstly, we need to install <code>skimr</code>, and then load the packages. We going to use the <code>dplyr</code> package together with the <code>skimr</code> package.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install the package</span></span>
@@ -886,8 +886,8 @@ FALSE  TRUE
 </div>
 <p>Readers interested in learning more about the <code>skimr</code> package can explore its <a href="https://docs.ropensci.org/skimr/">comprehensive documentation</a> for more details and examples.</p>
 </section>
-<section id="naniar" class="level3" data-number="8.3.2">
-<h3 data-number="8.3.2" class="anchored" data-anchor-id="naniar"><span class="header-section-number">8.3.2</span> naniar</h3>
+<section id="naniar" class="level3" data-number="9.3.2">
+<h3 data-number="9.3.2" class="anchored" data-anchor-id="naniar"><span class="header-section-number">9.3.2</span> naniar</h3>
 <p><code>naniar</code> package provides tidy ways to summarise, visualise, and manipulate missing data. First, let’s install and load the necessary packages.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install the package</span></span>
@@ -968,8 +968,8 @@ FALSE  TRUE
 </div>
 <p>The content we just covered provides only a glimpse of the powerful features and capabilities of the <code>naniar</code> package. For a deeper understanding and comprehensive insights, readers are encouraged to explore the <a href="https://naniar.njtierney.com/index.html"><code>naniar</code> documentation website</a>.</p>
 </section>
-<section id="dataexplorer" class="level3" data-number="8.3.3">
-<h3 data-number="8.3.3" class="anchored" data-anchor-id="dataexplorer"><span class="header-section-number">8.3.3</span> DataExplorer</h3>
+<section id="dataexplorer" class="level3" data-number="9.3.3">
+<h3 data-number="9.3.3" class="anchored" data-anchor-id="dataexplorer"><span class="header-section-number">9.3.3</span> DataExplorer</h3>
 <p><code>DataExplorer</code> provides various helpful functions for data exploration. First, let’s install and load the necessary packages.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install package</span></span>
@@ -1065,8 +1065,8 @@ FALSE  TRUE
 </div>
 <p><code>DataExplorer</code> provides more useful functions, which can not be extensively covered in this section. Interested readers can further study <a href="https://boxuancui.github.io/DataExplorer/index.html">its documentation</a> for more.</p>
 </section>
-<section id="vim" class="level3" data-number="8.3.4">
-<h3 data-number="8.3.4" class="anchored" data-anchor-id="vim"><span class="header-section-number">8.3.4</span> VIM</h3>
+<section id="vim" class="level3" data-number="9.3.4">
+<h3 data-number="9.3.4" class="anchored" data-anchor-id="vim"><span class="header-section-number">9.3.4</span> VIM</h3>
 <p>The <code>VIM</code> package contains tools for the visualisation of missing and/or imputed values. Imputation of the missing values is beyond the scope of this book. However, we going to see how functions from the <code>VIM</code> package can be utilised to explore the pattern of missingness.</p>
 <p>First, make sure to install the <code>VIM</code> package and load the necessary packages.</p>
 <div class="cell">
@@ -1108,8 +1108,8 @@ FALSE  TRUE
 <p><code>matrixplot()</code> scales the data into 0 (white) and 1 (black). The higher values will become close to 1, and the lower values will become close to 0. The red colour represents the missing values.</p>
 <p>The <code>VIM</code> package contains more useful functions, however, the majority of them are for exploring the imputation methods and values. Interested readers can further study <a href="https://statistikat.github.io/VIM/index.html">its documentation</a> for more details.</p>
 </section>
-<section id="dlookr" class="level3" data-number="8.3.5">
-<h3 data-number="8.3.5" class="anchored" data-anchor-id="dlookr"><span class="header-section-number">8.3.5</span> dlookr</h3>
+<section id="dlookr" class="level3" data-number="9.3.5">
+<h3 data-number="9.3.5" class="anchored" data-anchor-id="dlookr"><span class="header-section-number">9.3.5</span> dlookr</h3>
 <p>The <code>dlookr</code> package provides various helpful functions especially related to outliers. First, we need to install the <code>dlookr</code> package and load the necessary packages.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install package</span></span>
@@ -1215,8 +1215,8 @@ FALSE  TRUE
 <p>This function returns a boxplot and histogram for values with and without outliers. Thus, we can see how much the outliers in the variables change the distribution of the data. <code>dlookr</code> actually provides more functions than the ones we covered in this section. Readers are suggested to go through its <a href="https://choonghyunryu.github.io/dlookr/index.html">documentation</a> to further learn this package.</p>
 </section>
 </section>
-<section id="chapter-summary" class="level2" data-number="8.4">
-<h2 data-number="8.4" class="anchored" data-anchor-id="chapter-summary"><span class="header-section-number">8.4</span> Chapter summary</h2>
+<section id="chapter-summary" class="level2" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="chapter-summary"><span class="header-section-number">9.4</span> Chapter summary</h2>
 <p>In this chapter, we have covered how missing data and outliers were identified in R using base R functions. Moreover, we have covered several useful functions from five R packages:</p>
 <ol type="1">
 <li>skimr</li>
@@ -1228,8 +1228,8 @@ FALSE  TRUE
 <p><code>skimr</code> provides general functions for data exploration <span class="citation" data-cites="skimr-rubia2024">(<a href="references.html#ref-skimr-rubia2024" role="doc-biblioref">Waring et al. 2024</a>)</span>. <code>naniar</code>, <code>DataExplorer</code>, and <code>VIM</code> provide additional functions to explore and investigate missing data <span class="citation" data-cites="naniar-tierney2023 dataexplorer-cui2024 vim-kowarik2016">(<a href="references.html#ref-naniar-tierney2023" role="doc-biblioref">Tierney and Cook 2023</a>; <a href="references.html#ref-dataexplorer-cui2024" role="doc-biblioref">Cui 2024</a>; <a href="references.html#ref-vim-kowarik2016" role="doc-biblioref">Kowarik and Templ 2016</a>)</span>. Lastly, <code>dlookr</code> provides more functions for investigating outliers in the dataset <span class="citation" data-cites="dlookr-ryu2024">(<a href="references.html#ref-dlookr-ryu2024" role="doc-biblioref">Ryu 2024</a>)</span>.</p>
 <p>While this chapter highlights the capabilities of these five packages, it is important to note that R offers many additional packages that can further enhance your analysis. Readers are encouraged to explore beyond these tools to find packages best suited to their specific needs.</p>
 </section>
-<section id="revision" class="level2" data-number="8.5">
-<h2 data-number="8.5" class="anchored" data-anchor-id="revision"><span class="header-section-number">8.5</span> Revision</h2>
+<section id="revision" class="level2" data-number="9.5">
+<h2 data-number="9.5" class="anchored" data-anchor-id="revision"><span class="header-section-number">9.5</span> Revision</h2>
 <ol type="1">
 <li><p>Why is data exploration considered a crucial first step in data analysis, and what are some R functions and packages that can help in this process?</p></li>
 <li><p>Write an R code to check for missing values in each column of the <code>riskfactors</code> dataset, a dataset from the <code>naniar</code> package. Then, count how many <code>NA</code> values exist in total.</p>
@@ -1672,12 +1672,12 @@ Waring, Elin, Michael Quinn, Amelia McNamara, Eduardo Arino de la Rubia, Hao Zhu
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./efficient-coding.html" class="pagination-link" aria-label="Efficient coding">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Efficient coding</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Efficient coding</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./descriptive-stat.html" class="pagination-link" aria-label="Descriptive statistics">
-        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Descriptive statistics</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./summary.html" class="pagination-link" aria-label="A way forward">
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">A way forward</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -17,10 +17,10 @@ book:
     - use-rstudio.qmd
     - basic-r.qmd
     - data-wrangling.qmd
+    - descriptive-stat.qmd
     - plotting.qmd
     - efficient-coding.qmd
     - data-explore.qmd
-    - descriptive-stat.qmd
     - summary.qmd
     - references.qmd
 

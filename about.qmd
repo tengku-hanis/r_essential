@@ -10,11 +10,13 @@ Chapters 1 to 3 introduce readers to R and RStudio. For those already somewhat f
 
 Chapters 4 and 5 provide essential knowledge on basic R coding, commonly used in data analysis projects. It is advised to read these chapters thoroughly before moving on, as they lay the groundwork for more advanced topics.
 
-Chapter 6 focuses on basic visualizations and plotting techniques. Readers will learn how to use base R functions for visual representation and will be introduced to `ggplot2`, a highly regarded package for data visualisation in R.
+Chapter 6 introduces readers to basic knowledge in descriptive statistics. This chapter is significant for those who aim to further their journey in data analysis. It covers essential concepts such as measures of central tendency, variability, and relevant packages, providing a strong foundation for more advanced statistical techniques.
 
-Chapter 7 covers loop, apply family, and function, topics that may pose a challenge for beginners. This chapter aims to equip readers with the skills needed for more efficient R coding. While not critical for initial learning, understanding these concepts will become increasingly important as one progresses in data analysis.
+Chapter 7 focuses on basic visualizations and plotting techniques. Readers will learn how to use base R functions for visual representation and will be introduced to `ggplot2`, a highly regarded package for data visualisation in R.
 
-Chapters 8 and 9 delve into essential skills for data exploration and descriptive statistics. Mastering these will enable readers to gain deeper insights into their data and prepare them for more advanced analysis techniques.
+Chapter 8 covers loop, apply family, and function, topics that may pose a challenge for beginners. This chapter aims to equip readers with the skills needed for more efficient R coding. While not critical for initial learning, understanding these concepts will become increasingly important as one progresses in data analysis.
+
+Chapters 9 delve into essential skills for data exploration. Mastering these skills will enable readers to gain deeper insights into their data and prepare them for more advanced analysis techniques.
 
 Chapter 10 concludes the book by summarizing previous content and offering guidance on next steps to further enhance R and data analysis skills.
 

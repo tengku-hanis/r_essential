@@ -8,6 +8,16 @@ This book is intended for anyone interested in using R for applied statistical a
 
 Looking back, I wish I had known certain things earlier in my journey of learning R. This book is my attempt to provide those insights, covering the key concepts and tips I wish I had had when I started. I hope it sparks interest in R for others and helps them fully utilize its capabilities.
 
-Finally, I just want to say thanks to my lovely wife, Nurul Asmaq, my parents, Tengku Mokhtar and Nor Malaysia, and my in-laws, Mazalan and Salmeh, for all their understanding. Writing this book means taking the time I would usually spend with them, and while they might not fully get my obsession with R and data analysis (especially my wife!), they’ve supported me every step of the way.
+::: {.callout-note appearance="simple"}
+## As Prophet Muhammad (Peace Been Upon Him) said:
+
+"When a man dies, his deeds come to an end except for three things: Sadaqah Jariyah (ceaseless charity); a knowledge which is beneficial, or a virtuous descendant who prays for him (for the deceased)."
+:::
+
+I hope my effort in writing this book will be considered as a beneficial knowledge to others.
+
+Finally, I would like to express my deepest love and gratitude to my late wife, Nurul Asmaq. You will always remain in my heart and in my thoughts — Al‑Fatihah.
+
+To my son, Hanif, who gives me purpose, and to my parents, Tengku Mokhtar and Nor Malaysia: thank you. Writing this book meant taking time away from them, and even if my obsession with R and data analysis is hard to understand, their support has meant the world to me.
 
 [Tengku Muhammad Hanis Bin Tengku Mokhtar, PhD](https://tengkuhanis.netlify.app/)

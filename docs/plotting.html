@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>6&nbsp; Data visualisation – R Essentials: A Beginner’s Guide to Data Analysis</title>
+<title>7&nbsp; Data visualisation – R Essentials: A Beginner’s Guide to Data Analysis</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -86,7 +86,7 @@ div.csl-indent {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./efficient-coding.html" rel="next">
-<link href="./data-wrangling.html" rel="prev">
+<link href="./descriptive-stat.html" rel="prev">
 <link href="./images/thumbnail2.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -139,7 +139,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./plotting.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data visualisation</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./plotting.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data visualisation</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -210,26 +210,26 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./descriptive-stat.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Descriptive statistics</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./plotting.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data visualisation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data visualisation</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./efficient-coding.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Efficient coding</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Efficient coding</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./data-explore.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Data exploration</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./descriptive-stat.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Descriptive statistics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Data exploration</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -254,15 +254,15 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#load-packages" id="toc-load-packages" class="nav-link active" data-scroll-target="#load-packages"><span class="header-section-number">6.1</span> Load packages</a></li>
-  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data"><span class="header-section-number">6.2</span> Data</a></li>
-  <li><a href="#barplot" id="toc-barplot" class="nav-link" data-scroll-target="#barplot"><span class="header-section-number">6.3</span> Barplot</a></li>
-  <li><a href="#histogram" id="toc-histogram" class="nav-link" data-scroll-target="#histogram"><span class="header-section-number">6.4</span> Histogram</a></li>
-  <li><a href="#boxplot" id="toc-boxplot" class="nav-link" data-scroll-target="#boxplot"><span class="header-section-number">6.5</span> Boxplot</a></li>
-  <li><a href="#violin-plot" id="toc-violin-plot" class="nav-link" data-scroll-target="#violin-plot"><span class="header-section-number">6.6</span> Violin plot</a></li>
-  <li><a href="#scatter-plot" id="toc-scatter-plot" class="nav-link" data-scroll-target="#scatter-plot"><span class="header-section-number">6.7</span> Scatter plot</a></li>
-  <li><a href="#chapter-summary" id="toc-chapter-summary" class="nav-link" data-scroll-target="#chapter-summary"><span class="header-section-number">6.8</span> Chapter summary</a></li>
-  <li><a href="#revision" id="toc-revision" class="nav-link" data-scroll-target="#revision"><span class="header-section-number">6.9</span> Revision</a></li>
+  <li><a href="#load-packages" id="toc-load-packages" class="nav-link active" data-scroll-target="#load-packages"><span class="header-section-number">7.1</span> Load packages</a></li>
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data"><span class="header-section-number">7.2</span> Data</a></li>
+  <li><a href="#barplot" id="toc-barplot" class="nav-link" data-scroll-target="#barplot"><span class="header-section-number">7.3</span> Barplot</a></li>
+  <li><a href="#histogram" id="toc-histogram" class="nav-link" data-scroll-target="#histogram"><span class="header-section-number">7.4</span> Histogram</a></li>
+  <li><a href="#boxplot" id="toc-boxplot" class="nav-link" data-scroll-target="#boxplot"><span class="header-section-number">7.5</span> Boxplot</a></li>
+  <li><a href="#violin-plot" id="toc-violin-plot" class="nav-link" data-scroll-target="#violin-plot"><span class="header-section-number">7.6</span> Violin plot</a></li>
+  <li><a href="#scatter-plot" id="toc-scatter-plot" class="nav-link" data-scroll-target="#scatter-plot"><span class="header-section-number">7.7</span> Scatter plot</a></li>
+  <li><a href="#chapter-summary" id="toc-chapter-summary" class="nav-link" data-scroll-target="#chapter-summary"><span class="header-section-number">7.8</span> Chapter summary</a></li>
+  <li><a href="#revision" id="toc-revision" class="nav-link" data-scroll-target="#revision"><span class="header-section-number">7.9</span> Revision</a></li>
   </ul>
 </nav>
     </div>
@@ -271,7 +271,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data visualisation</span></h1>
+<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data visualisation</span></h1>
 </div>
 
 
@@ -303,15 +303,15 @@ div.csl-indent {
 <li>Scatter plot</li>
 </ol>
 <p>We going to focus more on the <code>ggplot2</code> and only cover the basics for base R plotting. <code>ggplot2</code> is widely used for plotting and visualisation in the R community <span class="citation" data-cites="ggplot2">(<a href="references.html#ref-ggplot2" role="doc-biblioref">Wickham 2016</a>)</span>.</p>
-<section id="load-packages" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="load-packages"><span class="header-section-number">6.1</span> Load packages</h2>
+<section id="load-packages" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="load-packages"><span class="header-section-number">7.1</span> Load packages</h2>
 <p>Please load a <code>tidyverse</code> package before proceeding to the next section. We do not need to load the <code>ggplot2</code> package as it is part of the <code>tidyverse</code> meta package.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="data" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="data"><span class="header-section-number">6.2</span> Data</h2>
+<section id="data" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="data"><span class="header-section-number">7.2</span> Data</h2>
 <p>In this chapter, we going to utilise <code>ChickWeight</code> a built-in dataset in R. This dataset is about the effect of different diet regimens on the weight of the chicks.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># More info about the ChickWeight data</span></span>
@@ -421,8 +421,8 @@ div.csl-indent {
 </div>
 </div>
 </section>
-<section id="barplot" class="level2" data-number="6.3">
-<h2 data-number="6.3" class="anchored" data-anchor-id="barplot"><span class="header-section-number">6.3</span> Barplot</h2>
+<section id="barplot" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="barplot"><span class="header-section-number">7.3</span> Barplot</h2>
 <p>Barplot is utilised when a variable is categorical. Let’s explore the <code>ChickWeight</code> data. To use <code>barplot()</code>, the data should be a matrix.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>diet_table <span class="ot">&lt;-</span> </span>
@@ -579,8 +579,8 @@ div.csl-indent {
 </div>
 </div>
 </section>
-<section id="histogram" class="level2" data-number="6.4">
-<h2 data-number="6.4" class="anchored" data-anchor-id="histogram"><span class="header-section-number">6.4</span> Histogram</h2>
+<section id="histogram" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="histogram"><span class="header-section-number">7.4</span> Histogram</h2>
 <p>A histogram is used when a variable is numerical. It reflects the frequency distribution of the data.</p>
 <p>Let’s do the histogram in base R.</p>
 <div class="cell">
@@ -658,8 +658,8 @@ div.csl-indent {
 </div>
 <p>Here, we can see more clearly that the weight of the chicks in diet regimen 1 is skewed to the left side, while the weight of the chicks in diet regimen 4 is distributed more uniformly.</p>
 </section>
-<section id="boxplot" class="level2" data-number="6.5">
-<h2 data-number="6.5" class="anchored" data-anchor-id="boxplot"><span class="header-section-number">6.5</span> Boxplot</h2>
+<section id="boxplot" class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="boxplot"><span class="header-section-number">7.5</span> Boxplot</h2>
 <p>Boxplot is utilised when a variable is numerical. The main use of the boxplot is to display the spread of the data and further identify outliers and extreme values. Outliers are observations that lie far from the majority of the data. An extreme value may not be an outlier, but an outlier is always an extreme value.</p>
 <p>Let’s plot the boxplot using base R.</p>
 <div class="cell">
@@ -732,8 +732,8 @@ div.csl-indent {
 </div>
 <p>We can see that we may have an outlier in a low-dose group.</p>
 </section>
-<section id="violin-plot" class="level2" data-number="6.6">
-<h2 data-number="6.6" class="anchored" data-anchor-id="violin-plot"><span class="header-section-number">6.6</span> Violin plot</h2>
+<section id="violin-plot" class="level2" data-number="7.6">
+<h2 data-number="7.6" class="anchored" data-anchor-id="violin-plot"><span class="header-section-number">7.6</span> Violin plot</h2>
 <p>A violin plot allows us to visualise the distribution of the numeric variable according to a factor variable. It is a combination of a boxplot and a density plot. In contrast to the boxplot, the violin plot needs two variables.</p>
 <p>There is no function in base R to plot the violin plot. However, we can use <code>ggplot2</code> to plot the violin plot.</p>
 <div class="cell">
@@ -784,8 +784,8 @@ div.csl-indent {
 </div>
 <p>The argument <code>width</code> specifies the width of the boxplot and <code>alpha</code> specifies the colour density.</p>
 </section>
-<section id="scatter-plot" class="level2" data-number="6.7">
-<h2 data-number="6.7" class="anchored" data-anchor-id="scatter-plot"><span class="header-section-number">6.7</span> Scatter plot</h2>
+<section id="scatter-plot" class="level2" data-number="7.7">
+<h2 data-number="7.7" class="anchored" data-anchor-id="scatter-plot"><span class="header-section-number">7.7</span> Scatter plot</h2>
 <p>Scatter plots allow us to plot two continuous variables.</p>
 <p>Let’s plot a scatter plot using base R. We going to use the last dataset, <code>cars_data</code>.</p>
 <div class="cell">
@@ -863,13 +863,13 @@ div.csl-indent {
 </div>
 </div>
 </section>
-<section id="chapter-summary" class="level2" data-number="6.8">
-<h2 data-number="6.8" class="anchored" data-anchor-id="chapter-summary"><span class="header-section-number">6.8</span> Chapter summary</h2>
+<section id="chapter-summary" class="level2" data-number="7.8">
+<h2 data-number="7.8" class="anchored" data-anchor-id="chapter-summary"><span class="header-section-number">7.8</span> Chapter summary</h2>
 <p>In this chapter, we have learned about five different plots.</p>
 <div id="tbl-common-plots" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-common-plots-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;6.1: Commonly used plots in data analysis.
+Table&nbsp;7.1: Commonly used plots in data analysis.
 </figcaption>
 <div aria-describedby="tbl-common-plots-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
@@ -923,8 +923,8 @@ Table&nbsp;6.1: Commonly used plots in data analysis.
 </figure>
 </div>
 </section>
-<section id="revision" class="level2" data-number="6.9">
-<h2 data-number="6.9" class="anchored" data-anchor-id="revision"><span class="header-section-number">6.9</span> Revision</h2>
+<section id="revision" class="level2" data-number="7.9">
+<h2 data-number="7.9" class="anchored" data-anchor-id="revision"><span class="header-section-number">7.9</span> Revision</h2>
 <ol type="1">
 <li><p>Load and read about <code>mtcars</code> dataset from base R.</p>
 <div class="cell">
@@ -1427,13 +1427,13 @@ Wickham, Hadley. 2016. <em>Ggplot2: Elegant Graphics for Data Analysis</em>. Spr
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./data-wrangling.html" class="pagination-link" aria-label="Data wrangling">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Data wrangling</span></span>
+      <a href="./descriptive-stat.html" class="pagination-link" aria-label="Descriptive statistics">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Descriptive statistics</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./efficient-coding.html" class="pagination-link" aria-label="Efficient coding">
-        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Efficient coding</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Efficient coding</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

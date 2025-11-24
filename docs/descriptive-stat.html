@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>9&nbsp; Descriptive statistics – R Essentials: A Beginner’s Guide to Data Analysis</title>
+<title>6&nbsp; Descriptive statistics – R Essentials: A Beginner’s Guide to Data Analysis</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -85,8 +85,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./summary.html" rel="next">
-<link href="./data-explore.html" rel="prev">
+<link href="./plotting.html" rel="next">
+<link href="./data-wrangling.html" rel="prev">
 <link href="./images/thumbnail2.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -168,7 +168,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./descriptive-stat.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Descriptive statistics</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./descriptive-stat.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Descriptive statistics</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -239,26 +239,26 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./descriptive-stat.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Descriptive statistics</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./plotting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data visualisation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data visualisation</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./efficient-coding.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Efficient coding</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Efficient coding</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./data-explore.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Data exploration</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./descriptive-stat.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Descriptive statistics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Data exploration</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -283,28 +283,28 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#load-packages" id="toc-load-packages" class="nav-link active" data-scroll-target="#load-packages"><span class="header-section-number">9.1</span> Load packages</a></li>
-  <li><a href="#measures-of-central-tendency" id="toc-measures-of-central-tendency" class="nav-link" data-scroll-target="#measures-of-central-tendency"><span class="header-section-number">9.2</span> Measures of central tendency</a>
+  <li><a href="#load-packages" id="toc-load-packages" class="nav-link active" data-scroll-target="#load-packages"><span class="header-section-number">6.1</span> Load packages</a></li>
+  <li><a href="#measures-of-central-tendency" id="toc-measures-of-central-tendency" class="nav-link" data-scroll-target="#measures-of-central-tendency"><span class="header-section-number">6.2</span> Measures of central tendency</a>
   <ul class="collapse">
-  <li><a href="#mean" id="toc-mean" class="nav-link" data-scroll-target="#mean"><span class="header-section-number">9.2.1</span> Mean</a></li>
-  <li><a href="#median" id="toc-median" class="nav-link" data-scroll-target="#median"><span class="header-section-number">9.2.2</span> Median</a></li>
-  <li><a href="#mode" id="toc-mode" class="nav-link" data-scroll-target="#mode"><span class="header-section-number">9.2.3</span> Mode</a></li>
-  <li><a href="#comparison-of-mean-median-and-mode" id="toc-comparison-of-mean-median-and-mode" class="nav-link" data-scroll-target="#comparison-of-mean-median-and-mode"><span class="header-section-number">9.2.4</span> Comparison of mean, median, and mode</a></li>
+  <li><a href="#mean" id="toc-mean" class="nav-link" data-scroll-target="#mean"><span class="header-section-number">6.2.1</span> Mean</a></li>
+  <li><a href="#median" id="toc-median" class="nav-link" data-scroll-target="#median"><span class="header-section-number">6.2.2</span> Median</a></li>
+  <li><a href="#mode" id="toc-mode" class="nav-link" data-scroll-target="#mode"><span class="header-section-number">6.2.3</span> Mode</a></li>
+  <li><a href="#comparison-of-mean-median-and-mode" id="toc-comparison-of-mean-median-and-mode" class="nav-link" data-scroll-target="#comparison-of-mean-median-and-mode"><span class="header-section-number">6.2.4</span> Comparison of mean, median, and mode</a></li>
   </ul></li>
-  <li><a href="#measures-of-variability" id="toc-measures-of-variability" class="nav-link" data-scroll-target="#measures-of-variability"><span class="header-section-number">9.3</span> Measures of variability</a>
+  <li><a href="#measures-of-variability" id="toc-measures-of-variability" class="nav-link" data-scroll-target="#measures-of-variability"><span class="header-section-number">6.3</span> Measures of variability</a>
   <ul class="collapse">
-  <li><a href="#range" id="toc-range" class="nav-link" data-scroll-target="#range"><span class="header-section-number">9.3.1</span> Range</a></li>
-  <li><a href="#variance" id="toc-variance" class="nav-link" data-scroll-target="#variance"><span class="header-section-number">9.3.2</span> Variance</a></li>
-  <li><a href="#standard-deviation" id="toc-standard-deviation" class="nav-link" data-scroll-target="#standard-deviation"><span class="header-section-number">9.3.3</span> Standard deviation</a></li>
-  <li><a href="#interquartile-range" id="toc-interquartile-range" class="nav-link" data-scroll-target="#interquartile-range"><span class="header-section-number">9.3.4</span> Interquartile range</a></li>
+  <li><a href="#range" id="toc-range" class="nav-link" data-scroll-target="#range"><span class="header-section-number">6.3.1</span> Range</a></li>
+  <li><a href="#variance" id="toc-variance" class="nav-link" data-scroll-target="#variance"><span class="header-section-number">6.3.2</span> Variance</a></li>
+  <li><a href="#standard-deviation" id="toc-standard-deviation" class="nav-link" data-scroll-target="#standard-deviation"><span class="header-section-number">6.3.3</span> Standard deviation</a></li>
+  <li><a href="#interquartile-range" id="toc-interquartile-range" class="nav-link" data-scroll-target="#interquartile-range"><span class="header-section-number">6.3.4</span> Interquartile range</a></li>
   </ul></li>
-  <li><a href="#packages-for-descriptive-statistics" id="toc-packages-for-descriptive-statistics" class="nav-link" data-scroll-target="#packages-for-descriptive-statistics"><span class="header-section-number">9.4</span> Packages for descriptive statistics</a>
+  <li><a href="#packages-for-descriptive-statistics" id="toc-packages-for-descriptive-statistics" class="nav-link" data-scroll-target="#packages-for-descriptive-statistics"><span class="header-section-number">6.4</span> Packages for descriptive statistics</a>
   <ul class="collapse">
-  <li><a href="#summarytools" id="toc-summarytools" class="nav-link" data-scroll-target="#summarytools"><span class="header-section-number">9.4.1</span> summarytools</a></li>
-  <li><a href="#gtsummary" id="toc-gtsummary" class="nav-link" data-scroll-target="#gtsummary"><span class="header-section-number">9.4.2</span> gtsummary</a></li>
+  <li><a href="#summarytools" id="toc-summarytools" class="nav-link" data-scroll-target="#summarytools"><span class="header-section-number">6.4.1</span> summarytools</a></li>
+  <li><a href="#gtsummary" id="toc-gtsummary" class="nav-link" data-scroll-target="#gtsummary"><span class="header-section-number">6.4.2</span> gtsummary</a></li>
   </ul></li>
-  <li><a href="#chapter-summary" id="toc-chapter-summary" class="nav-link" data-scroll-target="#chapter-summary"><span class="header-section-number">9.5</span> Chapter summary</a></li>
-  <li><a href="#revision" id="toc-revision" class="nav-link" data-scroll-target="#revision"><span class="header-section-number">9.6</span> Revision</a></li>
+  <li><a href="#chapter-summary" id="toc-chapter-summary" class="nav-link" data-scroll-target="#chapter-summary"><span class="header-section-number">6.5</span> Chapter summary</a></li>
+  <li><a href="#revision" id="toc-revision" class="nav-link" data-scroll-target="#revision"><span class="header-section-number">6.6</span> Revision</a></li>
   </ul>
 </nav>
     </div>
@@ -313,7 +313,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Descriptive statistics</span></h1>
+<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Descriptive statistics</span></h1>
 </div>
 
 
@@ -337,8 +337,8 @@ window.Quarto = {
 <p>Descriptive statistics, as the name suggests, involves summarizing and describing the main features of a dataset. It allows us to distil large or complex datasets into manageable summaries, making it easier to interpret and understand the data. While some details are inevitably lost during this process, we gain valuable insights and a clearer direction for further analysis.</p>
 <p>This statistical approach is crucial in data analysis because it provides a foundation for understanding the overall structure of the data. Descriptive statistics use measures such as central tendency (mean, median, and mode), variability (range, variance, and standard deviation), and data visualization tools (like histograms and pie charts) to offer a clear overview of the data’s characteristics.</p>
 <p>By simplifying the data, descriptive statistics not only highlight trends and patterns but also serve as a stepping stone for more advanced statistical methods. In this chapter, we will cover the fundamentals of descriptive statistics, helping you understand its key concepts, techniques, and practical applications.</p>
-<section id="load-packages" class="level2" data-number="9.1">
-<h2 data-number="9.1" class="anchored" data-anchor-id="load-packages"><span class="header-section-number">9.1</span> Load packages</h2>
+<section id="load-packages" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="load-packages"><span class="header-section-number">6.1</span> Load packages</h2>
 <p>Please load these packages before proceeding to the next section.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install the packages if necessary</span></span>
@@ -351,11 +351,11 @@ window.Quarto = {
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="measures-of-central-tendency" class="level2" data-number="9.2">
-<h2 data-number="9.2" class="anchored" data-anchor-id="measures-of-central-tendency"><span class="header-section-number">9.2</span> Measures of central tendency</h2>
+<section id="measures-of-central-tendency" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="measures-of-central-tendency"><span class="header-section-number">6.2</span> Measures of central tendency</h2>
 <p>Measures of central tendency aim to identify the centre or typical value within a dataset. It provides a summary of the data by describing the point around which most values cluster.</p>
-<section id="mean" class="level3" data-number="9.2.1">
-<h3 data-number="9.2.1" class="anchored" data-anchor-id="mean"><span class="header-section-number">9.2.1</span> Mean</h3>
+<section id="mean" class="level3" data-number="6.2.1">
+<h3 data-number="6.2.1" class="anchored" data-anchor-id="mean"><span class="header-section-number">6.2.1</span> Mean</h3>
 <p>The mean represents the average of a dataset. It is calculated by summing all the values in the dataset and dividing the total by the number of values. <span class="math display">\[
 Mean(\overline{x}) = \frac{\sum x}{n}
 \]</span></p>
@@ -385,8 +385,8 @@ Mean(\overline{x}) = \frac{\sum x}{n}
 </div>
 </div>
 </section>
-<section id="median" class="level3" data-number="9.2.2">
-<h3 data-number="9.2.2" class="anchored" data-anchor-id="median"><span class="header-section-number">9.2.2</span> Median</h3>
+<section id="median" class="level3" data-number="6.2.2">
+<h3 data-number="6.2.2" class="anchored" data-anchor-id="median"><span class="header-section-number">6.2.2</span> Median</h3>
 <p>The median represents the middle value in a sorted dataset. It divides the dataset into two halves: 50% of the data values are smaller than the median, and 50% are larger.</p>
 <p>For example, to determine the median for the below values:</p>
 <p><span class="math display">\[
@@ -414,8 +414,8 @@ Mean(\overline{x}) = \frac{\sum x}{n}
 </div>
 </div>
 </section>
-<section id="mode" class="level3" data-number="9.2.3">
-<h3 data-number="9.2.3" class="anchored" data-anchor-id="mode"><span class="header-section-number">9.2.3</span> Mode</h3>
+<section id="mode" class="level3" data-number="6.2.3">
+<h3 data-number="6.2.3" class="anchored" data-anchor-id="mode"><span class="header-section-number">6.2.3</span> Mode</h3>
 <p>The mode represents the most frequently occurring value in a dataset. It is the value that appears the most times. Unlike the mean or median, the mode can be used for both numerical and categorical data.</p>
 <p>For example, to determine the mode for the numbers:</p>
 <p><span class="math display">\[
@@ -495,10 +495,10 @@ attr(,"freq")
 </div>
 <p>The <code>Mode()</code> function from <code>DescTools</code> returns the mode value and the frequency of the values. For example, <code>yes</code> is the mode and it appears in the data 3 times.</p>
 </section>
-<section id="comparison-of-mean-median-and-mode" class="level3" data-number="9.2.4">
-<h3 data-number="9.2.4" class="anchored" data-anchor-id="comparison-of-mean-median-and-mode"><span class="header-section-number">9.2.4</span> Comparison of mean, median, and mode</h3>
-<section id="mean-vs.-median" class="level4" data-number="9.2.4.1">
-<h4 data-number="9.2.4.1" class="anchored" data-anchor-id="mean-vs.-median"><span class="header-section-number">9.2.4.1</span> Mean vs.&nbsp;median</h4>
+<section id="comparison-of-mean-median-and-mode" class="level3" data-number="6.2.4">
+<h3 data-number="6.2.4" class="anchored" data-anchor-id="comparison-of-mean-median-and-mode"><span class="header-section-number">6.2.4</span> Comparison of mean, median, and mode</h3>
+<section id="mean-vs.-median" class="level4" data-number="6.2.4.1">
+<h4 data-number="6.2.4.1" class="anchored" data-anchor-id="mean-vs.-median"><span class="header-section-number">6.2.4.1</span> Mean vs.&nbsp;median</h4>
 <p>The mean is sensitive to outliers compared to the median and mode. In the presence of outliers, the median is more robust and thus, preferred to describe the central tendency of the data. Let’s demonstrate the change of mean and median in the presence of the outliers.</p>
 <p>Firstly, let’s create the data with and without the outlier.</p>
 <div class="cell">
@@ -709,8 +709,8 @@ attr(,"freq")
 </div>
 <p>In the normal distribution, despite the values of mean and median being close, the mean is preferred as it takes into account the whole range of values mathematically. However, in the skewed distribution, the median is preferred as it is less affected by the extreme values and sparsity of the values as compared to the mean.</p>
 </section>
-<section id="mode-vs.-mean-and-median" class="level4" data-number="9.2.4.2">
-<h4 data-number="9.2.4.2" class="anchored" data-anchor-id="mode-vs.-mean-and-median"><span class="header-section-number">9.2.4.2</span> Mode vs.&nbsp;mean and median</h4>
+<section id="mode-vs.-mean-and-median" class="level4" data-number="6.2.4.2">
+<h4 data-number="6.2.4.2" class="anchored" data-anchor-id="mode-vs.-mean-and-median"><span class="header-section-number">6.2.4.2</span> Mode vs.&nbsp;mean and median</h4>
 <p>Lastly, the mode is less useful for the data analysis compared to the mean and median. Moreover, the mode may not be unique or exist in certain datasets. Let’s demonstrate these cases:</p>
 <ol type="1">
 <li><p>Mode values are not unique.</p>
@@ -743,11 +743,11 @@ attr(,"freq")
 </section>
 </section>
 </section>
-<section id="measures-of-variability" class="level2" data-number="9.3">
-<h2 data-number="9.3" class="anchored" data-anchor-id="measures-of-variability"><span class="header-section-number">9.3</span> Measures of variability</h2>
+<section id="measures-of-variability" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="measures-of-variability"><span class="header-section-number">6.3</span> Measures of variability</h2>
 <p>Measures of variability describe the spread or dispersion of data points in a dataset. These measures indicate how much the data values differ from each other and from the central tendency (e.g., mean or median).</p>
-<section id="range" class="level3" data-number="9.3.1">
-<h3 data-number="9.3.1" class="anchored" data-anchor-id="range"><span class="header-section-number">9.3.1</span> Range</h3>
+<section id="range" class="level3" data-number="6.3.1">
+<h3 data-number="6.3.1" class="anchored" data-anchor-id="range"><span class="header-section-number">6.3.1</span> Range</h3>
 <p>The range is the difference between maximum and minimum values in a dataset.</p>
 <p><span class="math display">\[
 Range = Maximum - Minimum
@@ -785,8 +785,8 @@ Maximum = 10, Minimum = 1
 </div>
 </div>
 </section>
-<section id="variance" class="level3" data-number="9.3.2">
-<h3 data-number="9.3.2" class="anchored" data-anchor-id="variance"><span class="header-section-number">9.3.2</span> Variance</h3>
+<section id="variance" class="level3" data-number="6.3.2">
+<h3 data-number="6.3.2" class="anchored" data-anchor-id="variance"><span class="header-section-number">6.3.2</span> Variance</h3>
 <p>Variance measures the average squared difference of each data point from the mean. It shows how data points spread around the mean in squared units.</p>
 <p><span class="math display">\[
 Variance (s^{2}) = \frac{\sum (x_{i} - \overline{x})^{2}}{n-1}
@@ -828,8 +828,8 @@ Variance (s^{2}) = \frac{\sum (x_{i} - \overline{x})^{2}}{n-1}
 <p>Notice the slight differences in the denominators of the two equations. Sample variance is calculated for a subset of data and includes an adjustment for smaller sample sizes by dividing by <span class="math inline">\(n-1\)</span> instead of <span class="math inline">\(n\)</span>. This correction (known as Bessel’s correction) ensures that the sample variance is an unbiased estimate of the population variance. In contrast, population variance is calculated for the entire dataset and does not require this adjustment. Additionally, instead of using sample mean (<span class="math inline">\(\overline{x}\)</span>), population variance is using the population mean (<span class="math inline">\(\mu\)</span>).</p>
 <p>In practical data analysis, we are almost always working with a sample rather than the entire population. As a result, the formula for sample variance is typically used to estimate the variability of the dataset.</p>
 </section>
-<section id="standard-deviation" class="level3" data-number="9.3.3">
-<h3 data-number="9.3.3" class="anchored" data-anchor-id="standard-deviation"><span class="header-section-number">9.3.3</span> Standard deviation</h3>
+<section id="standard-deviation" class="level3" data-number="6.3.3">
+<h3 data-number="6.3.3" class="anchored" data-anchor-id="standard-deviation"><span class="header-section-number">6.3.3</span> Standard deviation</h3>
 <p>Standard deviation is the square root of the variance, providing a measure of dispersion in the same units as the data. A smaller value indicates less variability and a larger value indicates greater variability.</p>
 <p><span class="math display">\[
 \text{Standard deviation}(SD) = \sqrt{Variance}
@@ -860,8 +860,8 @@ Variance (s^{2}) = \frac{\sum (x_{i} - \overline{x})^{2}}{n-1}
 </div>
 </div>
 </section>
-<section id="interquartile-range" class="level3" data-number="9.3.4">
-<h3 data-number="9.3.4" class="anchored" data-anchor-id="interquartile-range"><span class="header-section-number">9.3.4</span> Interquartile range</h3>
+<section id="interquartile-range" class="level3" data-number="6.3.4">
+<h3 data-number="6.3.4" class="anchored" data-anchor-id="interquartile-range"><span class="header-section-number">6.3.4</span> Interquartile range</h3>
 <p>The interquartile range describes the range of the middle 50% of the data (the difference between the third quartile and first quartile).</p>
 <p><span class="math display">\[
 \text{Interquartile range}(IQR) = Q_{3} - Q_{1}
@@ -937,11 +937,11 @@ Variance (s^{2}) = \frac{\sum (x_{i} - \overline{x})^{2}}{n-1}
 <p>Briefly, I suggest using <code>type = 7</code> or <code>type = 8</code> for calculating the quartile and interquartile range. For accuracy, we can use <code>type = 8</code> as proposed by Hyndman &amp; Fan<span class="citation" data-cites="Hyndman1996">(<a href="references.html#ref-Hyndman1996" role="doc-biblioref">1996</a>)</span>. For simplicity, we can use <code>type = 7</code> as it is the default in R and widely used in other statistical software as well.</p>
 </section>
 </section>
-<section id="packages-for-descriptive-statistics" class="level2" data-number="9.4">
-<h2 data-number="9.4" class="anchored" data-anchor-id="packages-for-descriptive-statistics"><span class="header-section-number">9.4</span> Packages for descriptive statistics</h2>
-<p>We have covered in <a href="data-explore.html#sec-data-explore-useful-packages" class="quarto-xref"><span>Section 8.3</span></a> several general packages for data exploration which includes descriptive statistics. In this, section we going to explore two useful packages for descriptive statistics: <code>summarytools</code> and <code>gtsummary</code>. It is to be noted that there are several other R packages available for descriptive statistics, to name a few: <code>psych</code>, <code>pastecs</code>, and <code>Hmisc</code>.</p>
-<section id="summarytools" class="level3" data-number="9.4.1">
-<h3 data-number="9.4.1" class="anchored" data-anchor-id="summarytools"><span class="header-section-number">9.4.1</span> summarytools</h3>
+<section id="packages-for-descriptive-statistics" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="packages-for-descriptive-statistics"><span class="header-section-number">6.4</span> Packages for descriptive statistics</h2>
+<p>We have covered in <a href="data-explore.html#sec-data-explore-useful-packages" class="quarto-xref"><span>Section 9.3</span></a> several general packages for data exploration which includes descriptive statistics. In this, section we going to explore two useful packages for descriptive statistics: <code>summarytools</code> and <code>gtsummary</code>. It is to be noted that there are several other R packages available for descriptive statistics, to name a few: <code>psych</code>, <code>pastecs</code>, and <code>Hmisc</code>.</p>
+<section id="summarytools" class="level3" data-number="6.4.1">
+<h3 data-number="6.4.1" class="anchored" data-anchor-id="summarytools"><span class="header-section-number">6.4.1</span> summarytools</h3>
 <p><code>summarytools</code> provides an easy-to-use function for descriptive statistics. For numerical variables, we can use <code>descr()</code>. We going to use the <code>iris</code> dataset to demonstrate the capabilities of <code>summarytools</code>. More details on the <code>iris</code> dataset can be read by typing <code>?iris</code> in the</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load packages</span></span>
@@ -1134,8 +1134,8 @@ Data Frame: dat
 </div>
 <p>The first variable will appear as row names and the second variable will appear as column names. In our code, <code>Sepal_Length_Cat</code> will appear as a row, and <code>Species</code> will appear as a column.</p>
 </section>
-<section id="gtsummary" class="level3" data-number="9.4.2">
-<h3 data-number="9.4.2" class="anchored" data-anchor-id="gtsummary"><span class="header-section-number">9.4.2</span> gtsummary</h3>
+<section id="gtsummary" class="level3" data-number="6.4.2">
+<h3 data-number="6.4.2" class="anchored" data-anchor-id="gtsummary"><span class="header-section-number">6.4.2</span> gtsummary</h3>
 <p>The <code>gtsummary</code> package provides an easy way to create a publication-ready summary table. We going to use the <code>iris</code> dataset to demonstrate the capabilities of <code>gtsummary</code>.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load packages</span></span>
@@ -2171,8 +2171,8 @@ Data Frame: dat
 </div>
 </section>
 </section>
-<section id="chapter-summary" class="level2" data-number="9.5">
-<h2 data-number="9.5" class="anchored" data-anchor-id="chapter-summary"><span class="header-section-number">9.5</span> Chapter summary</h2>
+<section id="chapter-summary" class="level2" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="chapter-summary"><span class="header-section-number">6.5</span> Chapter summary</h2>
 <p>In this chapter, we have covered the basic descriptive statistics, which is consist of:</p>
 <ol type="1">
 <li>Measures of central tendency.</li>
@@ -2185,8 +2185,8 @@ Data Frame: dat
 </ol>
 <p>For more information on <code>summarytools</code> <span class="citation" data-cites="summarytools">(<a href="references.html#ref-summarytools" role="doc-biblioref">Comtois 2022</a>)</span>, refer to its <a href="https://cran.r-project.org/web/packages/summarytools/vignettes/introduction.html">official documentation</a>. Similarly, detailed guidance on <code>gtsummary</code> <span class="citation" data-cites="gtsummary">(<a href="references.html#ref-gtsummary" role="doc-biblioref">Sjoberg et al. 2021</a>)</span> is available on <a href="https://www.danieldsjoberg.com/gtsummary/">its documentation page</a>.</p>
 </section>
-<section id="revision" class="level2" data-number="9.6">
-<h2 data-number="9.6" class="anchored" data-anchor-id="revision"><span class="header-section-number">9.6</span> Revision</h2>
+<section id="revision" class="level2" data-number="6.6">
+<h2 data-number="6.6" class="anchored" data-anchor-id="revision"><span class="header-section-number">6.6</span> Revision</h2>
 <ol type="1">
 <li><p>Explain measures of central tendency.</p></li>
 <li><p>Explain measures of variability.</p></li>
@@ -2631,13 +2631,13 @@ Sjoberg, Daniel D., Karissa Whiting, Michael Curry, Jessica A. Lavery, and Josep
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./data-explore.html" class="pagination-link" aria-label="Data exploration">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Data exploration</span></span>
+      <a href="./data-wrangling.html" class="pagination-link" aria-label="Data wrangling">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Data wrangling</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./summary.html" class="pagination-link" aria-label="A way forward">
-        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">A way forward</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./plotting.html" class="pagination-link" aria-label="Data visualisation">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data visualisation</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
