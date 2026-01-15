@@ -86,7 +86,7 @@ Since outliers may not be representative of the data and may distort statistical
 
 There are two methods to identify outliers:
 
-1.  Interquartile range (IQR) method:
+1.  Interquartile range (IQR) or box plot method:
 
     The IQR method identifies outliers as data points lying below Q1 − 1.5 × IQR or above Q3 + 1.5 × IQR , where Q1 and Q3 are the first and third quartiles, respectively. This is the method that applies in the boxplot.
 
@@ -138,7 +138,69 @@ There are two methods to identify outliers:
       dplyr::filter(Wind == 20.7)
     ```
 
-There are other advanced methods to detect outliers. However, the basics to understand those methods are beyond the scope of this book.
+There is a useful package where we can check for outliers more effficently, which is the `perfomance` package. One of the benefits of using this package compared to the base R approach that we covered earlier is that this package can easily check the outliers for the whole dataset.
+
+First, let us install the package.
+
+```{r eval=FALSE}
+install.packages("performance")
+```
+
+Now, let us load the package.
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+library(performance)
+library(dplyr)
+```
+
+To check the outliers using the IQR method:
+
+```{r}
+iqr_outliers <- check_outliers(airquality_noNA, method = "iqr", threshold = 2)
+iqr_outliers
+```
+
+`method` specify the method that we want to use to detect the outliers and `threshold` specify the threshold for each method. In IQR method, the outliers are determined using these formula:
+
+$outliers < Q1 - (IQR * 1.5)$ or $outliers > Q3 + (IQR * 1.5)$
+
+The value of 1.5 is proposed by John Tukey, the famous statistician who founded this method. However, the `performance` package uses `2` as the threshold by default. The IQR method from the base R that we learnt earlier used the threshold of `1.5`.
+
+If we want to extract the outliers:
+
+```{r}
+# This will extract the row positions of outliers 
+iqr_outliers_points <- which(iqr_outliers)
+
+# Extract from the data
+airquality_noNA %>% 
+  slice(iqr_outliers_points)
+```
+
+Next, let us see the z-score method using the `performance` package.
+
+```{r}
+zs_outliers <- check_outliers(airquality_noNA, method = "zscore", threshold = 3)
+zs_outliers
+```
+
+The arguments are similar since we are using the same function. For the z-score method, we often look at the threshold to decide how extreme a value must be to be labeled an outlier.
+
+-   A threshold of `3.291` (the default in `performance` package for this method) is a conservative choice. It identifies only the most extreme values (roughly the top 0.1% of a normal distribution).
+-   A threshold of `3` is more sensitive. It will identify more points as outliers (roughly the top 0.3% of extreme values).
+
+Additionally, we can get the outliers by using the same function as previously:
+
+```{r}
+# This will extract the row positions of outliers 
+zs_outliers_points <- which(zs_outliers)
+
+# Extract from the data
+airquality_noNA %>% 
+  slice(zs_outliers_points)
+```
+
+There are other advanced methods to detect outliers in the `performance` package (you can read more on the `method` argument by typing `?check_outliers()` in the console). However, the basics to understand those methods are beyond the scope of this book.
 
 ## Useful packages {#sec-data-explore-useful-packages}
 
